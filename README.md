@@ -184,6 +184,7 @@ Full steps, commands, updating, rollback and troubleshooting: **[INSTALL.md](INS
 - Using Codex, Claude Code or another AI agent on this repo: it should read [AGENTS.md](AGENTS.md) first — it lists
   the rules that come from real failures (image builder, SELinux, system apps, overlays).
 - Research reports (hardware, firmware, telephony, camera, apps, performance): `audit/research/`.
+- What comes next (own kernel build, 64-bit-only system) and how it will be tested: [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Credits
 
