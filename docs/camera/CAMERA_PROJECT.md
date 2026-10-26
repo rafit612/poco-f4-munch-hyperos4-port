@@ -62,10 +62,17 @@ Named profile per change (git), fixed test scenes, comparison scripts (SNR, Lapl
 ΔE on a colour chart, skin hue), one comparison sheet + recommendation per round.
 
 ## To-do
-- [ ] **Watermark still says "Xiaomi 17"** — find where the camera app takes the device name for the watermark (app
-      config / device features / build props) and make it "POCO F4 5G". (reported 2026-10-27)
-- [ ] REA analysis engines: REA (rea-agents 6.8.0) needs Ghidra 12.1 and/or a jadx-headless-mcp 0.7.1 JAR supplied
-      separately; decide whether to download them.
+- [x] **Watermark said "XIAOMI 17 PRO"** — fixed 2026-10-27. [Observed] The port's camera 6.7 is patched by the porter
+      to always load a fixed `com.mi.device.Marble` device profile (log "Loaded direct 6.7 marble device profile"; marble =
+      POCO F5). Its watermark table `Marble.d()` was hard-coded `{"XIAOMI", "17 PRO"}`; the system properties were
+      already "POCO F4 5G". Patched to `{"POCO", "F4 5G"}` (only those 4 strings; dex 035, stored like the original),
+      re-signed. Tested as KSU module `munch_cam_watermark`: photo watermark reads "POCO F4 5G". Reproducible with
+      `tools/re/camera_watermark_patch.sh`; patched APK in `payload_tele/product/priv-app/MiuiCamera/` for the next release.
+- [x] Analysis tools: Ghidra 12.1.4 (`~/re_tools/ghidra_12.1.4_PUBLIC`) and jadx-headless-mcp 0.7.1 (`~/re_tools/jadx/`),
+      both checked against their published SHA-256. Helpers: `tools/re/Decomp.java` (JADX library: decompile chosen
+      classes) and `tools/re/Smali.java` (dexlib2: disassemble/assemble a dex). REA's MCP registration still to do.
+- [ ] Note: the camera app runs on the **Marble (POCO F5) device profile**; check which of its camera features/limits
+      fit munch (Part B step 2) — this profile is the main L1 tuning lever.
 - [ ] Part B step 2–4.
 
 ## Repository rule
