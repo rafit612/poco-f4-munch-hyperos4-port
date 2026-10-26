@@ -21,6 +21,7 @@
 !secure_build/payload_tele/product/etc/selinux/*
 !release/*.bat
 !docs/screenshots/*.jpg
+!tools/re/*.java
 
 # downloaded / extracted ROMs and build outputs
 stock_rom_*/
