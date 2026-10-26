@@ -1,0 +1,277 @@
+
+### CPU clusters / governor (schedutil)
+/sys/devices/system/cpu/cpufreq/policy0/scaling_governor = schedutil 
+/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq = 691200 
+/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq = 1804800 
+/sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq = 1804800 
+down_rate_limit_us hispeed_freq hispeed_load pl rtg_boost_freq up_rate_limit_us 
+policy0 schedutil/up_rate_limit_us = 500
+policy0 schedutil/down_rate_limit_us = 20000
+policy0 schedutil/hispeed_freq = 1248000
+policy0 schedutil/hispeed_load = 90
+/sys/devices/system/cpu/cpufreq/policy4/scaling_governor = schedutil 
+/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq = 710400 
+/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq = 2419200 
+/sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq = 2419200 
+down_rate_limit_us hispeed_freq hispeed_load pl rtg_boost_freq up_rate_limit_us 
+policy4 schedutil/up_rate_limit_us = 500
+policy4 schedutil/down_rate_limit_us = 20000
+policy4 schedutil/hispeed_freq = 1574400
+policy4 schedutil/hispeed_load = 90
+/sys/devices/system/cpu/cpufreq/policy7/scaling_governor = schedutil 
+/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq = 844800 
+/sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq = 3187200 
+/sys/devices/system/cpu/cpufreq/policy7/cpuinfo_max_freq = 3187200 
+down_rate_limit_us hispeed_freq hispeed_load pl rtg_boost_freq up_rate_limit_us 
+policy7 schedutil/up_rate_limit_us = 500
+policy7 schedutil/down_rate_limit_us = 20000
+policy7 schedutil/hispeed_freq = 1632000
+policy7 schedutil/hispeed_load = 90
+
+### EAS / capacity / sched knobs
+/sys/devices/system/cpu/cpu0/cpu_capacity = 313 
+/sys/devices/system/cpu/cpu4/cpu_capacity = 777 
+/sys/devices/system/cpu/cpu7/cpu_capacity = 1024 
+sched_asym_cap_sibling_freq_match_pct sched_boost sched_busy_hyst_ns sched_busy_hysteresis_enable_cpus sched_cfs_bandwidth_slice_us sched_child_runs_first sched_coloc_busy_hyst_max_ms sched_coloc_busy_hyst_ns sched_coloc_busy_hysteresis_enable_cpus sched_coloc_downmigrate_ns sched_conservative_pl sched_cpu_high_irqload sched_cstate_aware sched_domain sched_downmigrate sched_dynamic_ravg_window_enable sched_energy_aware sched_force_lb_enable sched_group_downmigrate sched_group_upmigrate sched_latency_ns sched_lib_mask_force sched_lib_name sched_many_wakeup_threshold sched_migration_cost_ns sched_min_granularity_ns sched_min_task_util_for_boost sched_min_task_util_for_colocation sched_nr_migrate sched_prefer_spread sched_ravg_window_nr_ticks sched_rr_timeslice_ms sched_rt_period_us sched_rt_runtime_us sched_schedstats sched_sync_hint_enable sched_task_unfilter_period sched_tunable_scaling sched_upmigrate sched_user_hint sched_wakeup_granularity_ns sched_walt_rotate_big_tasks sched_window_stats_policy 
+/proc/sys/kernel/sched_boost = <unreadable>
+/proc/sys/kernel/sched_energy_aware = <unreadable>
+/proc/sys/kernel/sched_util_clamp_min = <unreadable>
+/proc/sys/kernel/sched_util_clamp_max = <unreadable>
+
+### cgroups / stune / uclamp
+#subsys_name	hierarchy	num_cgroups	enabled
+cpuset	3	19	1
+cpu	2	23	1
+cpuacct	0	493	1
+schedtune	0	493	1
+blkio	1	2	1
+memory	4	157	1
+freezer	0	493	1
+ls: /dev/stune: No such file or directory /dev/cpuctl/top-app cpu.shares 
+
+### GPU (Adreno 650, kgsl devfreq)
+/sys/class/kgsl/kgsl-3d0/devfreq/governor = <unreadable>
+/sys/class/kgsl/kgsl-3d0/max_gpuclk = 670000000 
+/sys/class/kgsl/kgsl-3d0/devfreq/min_freq = <unreadable>
+/sys/class/kgsl/kgsl-3d0/devfreq/max_freq = <unreadable>
+/sys/class/kgsl/kgsl-3d0/devfreq/available_frequencies = <unreadable>
+/sys/class/kgsl/kgsl-3d0/gpu_model = Adreno650v3 
+
+### devfreq (bus/DDR/LLCC)
+
+### Hexagon DSP / NPU (NNAPI)
+[init.svc.neuralnetworks_hal_service]: [running]
+adsprpc-smd adsprpc-smd-secure ramdump_cdsp ramdump_md_cdsp subsys_cdsp 
+
+### Charging / PMIC / battery
+  AC powered: false
+  USB powered: false
+  Wireless powered: false
+  Max charging current: 0
+ Time when the latest updated value of the Max charging current was sent via battery changed broadcast: +1h21m55s885ms
+  Max charging voltage: 0
+  status: 3
+  health: 2
+  level: 100
+  voltage: -107
+ Time when the latest updated value of the voltage was sent via battery changed broadcast: +3h1m55s905ms
+ The last voltage value sent via the battery changed broadcast: -107
+  temperature: 500
+  technology: Li-poly
+  Capacity level: 5
+/sys/class/power_supply/usb/real_type = <unreadable>
+/sys/class/power_supply/usb/pd_active = <unreadable>
+/sys/class/power_supply/battery/charge_type = <unreadable>
+/sys/class/power_supply/battery/cycle_count = <unreadable>
+/sys/class/power_supply/bms/charge_full_design = <unreadable>
+
+### Audio: ALSA SoC, Smart PA (TFA98xx), Dolby, Hi-Res
+[audio.offload.enable]: [true]
+[audio.offload.gapless.enabled]: [true]
+[audio.offload.min.duration.secs]: [30]
+[audio.offload.pcm.16bit.enable]: [true]
+[audio.offload.pcm.24bit.enable]: [true]
+[audio.offload.pcm.enable]: [true]
+[audio.offload.video]: [true]
+[persist.audio.hifi]: [true]
+[persist.audio.hifi.volume]: [87]
+[ro.audio.hifi]: [true]
+[init.svc.audioserver]: [running]
+[init.svc.audioshell_service]: [stopped]
+[init.svc.audioshell_system]: [stopped]
+[init.svc.dms-hal-2-0]: [running]
+
+### IR blaster
+Service consumer_ir: found
+true
+
+### Display: panel, DFPS, HDR, 10-bit, DC dimming, kcal
+supportedModes [{id=1, parentModeId=-1, sfModeId=0, flags=, width=1080, height=2400, fps=60.000004, vsync=60.000004, alternativeRefreshRates=[90.0, 120.00001]
+supportedColorModes [0, 7, 9]
+hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[2, 3, 4], mMaxLuminance=420.0, mMaxAverageLuminance=210.1615, mMinLuminance=0.323}
+supportedModes [{id=1, parentModeId=-1, sfModeId=0, flags=, width=1080, height=2400, fps=60.000004, vsync=60.000004, alternativeRefreshRates=[90.0, 120.00001]
+hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[2, 3, 4], mMaxLuminance=420.0, mMaxAverageLuminance=210.1615, mMinLuminance=0.323}
+supportedColorModes [0, 7, 9]
+supportedModes [{id=1, parentModeId=-1, sfModeId=0, flags=, width=1080, height=2400, fps=60.000004, vsync=60.000004, alternativeRefreshRates=[90.0, 120.00001]
+hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[2, 3, 4], mMaxLuminance=420.0, mMaxAverageLuminance=210.1615, mMinLuminance=0.323}
+supportedColorModes [0, 7, 9]
+[debug.secret_dc_backlight.enable]: [true]
+[debug.sf.disable_backpressure]: [1]
+[debug.sf.enable_advanced_sf_phase_offset]: [1]
+[debug.sf.enable_gl_backpressure]: [1]
+[debug.sf.enable_hwc_vds]: [0]
+[debug.sf.high_fps_early_gl_phase_offset_ns]: [-4000000]
+[debug.sf.high_fps_early_phase_offset_ns]: [-4000000]
+[debug.sf.high_fps_late_app_phase_offset_ns]: [1000000]
+[debug.sf.high_fps_late_sf_phase_offset_ns]: [-4000000]
+[debug.sf.hw]: [0]
+[debug.sf.latch_unsignaled]: [1]
+[debug.sf.predict_hwc_composition_strategy]: [0]
+[debug.sf.treat_170m_as_sRGB]: [1]
+[persist.sys.sf.cache.oldVersion]: [f0c0bb1b85b1d0722c22f6d3e8b1721ee5fdd28f682de9bfbb19a2bc893a727b]
+[persist.sys.sf.color_mode]: [0]
+[persist.sys.sf.color_saturation]: [1.0]
+[persist.sys.sf.disable_blurs]: [false]
+[persist.sys.sf.dynamic.glass.miop]: [true]
+[persist.sys.sf.native_mode]: [258]
+[persist.sys.sf_charge_anim_supported]: [true]
+[persist.sys.sf_content_recorder_version]: [1001]
+[persist.vendor.dc_backlight.enable]: [false]
+[persist.vendor.dc_backlight.threshold]: [450]
+[persist.vendor.dfps.level]: [60]
+[persist.vendor.power.dfps.level]: [0]
+[ro.surface_flinger.enable_frame_rate_override]: [false]
+[ro.surface_flinger.force_hwc_copy_for_virtual_displays]: [true]
+[ro.surface_flinger.game_default_frame_rate_override]: [60]
+[ro.surface_flinger.has_HDR_display]: [true]
+[ro.surface_flinger.has_wide_color_display]: [true]
+/sys/devices/platform/kcal_ctrl.0/kcal = <unreadable>
+/sys/class/drm/card0-DSI-1/panel_info = <unreadable>
+
+### SurfaceFlinger / HWC / Gralloc
+    activeMode={id=0, hwcId=0, resolution=1080x2400, vsyncRate=60.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+        {id=0, hwcId=0, resolution=1080x2400, vsyncRate=60.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+        {id=1, hwcId=1, resolution=1080x2400, vsyncRate=120.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+        {id=2, hwcId=2, resolution=1080x2400, vsyncRate=90.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+    mPrimaryFrameRates[0]=fps=60.00 Hz mode={id=0, hwcId=0, resolution=1080x2400, vsyncRate=60.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+    mAppRequestFrameRates[0]=fps=60.00 Hz mode={id=0, hwcId=0, resolution=1080x2400, vsyncRate=60.00 Hz, dpi=394.70x394.31, group=0, {normal} vrrConfig=N/A, hdrOutputType=INVALID}
+?
+Y
+
+### Vulkan / OpenGL
+feature:android.hardware.opengles.aep
+feature:android.hardware.vulkan.compute
+feature:android.hardware.vulkan.level=1
+feature:android.hardware.vulkan.version=4206592
+feature:android.software.vulkan.deqp.level=132383489
+adreno
+196610
+
+### Storage: UFS, I/O scheduler, filesystems
+/sys/block/sda/queue/scheduler = <unreadable>
+/sys/block/sda/queue/read_ahead_kb = <unreadable>
+/sys/block/sda/queue/nr_requests = <unreadable>
+/sys/block/sda/device/model = <unreadable>
+/ erofs
+/product erofs
+/vendor erofs
+/data f2fs
+
+### Memory: zram, swap, swappiness, dirty ratios, LMK, memory engine
+/sys/block/zram0/comp_algorithm = <unreadable>
+/sys/block/zram0/disksize = <unreadable>
+/proc/sys/vm/swappiness = <unreadable>
+/proc/sys/vm/dirty_ratio = <unreadable>
+/proc/sys/vm/dirty_background_ratio = <unreadable>
+/proc/sys/vm/vfs_cache_pressure = <unreadable>
+/proc/sys/vm/watermark_scale_factor = <unreadable>
+/proc/swaps = <unreadable>
+[debug.atrace.app_17]: [lmkd]
+[init.svc.lmkd]: [running]
+[persist.sys.mms.write_lmkd]: [true]
+[persist.sys.xring_extm.enable]: [true]
+[ro.lmk.kill_heaviest_task]: [true]
+[ro.lmk.kill_timeout_ms]: [15]
+[ro.lmk.log_stats]: [false]
+[ro.lmk.use_minfree_levels]: [true]
+ls: /proc/mi_mem_engine: No such file or directory
+
+### Power HAL / perf / Doze
+  mLightEnabled=true  mDeepEnabled=true
+  mState=IDLE mLightState=OVERRIDE
+[init.svc.perf-hal-2-2]: [running]
+[init.svc.perfetto_persistent_sysui_tracing_for_bugreport_mtbf]: [stopped]
+[init.svc.perfobserve_read_cloud_bits]: [stopped]
+[init.svc.poweroffm64]: [stopped]
+[init.svc.qti_esepowermanager_service_1_1]: [running]
+[init.svc.system_perf_init]: [stopped]
+[init.svc.traced_perf]: [stopped]
+[ro.vendor.perf.scroll_opt]: [false]
+[vendor.perf.framepacing.enable]: [false]
+
+### Thermal
+[dalvik.vm.dexopt.thermal-cutoff]: [2]
+[init.svc.android.thermal-hal]: [running]
+[init.svc.mi_thermald]: [running]
+[ro.thermal.iec.enable]: [true]
+[ro.vendor.fps.switch.thermal]: [true]
+IsStatusOverride: false
+ThermalEventListeners:
+	callbacks: 4
+	killed: false
+	broadcasts count: -1
+ThermalStatusListeners:
+	callbacks: 10
+	killed: false
+	broadcasts count: -1
+Thermal Status: 0
+Cached temperatures:
+HAL Ready: true
+
+### Telephony / RIL / 5G NSA-SA / VoNR
+[gsm.version.baseband]: [2.5.1.c1-14.1-0324_0657_6488b87c,2.5.1.c1-14.1-0324_0657_6488b87c]
+[gsm.version.ril-impl]: [Qualcomm RIL 1.0]
+[persist.radio.sa.user.enabled]: [0]
+[persist.rild.nitz_long_ons_0]: []
+[persist.rild.nitz_long_ons_1]: []
+[persist.rild.nitz_long_ons_2]: []
+[persist.rild.nitz_long_ons_3]: []
+[persist.rild.nitz_plmn]: []
+[persist.rild.nitz_short_ons_0]: []
+[persist.rild.nitz_short_ons_1]: []
+[persist.rild.nitz_short_ons_2]: []
+[persist.rild.nitz_short_ons_3]: []
+[ril.deprioritize.sa.slot0]: [false]
+[ril.deprioritize.sa.slot1]: [false]
+[ril.ecclist]: [911,101,112,102,108,100]
+[ril.ecclist1]: [911,112,999,102,108,100,101]
+[ril.fake_bs_flag1]: [FALSE:0]
+[ril.limit_service_mnc]: [GSM_470]
+[ril.mcc.mnc0]: []
+[ril.mcc.mnc1]: [47003]
+[ril.smap.badcell]: []
+[ril.subscription.types]: [NV,RUIM]
+[ril.temp.dds.state]: [false]
+[rild.libpath]: [/vendor/lib64/libril-qc-hal-qmi.so]
+[ro.ril.factory_id]: [9]
+getRilDataRadioTechnology=0(Unknown)
+mNrFrequencyRange=0
+getRilDataRadioTechnology=14(LTE)
+mNrFrequencyRange=0
+getRilDataRadioTechnology=0(Unknown)
+mNrFrequencyRange=0
+getRilDataRadioTechnology=0(Unknown)
+mNrFrequencyRange=0
+
+### Security: AVB, SELinux, integrity props
+Enforcing
+orange
+locked
+1
+enforcing
+release-keys
+user
+
+### Binder / IPC
+ls: /dev/binderfs: Permission denied
+

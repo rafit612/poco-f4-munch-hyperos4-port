@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VoLTE for all operators: extends CarrierConfigResCommon_Sys (priority 100) for com.android.carrierconfig -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.munch.volte.overlay">
+    <overlay android:targetPackage="com.android.carrierconfig" android:priority="200" android:isStatic="true" />
+    <application android:hasCode="false" />
+</manifest>

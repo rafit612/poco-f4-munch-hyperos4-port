@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for vendor-specific config values. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+<carrier_config include="default_v2.9.2.xml"/>
+<!--香港 CT-->
+<carrier_config mcc="454" mnc="31">
+    <boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="460">
+    <boolean name="config_miui_sms_sa_fallback_optimization" value="true" />
+</carrier_config>
+<!--中国移动-->
+<carrier_config mcc="460" mnc="00,02,04,07,08,13">
+    <boolean name="config_miui_sms_optimization" value="true" />
+</carrier_config>
+<!--中国联通-->
+<carrier_config mcc="460" mnc="01,06,09">
+    <boolean name="config_miui_sms_optimization" value="true" />
+</carrier_config>
+<!--中国电信-->
+<carrier_config mcc="460" mnc="03,05,11,12">
+   <boolean name="carrier_wfc_ims_available_bool" value="true" />
+   <boolean name="carrier_wfc_ims_available_bool_develop" value="true" />
+   <boolean name="carrier_hide_wfc_bool" value="true" />
+   <boolean name="config_wfc_disable_sa" value="true" />
+</carrier_config>
+</carrier_config_list>

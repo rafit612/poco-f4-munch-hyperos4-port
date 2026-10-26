@@ -1,0 +1,3 @@
+# Official HyperOS 1 IMS app (payload) replaces the China-base one: the old precompiled code and its extra JNI lib go
+priv-app/ims/oat
+priv-app/ims/lib/arm64/libSurfaceUtil_jni.so

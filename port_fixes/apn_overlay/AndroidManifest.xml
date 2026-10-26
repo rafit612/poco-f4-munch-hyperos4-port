@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Makes TelephonyProvider load APNs from /product/etc (apns-conf.xml, fiveG-apns-conf.xml, xcap-apns-conf.xml)
+     instead of Xiaomi's CarrierStudioApn service, whose built-in list has no IMS APN for some operators. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.munch.apn.overlay">
+    <overlay android:targetPackage="com.android.providers.telephony" android:priority="200" android:isStatic="true" />
+    <application android:hasCode="false" />
+</manifest>

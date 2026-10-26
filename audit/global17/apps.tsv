@@ -1,0 +1,453 @@
+package	status	global_part	global_path	global_kind	global_version	global_signer	port_part	port_path	port_version	port_signer
+?	both	mi_ext	system_ext/priv-app/MtkContacts/MtkContacts.apk	priv-app	?	list index out of range	mi_ext	system/priv-app/SystemHelper/SystemHelper.apk	?	list index out of range
+android	both	system	framework/framework-res.apk	app	17	Xiaomi	system	framework/framework-res.apk	17	Xiaomi
+android.aosp.overlay	both	product	overlay/AospFrameworkResOverlay.apk	overlay	17	Xiaomi	product	overlay/AospFrameworkResOverlay.apk	14	Android
+android.aosp.overlay.telephony	both	product	overlay/AospFrameworkTelephonyResOverlay.apk	overlay	17	Xiaomi	product	overlay/AospFrameworkTelephonyResOverlay.apk	17	Xiaomi
+android.auto_generated_characteristics_rro	both	product	overlay/framework-res__nosdcard__auto_generated_characteristics_rro.apk	overlay	17	Xiaomi	product	overlay/framework-res__nosdcard__auto_generated_characteristics_rro.apk	17	Xiaomi
+android.autoinstalls.config.Xiaomi.model	GLOBAL_ONLY	product	app/PlayAutoInstallStubApp/PlayAutoInstallStubApp.apk	app	1	Xiaomi				
+android.ext.shared	PORT_ONLY						system	app/ExtShared/ExtShared.apk	1	Xiaomi
+android.miui.home.launcher.res	both	product	overlay/MiuiHomeLauncherResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiHomeLauncherResOverlay.apk	14	Xiaomi
+android.miui.overlay	both	product	overlay/MiuiFrameworkResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiFrameworkResOverlay.apk	15	Xiaomi
+android.miui.overlay.telephony	both	product	overlay/MiuiFrameworkTelephonyResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiFrameworkTelephonyResOverlay.apk	17	Xiaomi
+android.miui.poco.launcher.res	both	product	overlay/MiuiPocoLauncherResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiPocoLauncherResOverlay.apk	17	Xiaomi
+android.overlay.common	both	product	overlay/FrameworksResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/FrameworksResCommon_Sys.apk	17	Xiaomi
+android.qvaoverlay.common	both	product	overlay/FrameworksResCommonQva_Sys.apk	overlay	17	Xiaomi	product	overlay/FrameworksResCommonQva_Sys.apk	17	Xiaomi
+cn.wps.moffice_eng.xiaomi.lite	PORT_ONLY						product	data-app/wps-lite/wps-lite.apk	4.0.4	Zhuhai Kingsoft Office Software Co.
+cn.wps.xiaomi.abroad.lite	GLOBAL_ONLY	mi_ext	product/data-app/GlobalWPSLITE/GlobalWPSLITE.apk	app	2.6.9	Zhuhai Kingsoft Office Software Co.				
+com.android.DeviceAsWebcam	both	system	priv-app/DeviceAsWebcam/DeviceAsWebcam.apk	priv-app	17	Xiaomi	system	priv-app/DeviceAsWebcam/DeviceAsWebcam.apk	17	Xiaomi
+com.android.angle	GLOBAL_ONLY	product	priv-app/ANGLE/ANGLE.apk	priv-app	100	Xiaomi				
+com.android.apps.tag	both	system	priv-app/Tag/Tag.apk	priv-app	1.1	Xiaomi	system	priv-app/Tag/Tag.apk	1.1	Xiaomi
+com.android.appsearch.aiseal.config	both	system	app/AppSearchAiSealConfig/AppSearchAiSealConfig.apk	app	17	Xiaomi	system	app/AppSearchAiSealConfig/AppSearchAiSealConfig.apk	17	Xiaomi
+com.android.avatarpicker	both	system_ext	priv-app/AvatarPicker/AvatarPicker.apk	priv-app	17	Xiaomi	system_ext	priv-app/AvatarPicker/AvatarPicker.apk	17	Xiaomi
+com.android.backupconfirm	both	system	priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk	priv-app	17	Xiaomi	system	priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk	17	Xiaomi
+com.android.bips	both	system	priv-app/BuiltInPrintService/BuiltInPrintService.apk	priv-app	17	Xiaomi	system	priv-app/BuiltInPrintService/BuiltInPrintService.apk	17	Xiaomi
+com.android.bluetooth.overlay	both	product	overlay/AospBluetoothResOverlay.apk	overlay	17	Xiaomi	product	overlay/AospBluetoothResOverlay.apk	17	Xiaomi
+com.android.bluetoothmidiservice	both	system	app/BluetoothMidiService/BluetoothMidiService.apk	app	17	Xiaomi	system	app/BluetoothMidiService/BluetoothMidiService.apk	17	Xiaomi
+com.android.bookmarkprovider	GLOBAL_ONLY	system	app/BookmarkProvider/BookmarkProvider.apk	app	17	Xiaomi				
+com.android.calendar	both	product	app/Calendar/Calendar.apk	app	17	Xiaomi	product	app/MIUICalendar/MIUICalendar.apk	18.0.1.15	Xiaomi
+com.android.calllogbackup	both	system	priv-app/CallLogBackup/CallLogBackup.apk	priv-app	17	Xiaomi	system	priv-app/CallLogBackup/CallLogBackup.apk	17	Xiaomi
+com.android.camera	both	product	priv-app/MiuiCamera/MiuiCamera.apk	priv-app	6.6.000570.5	Xiaomi	product	priv-app/MiuiCamera/MiuiCamera.apk	6.7.000070.0	Android
+com.android.cameraextensions	both	system	app/CameraExtensionsProxy/CameraExtensionsProxy.apk	app	17	Xiaomi	system	app/CameraExtensionsProxy/CameraExtensionsProxy.apk	17	Xiaomi
+com.android.captiveportallogin	PORT_ONLY						system	app/CaptivePortalLogin/CaptivePortalLogin.apk	17	Xiaomi
+com.android.carrierconfig	both	system_ext	priv-app/CarrierConfig/CarrierConfig.apk	priv-app	1.0.0	Xiaomi	system_ext	priv-app/CarrierConfig/CarrierConfig.apk	1.0.0	Xiaomi
+com.android.carrierconfig.overlay.common	both	product	overlay/CarrierConfigResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/CarrierConfigResCommon_Sys.apk	17	Xiaomi
+com.android.carrierdefaultapp	both	system	app/CarrierDefaultApp/CarrierDefaultApp.apk	app	17	Xiaomi	system	app/CarrierDefaultApp/CarrierDefaultApp.apk	17	Xiaomi
+com.android.cellbroadcastreceiver	both	system	priv-app/CellBroadcastLegacyApp/CellBroadcastLegacyApp.apk	priv-app	R-initial	Xiaomi	system_ext	priv-app/CellBroadcastAppPlatform/CellBroadcastAppPlatform.apk	17	Xiaomi
+com.android.cellbroadcastreceiver.overlay.common	both	product	overlay/CellBroadcastReceiverResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/CellBroadcastReceiverResCommon_Sys.apk	17	Xiaomi
+com.android.cellbroadcastservice	PORT_ONLY						system	priv-app/CellBroadcastServiceModulePlatform/CellBroadcastServiceModulePlatform.apk	17	Xiaomi
+com.android.certinstaller	both	system	app/CertInstaller/CertInstaller.apk	app	17	Xiaomi	system	app/CertInstaller/CertInstaller.apk	17	Xiaomi
+com.android.chrome	GLOBAL_ONLY	product	app/Chrome64/Chrome64.apk	app	149.0.7827.102	Google Inc.				
+com.android.companiondevicemanager	both	system	app/CompanionDeviceManager/CompanionDeviceManager.apk	app	17	Xiaomi	system	app/CompanionDeviceManager/CompanionDeviceManager.apk	17	Xiaomi
+com.android.companiondevicemanager.auto_generated_characteristics_rro	both	product	overlay/CompanionDeviceManager__nosdcard__auto_generated_characteristics_rro.apk	overlay	17	Xiaomi	product	overlay/CompanionDeviceManager__nosdcard__auto_generated_characteristics_rro.apk	17	Xiaomi
+com.android.contacts	both	mi_ext	product/priv-app/MIUIContactsTGlobal/MIUIContactsTGlobal.apk	priv-app	18.30.00.55	Xiaomi	product	priv-app/MIUIContactsT/MIUIContactsT.apk	18.30.00.20	Xiaomi
+com.android.contactspicker	both	system	priv-app/ContactsPicker/ContactsPicker.apk	priv-app	17	Xiaomi	system	priv-app/ContactsPicker/ContactsPicker.apk	17	Xiaomi
+com.android.credentialmanager	both	system	priv-app/CredentialManager/CredentialManager.apk	priv-app	17	Xiaomi	product	app/MiuiCredentialManager/MiuiCredentialManager.apk	4.0.4	Xiaomi
+com.android.deskclock	both	product	data-app/MIUIDeskClockGlobal/MIUIDeskClockGlobal.apk	app	18.26.0	Xiaomi	product	app/MIUIDeskClock/MIUIDeskClock.apk	18.17.0	Xiaomi
+com.android.deskclocklib.res20190812	both	product	prebuilts/com.android.deskclocklib.res20190812/com.android.deskclocklib.res20190812.apk	app	2.0	Xiaomi	product	prebuilts/com.android.deskclocklib.res20190812/com.android.deskclocklib.res20190812.apk	2.0	Xiaomi
+com.android.devicediagnostics	both	system	priv-app/DeviceDiagnostics/DeviceDiagnostics.apk	priv-app	17	Xiaomi	system	priv-app/DeviceDiagnostics/DeviceDiagnostics.apk	17	Xiaomi
+com.android.dreams.basic	both	system	app/BasicDreams/BasicDreams.apk	app	17	Xiaomi	system	app/BasicDreams/BasicDreams.apk	17	Xiaomi
+com.android.dreams.phototable	GLOBAL_ONLY	product	app/PhotoTable/PhotoTable.apk	app	17	Xiaomi				
+com.android.dynsystem	both	system	priv-app/DynamicSystemInstallationService/DynamicSystemInstallationService.apk	priv-app	17	Xiaomi	system	priv-app/DynamicSystemInstallationService/DynamicSystemInstallationService.apk	17	Xiaomi
+com.android.egg	both	system	app/EasterEgg/EasterEgg.apk	app	1.0	Xiaomi	system	app/EasterEgg/EasterEgg.apk	1.0	Xiaomi
+com.android.emergency	both	system_ext	priv-app/EmergencyInfoGms/EmergencyInfoGms.apk	priv-app	17	Xiaomi	system_ext	priv-app/EmergencyInfo/EmergencyInfo.apk	17	Xiaomi
+com.android.externalstorage	both	system	priv-app/ExternalStorageProvider/ExternalStorageProvider.apk	priv-app	17	Xiaomi	system	priv-app/ExternalStorageProvider/ExternalStorageProvider.apk	17	Xiaomi
+com.android.eyedropper	both	system	priv-app/EyeDropper/EyeDropper.apk	priv-app	17	Xiaomi	system	priv-app/EyeDropper/EyeDropper.apk	17	Xiaomi
+com.android.fileexplorer	PORT_ONLY						product	app/MIUIFileExplorer/MIUIFileExplorer.apk	9.2.3.2	Xiaomi
+com.android.hotwordenrollment.okgoogle	GLOBAL_ONLY	product	priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk	priv-app	17	Xiaomi				
+com.android.hotwordenrollment.xgoogle	GLOBAL_ONLY	product	priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk	priv-app	17	Xiaomi				
+com.android.htmlviewer	both	system	priv-app/HTMLViewer/HTMLViewer.apk	priv-app	17	Xiaomi	system	priv-app/HTMLViewer/HTMLViewer.apk	17	Xiaomi
+com.android.imsserviceentitlement	both	product	priv-app/ImsServiceEntitlement/ImsServiceEntitlement.apk	priv-app	17	Xiaomi	product	priv-app/ImsServiceEntitlement/ImsServiceEntitlement.apk	17	Xiaomi
+com.android.incallui	both	mi_ext	product/priv-app/InCallUI/InCallUI.apk	priv-app	40.01.52	Xiaomi	product	priv-app/InCallUI/InCallUI.apk	40.01.05	Xiaomi
+com.android.inputdevices	both	system	priv-app/InputDevices/InputDevices.apk	priv-app	17	Xiaomi	system	priv-app/InputDevices/InputDevices.apk	17	Xiaomi
+com.android.inputsettings.overlay.miui	both	product	overlay/MiuiSecurityCoreOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiSecurityCoreOverlay.apk	17	Xiaomi
+com.android.intentresolver	both	system_ext	priv-app/MiIntentResolver/MiIntentResolver.apk	priv-app	2021-11	Xiaomi	system_ext	priv-app/MiIntentResolver/MiIntentResolver.apk	2021-11	Xiaomi
+com.android.internal.display.cutout.emulation.corner	both	product	overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DisplayCutoutEmulationCorner/DisplayCutoutEmulationCornerOverlay.apk	1.0	Xiaomi
+com.android.internal.display.cutout.emulation.double	both	product	overlay/DisplayCutoutEmulationDouble/DisplayCutoutEmulationDoubleOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DisplayCutoutEmulationDouble/DisplayCutoutEmulationDoubleOverlay.apk	1.0	Xiaomi
+com.android.internal.display.cutout.emulation.hole	both	product	overlay/DisplayCutoutEmulationHole/DisplayCutoutEmulationHoleOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DisplayCutoutEmulationHole/DisplayCutoutEmulationHoleOverlay.apk	1.0	Xiaomi
+com.android.internal.display.cutout.emulation.tall	both	product	overlay/DisplayCutoutEmulationTall/DisplayCutoutEmulationTallOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DisplayCutoutEmulationTall/DisplayCutoutEmulationTallOverlay.apk	1.0	Xiaomi
+com.android.internal.display.cutout.emulation.waterfall	both	product	overlay/DisplayCutoutEmulationWaterfall/DisplayCutoutEmulationWaterfallOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DisplayCutoutEmulationWaterfall/DisplayCutoutEmulationWaterfallOverlay.apk	1.0	Xiaomi
+com.android.internal.systemui.navbar.gestural	both	product	overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk	overlay	1.0	Xiaomi	product	overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk	1.0	Xiaomi
+com.android.internal.systemui.navbar.threebutton	both	product	overlay/NavigationBarMode3Button/NavigationBarMode3ButtonOverlay.apk	overlay	1.0	Xiaomi	product	overlay/NavigationBarMode3Button/NavigationBarMode3ButtonOverlay.apk	1.0	Xiaomi
+com.android.internal.systemui.navbar.transparent	both	product	overlay/TransparentNavigationBar/TransparentNavigationBarOverlay.apk	overlay	1.0	Xiaomi	product	overlay/TransparentNavigationBar/TransparentNavigationBarOverlay.apk	1.0	Xiaomi
+com.android.keychain	both	system	app/KeyChain/KeyChain.apk	app	17	Xiaomi	system	app/KeyChain/KeyChain.apk	17	Xiaomi
+com.android.localtransport	both	system	priv-app/LocalTransport/LocalTransport.apk	priv-app	17	Xiaomi	system	priv-app/LocalTransport/LocalTransport.apk	17	Xiaomi
+com.android.location.fused	both	system	priv-app/FusedLocation/FusedLocation.apk	priv-app	17	Xiaomi	system	priv-app/FusedLocation/FusedLocation.apk	17	Xiaomi
+com.android.managedprovisioning	both	system	priv-app/ManagedProvisioning/ManagedProvisioning.apk	priv-app	17	Xiaomi	system	priv-app/ManagedProvisioning/ManagedProvisioning.apk	17	Xiaomi
+com.android.managedprovisioning.overlay	both	product	overlay/ManagedProvisioningResOverlay.apk	overlay	17	Xiaomi	product	overlay/ManagedProvisioningResOverlay.apk	17	Xiaomi
+com.android.mms	both	mi_ext	product/priv-app/MiuiMmsGlobal/MiuiMmsGlobal.apk	priv-app	18.0.0.36-gl	Xiaomi	product	priv-app/MiuiMms/MiuiMms.apk	18.0.0.32	Xiaomi
+com.android.mms.service	both	system	priv-app/MmsService/MmsService.apk	priv-app	17	Xiaomi	system	priv-app/MmsService/MmsService.apk	17	Xiaomi
+com.android.modulemetadata	PORT_ONLY						product	app/ModuleMetadata/ModuleMetadata.apk	17	Xiaomi
+com.android.mtp	both	system	priv-app/MtpService/MtpService.apk	priv-app	17	Xiaomi	system	priv-app/MtpService/MtpService.apk	17	Xiaomi
+com.android.musicfx	both	system	priv-app/MusicFX/MusicFX.apk	priv-app	1.4	Xiaomi	system	priv-app/MusicFX/MusicFX.apk	1.4	Xiaomi
+com.android.ncm.overlay.common	both	product	overlay/NcmTetheringResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/NcmTetheringResCommon_Sys.apk	17	Xiaomi
+com.android.networkstack	PORT_ONLY						system	priv-app/NetworkStack/NetworkStack.apk	17	Xiaomi
+com.android.networkstack.overlay.miui	both	product	overlay/NetworkStackOverlay.apk	overlay	17	Xiaomi	product	overlay/NetworkStackOverlay.apk	17	Xiaomi
+com.android.nfc	both	product	pangu/system/app/Nfc_st/Nfc_st.apk	app	17	Xiaomi	system_ext	app/NQNfcNci/NQNfcNci.apk	16	Xiaomi
+com.android.nfc.resources.overlay.common	PORT_ONLY						product	overlay/NfcResCommon.apk	16	Xiaomi
+com.android.ons	both	system	priv-app/ONS/ONS.apk	priv-app	17	Xiaomi	system	priv-app/ONS/ONS.apk	17	Xiaomi
+com.android.overlay.circletosearch	GLOBAL_ONLY	product	overlay/CircleToSearchOverlay.apk	overlay	1.0	Xiaomi				
+com.android.overlay.cngmstelecomm	PORT_ONLY						product	overlay/GmsCnTelecommOverlay.apk	1.0	Xiaomi
+com.android.overlay.gmscontactprovider	both	product	overlay/GmsContactProviderOverlay.apk	overlay	1.0	Xiaomi	product	overlay/GmsContactProviderOverlay.apk	1.0	Xiaomi
+com.android.overlay.gmssettingprovider	both	product	overlay/GmsSettingProviderOverlay.apk	overlay	1.0	Xiaomi	product	overlay/GmsSettingProviderOverlay.apk	1.0	Xiaomi
+com.android.overlay.gmssettings	both	product	overlay/GmsSettingsOverlay.apk	overlay	1.0	Xiaomi	product	overlay/GmsCnSettingsOverlay.apk	1.0	Xiaomi
+com.android.overlay.gmstelecomm	both	mi_ext	product/overlay/GmsTelecommOverlay.apk	overlay	1.0	Xiaomi	mi_ext	product/overlay/GmsMiCSPTelecommOverlay.apk	1.0	Xiaomi
+com.android.overlay.gmstelephony	both	mi_ext	product/overlay/GmsTelephonyOverlay.apk	overlay	1.0	Xiaomi	mi_ext	product/overlay/GmsMiCSPTelephonyOverlay.apk	1.0	Xiaomi
+com.android.overlay.systemui	both	product	overlay/GmsSystemUIOverlay.apk	overlay	1.0	Xiaomi	product	overlay/GmsCnSystemUIOverlay.apk	1.0	Xiaomi
+com.android.packageinstaller	PORT_ONLY						system	priv-app/PackageInstaller/PackageInstaller.apk	17	Xiaomi
+com.android.pacprocessor	both	system	app/PacProcessor/PacProcessor.apk	app	17	Xiaomi	system	app/PacProcessor/PacProcessor.apk	17	Xiaomi
+com.android.phone	both	system	priv-app/TeleService/TeleService.apk	priv-app	17	Xiaomi	system	priv-app/TeleService/TeleService.apk	17	Xiaomi
+com.android.phone.auto_generated_characteristics_rro	both	product	overlay/TeleService__nosdcard__auto_generated_characteristics_rro.apk	overlay	17	Xiaomi	product	overlay/TeleService__nosdcard__auto_generated_characteristics_rro.apk	17	Xiaomi
+com.android.phone.cust.overlay.miui	GLOBAL_ONLY	mi_ext	product/overlay/MiuiTelephonyResCustOverlay.apk	overlay	1.0.3	Xiaomi				
+com.android.phone.overlay.common	both	product	overlay/TelephonyResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/TelephonyResCommon_Sys.apk	17	Xiaomi
+com.android.phone.overlay.miui	both	product	overlay/MiuiTelephonyResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiTelephonyResOverlay.apk	17	Xiaomi
+com.android.printservice.recommendation	PORT_ONLY						system	app/PrintRecommendationService/PrintRecommendationService.apk	1.3.0	Xiaomi
+com.android.printspooler	both	system_ext	app/MiuiPrintSpooler/MiuiPrintSpooler.apk	app	17	Xiaomi	system_ext	app/MiuiPrintSpooler/MiuiPrintSpooler.apk	17	Xiaomi
+com.android.privatespace	both	system	priv-app/PrivateSpace/PrivateSpace.apk	priv-app	17	Xiaomi	system	priv-app/PrivateSpace/PrivateSpace.apk	17	Xiaomi
+com.android.providers.blockednumber	both	system	priv-app/BlockedNumberProvider/BlockedNumberProvider.apk	priv-app	17	Xiaomi	system	priv-app/BlockedNumberProvider/BlockedNumberProvider.apk	17	Xiaomi
+com.android.providers.calendar	both	system	priv-app/CalendarProvider/CalendarProvider.apk	priv-app	16.0.0.0	Xiaomi	system	priv-app/CalendarProvider/CalendarProvider.apk	16.0.0.0	Xiaomi
+com.android.providers.contactkeys	both	system	priv-app/E2eeContactKeysProvider/E2eeContactKeysProvider.apk	priv-app	17	Xiaomi	system	priv-app/E2eeContactKeysProvider/E2eeContactKeysProvider.apk	17	Xiaomi
+com.android.providers.contacts	both	system	priv-app/ContactsProvider/ContactsProvider.apk	priv-app	17	Xiaomi	system	priv-app/ContactsProvider/ContactsProvider.apk	17	Xiaomi
+com.android.providers.downloads	both	system	priv-app/DownloadProvider/DownloadProvider.apk	priv-app	26.03.24.108	Xiaomi	system	priv-app/DownloadProvider/DownloadProvider.apk	137.26.07.800010	Xiaomi
+com.android.providers.downloads.ui	GLOBAL_ONLY	product	priv-app/DownloadProviderUi/DownloadProviderUi.apk	priv-app	26.07.01.106	Xiaomi				
+com.android.providers.partnerbookmarks	both	system	priv-app/PartnerBookmarksProvider/PartnerBookmarksProvider.apk	priv-app	17	Xiaomi	system	priv-app/PartnerBookmarksProvider/PartnerBookmarksProvider.apk	17	Xiaomi
+com.android.providers.settings	both	system	priv-app/SettingsProvider/SettingsProvider.apk	priv-app	17	Xiaomi	system	priv-app/SettingsProvider/SettingsProvider.apk	17	Xiaomi
+com.android.providers.settings.overlay	both	product	overlay/SettingsProviderCustResOverlay.apk	overlay	17	Xiaomi	product	overlay/SettingsProviderCustResOverlay.apk	17	Xiaomi
+com.android.providers.telephony	both	system	priv-app/TelephonyProvider/TelephonyProvider.apk	priv-app	17	Xiaomi	system	priv-app/TelephonyProvider/TelephonyProvider.apk	17	Xiaomi
+com.android.providers.telephony.auto_generated_characteristics_rro	both	product	overlay/TelephonyProvider__nosdcard__auto_generated_characteristics_rro.apk	overlay	17	Xiaomi	product	overlay/TelephonyProvider__nosdcard__auto_generated_characteristics_rro.apk	17	Xiaomi
+com.android.providers.telephony.overlay.miui	both	product	overlay/MiuiTelephonyProviderResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiTelephonyProviderResOverlay.apk	17	Xiaomi
+com.android.providers.userdictionary	both	system	priv-app/UserDictionaryProvider/UserDictionaryProvider.apk	priv-app	17	Xiaomi	system	priv-app/UserDictionaryProvider/UserDictionaryProvider.apk	17	Xiaomi
+com.android.provision	both	system_ext	priv-app/Provision/Provision.apk	priv-app	17	Xiaomi	system_ext	priv-app/Provision/Provision.apk	17	Xiaomi
+com.android.provision.esim.transfer.overlay	GLOBAL_ONLY	mi_ext	product/overlay/EsimTransferOverlay.apk	overlay	1.0	Xiaomi				
+com.android.proxyhandler	both	system	priv-app/ProxyHandler/ProxyHandler.apk	priv-app	17	Xiaomi	system	priv-app/ProxyHandler/ProxyHandler.apk	17	Xiaomi
+com.android.quicksearchbox	PORT_ONLY						product	priv-app/MIUIQuickSearchBox/MIUIQuickSearchBox.apk	13.0.1.083124	Xiaomi
+com.android.role.notes.enabled	both	product	overlay/NotesRoleEnabled/NotesRoleEnabledOverlay.apk	overlay	1.0	Xiaomi	product	overlay/NotesRoleEnabled/NotesRoleEnabledOverlay.apk	1.0	Xiaomi
+com.android.se	both	system	app/SecureElement/SecureElement.apk	app	17	Xiaomi	system	app/SecureElement/SecureElement.apk	17	Xiaomi
+com.android.security.fsverity_metadata.system	both	system	etc/security/fsverity/BuildManifest.apk	app	17	Xiaomi	system	etc/security/fsverity/BuildManifest.apk	17	Xiaomi
+com.android.security.fsverity_metadata.system_ext	both	system_ext	etc/security/fsverity/BuildManifestSystemExt.apk	app	17	Xiaomi	system_ext	etc/security/fsverity/BuildManifestSystemExt.apk	17	Xiaomi
+com.android.server.telecom	both	system	priv-app/Telecom/Telecom.apk	priv-app	17	Xiaomi	system	priv-app/Telecom/Telecom.apk	17	Xiaomi
+com.android.server.telecom.overlay.common	both	product	overlay/TelecommResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/TelecommResCommon_Sys.apk	17	Xiaomi
+com.android.server.telecom.overlay.miui	both	product	overlay/MiuiTelecomResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiTelecomResOverlay.apk	17	Xiaomi
+com.android.server.telecomui	both	system	priv-app/TelecomUi/TelecomUi.apk	priv-app	17	Xiaomi	system	priv-app/TelecomUi/TelecomUi.apk	17	Xiaomi
+com.android.settings	both	system_ext	priv-app/Settings/Settings.apk	priv-app	17	Xiaomi	system_ext	priv-app/Settings/Settings.apk	17	Xiaomi
+com.android.settings.intelligence	both	product	priv-app/SettingsIntelligence/SettingsIntelligence.apk	priv-app	17	Xiaomi	product	priv-app/SettingsIntelligence/SettingsIntelligence.apk	17	Xiaomi
+com.android.settings.overlay.common	both	product	overlay/SettingsResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/SettingsResCommon_Sys.apk	17	Xiaomi
+com.android.settings.overlay.miui	both	product	overlay/MiuiSettingsResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiSettingsResOverlay.apk	17	Xiaomi
+com.android.sharedstoragebackup	both	system	priv-app/SharedStorageBackup/SharedStorageBackup.apk	priv-app	17	Xiaomi	system	priv-app/SharedStorageBackup/SharedStorageBackup.apk	17	Xiaomi
+com.android.shell	both	system	priv-app/Shell/Shell.apk	priv-app	17	Xiaomi	system	priv-app/Shell/Shell.apk	17	Xiaomi
+com.android.simappdialog	both	system	app/SimAppDialog/SimAppDialog.apk	app	17	Xiaomi	system	app/SimAppDialog/SimAppDialog.apk	17	Xiaomi
+com.android.soundpicker	both	system	priv-app/SoundPicker/SoundPicker.apk	priv-app	17	Xiaomi	system	priv-app/SoundPicker/SoundPicker.apk	17	Xiaomi
+com.android.soundrecorder	both	mi_ext	product/data-app/MIUISoundRecorderTargetSdk30Global/MIUISoundRecorderTargetSdk30Global.apk	app	8.1.5-779121d13	Xiaomi	product	app/MIUISoundRecorderTargetSdk30/MIUISoundRecorderTargetSdk30.apk	8.1.3-e97946905	Xiaomi
+com.android.stk	both	system	app/Stk/Stk.apk	app	17	Xiaomi	system	app/Stk/Stk.apk	17	Xiaomi
+com.android.stk.overlay.miui	both	mi_ext	product/overlay/MiuiStkResOverlay.apk	overlay	1.0.3	Xiaomi	mi_ext	product/overlay/MiuiStkResOverlay.apk	1.0.3	Xiaomi
+com.android.storagemanager	both	system_ext	priv-app/StorageManager/StorageManager.apk	priv-app	17	Xiaomi	system_ext	priv-app/StorageManager/StorageManager.apk	17	Xiaomi
+com.android.systemui	both	system_ext	priv-app/MiuiSystemUI/MiuiSystemUI.apk	priv-app	17.03.260226.r	Xiaomi	system_ext	priv-app/MiuiSystemUI/MiuiSystemUI.apk	17.03.260226.r	Xiaomi
+com.android.systemui.accessibility.accessibilitymenu	both	system_ext	app/AccessibilityMenu/AccessibilityMenu.apk	app	17	Xiaomi	system_ext	app/AccessibilityMenu/AccessibilityMenu.apk	17	Xiaomi
+com.android.systemui.gesture.line.overlay	both	product	overlay/GestureLineOverlay.apk	overlay	1.0	Xiaomi	product	overlay/GestureLineOverlay.apk	1.0	Android
+com.android.systemui.navigation.bar.overlay	both	product	overlay/ElderlyNavigationBarOverlay.apk	overlay	1.0	Xiaomi	product	overlay/ElderlyNavigationBarOverlay.apk	1.0	Xiaomi
+com.android.systemui.overlay.common	both	product	overlay/SystemUIResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/SystemUIResCommon_Sys.apk	17	Xiaomi
+com.android.systemui.overlay.miui	both	product	overlay/MiuiSystemUIResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiSystemUIResOverlay.apk	17	Xiaomi
+com.android.theme.font.notoserifsource	both	product	overlay/FontNotoSerifSource/FontNotoSerifSourceOverlay.apk	overlay	1.0	Xiaomi	product	overlay/FontNotoSerifSource/FontNotoSerifSourceOverlay.apk	1.0	Xiaomi
+com.android.thememanager	both	product	app/MIUIThemeManagerGlobal/MIUIThemeManagerGlobal.apk	app	3.4.1.23-global	Xiaomi	product	priv-app/MIUIThemeManager/MIUIThemeManager.apk	11.5.3.1	Xiaomi
+com.android.thememanager.customizethemeconfig.config.overlay	GLOBAL_ONLY	product	overlay/MiuiThemeManagerGlobalOverlayTest.apk	overlay	1.0	Xiaomi				
+com.android.thememanager.customthemeconfig.config.overlay	PORT_ONLY						product	overlay/MiuiThemeManagerCnOverlay.apk	1.0	Xiaomi
+com.android.traceur	both	system	app/Traceur/Traceur.apk	app	1.0	Xiaomi	system	app/Traceur/Traceur.apk	1.0	Xiaomi
+com.android.updater	GLOBAL_ONLY	product	app/Updater/Updater.apk	app	9.7.2	Xiaomi				
+com.android.uwb.resources.overlay.common	both	product	overlay/UwbResCommon_Sys.apk	overlay	1.0	Xiaomi	product	overlay/UwbResCommon_Sys.apk	1.0	Xiaomi
+com.android.vending	both	product	priv-app/Phonesky/Phonesky.apk	priv-app	51.8.09-29 [0] [PR] 927580062	Google Inc.	product	priv-app/Phonesky/Phonesky.apk	51.3.25-24 [0] [PR] 910257173	Google Inc.
+com.android.vpndialogs	both	system_ext	priv-app/MiuiVpnDialogs/MiuiVpnDialogs.apk	priv-app	17	Xiaomi	system_ext	priv-app/MiuiVpnDialogs/MiuiVpnDialogs.apk	17	Xiaomi
+com.android.wallpaper.livepicker	both	system	priv-app/LiveWallpapersPicker/LiveWallpapersPicker.apk	priv-app	17	Xiaomi	system	priv-app/LiveWallpapersPicker/LiveWallpapersPicker.apk	17	Xiaomi
+com.android.wallpaperbackup	both	system	app/WallpaperBackup/WallpaperBackup.apk	app	17	Xiaomi	system	app/WallpaperBackup/WallpaperBackup.apk	17	Xiaomi
+com.android.wallpapercropper	both	system_ext	priv-app/WallpaperCropper/WallpaperCropper.apk	priv-app	17	Xiaomi	system_ext	priv-app/WallpaperCropper/WallpaperCropper.apk	17	Xiaomi
+com.android.wifi.dialog	both	system_ext	priv-app/MiuiWifiDialog/MiuiWifiDialog.apk	priv-app	17	Xiaomi	system_ext	priv-app/MiuiWifiDialog/MiuiWifiDialog.apk	17	Xiaomi
+com.android.wifi.resources.overlay.common	both	product	overlay/WifiResCommon_Sys.apk	overlay	17	Xiaomi	product	overlay/WifiResCommon_Sys.apk	17	Xiaomi
+com.android.wifi.resources.xiaomi	both	product	overlay/AospWifiResOverlay.apk	overlay	1.0	Xiaomi	product	overlay/AospWifiResOverlay.apk	1.0	Xiaomi
+com.android.wm.shell	both	system_ext	app/MiuiWMShellResources-install/MiuiWMShellResources-install.apk	app	17	Xiaomi	system_ext	app/MiuiWMShellResources-install/MiuiWMShellResources-install.apk	17	Xiaomi
+com.bsp.catchlog	GLOBAL_ONLY	product	app/CatchLog/CatchLog.apk	app	1.7.0	Xiaomi				
+com.dti.aone	GLOBAL_ONLY	mi_ext	product/priv-app/com.dti.aone/com.dti.aone.apk	priv-app	22.4.31-754	Logia				
+com.dti.millicom	GLOBAL_ONLY	mi_ext	product/priv-app/com.dti.millicom/com.dti.millicom.apk	priv-app	22.0.15-436	Logia				
+com.duokan.phone.remotecontroller	GLOBAL_ONLY	mi_ext	product/data-app/XMRemoteController/XMRemoteController.apk	app	7.2.5R	Xiaomi				
+com.facebook.appmanager	GLOBAL_ONLY	product	pangu/system/app/facebook-appmanager/facebook-appmanager.apk	app	132.0.26	Facebook Inc.				
+com.facebook.services	GLOBAL_ONLY	product	pangu/system/priv-app/facebook-services/facebook-services.apk	priv-app	163.0.36	Facebook Inc.				
+com.facebook.system	GLOBAL_ONLY	product	pangu/system/priv-app/facebook-installer/facebook-installer.apk	priv-app	132.0.26	Facebook Inc.				
+com.fido.asm	PORT_ONLY						product	app/FidoAuthen2/FidoAuthen2.apk	220260331	Xiaomi
+com.gms.android.ncm.overlay.common	both	product	overlay/NcmTetheringResCommonGMS_Sys.apk	overlay	17	Xiaomi	product	overlay/NcmTetheringResCommonGMS_Sys.apk	17	Xiaomi
+com.google.ambient.streaming	GLOBAL_ONLY	mi_ext	product/priv-app/CrossDeviceServices/CrossDeviceServices.apk	priv-app	1.1.2	Google Inc.				
+com.google.android.accessibility.switchaccess	both	product	app/SwitchAccess/SwitchAccess.apk	app	1.17.0.877181440	Google Inc.	product	app/SwitchAccess/SwitchAccess.apk	1.17.0.877181440	Google Inc.
+com.google.android.aicore	GLOBAL_ONLY	product	priv-app/AiCore/AiCore.apk	priv-app	0.stub.oem.stub_aicore_20260302.01_RC00.877448964	Google Inc.				
+com.google.android.apps.bard	both	mi_ext	product/app/Gemini_arm64/Gemini_arm64.apk	app	1.0.913571982	Google Inc.	product	app/Gemini/Gemini.apk	1.0.971139365	Google Inc.
+com.google.android.apps.docs	GLOBAL_ONLY	product	app/Drive/Drive.apk	app	2.26.227.0.all.alldpi	Google Inc.				
+com.google.android.apps.maps	GLOBAL_ONLY	product	app/Maps/Maps.apk	app	26.23.01.924285238	Google Inc.				
+com.google.android.apps.messaging	GLOBAL_ONLY	mi_ext	product/priv-app/Messages_arm64_xxhdpi/Messages_arm64_xxhdpi.apk	priv-app	messages.android_20260601_00_RC00.phone_dynamic	Google Inc.				
+com.google.android.apps.photos	GLOBAL_ONLY	product	app/Photos/Photos.apk	app	7.79.1.929394759	Google				
+com.google.android.apps.restore	GLOBAL_ONLY	product	priv-app/GoogleRestore/GoogleRestore.apk	priv-app	1.0.918300902	Google Inc.				
+com.google.android.apps.safetyhub	GLOBAL_ONLY	product	priv-app/PersonalSafety/PersonalSafety.apk	priv-app	2026.05.14.915325203.0-release_gms	Google Inc.				
+com.google.android.apps.subscriptions.red	GLOBAL_ONLY	mi_ext	product/app/GoogleOne_arm64/GoogleOne_arm64.apk	app	1.291.842200972	Google Inc.				
+com.google.android.apps.tachyon	GLOBAL_ONLY	product	app/Meet/Meet.apk	app	362.0.924540007.duo.android_20260601.01_p0	Google Inc.				
+com.google.android.apps.wellbeing	GLOBAL_ONLY	product	priv-app/Wellbeing/Wellbeing.apk	priv-app	1.43.912539612 (839927)	Google Inc.				
+com.google.android.apps.youtube.music	GLOBAL_ONLY	product	app/YTMusic/YTMusic.apk	app	9.23.52	Google Inc.				
+com.google.android.as	GLOBAL_ONLY	mi_ext	product/priv-app/AndroidSystemIntelligence_Features_arm64/AndroidSystemIntelligence_Features_arm64.apk	priv-app	C.3.playstore.oemfull.919165660	Google Inc.				
+com.google.android.as.oss	GLOBAL_ONLY	mi_ext	product/priv-app/PrivateComputeServices_arm64/PrivateComputeServices_arm64.apk	priv-app	1.0.release.915381564	Google Inc.				
+com.google.android.captiveportallogin	GLOBAL_ONLY	system	app/CaptivePortalLoginGoogle/CaptivePortalLoginGoogle.apk	app	17	Google Inc.				
+com.google.android.cellbroadcastreceiver.overlay.miui	both	product	overlay/MiuiCellBroadcastReceiverOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiCellBroadcastReceiverOverlay.apk	17	Xiaomi
+com.google.android.cellbroadcastservice.overlay.miui	both	product	overlay/MiuiCellBroadcastServiceOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiCellBroadcastServiceOverlay.apk	17	Xiaomi
+com.google.android.configupdater	GLOBAL_ONLY	product	priv-app/ConfigUpdater/ConfigUpdater.apk	priv-app	36.0.5	Google Inc.				
+com.google.android.contacts	GLOBAL_ONLY	mi_ext	product/app/GoogleContacts/GoogleContacts.apk	app	4.80.26.919944602	Google Inc.				
+com.google.android.dialer	GLOBAL_ONLY	mi_ext	product/priv-app/GoogleDialer_arm64/GoogleDialer_arm64.apk	priv-app	225.0.924183519	Google Inc.				
+com.google.android.documentsui	both	system	priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk	priv-app	17	Google Inc.	system	priv-app/DocumentsUIGoogleMiuiCn/DocumentsUIGoogleMiuiCn.apk	17	Google Inc.
+com.google.android.euicc	GLOBAL_ONLY	mi_ext	product/priv-app/EuiccGoogle_arm64/EuiccGoogle_arm64.apk	priv-app	D.2.1.944346941-gms	Google Inc.				
+com.google.android.ext.shared	both	system	app/GoogleExtShared/GoogleExtShared.apk	app	1	Google Inc.	product	app/GoogleExtShared/GoogleExtShared.apk	1	Google Inc.
+com.google.android.feedback	GLOBAL_ONLY	system_ext	priv-app/GoogleFeedback/GoogleFeedback.apk	priv-app	17-15555506	Google Inc.				
+com.google.android.gm	GLOBAL_ONLY	product	app/Gmail2/Gmail2.apk	app	2026.06.01.929418315.Release	Google Inc.				
+com.google.android.gms	PORT_ONLY						product	priv-app/GmsCore/GmsCore.apk	26.15.32 (260400-897383663)	Google Inc.
+com.google.android.gms.location.history	both	product	app/GoogleLocationHistory/GoogleLocationHistory.apk	app	1.2	Google Inc.	product	app/GoogleLocationHistory/GoogleLocationHistory.apk	1.2	Google Inc.
+com.google.android.gms.policy_sidecar_aps	both	product	priv-app/GmsCore/m/independent/AndroidPlatformServices.apk	priv-app	251330800025.748366938.748366938	Google Inc.	product	priv-app/GmsCore/m/independent/AndroidPlatformServices.apk	251330800025.748366938.748366938	Google Inc.
+com.google.android.gms.supervision	GLOBAL_ONLY	product	priv-app/FamilyLinkParentalControls/FamilyLinkParentalControls.apk	priv-app	1.0.881395152.phone	Google Inc.				
+com.google.android.googlequicksearchbox	both	product	priv-app/VelvetCtS/VelvetCtS.apk	priv-app	17.32.30.ve.arm64	Google Inc.	product	priv-app/Velvet/Velvet.apk	17.3.60.sa.arm64	Google Inc.
+com.google.android.gsf	both	system_ext	priv-app/GoogleServicesFramework/GoogleServicesFramework.apk	priv-app	17-15555506	Google Inc.	system_ext	priv-app/GoogleServicesFramework/GoogleServicesFramework.apk	17-15555506	Google Inc.
+com.google.android.inputmethod.latin	both	product	app/LatinImeGoogle/LatinImeGoogle.apk	app	17.4.3.909935335-release-arm64-v8a	Google Inc.	product	priv-app/LatinImeGoogle/LatinImeGoogle.apk	 14.9.07.686502182-release-arm64-v8a	Android
+com.google.android.marvin.talkback	GLOBAL_ONLY	product	app/talkback/talkback.apk	app	17.0.1.926549743	Google				
+com.google.android.modulemetadata	GLOBAL_ONLY	product	app/com.google.android.modulemetadata/com.google.android.modulemetadata.apk	app	2026-06-01S+	Google Inc.				
+com.google.android.networkstack	GLOBAL_ONLY	system	priv-app/NetworkStackGoogle/NetworkStackGoogle.apk	priv-app	17	Google Inc.				
+com.google.android.overlay.aicoreconfig	GLOBAL_ONLY	mi_ext	product/overlay/AICoreConfigOverlay-release-unsigned.apk	overlay	1.0	UNSIGNED				
+com.google.android.overlay.devicelockcontroller	GLOBAL_ONLY	product	overlay/GoogleDeviceLockControllerOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig	PORT_ONLY						product	overlay/GmsCnConfigOverlay.apk	1.0	Xiaomi
+com.google.android.overlay.gmsconfig.asi	GLOBAL_ONLY	mi_ext	product/overlay/GmsConfigOverlayASI_Features.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.common	GLOBAL_ONLY	product	overlay/GmsConfigOverlayCommon.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.comms	GLOBAL_ONLY	mi_ext	product/overlay/GmsConfigOverlayComms.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.geotz	GLOBAL_ONLY	product	overlay/GmsConfigOverlayGeotz.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.gsa	GLOBAL_ONLY	product	overlay/GmsConfigOverlayGSA.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.personalsafety	GLOBAL_ONLY	product	overlay/GmsConfigOverlayPersonalSafety.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.gmsconfig.photos	GLOBAL_ONLY	product	overlay/GmsConfigOverlayPhotos.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.captiveportallogin.forframework	GLOBAL_ONLY	product	overlay/CaptivePortalLoginFrameworkOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.documentsui	GLOBAL_ONLY	product	overlay/GoogleDocumentsUIOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.ext.services	GLOBAL_ONLY	product	overlay/GoogleExtServicesConfigOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.healthfitness.forframework	GLOBAL_ONLY	product	overlay/GoogleHealthFitnessFrameworkOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.modulemetadata.forframework	GLOBAL_ONLY	product	overlay/ModuleMetadataGoogleOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.permissioncontroller	GLOBAL_ONLY	product	overlay/GooglePermissionControllerOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.modules.permissioncontroller.forframework	GLOBAL_ONLY	product	overlay/GooglePermissionControllerFrameworkOverlay.apk	overlay	1.0	Xiaomi				
+com.google.android.overlay.settings.safetycenter	GLOBAL_ONLY	product	overlay/GmsSettingsOverlaySafetyCenter.apk	overlay	1.0	Xiaomi				
+com.google.android.packageinstaller	GLOBAL_ONLY	system	priv-app/GooglePackageInstaller/GooglePackageInstaller.apk	priv-app	17-15544436	Android				
+com.google.android.partnersetup	GLOBAL_ONLY	product	priv-app/GooglePartnerSetup/GooglePartnerSetup.apk	priv-app	100.874117303	Google Inc.				
+com.google.android.printservice.recommendation	both	system	app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk	app	1.3.0	Google Inc.	product	app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk	1.3.0	Google Inc.
+com.google.android.projection.gearhead	GLOBAL_ONLY	product	priv-app/AndroidAutoStub/AndroidAutoStub.apk	priv-app	1.2.566220-stub	Google Inc.				
+com.google.android.setupwizard	GLOBAL_ONLY	system_ext	priv-app/SetupWizard/SetupWizard.apk	priv-app	236.890345816	Google Inc.				
+com.google.android.syncadapters.calendar	GLOBAL_ONLY	product	app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk	app	2025.10.0-735189449-release	Google Inc.				
+com.google.android.trichromelibrary	GLOBAL_ONLY	product	app/TrichromeLibrary64/TrichromeLibrary64.apk	app	149.0.7827.102	Google Inc.				
+com.google.android.tts	GLOBAL_ONLY	product	app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk	app	googletts.google-speech-apk_20251222.02_p0.847924619	Google Inc.				
+com.google.android.uwb.resources.overlay.common	both	product	overlay/UwbResCommonMainline_Sys.apk	overlay	1.0	Xiaomi	product	overlay/UwbResCommonMainline_Sys.apk	1.0	Xiaomi
+com.google.android.verifier	GLOBAL_ONLY	product	priv-app/AndroidDeveloperVerifier/AndroidDeveloperVerifier.apk	priv-app	1.0.866414232	Google Inc.				
+com.google.android.verifier.overlay	GLOBAL_ONLY	product	overlay/GmsConfigOverlayADVerifier.apk	overlay	17	Xiaomi				
+com.google.android.videos	GLOBAL_ONLY	product	app/Videos/Videos.apk	app	4.39.4536.917279442.1-release	Google				
+com.google.android.webview	both	product	app/WebViewGoogle64/WebViewGoogle64.apk	app	149.0.7827.91	Google Inc.	product	app/WebViewGoogle64/WebViewGoogle64.apk	149.0.7827.91	Google Inc.
+com.google.android.wifi.resources.overlay.common	both	product	overlay/WifiResCommonMainline_Sys.apk	overlay	17	Xiaomi	product	overlay/WifiResCommonMainline_Sys.apk	17	Xiaomi
+com.google.android.wifi.resources.xiaomi	both	product	overlay/AospWifiResOverlay_mainline.apk	overlay	1.0	Xiaomi	product	overlay/AospWifiResOverlay_mainline.apk	1.0	Xiaomi
+com.google.android.youtube	GLOBAL_ONLY	product	app/YouTube/YouTube.apk	app	21.03.36	Google				
+com.google.mainline.adservices	GLOBAL_ONLY	product	app/com.google.mainline.adservices/com.google.mainline.adservices.apk	app	2026-06-01T+	Google Inc.				
+com.google.mainline.telemetry	GLOBAL_ONLY	product	app/com.google.mainline.telemetry/com.google.mainline.telemetry.apk	app	2026-06-01S+	Google Inc.				
+com.hyper.gallery.plugin	both	product	app/HyperGalleryPluginGlobal/HyperGalleryPluginGlobal.apk	app	5.4.2.4-global	Xiaomi	product	app/HyperGalleryPluginCn/HyperGalleryPluginCn.apk	5.4.1.8	Xiaomi
+com.lbe.security.miui	both	system_ext	priv-app/AuthManager/AuthManager.apk	priv-app	4.0.0	Xiaomi	system_ext	priv-app/AuthManager/AuthManager.apk	1.9.2	Xiaomi
+com.mi.android.globalFileexplorer	GLOBAL_ONLY	product	app/MIUIFileExplorerGlobal/MIUIFileExplorerGlobal.apk	app	V1-260253	Xiaomi				
+com.mi.appfinder	GLOBAL_ONLY	mi_ext	product/priv-app/AppFinder/AppFinder.apk	priv-app	1.22.5	Xiaomi				
+com.mi.global.bbs	GLOBAL_ONLY	mi_ext	product/data-app/MICOMMUNITY_OVERSEA/MICOMMUNITY_OVERSEA.apk	app	5.4.39	mi.com				
+com.mi.global.shop	GLOBAL_ONLY	mi_ext	product/data-app/MISTORE_OVERSEA/MISTORE_OVERSEA.apk	app	4.35.1	mi.com				
+com.mi.globalbrowser	GLOBAL_ONLY	mi_ext	product/priv-app/MIBrowserGlobal_builtin_before_2021/MIBrowserGlobal_builtin_before_2021.apk	priv-app	14.54.0.8-gn	Xiaomi				
+com.mi.globallayout	GLOBAL_ONLY	product	app/MIUIGlobalLayout/MIUIGlobalLayout.apk	app	3.2.0.17	Xiaomi				
+com.mi.globalminusscreen	GLOBAL_ONLY	mi_ext	product/priv-app/MIUIGlobalMinusScreenWidget/MIUIGlobalMinusScreenWidget.apk	priv-app	13.33.52	Xiaomi				
+com.microsoft.appmanager	GLOBAL_ONLY	product	priv-app/LinkToWindows/LinkToWindows.apk	priv-app	1.26052.191.0	Microsoft Corporation				
+com.microsoft.deviceintegrationservice	GLOBAL_ONLY	product	priv-app/DeviceIntegrationService/DeviceIntegrationService.apk	priv-app	2.26061.7.6.0	Microsoft Corporation				
+com.microsoftsdk.crossdeviceservicebroker	GLOBAL_ONLY	system_ext	app/CrossDeviceServiceBroker/CrossDeviceServiceBroker.apk	app	17	Xiaomi				
+com.milink.service	both	product	app/MiLinkOS4Global/MiLinkOS4Global.apk	app	18.2.0.11.2608151637-global	Xiaomi	product	app/MiLinkOS4Cn/MiLinkOS4Cn.apk	18.1.1.18.2608172242	Xiaomi
+com.miui.accessibility	both	product	priv-app/MIUIAccessibility/MIUIAccessibility.apk	priv-app	V0.9.3.GL	Xiaomi	product	priv-app/MIUIAccessibility/MIUIAccessibility.apk	V8.0.8.CN	Xiaomi
+com.miui.analytics	GLOBAL_ONLY	product	app/AnalyticsCore/AnalyticsCore.apk	app	2130771968	Xiaomi				
+com.miui.android.fashiongallery	GLOBAL_ONLY	product	data-app/MiGalleryLockScreenGlobalOs4/MiGalleryLockScreenGlobalOs4.apk	app	4.990.4	Xiaomi				
+com.miui.aod	both	product	priv-app/MIUIAod/MIUIAod.apk	priv-app	DEV-2446.3.0.1-09042206	Xiaomi	product	priv-app/MIUIAod/MIUIAod.apk	DEV-2437.1.0.1-07272237	Xiaomi
+com.miui.audiomonitor	both	system_ext	app/MiuiAudioMonitor/MiuiAudioMonitor.apk	app	17.4.0.11	Xiaomi	system_ext	app/MiuiAudioMonitor/MiuiAudioMonitor.apk	17.4.0.11	Xiaomi
+com.miui.autoui.ext	both	system_ext	app/AutoUIExtension/AutoUIExtension.apk	app	17	Xiaomi	system_ext	app/AutoUIExtension/AutoUIExtension.apk	17	Xiaomi
+com.miui.backup	both	product	priv-app/Backup/Backup.apk	priv-app	7.2.1.0-OS4	Xiaomi	product	priv-app/Backup/Backup.apk	7.2.1.0-OS4	Xiaomi
+com.miui.bugreport	GLOBAL_ONLY	product	app/MiBugReportOS4Global/MiBugReportOS4Global.apk	app	18.0.3.7	Xiaomi				
+com.miui.calculator	both	product	data-app/MIUICalculatorGlobal/MIUICalculatorGlobal.apk	app	17.3.0	Xiaomi	product	app/MIUICalculator/MIUICalculator.apk	17.1.6	Xiaomi
+com.miui.cit	GLOBAL_ONLY	product	app/MiuiCit/MiuiCit.apk	app	1.9.8	Xiaomi				
+com.miui.cleaner	GLOBAL_ONLY	product	priv-app/MIUICleanMasterGlobal-cleaner/MIUICleanMasterGlobal-cleaner.apk	priv-app	1057.1.260730.release	Xiaomi				
+com.miui.cleanmaster	PORT_ONLY						product	app/MIUICleanMaster/MIUICleanMaster.apk	1061.0.260825.release	Xiaomi
+com.miui.cloudbackup	both	product	priv-app/MIUICloudBackupGlobal/MIUICloudBackupGlobal.apk	priv-app	1.12.1.6.51.5	Xiaomi	product	priv-app/MIUICloudBackup/MIUICloudBackup.apk	1.12.1.6.51.7	Xiaomi
+com.miui.cloudservice	both	product	app/MIUICloudServiceGlobal/MIUICloudServiceGlobal.apk	app	1.12.0.10.22	Xiaomi	product	app/MIUICloudService/MIUICloudService.apk	1.12.0.10.19	Xiaomi
+com.miui.compass	both	mi_ext	product/data-app/MIUICompassGlobal/MIUICompassGlobal.apk	app	17.1.3.0	Xiaomi	product	app/MIUICompass/MIUICompass.apk	17.0.9.1	Xiaomi
+com.miui.contentcatcher	PORT_ONLY						product	app/ContentCatcherOS4/ContentCatcherOS4.apk	5.1.4	Xiaomi
+com.miui.contentextension	PORT_ONLY						product	priv-app/MIUIContentExtension/MIUIContentExtension.apk	5.1.0	Xiaomi
+com.miui.core	both	product	app/XmsCore/XmsCore.apk	app	1.20.2.5-13	Xiaomi	product	app/XmsCore/XmsCore.apk	1.20.2.6-14	Xiaomi
+com.miui.core.internal.services	both	product	overlay/MiuiServiceOverlay/MiuiServiceOverlay.apk	overlay	2.0	Xiaomi	product	overlay/MiuiServiceOverlay/MiuiServiceOverlay.apk	2.0	Xiaomi
+com.miui.cotaservice	GLOBAL_ONLY	mi_ext	product/priv-app/LatinCotaService/LatinCotaService.apk	priv-app	3.0.0.ms	Xiaomi				
+com.miui.dmregservice	PORT_ONLY						product	priv-app/RegService/RegService.apk	16.0.1	Xiaomi
+com.miui.euicc	GLOBAL_ONLY	mi_ext	product/priv-app/MIUIEsimLPA/MIUIEsimLPA.apk	priv-app	5.1.2.1	Xiaomi				
+com.miui.extraphoto	both	product	priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk	priv-app	2.2.1.0.1-global	Xiaomi	product	priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk	2.2.1.0.1	Xiaomi
+com.miui.face	PORT_ONLY						product	app/Biometric/Biometric.apk	1.44.0-A140036	Xiaomi
+com.miui.gallery	both	product	priv-app/MIUIGalleryGlobal/MIUIGalleryGlobal.apk	priv-app	5.4.2.10-0907-global	Xiaomi	product	priv-app/MIUIGallery/MIUIGallery.apk	4.3.1.6-global	Xiaomi
+com.miui.global.packageinstaller	GLOBAL_ONLY	product	app/GlobalPackageInstaller/GlobalPackageInstaller.apk	app	3.8.2	Xiaomi				
+com.miui.guardprovider	both	product	app/MIUIGuardProviderGlobal/MIUIGuardProviderGlobal.apk	app	3.0.1-20260708.1	Xiaomi	product	app/MIUIGuardProvider/MIUIGuardProvider.apk	3.0.8-20260807.0	Xiaomi
+com.miui.home	both	product	priv-app/MiuiHome/MiuiHome.apk	priv-app	RELEASE-8.01.02.7653-260904-09092231-R	Xiaomi	product	priv-app/MiuiHome/MiuiHome.apk	RELEASE-8.01.02.7719-260904-09181616-R	Xiaomi
+com.miui.huanji	GLOBAL_ONLY	mi_ext	product/data-app/MIUIHuanjiGlobal/MIUIHuanjiGlobal.apk	app	4.6.1.7	Xiaomi				
+com.miui.hybrid	PORT_ONLY						product	app/HybridPlatform/HybridPlatform.apk	1.30.7.3	Xiaomi
+com.miui.mediaeditor	both	product	data-app/MIMediaEditorGlobal/MIMediaEditorGlobal.apk	app	2.10.40.4.8-global	Xiaomi	product	app/MiMediaEditor/MiMediaEditor.apk	2.11.10.0.3	Xiaomi
+com.miui.mediaviewer	both	product	app/MediaViewerGlobal/MediaViewerGlobal.apk	app	v2104260902(MediaViewer-Global-ROM)	Xiaomi	product	app/MediaViewer/MediaViewer.apk	v2104260701(MediaViewer-ROM)	Xiaomi
+com.miui.micloudsync	both	product	app/MIUIMiCloudSyncGlobal/MIUIMiCloudSyncGlobal.apk	app	1.12.0.2.00	Xiaomi	product	app/MIUIMiCloudSync/MIUIMiCloudSync.apk	1.12.0.2.00	Xiaomi
+com.miui.miservice	GLOBAL_ONLY	product	priv-app/MIServiceGlobal/MIServiceGlobal.apk	priv-app	18.0.1.0.gb	Xiaomi				
+com.miui.mishare.connectivity	GLOBAL_ONLY	product	priv-app/MIShareGlobal/MIShareGlobal.apk	priv-app	5.3.4.global_20260826_1634	Xiaomi				
+com.miui.misightservice	both	product	app/MiSightServiceGlobal/MiSightServiceGlobal.apk	app	1.0.0.8.20260826001	Xiaomi	system_ext	app/MiSightService/MiSightService.apk	0.9.5	Xiaomi
+com.miui.misound	both	product	app/MiSound/MiSound.apk	app	16-4.0-4-20260903	Xiaomi	product	app/MiSound/MiSound.apk	2.0	Xiaomi
+com.miui.miwallpaper	both	product	app/MiWallpaper/MiWallpaper.apk	app	7.0.7-ALPHA-08241616	Xiaomi	product	app/MiWallpaper/MiWallpaper.apk	7.0.5-ALPHA-08102201	Xiaomi
+com.miui.miwallpaper.config.overlay	both	product	overlay/MIWallpaperOverlay.apk	overlay	17	Xiaomi	product	overlay/MIWallpaperOverlay.apk	17	Xiaomi
+com.miui.miwallpaper.overlay	both	product	overlay/MiuiPOCOLockscreenOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiPOCOLockscreenOverlay.apk	17	Xiaomi
+com.miui.miwallpaper.overlay.customize	both	product	overlay/MiuiCustomizeLockscreenOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiCustomizeLockscreenOverlay.apk	17	Xiaomi
+com.miui.miwallpaper.overlay.lundun	both	product	overlay/MiuiLundunLockscreenOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiLundunLockscreenOverlay.apk	17	Xiaomi
+com.miui.miwallpaper.overlay.qr	both	product	overlay/MiuiQRLockscreenOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiQRLockscreenOverlay.apk	17	Xiaomi
+com.miui.msa.global	GLOBAL_ONLY	product	app/MSA-Global/MSA-Global.apk	app	2026.03.25.00-release	Xiaomi				
+com.miui.notes	both	product	data-app/MIUINotes/MIUINotes.apk	app	3.2.2.7	Xiaomi	product	app/MIUINotes/MIUINotes.apk	3.0.7.1	Xiaomi
+com.miui.notification	both	product	app/MIUINotificationCenter/MIUINotificationCenter.apk	app	4.1.2.84.0	Xiaomi	product	app/MIUINotificationCenter/MIUINotificationCenter.apk	4.0.2.50.0	Xiaomi
+com.miui.packageinstaller	PORT_ONLY						product	priv-app/PackageInstaller/PackageInstaller.apk	26.04.5cffc53	CN=Carl Yu
+com.miui.permissioncontroller.overlay	GLOBAL_ONLY	product	overlay/MiuiPermissionControllerOverlay.apk	overlay	17	Xiaomi				
+com.miui.personalassistant	PORT_ONLY						product	priv-app/MIUIPersonalAssistantPhoneOS4/MIUIPersonalAssistantPhoneOS4.apk	25.40.25-07311028	Xiaomi
+com.miui.phone.carriers.overlay.h3g	GLOBAL_ONLY	product	overlay/H3gCotaResOverlay.apk	overlay	1.0	Xiaomi				
+com.miui.phone.carriers.overlay.vodafone	GLOBAL_ONLY	product	overlay/VodafoneCotaResOverlay.apk	overlay	1.0	Xiaomi				
+com.miui.phrase	both	product	app/MIUIFrequentPhrase/MIUIFrequentPhrase.apk	app	5.7.2	Xiaomi	product	app/MIUIFrequentPhrase/MIUIFrequentPhrase.apk	3.9.4	Xiaomi
+com.miui.player	GLOBAL_ONLY	product	priv-app/MIUIMusicGlobal/MIUIMusicGlobal.apk	priv-app	9.41.02.090411i	Xiaomi				
+com.miui.powerinsight	both	system_ext	priv-app/PowerInsight/PowerInsight.apk	priv-app	17	Xiaomi	system_ext	priv-app/PowerInsight/PowerInsight.apk	17	Xiaomi
+com.miui.powerinsight.overlay	both	product	overlay/MiuiPowerInsightOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiPowerInsightOverlay.apk	17	Xiaomi
+com.miui.powerkeeper	both	system_ext	app/PowerKeeper/PowerKeeper.apk	app	4.2.00	Xiaomi	system_ext	app/PowerKeeper/PowerKeeper.apk	4.2.00	Xiaomi
+com.miui.qr	both	product	app/DeviceInfoQR/DeviceInfoQR.apk	app	2026_08_18_19_00	Xiaomi	product	app/DeviceInfoQR/DeviceInfoQR.apk	2026_06_11_18_47	Xiaomi
+com.miui.rom	both	system_ext	framework/framework-ext-res/framework-ext-res.apk	app	1.11.0.0	Xiaomi	system_ext	framework/framework-ext-res/framework-ext-res.apk	1.11.0.0	Xiaomi
+com.miui.safetycenter.res.overlay	GLOBAL_ONLY	product	overlay/SafetyCenterMiuiOverlay.apk	overlay	17	Xiaomi				
+com.miui.screenrecorder	both	product	data-app/MIUIScreenRecorder/MIUIScreenRecorder.apk	app	4.16.2.8.0	Xiaomi	product	app/MIUIScreenRecorder/MIUIScreenRecorder.apk	4.16.2.2.1	Xiaomi
+com.miui.screenshot	both	product	app/MIUIScreenshot/MIUIScreenshot.apk	app	RELEASE-1.6.3.38-09051623	Xiaomi	product	app/MIUIScreenshot/MIUIScreenshot.apk	RELEASE-1.6.3.35-08172037	Xiaomi
+com.miui.securityadd	both	product	app/MIUISecurityAdd/MIUISecurityAdd.apk	app	9.12.12-260901.1.1	Xiaomi	product	app/MIUISecurityAdd/MIUISecurityAdd.apk	9.12.11-260806.0.1	Xiaomi
+com.miui.securitycenter	both	product	priv-app/MIUISecurityCenterGlobal/MIUISecurityCenterGlobal.apk	priv-app	13.5.8-260907.1.1	Xiaomi	product	priv-app/MIUISecurityCenter/MIUISecurityCenter.apk	13.6.3-260924.0.1	Xiaomi
+com.miui.securitycenter.securitycenter_phone_overlay.config.overlay	PORT_ONLY						mi_ext	product/overlay/signed_PLATFORM_cf766d1e91_app_sec_overlay-release-unsigned.apk	1.0	Xiaomi
+com.miui.securitycore	both	product	app/SecurityCoreAdd/SecurityCoreAdd.apk	app	4.4.4.1-4-260902	Xiaomi	product	app/SecurityCoreAdd/SecurityCoreAdd.apk	4.4.3.3-4-260814	Xiaomi
+com.miui.securitymanager	PORT_ONLY						product	app/MIUISecurityManager/MIUISecurityManager.apk	20.0	Xiaomi
+com.miui.server.litert	both	system_ext	priv-app/MiLiteRTServiceStub/MiLiteRTServiceStub.apk	priv-app	17	Xiaomi	system_ext	priv-app/MiLiteRTServiceStub/MiLiteRTServiceStub.apk	17	Xiaomi
+com.miui.settings.rro.common.overlay	both	product	overlay/SettingsRroCommonOverlay.apk	overlay	1.0	Xiaomi	product	overlay/SettingsRroCommonOverlay.apk	1.0	Xiaomi
+com.miui.settings.rro.device.config.overlay	both	product	overlay/SettingsRroDeviceConfigOverlay.apk	overlay	1.0	Xiaomi	product	overlay/SettingsRroDeviceConfigOverlay.apk	1.0	Xiaomi
+com.miui.settings.rro.device.hide.statusbar.overlay	both	product	overlay/SettingsRroDeviceHideStatusBarOverlay.apk	overlay	1.0	Xiaomi	product	overlay/SettingsRroDeviceHideStatusBarOverlay.apk	1.0	Xiaomi
+com.miui.settings.rro.device.systemui.overlay	both	product	overlay/SettingsRroDeviceSystemUiOverlay.apk	overlay	1.0	Xiaomi	product	overlay/SettingsRroDeviceSystemUiOverlay.apk	1.0	Xiaomi
+com.miui.settings.rro.device.type.overlay	both	product	overlay/SettingsRroDeviceTypeOverlay.apk	overlay	1.0	Xiaomi	product	overlay/SettingsRroDeviceTypeOverlay.apk	1.0	Xiaomi
+com.miui.system	both	system_ext	app/miuisystem/miuisystem.apk	app	1.15.0.0	Xiaomi	system_ext	app/miuisystem/miuisystem.apk	1.15.0.0	Xiaomi
+com.miui.system.overlay	both	product	overlay/MiuiSystemSdkResOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiSystemSdkResOverlay.apk	17	Xiaomi
+com.miui.systemui.carriers.overlay	both	product	overlay/MccMncOverlay.apk	overlay	1.0	Xiaomi	product	overlay/MccMncOverlay.apk	1.0	Xiaomi
+com.miui.systemui.devices.overlay	both	product	overlay/DevicesOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DevicesOverlay.apk	1.0	Xiaomi
+com.miui.systemui.overlay.devices.android	both	product	overlay/DevicesAndroidOverlay.apk	overlay	1.0	Xiaomi	product	overlay/DevicesAndroidOverlay.apk	1.0	Xiaomi
+com.miui.themestore	PORT_ONLY						product	app/MIUIThemeStore/MIUIThemeStore.apk	42.0	Xiaomi
+com.miui.thirdappassistant	both	product	app/ThirdAppAssistantGlobal/ThirdAppAssistantGlobal.apk	app	5.8-global	Xiaomi	product	app/ThirdAppAssistant/ThirdAppAssistant.apk	6.2	Xiaomi
+com.miui.touchassistant	both	product	app/MIUITouchAssistant/MIUITouchAssistant.apk	app	17.0.0.9.0	Xiaomi	product	app/MIUITouchAssistant/MIUITouchAssistant.apk	17.0.0.9.1	Xiaomi
+com.miui.tsmclient	GLOBAL_ONLY	mi_ext	product/app/MITSMClientGlobal/MITSMClientGlobal.apk	app	26.04.07.1.g	Xiaomi				
+com.miui.videoplayer	GLOBAL_ONLY	mi_ext	product/priv-app/MIUIVideoPlayer/MIUIVideoPlayer.apk	priv-app	2025060109(MiVideo-GROM)	Xiaomi				
+com.miui.voiceassist	PORT_ONLY						product	priv-app/VoiceAssistAndroidT/VoiceAssistAndroidT.apk	8.2.53.3014	Xiaomi
+com.miui.voiceassistProxy	PORT_ONLY						product	data-app/VoiceAssistProxy/VoiceAssistProxy.apk	1.6.1	Xiaomi
+com.miui.voiceassistoverlay	PORT_ONLY						product	overlay/VoiceAssistAndroidOverlay/VoiceAssistAndroidOverlay.apk	2.0	Xiaomi
+com.miui.vsimcore	both	system_ext	app/VsimCore/VsimCore.apk	app	1.1.3	Xiaomi	system_ext	app/VsimCore/VsimCore.apk	1.1.3	Xiaomi
+com.miui.wallpaper.overlay	both	product	overlay/MiuiQRWallpaperOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiQRWallpaperOverlay.apk	17	Xiaomi
+com.miui.wallpaper.overlay.customize	both	product	overlay/MiuiCustomizeWallpaperOverlay.apk	overlay	17	Xiaomi	product	overlay/MiuiCustomizeWallpaperOverlay.apk	17	Xiaomi
+com.miui.weather2	both	product	data-app/MIUIWeatherGlobal/MIUIWeatherGlobal.apk	app	G-18.0.0.24-R	Xiaomi	product	app/MIUIWeather/MIUIWeather.apk	17.0.3.15-Peace	Xiaomi
+com.miui.wmsvc	PORT_ONLY						product	app/WMService/WMService.apk	3.0.0	Xiaomi
+com.miui.yellowpage	GLOBAL_ONLY	mi_ext	product/priv-app/MIUIYellowPageGlobal/MIUIYellowPageGlobal.apk	priv-app	24.0.260731	Xiaomi				
+com.miuix.editor	both	product	app/MiuixEditor_global/MiuixEditor_global.apk	app	17	Xiaomi	product	app/MiuixEditor/MiuixEditor.apk	17	Xiaomi
+com.mobiletools.systemhelper	PORT_ONLY						mi_ext	system/priv-app/com.mobiletools.systemhelper/com.mobiletools.systemhelper.apk	4.0.0-20260610	CU
+com.munch.brightness.overlay	PORT_ONLY						product	overlay/MunchBrightnessOverlay.apk	None	Android
+com.newcall.overlay.miui	PORT_ONLY						product	overlay/MiuiNewCallSdkResOverlay.apk	1.0.1	Xiaomi
+com.parallelc.micts	PORT_ONLY						product	app/CTS/CTS.apk	2.6	CN=xzh
+com.qti.dcf	both	system_ext	priv-app/dcf/dcf.apk	priv-app	1.0	Xiaomi	system_ext	priv-app/dcf/dcf.apk	1.0	Xiaomi
+com.qti.dpmserviceapp	GLOBAL_ONLY	system_ext	priv-app/dpmserviceapp/dpmserviceapp.apk	priv-app	17	Xiaomi				
+com.qti.ltebc	both	system_ext	priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk	priv-app	MSDC_LA_5.4.06.00.0	Xiaomi	system_ext	priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk	MSDC_LA_5.4.06.00.0	Xiaomi
+com.qti.overlay.framework.nonmodem	both	product	overlay/FrameworksResNonModem_Sys.apk	overlay	17	Xiaomi	product	overlay/FrameworksResNonModem_Sys.apk	17	Xiaomi
+com.qti.phone	both	system_ext	priv-app/QtiTelephony/QtiTelephony.apk	priv-app	17	Xiaomi	system_ext	priv-app/QtiTelephony/QtiTelephony.apk	17	CN=Lisa HIDL Local Candidate
+com.qti.qcc	both	system_ext	app/QCC/QCC.apk	app	QCC17.0-20260527-b0d04e1	Xiaomi	system_ext	app/QCC/QCC.apk	QCC17.0-20260406-af36bb2	Xiaomi
+com.qti.qualcomm.deviceinfo	both	system_ext	app/DeviceInfo/DeviceInfo.apk	app	17	Xiaomi	system_ext	app/DeviceInfo/DeviceInfo.apk	17	Xiaomi
+com.qti.service.colorservice	both	system_ext	app/colorservice/colorservice.apk	app	1.0	Xiaomi	system_ext	app/colorservice/colorservice.apk	1.0	Xiaomi
+com.qti.xdivert	GLOBAL_ONLY	product	app/xdivert/xdivert.apk	app	17	Xiaomi				
+com.qualcomm.atfwd	both	system_ext	app/atfwd/atfwd.apk	app	17	Xiaomi	system_ext	app/atfwd/atfwd.apk	17	Xiaomi
+com.qualcomm.location	both	system_ext	priv-app/com.qualcomm.location/com.qualcomm.location.apk	priv-app	17.2026.04.07	Xiaomi	system_ext	priv-app/com.qualcomm.location/com.qualcomm.location.apk	17.2026.04.07	Android
+com.qualcomm.qcrilmsgtunnel	both	system_ext	priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk	priv-app	17	Xiaomi	system_ext	priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk	17	Xiaomi
+com.qualcomm.qti.confdialer	both	product	app/ConferenceDialer/ConferenceDialer.apk	app	17	Xiaomi	product	app/ConferenceDialer/ConferenceDialer.apk	17	Xiaomi
+com.qualcomm.qti.ims	both	system_ext	app/imssettings/imssettings.apk	app	1.0	Xiaomi	system_ext	app/imssettings/imssettings.apk	1.0	Xiaomi
+com.qualcomm.qti.poweroffalarm	both	system_ext	app/PowerOffAlarm/PowerOffAlarm.apk	app	17	Xiaomi	system_ext	app/PowerOffAlarm/PowerOffAlarm.apk	17	Xiaomi
+com.qualcomm.qti.powersavemode	both	system_ext	app/PowerSaveMode/PowerSaveMode.apk	app	17	Xiaomi	system_ext	app/PowerSaveMode/PowerSaveMode.apk	17	Xiaomi
+com.qualcomm.qti.qcolor	both	system_ext	app/QColor/QColor.apk	app	17	Xiaomi	system_ext	app/QColor/QColor.apk	17	Xiaomi
+com.qualcomm.qti.remoteSimlockAuth	both	product	app/remoteSimLockAuthentication/remoteSimLockAuthentication.apk	app	17	Xiaomi	product	app/remoteSimLockAuthentication/remoteSimLockAuthentication.apk	17	Xiaomi
+com.qualcomm.qti.ridemodeaudio	both	product	app/RideModeAudio/RideModeAudio.apk	app	17	Xiaomi	product	app/RideModeAudio/RideModeAudio.apk	17	Xiaomi
+com.qualcomm.qti.server.qtiwifi	both	system_ext	priv-app/QtiWifiService/QtiWifiService.apk	priv-app	17	Xiaomi	system_ext	priv-app/QtiWifiService/QtiWifiService.apk	17	Xiaomi
+com.qualcomm.qti.server.wigig.tethering.rro	both	system_ext	app/WigigTetheringRRO/WigigTetheringRRO.apk	app	1.0	Xiaomi	system_ext	app/WigigTetheringRRO/WigigTetheringRRO.apk	1.0	Xiaomi
+com.qualcomm.qti.services.systemhelper	both	system_ext	priv-app/com.qualcomm.qti.services.systemhelper/com.qualcomm.qti.services.systemhelper.apk	priv-app	1.1	Xiaomi	system_ext	priv-app/com.qualcomm.qti.services.systemhelper/com.qualcomm.qti.services.systemhelper.apk	1.1	Xiaomi
+com.qualcomm.qti.uceShimService	PORT_ONLY						system_ext	app/uceShimService/uceShimService.apk	1099484365	Xiaomi
+com.qualcomm.qti.uim	both	product	app/remotesimlockservice/remotesimlockservice.apk	app	17	Xiaomi	product	app/remotesimlockservice/remotesimlockservice.apk	17	Xiaomi
+com.qualcomm.qti.uimGbaApp	both	product	app/uimgbaservice/uimgbaservice.apk	app	17	Xiaomi	product	app/uimgbaservice/uimgbaservice.apk	17	Xiaomi
+com.qualcomm.qti.workloadclassifier	both	system_ext	app/workloadclassifier/workloadclassifier.apk	app	17	Xiaomi	system_ext	app/workloadclassifier/workloadclassifier.apk	17	Xiaomi
+com.qualcomm.qti.xrcb	both	system_ext	priv-app/xrcbservice/xrcbservice.apk	priv-app	17	Xiaomi	system_ext	priv-app/xrcbservice/xrcbservice.apk	17	Xiaomi
+com.qualcomm.qti.xrvd.service	both	system_ext	priv-app/xrvdservice/xrvdservice.apk	priv-app	17	Xiaomi	system_ext	priv-app/xrvdservice/xrvdservice.apk	17	Xiaomi
+com.qualcomm.qti.xrwifi	both	system_ext	priv-app/xrwifiservice/xrwifiservice.apk	priv-app	0.1.3	Xiaomi	system_ext	priv-app/xrwifiservice/xrwifiservice.apk	0.1.3	Xiaomi
+com.qualcomm.qtil.aptxals	GLOBAL_ONLY	system_ext	priv-app/aptxals/aptxals.apk	priv-app	17.0.2	Xiaomi				
+com.qualcomm.uimremoteclient	both	product	app/uimremoteclient/uimremoteclient.apk	app	17	Xiaomi	product	app/uimremoteclient/uimremoteclient.apk	17	Xiaomi
+com.qualcomm.uimremoteserver	both	product	app/uimremoteserver/uimremoteserver.apk	app	17	Xiaomi	product	app/uimremoteserver/uimremoteserver.apk	17	Xiaomi
+com.qualcomm.wfd.service	both	system_ext	priv-app/WfdService/WfdService.apk	priv-app	2.0	Xiaomi	system_ext	priv-app/WfdService/WfdService.apk	2.0	Xiaomi
+com.st.android.nfc_extensions_16	PORT_ONLY						system_ext	priv-app/StNfcExtensionService/StNfcExtensionService.apk	16	Xiaomi
+com.tencent.soter.soterserver	both	mi_ext	product/app/SoterService/SoterService.apk	app	2.0.260714	Xiaomi	product	app/SoterService/SoterService.apk	2.0.250811	Xiaomi
+com.wapi.wapicertmanage	PORT_ONLY						system	app/WapiCertManage/WapiCertManage.apk	17	Xiaomi
+com.wdstechnology.android.kryten	GLOBAL_ONLY	system_ext	priv-app/ConfigurationClient/ConfigurationClient.apk	priv-app	1.0.0	Xiaomi				
+com.xiaomi.account	both	product	app/MIUIXiaomiAccountGlobal/MIUIXiaomiAccountGlobal.apk	app	R-26.09.01.00	Xiaomi	product	app/MIUIXiaomiAccount/MIUIXiaomiAccount.apk	R-26.09.01.00	Xiaomi
+com.xiaomi.aiasst.service	PORT_ONLY						product	app/MIUIAiasstService/MIUIAiasstService.apk	6.2.2	Xiaomi
+com.xiaomi.aiasst.vision	both	product	app/AiAsstVision/AiAsstVision.apk	app	5.12.10.60	Xiaomi	product	app/AiasstVision/AiasstVision.apk	5.14.3.40	Xiaomi
+com.xiaomi.aicr	both	product	priv-app/MIUIAICR/MIUIAICR.apk	priv-app	4.12.19	Xiaomi	product	priv-app/MIUIAICR/MIUIAICR.apk	3.0.1-2025091215	Xiaomi
+com.xiaomi.aireco	PORT_ONLY						product	app/XiaoaiRecommendation/XiaoaiRecommendation.apk	0.1.7	Xiaomi
+com.xiaomi.aiservice	both	product	priv-app/AIService/AIService.apk	priv-app	4.2.10_836e74c_260831_exp	Xiaomi	product	priv-app/AIService/AIService.apk	4.2.10_836e74c_260831_cn	Xiaomi
+com.xiaomi.aon	both	mi_ext	product/app/MiAONServiceW/MiAONServiceW.apk	app	5.0.130	Xiaomi	product	app/MiAONServiceW/MiAONServiceW.apk	5.0.127	Xiaomi
+com.xiaomi.apn	both	system_ext	priv-app/CarrierStudioApn/CarrierStudioApn.apk	priv-app	23.0.0	Xiaomi	system_ext	priv-app/CarrierStudioApn/CarrierStudioApn.apk	19.0.0	Xiaomi
+com.xiaomi.app.toolbox	PORT_ONLY						product	priv-app/Toolbox/Toolbox.apk	1.0	Xiaomi
+com.xiaomi.barrage	both	product	priv-app/MIUIBarrage/MIUIBarrage.apk	priv-app	1.1.13	Xiaomi	product	priv-app/MiuiBarrage/MiuiBarrage.apk	3.0.0.260609	Xiaomi
+com.xiaomi.bluetooth	both	system_ext	app/BluetoothExtension/BluetoothExtension.apk	app	17	Xiaomi	system_ext	app/BluetoothExtension/BluetoothExtension.apk	17	Xiaomi
+com.xiaomi.bluetooth.rro.device.config.overlay	both	product	overlay/MiuiBtRRODeviceConfigOverlay.apk	overlay	1.0	Xiaomi	product	overlay/MiuiBtRRODeviceConfigOverlay.apk	1.0	Xiaomi
+com.xiaomi.calendar	GLOBAL_ONLY	mi_ext	product/data-app/MiuiCalendarGlobal/MiuiCalendarGlobal.apk	app	G-18.0.6	Xiaomi				
+com.xiaomi.cameramind	both	system_ext	app/CameraMind/CameraMind.apk	app	1.0.0	Xiaomi	system_ext	app/CameraMind/CameraMind.apk	1.0.0	Xiaomi
+com.xiaomi.cameratools	GLOBAL_ONLY	product	app/CameraTools_beta/CameraTools_beta.apk	app	26.06.22.17.0	Xiaomi				
+com.xiaomi.carrierconfig	both	system_ext	priv-app/CarrierStudioCarrierConfig/CarrierStudioCarrierConfig.apk	priv-app	1.0.0	Xiaomi	system_ext	priv-app/CarrierStudioCarrierConfig/CarrierStudioCarrierConfig.apk	1.0.0	Xiaomi
+com.xiaomi.continuity.sdkapp	both	product	app/LyraSdkSpp/LyraSdkSpp.apk	app	6.0.424.10.0731180	Xiaomi	product	app/LyraSdkSpp/LyraSdkSpp.apk	6.0.163.10.0706138	Xiaomi
+com.xiaomi.devauth	GLOBAL_ONLY	product	app/MiDevAuthService/MiDevAuthService.apk	app	1.0.260807	Xiaomi				
+com.xiaomi.digitalkey	PORT_ONLY						system_ext	app/digitalkey/digitalkey.apk	13.0.47	Xiaomi
+com.xiaomi.discover	GLOBAL_ONLY	product	app/MIUISystemAppUpdater/MIUISystemAppUpdater.apk	app	26.06.29.880	Xiaomi				
+com.xiaomi.ecc	both	system_ext	priv-app/CarrierStudioEcc/CarrierStudioEcc.apk	priv-app	4.0.0	Xiaomi	system_ext	priv-app/CarrierStudioEcc/CarrierStudioEcc.apk	4.0.0	Xiaomi
+com.xiaomi.entitlement.o2	GLOBAL_ONLY	system_ext	priv-app/Entitlement/Entitlement.apk	priv-app	17	Xiaomi				
+com.xiaomi.finddevice	both	product	priv-app/MiuiFindDevice/MiuiFindDevice.apk	priv-app	20.0.8	Xiaomi	system	priv-app/FindDevice/FindDevice.apk	20.13.81	Xiaomi
+com.xiaomi.glgm	GLOBAL_ONLY	mi_ext	product/app/GameCenterGlobal/GameCenterGlobal.apk	app	3.6.7.27	Xiaomi				
+com.xiaomi.gnss.polaris	PORT_ONLY						system_ext	priv-app/Polaris/Polaris.apk	2026.05.20.0	Xiaomi
+com.xiaomi.hypercomm	both	system_ext	priv-app/HyperComm/HyperComm.apk	priv-app	15.0.0	Xiaomi	system_ext	priv-app/HyperComm/HyperComm.apk	15.0.0	Xiaomi
+com.xiaomi.incallui	GLOBAL_ONLY	mi_ext	product/app/XiaomiInCallUI/XiaomiInCallUI.apk	app	1.0.0.8	Xiaomi				
+com.xiaomi.joyose	both	mi_ext	product/app/Joyose/Joyose.apk	app	2.5.21	Xiaomi	product	app/Joyose/Joyose.apk	2.5.20	Xiaomi
+com.xiaomi.macro	PORT_ONLY						product	app/com.xiaomi.macro/com.xiaomi.macro.apk	2.2.14.S	Xiaomi
+com.xiaomi.metoknlp	PORT_ONLY						product	priv-app/MetokNLP/MetokNLP.apk	17.2026.07.21	Xiaomi
+com.xiaomi.mi_connect_service	both	product	app/mi_connect_service/mi_connect_service.apk	app	6.0.424.10	Xiaomi	product	app/mi_connect_service/mi_connect_service.apk	6.0.163.10	Xiaomi
+com.xiaomi.mibrain.speech	PORT_ONLY						product	data-app/MIUIXiaoAiSpeechEngine/MIUIXiaoAiSpeechEngine.apk	1.6.5	xiaoai
+com.xiaomi.micloud.sdk	both	system_ext	priv-app/RtMiCloudSDK/RtMiCloudSDK.apk	priv-app	2.0.0.0	Xiaomi	system_ext	priv-app/RtMiCloudSDK/RtMiCloudSDK.apk	2.0.0.0	Xiaomi
+com.xiaomi.migameservice	PORT_ONLY						product	app/MiGameService_GameAI/MiGameService_GameAI.apk	3.0.0.0.3.2	Xiaomi
+com.xiaomi.mipicks	GLOBAL_ONLY	mi_ext	product/app/MIUIMiPicks/MIUIMiPicks.apk	app	602-15.2.4.0	Xiaomi				
+com.xiaomi.mirror	both	product	priv-app/MirrorOS4/MirrorOS4.apk	priv-app	18.01.07-26.08.13.global	Xiaomi	product	priv-app/MirrorOS4/MirrorOS4.apk	18.00.16-26.07.14	Xiaomi
+com.xiaomi.mis	GLOBAL_ONLY	product	app/MIS/MIS.apk	app	3.0.0-2026040919	Xiaomi				
+com.xiaomi.misettings	both	product	priv-app/MISettings/MISettings.apk	priv-app	16.4.260829.00	Xiaomi	product	priv-app/MISettings/MISettings.apk	16.4.260730.00	Xiaomi
+com.xiaomi.mtb	both	system_ext	app/ModemTestBox/ModemTestBox.apk	app	17	Xiaomi	system_ext	app/ModemTestBox/ModemTestBox.apk	17	Xiaomi
+com.xiaomi.otrpbroker	PORT_ONLY						product	app/OTrPBroker/OTrPBroker.apk	1.0.240902	Xiaomi
+com.xiaomi.phone	both	system_ext	priv-app/HyperPhone/HyperPhone.apk	priv-app	15.0.2	Xiaomi	system_ext	priv-app/HyperPhone/HyperPhone.apk	15.0.2	Xiaomi
+com.xiaomi.phone.overlay	both	product	overlay/MiTelephonyExtResOverlay.apk	overlay	1.0.3	Xiaomi	product	overlay/MiTelephonyExtResOverlay.apk	1.0.3	Xiaomi
+com.xiaomi.registration	PORT_ONLY						product	priv-app/AutoRegistration/AutoRegistration.apk	16.0.3	Xiaomi
+com.xiaomi.scanner	GLOBAL_ONLY	mi_ext	product/data-app/MiuiScanner/MiuiScanner.apk	app	13.2204.25	Xiaomi				
+com.xiaomi.security.onetrack	PORT_ONLY						product	app/SecurityOnetrackService/SecurityOnetrackService.apk	1.0.260407	Xiaomi
+com.xiaomi.simactivate.service	both	product	app/XiaomiSimActivateServiceGlobal/XiaomiSimActivateServiceGlobal.apk	app	26.08.10-R	Xiaomi	product	app/XiaomiSimActivateServiceCn/XiaomiSimActivateServiceCn.apk	26.08.10-R	Xiaomi
+com.xiaomi.smarthome	GLOBAL_ONLY	mi_ext	product/data-app/SmartHome/SmartHome.apk	app	11.1.838	北京小米科技有限责任公司				
+com.xiaomi.touchservice	both	system_ext	priv-app/TouchService/TouchService.apk	priv-app	17	Xiaomi	system_ext	priv-app/TouchService/TouchService.apk	17	Xiaomi
+com.xiaomi.trustservice	both	product	app/MiTrustService/MiTrustService.apk	app	1.2.260825	Xiaomi	product	app/MiTrustService/MiTrustService.apk	1.2.260807	Xiaomi
+com.xiaomi.type	PORT_ONLY						product	app/MiType/MiType.apk	0.2.169.d9397d3b	Xiaomi
+com.xiaomi.ugd	both	product	app/com.xiaomi.ugd/com.xiaomi.ugd.apk	app	1.2.3	Xiaomi	product	app/com.xiaomi.ugd/com.xiaomi.ugd.apk	1.2.3	Xiaomi
+com.xiaomi.xmsf	both	product	app/XiaomiServiceFrameworkGlobal/XiaomiServiceFrameworkGlobal.apk	app	6.2.42-G	Xiaomi	product	app/split-XiaomiServiceFrameworkCN/uninstall_relogin-xxhdpi.apk	None	Xiaomi
+com.xiaomi.xmsfkeeper	both	product	app/XMSFKeeperAll/XMSFKeeperAll.apk	app	1.0.8	Xiaomi	product	app/XMSFKeeperCN/XMSFKeeperCN.apk	1.0.6	Xiaomi
+dev.codex.miuibackgesturehook	PORT_ONLY						product	app/Gesture/Gesture.apk	0.11.11	O
+miui.systemui.plugin	both	product	app/MIUISystemUIPlugin/MIUISystemUIPlugin.apk	app	18.3.2.22.0	Xiaomi	product	app/MIUISystemUIPlugin/MIUISystemUIPlugin.apk	18.3.2.34.0	Xiaomi
+miuix.stub	both	system_ext	app/miuix/miuix.apk	app	1.0	Xiaomi	system_ext	app/miuix/miuix.apk	1.0	Xiaomi
+org.codeaurora.ims	both	system_ext	priv-app/ims/ims.apk	priv-app	1.0	Xiaomi	system_ext	priv-app/ims/ims.apk	1.0	Xiaomi
+org.ifaa.aidl.manager	both	mi_ext	product/app/IFAAService/IFAAService.apk	app	1.0.260714	Xiaomi	product	app/IFAAService/IFAAService.apk	1.0.250812	Xiaomi
+vendor.qti.bluetooth.xpan	both	system_ext	priv-app/Xpan/Xpan.apk	priv-app	1.0.1	Xiaomi	system_ext	priv-app/Xpan/Xpan.apk	1.0.1	Xiaomi
+vendor.qti.data.ntnsatapp	both	system_ext	app/NtnSatApp/NtnSatApp.apk	app	17.1	Xiaomi	system_ext	app/NtnSatApp/NtnSatApp.apk	17.1	Xiaomi
+vendor.qti.imsdatachannel	both	system_ext	app/ImsDataChannelService/ImsDataChannelService.apk	app	1099484365	Xiaomi	system_ext	app/ImsDataChannelService/ImsDataChannelService.apk	1099484365	Xiaomi

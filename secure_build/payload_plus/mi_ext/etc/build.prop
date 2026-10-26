@@ -1,0 +1,15 @@
+# munch Full Global: region/Google props from Xiaomi 17 Global OS4.0.0.9 mi_ext (device props removed)
+ro.miui.cota_app_del_support=true
+ro.mi.xms.version.incremental=D01
+ro.appsflyer.preinstall.path=/data/miui/pai/pre_install.appsflyer
+ro.miui.pai.preinstall.path=/data/miui/pai/
+ro.ai.os.version.code=7
+setupwizard.feature.enable_quick_start_flow=true
+ro.miui.google.csp=true
+ro.mi.os.custfeatureresolve=true
+ro.miui.customized_clientid=2
+setupwizard.feature.enable_quick_enhanced_biometrics_flow=true
+ro.ai.transparent.sandbox.enabled=true
+ro.ai.os.version.name=OS4.0
+ro.miui.build.region=global
+ro.product.mod_device=munch_global

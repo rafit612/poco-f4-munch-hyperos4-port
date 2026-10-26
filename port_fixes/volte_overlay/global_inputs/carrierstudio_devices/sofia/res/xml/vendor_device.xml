@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for vendor-specific config values. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+<carrier_config include="default_v2.9.9.xml"/>
+<!--DPC锁机方案-->
+<carrier_config cust_region = "global_dc">
+    <string-array name="carrier_certificate_string_array" num="2">
+        <item value="8C960CA3CBF4A9DA851774F2DE072E57B1289A9CF7D6BDA4A6B386A42BC4FFB3:com.trustonic.telecoms.standard.dlc,com.trustonic.telecoms.client.standard.dlc.playground,com.trustonic.telecoms.standard.dpc"/>
+        <item value="7413E2B365230E1BCB294D687C3B87EE5BC7E3F9:com.trustonic.telecoms.standard.dlc,com.trustonic.telecoms.client.standard.dlc.playground,com.trustonic.telecoms.standard.dpc"/>
+    </string-array>
+    <string name="call_screening_app">com.trustonic.telecoms.standard.dpc/com.trustonic.telecoms.entrypoint.carrier.CallScreeningService</string>
+    <string name="call_redirection_service_component_name_string">com.trustonic.telecoms.standard.dpc/com.trustonic.telecoms.entrypoint.carrier.CallRedirectionService</string>
+</carrier_config>
+<!---中国移动-->
+<carrier_config mcc="460" mnc="00,02,04,07,08,13">
+    <boolean name="config_miui_sms_optimization" value="true" />
+    <boolean name="config_miui_sms_sa_fallback_optimization" value="true" />
+    <boolean name="config_vonr_on_by_defalut_bool" value="true" />
+    <boolean name="carrier_new_call_available_bool" value="true" />
+</carrier_config>
+<!---中国联通-->
+<carrier_config mcc="460" mnc="01,06,09">
+    <boolean name="config_miui_sms_optimization" value="true" />
+    <boolean name="config_miui_sms_sa_fallback_optimization" value="true" />
+    <boolean name="config_vonr_on_by_defalut_bool" value="true" />
+</carrier_config>
+<!--中国电信-->
+<carrier_config mcc="460" mnc="03,05,11,12">
+    <boolean name="config_vonr_on_by_defalut_bool" value="true" />
+</carrier_config>
+<!---中国广电-->
+<carrier_config mcc="460" mnc="15">
+    <boolean name="config_vonr_on_by_defalut_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

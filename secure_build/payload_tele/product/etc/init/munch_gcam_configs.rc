@@ -1,0 +1,11 @@
+# POCO F4: copy the bundled LMC 8.4 configs (/product/etc/gcam) to /sdcard/LMC8.4 for user 0.
+service munch_gcam_configs /product/bin/munch_gcam_configs.sh
+    class late_start
+    user root
+    group media_rw
+    capabilities CHOWN FOWNER DAC_OVERRIDE
+    disabled
+    oneshot
+
+on property:sys.user.0.ce_available=true
+    start munch_gcam_configs

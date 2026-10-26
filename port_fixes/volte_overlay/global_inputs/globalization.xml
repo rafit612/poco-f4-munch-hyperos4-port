@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for the operator's volte blacklist. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+    <!--默认值-->
+    <carrier_config>
+        <boolean name="carrier_volte_globalization_enable" value="true" />
+    </carrier_config>
+    <!--荷兰 NL/Tele2 New/Tele2 Old DT -->
+    <carrier_config mcc="204" mnc="20,02">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--法国 EIT MVNO-->
+    <carrier_config mcc="208" mnc="26" gid1="4E524A31">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--西班牙 ES amena-->
+    <carrier_config mcc="214" mnc="03" spn="amena">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--西班牙 ES JAZZTEL-->
+    <carrier_config mcc="214" mnc="21" spn="JAZZTEL">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--俄罗斯 RU SberMobile-->
+    <carrier_config mcc="250" mnc="50">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--缅甸 MM MPT-->
+    <carrier_config mcc="414" mnc="01">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--澳门 SMARTONE-->
+    <carrier_config mcc="455" mnc="00,06">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+    <!--英国 UK Vodafone-->
+    <carrier_config mcc="999" mnc="29">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+</carrier_config_list>

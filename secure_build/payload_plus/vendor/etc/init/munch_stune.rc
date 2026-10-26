@@ -1,0 +1,49 @@
+# munch: schedtune groups for the 4.19 kernel (as in official HyperOS 1 init.rc); task_profiles move tasks here
+on init
+    mkdir /dev/stune/foreground 0755 system system
+    mkdir /dev/stune/background 0755 system system
+    mkdir /dev/stune/top-app 0755 system system
+    mkdir /dev/stune/rt 0755 system system
+    mkdir /dev/stune/audio-app 0755 system system
+    mkdir /dev/stune/camera-daemon 0755 system system
+    mkdir /dev/stune/nnapi-hal 0755 system system
+    mkdir /dev/stune/system-background 0755 system system
+    chown system system /dev/stune/tasks
+    chmod 0664 /dev/stune/tasks
+    chown system system /dev/stune/foreground/tasks
+    chmod 0664 /dev/stune/foreground/tasks
+    chown system system /dev/stune/background/tasks
+    chmod 0664 /dev/stune/background/tasks
+    chown system system /dev/stune/top-app/tasks
+    chmod 0664 /dev/stune/top-app/tasks
+    chown system system /dev/stune/rt/tasks
+    chmod 0664 /dev/stune/rt/tasks
+    chown system system /dev/stune/audio-app/tasks
+    chmod 0664 /dev/stune/audio-app/tasks
+    chown system system /dev/stune/camera-daemon/tasks
+    chmod 0664 /dev/stune/camera-daemon/tasks
+    chown system system /dev/stune/nnapi-hal/tasks
+    chmod 0664 /dev/stune/nnapi-hal/tasks
+    chown system system /dev/stune/system-background/tasks
+    chmod 0664 /dev/stune/system-background/tasks
+    chown system system /dev/stune/cgroup.procs
+    chmod 0664 /dev/stune/cgroup.procs
+    chown system system /dev/stune/foreground/cgroup.procs
+    chmod 0664 /dev/stune/foreground/cgroup.procs
+    chown system system /dev/stune/background/cgroup.procs
+    chmod 0664 /dev/stune/background/cgroup.procs
+    chown system system /dev/stune/top-app/cgroup.procs
+    chmod 0664 /dev/stune/top-app/cgroup.procs
+    chown system system /dev/stune/rt/cgroup.procs
+    chmod 0664 /dev/stune/rt/cgroup.procs
+    chown system system /dev/stune/audio-app/cgroup.procs
+    chmod 0664 /dev/stune/audio-app/cgroup.procs
+    chown system system /dev/stune/camera-daemon/cgroup.procs
+    chmod 0664 /dev/stune/camera-daemon/cgroup.procs
+    chown system system /dev/stune/nnapi-hal/cgroup.procs
+    chmod 0664 /dev/stune/nnapi-hal/cgroup.procs
+    chown system system /dev/stune/system-background/cgroup.procs
+    chmod 0664 /dev/stune/system-background/cgroup.procs
+    # AOSP default for the foreground UI: prefer idle cores for latency
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/foreground/schedtune.prefer_idle 1

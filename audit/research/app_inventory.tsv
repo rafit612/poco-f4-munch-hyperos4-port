@@ -1,0 +1,487 @@
+package	label	versionName	versionCode	partition	type	installed_u0	enabled	launcher	signer	targetSdk	abi	origin	codePath	G17_ver	H1_ver	PORT_ver
+ai.openclaw.app		2026.10.50	2026090492	data	user	true	0	L	other:cabec43f	36	arm64-v8a	user	/data/app/~~VfM-rgzH-Ij2mHPUH0__uw==/ai.openclaw.app-slRYcI7dcytE46QYziGGQg==			
+android		17	37	system	system	true	0		platform	37	arm64-v8a	other	/system/framework/framework-res.apk			
+android.aosp.overlay		14	34	product	system	true	0		other:d7f1f224	34	null	HOS4-portbase	/product/overlay/AospFrameworkResOverlay.apk	17	14	14
+android.aosp.overlay.telephony		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/AospFrameworkTelephonyResOverlay.apk	17	14	17
+android.auto_generated_characteristics_rro		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/framework-res__nosdcard__auto_generated_characteristics_rro.apk	17		17
+android.ext.services		2019-09	309999900	apex	system	true	0		other:cadb5830	37	arm64-v8a	apex	/apex/com.android.extservices/priv-app/ExtServices-sminus@CP2A.260605.016			
+android.ext.shared	Android Shared Library	1	1	system	system	true	0		platform	37	null	HOS4-portbase	/system/app/ExtShared			1
+android.miui.home.launcher.res		14	34	product	system	true	0		platform	34	null	HOS4-portbase	/product/overlay/MiuiHomeLauncherResOverlay.apk	17	14	14
+android.miui.overlay		15	35	product	system	true	0		platform	35	null	HOS4-portbase	/product/overlay/MiuiFrameworkResOverlay.apk	17	14	15
+android.miui.overlay.telephony		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiFrameworkTelephonyResOverlay.apk	17	14	17
+android.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/FrameworksResCommon_Sys.apk	17	14	17
+android.overlay.target		13	30	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/overlay/FrameworksResTarget.apk			
+android.qvaoverlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/FrameworksResCommonQva_Sys.apk	17	14	17
+cn.wps.xiaomi.abroad.lite	Mi Doc Viewer (Powered by WPS)	2.6.9	269	data	user	true	0		other:aff1f579	35	arm64-v8a	user	/data/app/GlobalWPSLITE	2.6.9		
+com.android.DeviceAsWebcam	Webcam Service	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/DeviceAsWebcam	17		17
+com.android.adservices.api		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.adservices/priv-app/AdServicesApk@CP2A.260605.016			
+com.android.apps.tag	Tags	1.1	101	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/Tag	1.1	1.1	1.1
+com.android.appsearch.aiseal.config		17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/AppSearchAiSealConfig	17		17
+com.android.appsearch.apk		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.appsearch/priv-app/com.android.appsearch.apk@CP2A.260605.016			
+com.android.avatarpicker	Choose a picture	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/AvatarPicker	17		17
+com.android.backupconfirm		17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/BackupRestoreConfirmation	17	14	17
+com.android.bips	System printing service	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/BuiltInPrintService	17	14	17
+com.android.bluetooth	Bluetooth	17	37	apex	system	true	0		other:18bad640	37	arm64-v8a	apex	/apex/com.android.bt/app/Bluetooth@CP2A.260605.016		14	
+com.android.bluetooth.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/AospBluetoothResOverlay.apk	17	14	17
+com.android.bluetoothmidiservice	Bluetooth MIDI Service	17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/app/BluetoothMidiService	17	14	17
+com.android.calllogbackup	Call Log Backup/Restore	17	37	system	system	true	0		other:d7063f2a	37	null	HOS4(port+G17)	/system/priv-app/CallLogBackup	17	14	17
+com.android.camera	Camera	5.1.001140.0	510011400	product	system	true	0	L	platform	33	arm64-v8a	HyperOS1-OLD	/product/priv-app/MiuiCamera	6.6.000570.5	5.1.001140.0	6.7.000070.0
+com.android.cameraextensions	CameraExtensionsProxy	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/CameraExtensionsProxy	17	14	17
+com.android.captiveportallogin	Captive Portal Login	17	370399999	system	system	true	0		other:cc5e395e	37	null	HOS4-portbase	/system/app/CaptivePortalLogin			17
+com.android.carrierconfig		1.0.0	1	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/CarrierConfig	1.0.0	1.0.0	1.0.0
+com.android.carrierconfig.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/CarrierConfigResCommon_Sys.apk	17	14	17
+com.android.carrierdefaultapp	Carrier Communications	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/CarrierDefaultApp	17	14	17
+com.android.cellbroadcastreceiver	Wireless emergency alerts	17	37	system_ext	system	true	1		platform	33	null	HOS4-portbase	/system_ext/priv-app/CellBroadcastAppPlatform	R-initial	R-initial	17
+com.android.cellbroadcastreceiver.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/CellBroadcastReceiverResCommon_Sys.apk	17	14	17
+com.android.cellbroadcastservice	Cell Broadcast Service	17	37	system	system	true	0		platform	33	arm64-v8a	HOS4-portbase	/system/priv-app/CellBroadcastServiceModulePlatform			17
+com.android.certinstaller	Certificate Installer	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/CertInstaller	17	14	17
+com.android.chrome	Chrome	156.0.8078.47	807804704	data	user	true	0	L	other:e3ca78d8	36	arm64-v8a	user	/data/app/~~fzP1YAgWEW4hR9fyF8Lnfw==/com.android.chrome-k2sK50Uc2GCxRDF8JCTYQQ==	149.0.7827.102	126.0.6478.71	
+com.android.companiondevicemanager	Companion Device Manager	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/CompanionDeviceManager	17	14	17
+com.android.companiondevicemanager.auto_generated_characteristics_rro		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/CompanionDeviceManager__nosdcard__auto_generated_characteristics_rro.apk	17		17
+com.android.compos.payload		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.compos/app/CompOSPayloadApp@CP2A.260605.016			
+com.android.connectivity.resources		S-initial	1	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.tethering/priv-app/ServiceConnectivityResources@CP2A.260605.016			
+com.android.contacts	Contacts and dialer	18.30.00.20	300020	product	system	true	0	L	other:d7063f2a	36	null	HOS4-portbase	/product/priv-app/MIUIContactsT	18.30.00.55		18.30.00.20
+com.android.contactspicker	Contacts Picker	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/ContactsPicker	17		17
+com.android.credentialmanager	Credential Manager	4.0.4	40004	product	system	true	0		platform	34	arm64-v8a	HOS4-portbase	/product/app/MiuiCredentialManager	17	14	4.0.4
+com.android.cts.ctsshim		16	36	apex	system	true	0		other:d7f1f224	28	null	apex	/apex/com.android.apex.cts.shim/app/CtsShim@MAIN			
+com.android.cts.priv.ctsshim		16	36	apex	system	true	0		other:d7f1f224	28	arm64-v8a	apex	/apex/com.android.apex.cts.shim/priv-app/CtsShimPriv@MAIN			
+com.android.deskclock	Clock	18.26.0	1306002600	product	system	true	0	L	platform	35	null	G17-Global	/product/app/MIUIDeskClockGlobal	18.26.0	15.38.0	18.17.0
+com.android.devicediagnostics	DeviceDiagnostics	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/DeviceDiagnostics	17		17
+com.android.devicelockcontroller		17	37	apex	system	true	2		platform	37	null	apex	/apex/com.android.devicelock/priv-app/DeviceLockController@CP2A.260605.016			
+com.android.dreams.basic	Basic Daydreams	17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/app/BasicDreams	17	14	17
+com.android.dynsystem	Dynamic System Updates	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/DynamicSystemInstallationService	17	14	17
+com.android.egg	Android Easter Egg	1.0	12	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/EasterEgg	1.0	1.0	1.0
+com.android.emergency	Emergency information	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/EmergencyInfo	17	14	17
+com.android.externalstorage	External Storage	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/ExternalStorageProvider	17	14	17
+com.android.eyedropper	EyeDropper	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/EyeDropper	17		17
+com.android.federatedcompute.services		17	370399999	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.ondevicepersonalization/app/FederatedCompute@CP2A.260605.016			
+com.android.health.connect.backuprestore		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.healthfitness/app/HealthConnectBackupRestore@CP2A.260605.016			
+com.android.healthconnect.controller		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.healthfitness/priv-app/HealthConnectController@CP2A.260605.016			
+com.android.hotspot2.osulogin		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.wifi/app/OsuLogin@CP2A.260605.016			
+com.android.hotwordenrollment.okgoogle	OK Google Hotword	17	37	product	system	true	0		other:cadb5830	36	null	G17-Global	/product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND	17	14	
+com.android.hotwordenrollment.xgoogle	Hey Google Hotword	17	37	product	system	true	0		other:cadb5830	36	null	G17-Global	/product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND	17	14	
+com.android.htmlviewer	HTML Viewer	17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/HTMLViewer	17	14	17
+com.android.imsserviceentitlement		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/priv-app/ImsServiceEntitlement	17		17
+com.android.incallui	Phone	40.01.05	5634	product	system	true	0		other:d7063f2a	37	arm64-v8a	HOS4-portbase	/product/priv-app/InCallUI	40.01.52		40.01.05
+com.android.inputdevices	Input Devices	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/InputDevices	17	14	17
+com.android.inputsettings.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiSecurityCoreOverlay.apk	17	14	17
+com.android.intentresolver	IntentResolver	2021-11	0	system_ext	system	true	0		platform	37	null	other	/system_ext/priv-app/MiIntentResolver	2021-11	2021-11	2021-11
+com.android.internal.display.cutout.emulation.corner	Corner cutout	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/DisplayCutoutEmulationCorner	1.0	1.0	1.0
+com.android.internal.display.cutout.emulation.double	Double cutout	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/DisplayCutoutEmulationDouble	1.0	1.0	1.0
+com.android.internal.display.cutout.emulation.hole	Punch Hole cutout	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/DisplayCutoutEmulationHole	1.0	1.0	1.0
+com.android.internal.display.cutout.emulation.none	Notch Kill - By AMIR HM	11	30	vendor	system	true	0		other:d7f1f224	30	null	vendor(H1)	/vendor/overlay/DisplayCutoutEmulationNone			
+com.android.internal.display.cutout.emulation.tall	Tall cutout	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/DisplayCutoutEmulationTall	1.0	1.0	1.0
+com.android.internal.display.cutout.emulation.waterfall	Waterfall cutout	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/DisplayCutoutEmulationWaterfall	1.0	1.0	1.0
+com.android.internal.systemui.navbar.gestural	Gestural Navigation Bar	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/NavigationBarModeGestural	1.0	1.0	1.0
+com.android.internal.systemui.navbar.threebutton	3 Button Navigation Bar	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/NavigationBarMode3Button	1.0	1.0	1.0
+com.android.internal.systemui.navbar.transparent	Transparent navigation bar	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/TransparentNavigationBar	1.0	1.0	1.0
+com.android.keychain	Key Chain	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/app/KeyChain	17	14	17
+com.android.localtransport		17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/LocalTransport	17	14	17
+com.android.location.fused	Fused Location	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/FusedLocation	17	14	17
+com.android.managedprovisioning	Work Setup	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/ManagedProvisioning	17	14	17
+com.android.managedprovisioning.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/ManagedProvisioningResOverlay.apk	17	14	17
+com.android.microdroid.empty_payload		17	37	apex	system	true	0		other:cadb5830	37	arm64-v8a	apex	/apex/com.android.virt/app/EmptyPayloadApp@CP2A.260605.016			
+com.android.mms	Messaging	18.0.0.36-gl	180000036	product	system	true	0	L	other:cadb5830	36	arm64-v8a	G17-Global	/product/priv-app/MiuiMmsGlobal	18.0.0.36-gl		18.0.0.32
+com.android.mms.service	MmsService	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/MmsService	17	14	17
+com.android.modulemetadata	Module Metadata	17	37	product	system	true	0		other:cadb5830	37	null	HOS4-portbase	/product/app/ModuleMetadata			17
+com.android.mtp	MTP Host	17	37	system	system	true	0		other:1d3933c2	37	null	HOS4(port+G17)	/system/priv-app/MtpService	17	14	17
+com.android.musicfx	MusicFX	1.4	10400	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/MusicFX	1.4	1.4	1.4
+com.android.ncm.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/NcmTetheringResCommon_Sys.apk	17		17
+com.android.networkstack	Network manager	17	370399999	system	system	true	0		other:cc5e395e	37	arm64-v8a	HOS4-portbase	/system/priv-app/NetworkStack			17
+com.android.networkstack.overlay.miui	NetworkStackOverlay	17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/NetworkStackOverlay.apk	17	14	17
+com.android.networkstack.tethering		17	37	apex	system	true	0		other:cc5e395e	37	arm64-v8a	apex	/apex/com.android.tethering/priv-app/TetheringNext@CP2A.260605.016			
+com.android.nfc	NFC Service	16	36	system_ext	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/system_ext/app/NQNfcNci	17	14	16
+com.android.nfc.resources.overlay.common		16	36	product	system	true	0		platform	36	null	HOS4-portbase	/product/overlay/NfcResCommon.apk			16
+com.android.ondevicepersonalization.services		17	370399999	apex	system	true	0		platform	37	null	apex	/apex/com.android.ondevicepersonalization/priv-app/OnDevicePersonalization@CP2A.260605.016			
+com.android.ons		17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/ONS	17	14	17
+com.android.overlay.circletosearch		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/CircleToSearchOverlay.apk	1.0		
+com.android.overlay.gmscontactprovider		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/GmsContactProviderOverlay.apk	1.0	1.0	1.0
+com.android.overlay.gmssettingprovider		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/GmsSettingProviderOverlay.apk	1.0	1.0	1.0
+com.android.overlay.gmssettings		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/GmsSettingsOverlay.apk	1.0	1.0	1.0
+com.android.overlay.gmstelecomm		1.0	1	product	system	true	0		platform	40	null	G17-Global	/product/overlay/GmsTelecommOverlay.apk	1.0		
+com.android.overlay.gmstelephony		1.0	1	product	system	true	0		platform	40	null	G17-Global	/product/overlay/GmsTelephonyOverlay.apk	1.0		
+com.android.overlay.systemui		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/GmsSystemUIOverlay.apk	1.0	1.0	1.0
+com.android.packageinstaller	Package installer	17	37	system	system	true	0		platform	37	null	HOS4-portbase	/system/priv-app/PackageInstaller			17
+com.android.pacprocessor	PacProcessor	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/PacProcessor	17	14	17
+com.android.permissioncontroller		33 system image	330000000	apex	system	true	0		platform	37	null	apex	/apex/com.android.permission/priv-app/PermissionController@CP2A.260605.016			
+com.android.phone	Phone Services	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/TeleService	17	14	17
+com.android.phone.auto_generated_characteristics_rro		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/TeleService__nosdcard__auto_generated_characteristics_rro.apk	17		17
+com.android.phone.cust.overlay.miui		1.0.3	34	product	system	true	0		platform	34	null	G17-Global	/product/overlay/MiuiTelephonyResCustOverlay.apk	1.0.3		
+com.android.phone.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/TelephonyResCommon_Sys.apk	17	14	17
+com.android.phone.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiTelephonyResOverlay.apk	17	14	17
+com.android.photopicker		17	37	apex	system	true	0		other:1d3933c2	37	arm64-v8a	apex	/apex/com.android.mediaprovider/priv-app/Photopicker@CP2A.260605.016			
+com.android.printservice.recommendation	Print Service Recommendation Service	1.3.0	4	system	system	true	0		other:cadb5830	37	null	HOS4-portbase	/system/app/PrintRecommendationService			1.3.0
+com.android.printspooler	Print Spooler	17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/MiuiPrintSpooler	17	14	17
+com.android.privatespace	Private Space	17	37	system	system	false	0		platform	36	null	HOS4(port+G17)	/system/priv-app/PrivateSpace	17		17
+com.android.providers.blockednumber	Blocked Numbers Storage	17	37	system	system	true	0		other:d7063f2a	37	null	HOS4(port+G17)	/system/priv-app/BlockedNumberProvider	17	14	17
+com.android.providers.calendar	Calendar storage	16.0.0.0	16000000	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/CalendarProvider	16.0.0.0	13.0.0.11	16.0.0.0
+com.android.providers.contactkeys	ContactsKeys Storage	17	37	system	system	true	0		other:d7063f2a	37	null	HOS4(port+G17)	/system/priv-app/E2eeContactKeysProvider	17		17
+com.android.providers.contacts	Contacts Storage	17	37	system	system	true	0		other:d7063f2a	37	null	HOS4(port+G17)	/system/priv-app/ContactsProvider	17	14	17
+com.android.providers.downloads	Downloads	137.26.07.800010	1372607010	system	system	true	0		other:1d3933c2	35	null	HOS4-portbase	/system/priv-app/DownloadProvider	26.03.24.108	22.11.14.105	137.26.07.800010
+com.android.providers.downloads.ui	Downloads	26.07.01.106	260701106	product	system	true	0	L	other:1d3933c2	36	null	G17-Global	/product/priv-app/DownloadProviderUi	26.07.01.106	24.01.18.103	
+com.android.providers.media.module		17	37	apex	system	true	0		other:1d3933c2	37	arm64-v8a	apex	/apex/com.android.mediaprovider/priv-app/MediaProvider@CP2A.260605.016			
+com.android.providers.partnerbookmarks		17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/PartnerBookmarksProvider	17	14	17
+com.android.providers.settings	Settings Storage	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/SettingsProvider	17	14	17
+com.android.providers.settings.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsProviderCustResOverlay.apk	17	14	17
+com.android.providers.telephony	Phone and Messaging Storage	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/TelephonyProvider	17	14	17
+com.android.providers.telephony.auto_generated_characteristics_rro		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/TelephonyProvider__nosdcard__auto_generated_characteristics_rro.apk	17		17
+com.android.providers.telephony.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiTelephonyProviderResOverlay.apk	17	14	17
+com.android.providers.userdictionary	User Dictionary	17	37	system	system	true	0		other:d7063f2a	37	null	HOS4(port+G17)	/system/priv-app/UserDictionaryProvider	17	14	17
+com.android.provision	Provision	17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/Provision	17	14	17
+com.android.proxyhandler	ProxyHandler	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/ProxyHandler	17	14	17
+com.android.rkpdapp		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.rkpd/priv-app/rkpdapp@CP2A.260605.016			
+com.android.role.notes.enabled	Notes Role enabled	1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/NotesRoleEnabled	1.0	1.0	1.0
+com.android.safetycenter.resources		33 system image	330000000	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.permission/priv-app/SafetyCenterResources@CP2A.260605.016			
+com.android.sdksandbox		T-initial	1	apex	system	true	0		other:63a563b	37	null	apex	/apex/com.android.adservices/app/SdkSandbox@CP2A.260605.016			
+com.android.se	SecureElementApplication	17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/SecureElement	17	14	17
+com.android.server.telecom	Phone Calls	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system/priv-app/Telecom	17	14	17
+com.android.server.telecom.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/TelecommResCommon_Sys.apk	17	14	17
+com.android.server.telecom.overlay.miui	Manage calls	17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiTelecomResOverlay.apk	17	14	17
+com.android.server.telecomui		17	37	system	system	true	1		platform	37	null	HOS4(port+G17)	/system/priv-app/TelecomUi	17		17
+com.android.settings	Settings	17	37	system_ext	system	true	0	L	platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/Settings	17	14	17
+com.android.settings.intelligence	Settings Suggestions	17	37	product	system	true	0		other:cadb5830	31	null	HOS4(port+G17)	/product/priv-app/SettingsIntelligence	17	14	17
+com.android.settings.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsResCommon_Sys.apk	17	14	17
+com.android.settings.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiSettingsResOverlay.apk	17	14	17
+com.android.sharedstoragebackup		17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/priv-app/SharedStorageBackup	17	14	17
+com.android.shell	Shell	17	37	system	system	true	0		platform	36	null	HOS4(port+G17)	/system/priv-app/Shell	17	14	17
+com.android.simappdialog	Sim App Dialog	17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/app/SimAppDialog	17	14	17
+com.android.soundpicker	Sounds	17	37	system	system	true	0		other:1d3933c2	37	null	HOS4(port+G17)	/system/priv-app/SoundPicker	17	14	17
+com.android.soundrecorder	Recorder	8.1.5-779121d13	801050	product	system	true	0	L	platform	35	arm64-v8a	G17-Global	/product/app/MIUISoundRecorderTargetSdk30Global	8.1.5-779121d13	5.0.23.8	8.1.3-e97946905
+com.android.stk	SIM Toolkit	17	37	system	system	true	0	L	platform	37	arm64-v8a	HOS4(port+G17)	/system/app/Stk	17	14	17
+com.android.stk.overlay.miui		1.0.3	34	product	system	true	0		platform	34	null	G17-Global	/product/overlay/MiuiStkResOverlay.apk	1.0.3		
+com.android.storagemanager	Storage Manager	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/StorageManager	17	14	17
+com.android.systemui	System UI	17.03.260226.r	202602260	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/MiuiSystemUI	17.03.260226.r	20230316.0	17.03.260226.r
+com.android.systemui.accessibility.accessibilitymenu	Accessibility Menu	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/AccessibilityMenu	17	14	17
+com.android.systemui.gesture.line.overlay		1.0	1	product	system	true	0		other:ec6b6830	0	null	HOS4(port+G17)	/product/overlay/GestureLineOverlay.apk	1.0	1.0	1.0
+com.android.systemui.navigation.bar.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/ElderlyNavigationBarOverlay.apk	1.0	1.0	1.0
+com.android.systemui.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SystemUIResCommon_Sys.apk	17	14	17
+com.android.systemui.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiSystemUIResOverlay.apk	17	14	17
+com.android.theme.font.notoserifsource	Noto Serif / Source Sans Pro	1.0	1	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/FontNotoSerifSource	1.0	1.0	1.0
+com.android.thememanager	Themes	3.4.1.23-global	3040123	product	system	true	0	L	platform	36	arm64-v8a	G17-Global	/product/app/MIUIThemeManagerGlobal	3.4.1.23-global	2.6.2.52-global	11.5.3.1
+com.android.thememanager.customizethemeconfig.config.overlay		1.0	1	product	system	true	0		platform	37	null	G17-Global	/product/overlay/MiuiThemeManagerGlobalOverlayTest.apk	1.0	1.0	
+com.android.traceur	System Tracing	1.0	2	system	system	true	0		platform	36	null	HOS4(port+G17)	/system/app/Traceur	1.0	1.0	1.0
+com.android.updater	Updater	9.7.2	972	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/Updater	9.7.2	8.6.5	
+com.android.uwb.resources		T-initial	1	apex	system	true	1		other:cadb5830	37	null	apex	/apex/com.android.uwb/priv-app/ServiceUwbResources@CP2A.260605.016			
+com.android.uwb.resources.overlay.common		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/UwbResCommon_Sys.apk	1.0		1.0
+com.android.vending	Google Play Store	51.3.25-24 [0] [PR] 910257173	85132500	product	system	true	1	L	other:e3ca78d8	36	arm64-v8a	HOS4-portbase	/product/priv-app/Phonesky	51.8.09-29 [0] [PR] 927580062	43.5.26-31 [0] [PR] 693462648	51.3.25-24 [0] [PR] 910257173
+com.android.virtualization.terminal		17	37	apex	system	true	0		other:cadb5830	37	arm64-v8a	apex	/apex/com.android.virt/priv-app/VmTerminalApp@CP2A.260605.016			
+com.android.virtualmachine.res		17	37	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.virt/app/android.system.virtualmachine.res@CP2A.260605.016			
+com.android.vpndialogs	VpnDialogs	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/MiuiVpnDialogs	17	14	17
+com.android.wallpaper.livepicker	Live Wallpaper Picker	17	37	system	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system/priv-app/LiveWallpapersPicker	17	14	17
+com.android.wallpaperbackup		17	37	system	system	true	0		platform	37	null	HOS4(port+G17)	/system/app/WallpaperBackup	17	14	17
+com.android.wallpapercropper		17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/WallpaperCropper	17	14	17
+com.android.webapp.service		0	370399999	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.webapp/priv-app/WebAppService@CP2A.260605.016			
+com.android.wifi.dialog		17	37	system_ext	system	true	0		other:cadb5830	36	null	HOS4(port+G17)	/system_ext/priv-app/MiuiWifiDialog	17	14	17
+com.android.wifi.resources		R-initial	1	apex	system	true	0		other:cadb5830	37	null	apex	/apex/com.android.wifi/priv-app/ServiceWifiResources@CP2A.260605.016			
+com.android.wifi.resources.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/WifiResCommon_Sys.apk	17	14	17
+com.android.wifi.resources.overlay.target		13	30	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/overlay/WifiResTarget.apk			
+com.android.wifi.resources.xiaomi		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/AospWifiResOverlay.apk	1.0	1.0	1.0
+com.android.wm.shell		17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/MiuiWMShellResources-install	17		17
+com.anthropic.claude		1.261021.51	26102151	data	user	true	0	L	other:a1fc7e9b	37	arm64-v8a	user	/data/app/~~n8oOAmA-9RROZRTdx2KMMA==/com.anthropic.claude-MQu66gnjetsFjGnwTZR4NA==			
+com.anydesk.adcontrol.ad1		1.7.4	10704	data	user	true	0		other:f67b5209	37	null	user	/data/app/~~_nFoAnpEFJ2z53t2x2zdyw==/com.anydesk.adcontrol.ad1-xvVCtIUU37n5oSp3PeqjHA==			
+com.anydesk.anydeskandroid		9.0.2	90002	data	user	true	0	L	other:f67b5209	37	arm64-v8a	user	/data/app/~~JC84AppoXhMAPidPSCI0Eg==/com.anydesk.anydeskandroid-NEn6rFSl-4cVunJAH59shg==			
+com.app.kothon		1.2.9	102090	data	user	true	0	L	other:f56906db	36	arm64-v8a	user	/data/app/~~OSUZ8enFxfyeCNcsrBKF9Q==/com.app.kothon-xfF6LWfLfkvaWnc7D4XQWA==			
+com.azure.authenticator		6.2609.6214	202662143	data	user	true	0	L	other:60abb82a	36	arm64-v8a	user	/data/app/~~A6gX26C8zeTegvppZzcX-Q==/com.azure.authenticator-gXgjCiVofeWe9uD39WlTNw==			
+com.binance.dev		3.22.3	100302203	data	user	true	0	L	other:5d8cbf01	36	arm64-v8a	user	/data/app/~~GY4pBUQCtVE97EY0KnxIwQ==/com.binance.dev-S7mx3rZu4nFYL7CqXVfBNA==			
+com.brave.browser		1.97.59	429705904	data	user	true	0	L	other:dd946fc5	37	arm64-v8a	user	/data/app/~~nDKQsL8s1KV4wWYm43GqyA==/com.brave.browser-sGfKExhQ6dzbaolHpU_LXQ==			
+com.bsp.catchlog	Log generator	1.7.0	170	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/CatchLog	1.7.0	1.1.3-SNAPSHOT	
+com.canva.editor		2.383.0	29774207	data	user	true	0	L	other:aaeaf31f	36	arm64-v8a	user	/data/app/~~8HZ9cGJy6hpGB_mAATxlpw==/com.canva.editor-oGkjAN3sTjIXIoP4IKWahg==			
+com.cloudflare.onedotonedotonedotone		6.38.11	5703	data	user	true	0	L	other:88a57bdc	35	arm64-v8a	user	/data/app/~~iXEHO0tWbbW4WdflwUKCog==/com.cloudflare.onedotonedotonedotone-sRu87I487Uln247fqC-miA==			
+com.cudy.cloudapp		1.5.7	31	data	user	true	0	L	other:e9f195bd	35	arm64-v8a	user	/data/app/~~Ul0YGHB7LJcrWm5Kealw7Q==/com.cudy.cloudapp-auvgm_PTE6NvnQ7zO32ysg==			
+com.cybrosys.odoo_mobile_community		1.1.21	80	data	user	true	0	L	other:16a9f190	36	arm64-v8a	user	/data/app/~~LbAx3iAS4L0pbEujzM3L2Q==/com.cybrosys.odoo_mobile_community--aNyYr1yQRH-bIyPbd53iQ==			
+com.daraz.android		9.36.5	570	data	user	true	0	L	other:9eec3903	35	arm64-v8a	user	/data/app/~~jLVV3Bo-h7oyl-IBSteZiw==/com.daraz.android-48t2hWrN9rGUsRuoicXDZQ==			
+com.dbbl.mbs.apps.main		3.1.7	171	data	user	true	0	L	other:2ad58e90	36	arm64-v8a	user	/data/app/~~VcAclyk30v_ewWTQwSElHg==/com.dbbl.mbs.apps.main-3PL7Yi3rGUVFOYKWQ2jf5Q==			
+com.doubleangels.nextdnsmanagement		5.5.25	274	data	user	true	0	L	other:d5383112	37	arm64-v8a	user	/data/app/~~COfg-rmGOiHC9bpKgfq41w==/com.doubleangels.nextdnsmanagement-Q4dd_l-Fz9UHk11IMCY8AQ==			
+com.duokan.phone.remotecontroller	Mi Remote	7.2.5R	6550	data	user	true	0	L	other:49dc87ed	34	arm64-v8a	user	/data/app/XMRemoteController	7.2.5R		
+com.facebook.adsmanager		498.0.0.52.106	1095915968	data	user	true	0	L	other:1177bafe	36	arm64-v8a	user	/data/app/~~yveDxlU8I02r8AY-Lytddw==/com.facebook.adsmanager-bvf_dyLo9mhHRQzPNABUGQ==			
+com.facebook.katana		585.0.0.1.54	476007881	data	user	true	0	L	other:1177bafe	36	arm64-v8a	user	/data/app/~~O9B3MG9MixmId8Ytj-MfjA==/com.facebook.katana-5lFie7V2xlg-JEgLaxCoYg==			
+com.facebook.orca		585.0.0.11.94	347008682	data	user	true	0	L	other:1177bafe	37	arm64-v8a	user	/data/app/~~XFV_BUdWI82fc5BXLLlU5A==/com.facebook.orca-RovKTUXJJ99I-sTmHQm4WA==			
+com.fido.asm	FIDO UAF1.0 ASM	220260331	220260331	product	system	true	0		platform	34	null	HOS4-portbase	/product/app/FidoAuthen2		1.0.240614.1	220260331
+com.fingerprints.sensortesttool	Sensor Test Tool	3.54	354	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/SensorTestTool			
+com.foodiBd		8.1.7	654	data	user	true	0	L	other:987c01a7	36	arm64-v8a	user	/data/app/~~v-BZP3v4_SwQoF2MO8VDBw==/com.foodiBd-YcdSdhEaxON9VZ4NRpsYMw==			
+com.github.android		1.281.0	952	data	user	true	0	L	other:2f6526	37	arm64-v8a	user	/data/app/~~6iGIDIGnqOt1iWRllRRdVw==/com.github.android-VgbG8appSZaahdNSnyXkVQ==			
+com.global.foodpanda.android		26.42.0	264200094	data	user	true	0	L	other:e2133318	36	arm64-v8a	user	/data/app/~~0AHRAa4_TBUhdQQph8VSSA==/com.global.foodpanda.android-AdLt5MYR_lWl2nWtVh7WCg==			
+com.gms.android.ncm.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/NcmTetheringResCommonGMS_Sys.apk	17		17
+com.goodix.gftest	Fingerpirnt test	1.1.01	11	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/GFTest			
+com.google.ambient.streaming	Cross-Device Services	1.1.2	1000002	product	system	true	0		other:f1fe9af9	36	null	G17-Global	/product/priv-app/CrossDeviceServices	1.1.2		
+com.google.android.accessibility.switchaccess	Switch Access	1.17.0.877181440	787	product	system	true	0		other:62fa3fab	37	arm64-v8a	HOS4(port+G17)	/product/app/SwitchAccess	1.17.0.877181440	1.14.0.543553192	1.17.0.877181440
+com.google.android.apps.adm		3.1.763-05	20015005	data	user	true	0	L	other:98deb0ca	36	arm64-v8a	user	/data/app/~~5bh9fA3Bx4_pTMpBu1veUA==/com.google.android.apps.adm-cdcO9S_VtuuVds1W31MZMA==			
+com.google.android.apps.bard	Gemini	1.0.913571982	296	product	system	true	1	L	other:cc1c9522	36	arm64-v8a	G17-Global	/product/app/Gemini_arm64	1.0.913571982		1.0.971139365
+com.google.android.apps.chromecast.app		4.34.22.2	30586976	data	user	true	0	L	other:fa41615	36	arm64-v8a	user	/data/app/~~YLtHwu1OXEq6Kk_s0ABzVw==/com.google.android.apps.chromecast.app-CX1VakcR0z4eei7pwJduMQ==			
+com.google.android.apps.classroom		3.68.991701869	300052599	data	user	true	0	L	other:9bd3d799	36	arm64-v8a	user	/data/app/~~jYFIf9B0tbdBlY7iP1Lw9A==/com.google.android.apps.classroom-MGsOHqJu1AHyn4bvp0Qxgw==			
+com.google.android.apps.docs	Drive	2.26.417.1.all.alldpi	214691097	data	user	true	0	L	other:5b892901	37	arm64-v8a	user	/data/app/~~2-ztairbOLZw84QQbXDL9g==/com.google.android.apps.docs-8aHHWcFe5eMu-b4Wq_-DTg==	2.26.227.0.all.alldpi	2.23.427.1.all.alldpi	
+com.google.android.apps.docs.editors.sheets		1.26.421.00.90	220710918	data	user	true	0	L	other:d6664b6e	37	arm64-v8a	user	/data/app/~~P4dLSNMjzehgk1msftjcgw==/com.google.android.apps.docs.editors.sheets-LVczDAR8J4Gy4XAb_4m3TQ==			
+com.google.android.apps.googleassistant		0.1.884448652	78	data	user	true	1	L	other:5475bc1	36	null	user	/data/app/~~FE8HFh-ng6eIxQr9UFwHcA==/com.google.android.apps.googleassistant-eADh-VZvnjDzy8pXsgSLHA==			
+com.google.android.apps.healthdata		2026.10.01.00.release	283955	data	user	true	0		other:5ec27d43	36	null	user	/data/app/~~72NpjiysWUy_2c4Jiu7W7w==/com.google.android.apps.healthdata-YpWdbvjTdUWKURgLktqh5A==			
+com.google.android.apps.kids.familylink		2.105.0.2026w42.997825758	894622	data	user	true	0	L	other:1fa3ab83	37	arm64-v8a	user	/data/app/~~mgrJ7a8s6m8Ine8sWfhQ7Q==/com.google.android.apps.kids.familylink-_TgaVuYdj4ba1yk44h0XXQ==			
+com.google.android.apps.maps	Maps	26.42.01.997557324	1068832648	data	user	true	1	L	other:98deb0ca	37	arm64-v8a	user	/data/app/~~G0Zv0f_KyEtbCDaTEJ-rUA==/com.google.android.apps.maps-jpOK-2zuZu0utYfrijvDWg==	26.23.01.924285238	11.88.0303	
+com.google.android.apps.meetings		2024.06.23.645915839.Release	4243032	data	user	true	0	L	other:767cbc09	34	arm64-v8a	user	/data/app/~~68_3XNQBDacR_ibGP0JDXQ==/com.google.android.apps.meetings-Xv_xfmVFFnsgqeBkevBOsg==			
+com.google.android.apps.messaging	Messages	messages.android_20260601_00_RC00.phone_dynamic	311458063	product	system	true	0	L	other:2e9b4eb	37	arm64-v8a	G17-Global	/product/priv-app/Messages_arm64_xxhdpi	messages.android_20260601_00_RC00.phone_dynamic		
+com.google.android.apps.nbu.files		1.12735.987346843.0-release	2027683	data	user	true	0	L	other:aad491b1	37	arm64-v8a	user	/data/app/~~u7DPWXUDcQKMO4I2X6qLVQ==/com.google.android.apps.nbu.files-8HDHF70ANFraAZ53Uut2-A==			
+com.google.android.apps.photos	Photos	7.97.0.1000520730	52549343	data	user	true	0	L	other:fa41615	37	arm64-v8a	user	/data/app/~~dzil4PmNsv9NvwG1pNy_dg==/com.google.android.apps.photos-Jph2T3y15fGZ3ChpcEbFbg==	7.79.1.929394759	6.59.0.576923577	
+com.google.android.apps.restore	Android Switch	1.0.918300902	1054408	product	system	true	0		other:b19a990d	36	null	G17-Global	/product/priv-app/GoogleRestore	1.0.918300902	1.0.561073583	
+com.google.android.apps.safetyhub	Personal Safety	2026.05.14.915325203.0-release_gms	100836433	product	system	true	0	L	other:a8de258d	36	arm64-v8a	G17-Global	/product/priv-app/PersonalSafety	2026.05.14.915325203.0-release_gms	2023.09.13.571377323.release_gms	
+com.google.android.apps.subscriptions.red	Google One	1.291.842200972	609278	product	system	true	0	L	other:457289b3	36	arm64-v8a	G17-Global	/product/app/GoogleOne_arm64	1.291.842200972		
+com.google.android.apps.tachyon	Meet	380.0.998174106.duo.android_20261005.01_p3	7696261	data	user	true	0	L	other:b3c556fa	37	arm64-v8a	user	/data/app/~~5Qo9XFALVQSQRpvrKh5bhg==/com.google.android.apps.tachyon-hAd5KNlsj5Ui4KOoVhVWiA==	362.0.924540007.duo.android_20260601.01_p0	214.0.572358477.duo.android_20231008.10_p1	
+com.google.android.apps.walletnfcrel		26.41.996630916	933966247	data	user	true	1	L	other:fe309ae3	37	arm64-v8a	user	/data/app/~~Q8OSgq-30SGxGR5HcU5GiQ==/com.google.android.apps.walletnfcrel-An3whoylsG6dnTaxvW6Esw==			
+com.google.android.apps.wellbeing	Digital Wellbeing	1.43.912539612 (839927)	839927	product	system	true	0		other:83fc239b	36	arm64-v8a	G17-Global	/product/priv-app/Wellbeing	1.43.912539612 (839927)	1.6.551070056 (529557)	
+com.google.android.as	Android System Intelligence	C.3.playstore.oemfull.919165660	16882448	product	system	true	0		other:72af31ec	37	arm64-v8a	G17-Global	/product/priv-app/AndroidSystemIntelligence_Features_arm64	C.3.playstore.oemfull.919165660		
+com.google.android.as.oss	Private Compute Services	1.0.release.915381564	136103	product	system	true	0		other:628715d4	36	arm64-v8a	G17-Global	/product/priv-app/PrivateComputeServices_arm64	1.0.release.915381564		
+com.google.android.calendar		2026.40.0-997536344-release	2018345959	data	user	true	0	L	other:98deb0ca	37	arm64-v8a	user	/data/app/~~lb54SOkOymEJx2yPcsrHIg==/com.google.android.calendar-fuR6i-ZTZpFaYX1PPFYveg==			
+com.google.android.cellbroadcastreceiver.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiCellBroadcastReceiverOverlay.apk	17	14	17
+com.google.android.cellbroadcastservice.overlay.miui		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiCellBroadcastServiceOverlay.apk	17	14	17
+com.google.android.configupdater	ConfigUpdater	36.0.5	41	product	system	true	0		other:e3ca78d8	36	null	G17-Global	/product/priv-app/ConfigUpdater	36.0.5	14-11162970	
+com.google.android.contactkeys		1.463.993399841	22425	data	user	true	0		other:82723080	37	arm64-v8a	user	/data/app/~~hnnIkbit8HLEVi1wmTAN4Q==/com.google.android.contactkeys-cnwwSn1pAbE30mVWfHMkuQ==			
+com.google.android.contacts	Contacts	4.80.26.919944602	3278203	product	system	true	3		other:b8874b4f	37	arm64-v8a	G17-Global	/product/app/GoogleContacts	4.80.26.919944602		
+com.google.android.dialer	Phone	225.0.924183519	19806558	product	system	true	0	L	other:788396df	36	arm64-v8a	G17-Global	/product/priv-app/GoogleDialer_arm64	225.0.924183519		
+com.google.android.documentsui	Files	17	371020480	system	system	true	0	L	other:8987d87a	37	null	G17-Global	/system/priv-app/DocumentsUIGoogle	17	15	17
+com.google.android.ext.shared	Android Shared Library	1	1	product	system	true	0		other:ade84e30	37	null	HOS4(port+G17)	/product/app/GoogleExtShared	1	1	1
+com.google.android.gm	Gmail	2026.10.12.1003320221.Release	66103597	data	user	true	0	L	other:98deb0ca	37	arm64-v8a	user	/data/app/~~9y2YB758O1nfAEaBfrmbLw==/com.google.android.gm-sJAXklcGmWkOk4uxW7g7lw==	2026.06.01.929418315.Release	2023.10.15.575329347.Release	
+com.google.android.gms	Google Play services	26.41.62 (260400-1002810655)	264162035	data	updated-sys	true	0		google	37	arm64-v8a	sys+data-update	/data/app/~~PesgLC6B1HNgeZoYbJPpgw==/com.google.android.gms-UqTu8BE4UuAWMIpW1CAoXg==		23.42.12 (190400-574052649)	26.15.32 (260400-897383663)
+com.google.android.gms.location.history	Google Location History	1.2	3	product	system	true	0		other:b93d50e	36	null	HOS4(port+G17)	/product/app/GoogleLocationHistory	1.2	1.2	1.2
+com.google.android.gms.supervision	System parental controls	1.0.881395152.phone	106630	product	system	true	2		other:a9aac2e3	36	arm64-v8a	G17-Global	/product/priv-app/FamilyLinkParentalControls	1.0.881395152.phone	0.1.453788429	
+com.google.android.googlequicksearchbox	Google	17.32.30.ve.arm64	301762114	product	system	true	0	L	other:98deb0ca	37	arm64-v8a	G17-Global	/product/priv-app/VelvetCtS	17.32.30.ve.arm64	15.46.36.ve.arm64	17.3.60.sa.arm64
+com.google.android.gsf	Google Services Framework	17-15555506	37	system_ext	system	true	0		other:98deb0ca	37	null	HOS4(port+G17)	/system_ext/priv-app/GoogleServicesFramework	17-15555506	14-10347885	17-15555506
+com.google.android.inputmethod.latin	Gboard	14.9.07.686502182-release-arm64-v8a	1497602182	product	system	true	0		other:d7f1f224	34	arm64-v8a	HOS4-portbase	/product/priv-app/LatinImeGoogle	17.4.3.909935335-release-arm64-v8a	13.6.11.574113912-release-arm64-v8a	 14.9.07.686502182-release-arm64-v8a
+com.google.android.keep		5.26.411.02.90	220679618	data	user	true	0	L	other:122f8784	37	arm64-v8a	user	/data/app/~~GEOsMhagXVU5v7NZU_WGCQ==/com.google.android.keep-M2JtwAkO_9mzFGG3fmG3pg==			
+com.google.android.marvin.talkback	Android Accessibility Suite	17.1.0.983118198	60236094	data	user	true	0		other:49ba355b	37	arm64-v8a	user	/data/app/~~K-pzGrYkpwtK2JcXFryeDw==/com.google.android.marvin.talkback-rZKOGVYsdQiksd80jqmwsw==	17.0.1.926549743	14.0.0.562957504	
+com.google.android.overlay.gmsconfig.asi		1.0	1	product	system	true	0		other:cadb5830	40	null	G17-Global	/product/overlay/GmsConfigOverlayASI_Features.apk	1.0		
+com.google.android.overlay.gmsconfig.common		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayCommon.apk	1.0	1.0	
+com.google.android.overlay.gmsconfig.comms		1.0	1	product	system	true	0		other:cadb5830	40	null	G17-Global	/product/overlay/GmsConfigOverlayComms.apk	1.0		
+com.google.android.overlay.gmsconfig.geotz		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayGeotz.apk	1.0	1.0	
+com.google.android.overlay.gmsconfig.gsa		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayGSA.apk	1.0	1.0	
+com.google.android.overlay.gmsconfig.personalsafety		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayPersonalSafety.apk	1.0	1.0	
+com.google.android.overlay.gmsconfig.photos		1.0	1	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayPhotos.apk	1.0		
+com.google.android.partnersetup	Google Partner Setup	100.874117303	14645	product	system	true	0		other:e3ca78d8	36	null	G17-Global	/product/priv-app/GooglePartnerSetup	100.874117303	100.448391512	
+com.google.android.printservice.recommendation	Print Service Recommendation Service	1.3.0	4	product	system	true	0		other:4afc5d58	37	null	HOS4(port+G17)	/product/app/GooglePrintRecommendationService	1.3.0	1.3.0	1.3.0
+com.google.android.projection.gearhead	Android Auto	1.2.566220-stub	12566220	product	system	true	0		other:d2a5217f	37	null	G17-Global	/product/priv-app/AndroidAutoStub	1.2.566220-stub	1.2.531830-stub	
+com.google.android.safetycore		1.0.989369273	28110	data	user	true	0		other:2f04ddf3	37	arm64-v8a	user	/data/app/~~fw7H67TYRLK6sPKlxgsfWA==/com.google.android.safetycore-es9K1opfcIXV-4ddiqy2UQ==			
+com.google.android.setupwizard	Android Setup	236.890345816	41223	system_ext	system	true	0		other:e3ca78d8	36	arm64-v8a	G17-Global	/system_ext/priv-app/SetupWizard	236.890345816	234.631301522	
+com.google.android.tts	Speech Recognition and Synthesis from Google	googletts.google-speech-apk_20251222.02_p0.847924619	210610884	product	system	true	0		other:98deb0ca	36	arm64-v8a	G17-Global	/product/app/SpeechServicesByGoogle	googletts.google-speech-apk_20251222.02_p0.847924619	googletts.google-speech-apk_20230807.02_p0.554630146	
+com.google.android.uwb.resources.overlay.common		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/UwbResCommonMainline_Sys.apk	1.0		1.0
+com.google.android.verifier	Android Developer Verifier	1.0.866414232	48099	product	system	true	0		other:95084a92	36	null	G17-Global	/product/priv-app/AndroidDeveloperVerifier	1.0.866414232		
+com.google.android.verifier.overlay		17	37	product	system	true	0		other:cadb5830	37	null	G17-Global	/product/overlay/GmsConfigOverlayADVerifier.apk	17		
+com.google.android.videos	Google TV	4.39.5193.999139630.2-release	439860671	data	user	true	0	L	other:fa41615	37	arm64-v8a	user	/data/app/~~xk64cS-6CN3FzfW2WP9utg==/com.google.android.videos-zo9ra_gelUQwDiAvBllZ5A==	4.39.4536.917279442.1-release	4.39.1249.576274790.2-release	
+com.google.android.webview	Android System WebView	149.0.7827.91	782709103	product	system	true	0		other:f4ae824f	36	arm64-v8a	HOS4(port+G17)	/product/app/WebViewGoogle64	149.0.7827.91	126.0.6478.71	149.0.7827.91
+com.google.android.wifi.resources.overlay.common		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/WifiResCommonMainline_Sys.apk	17	14	17
+com.google.android.wifi.resources.xiaomi		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/AospWifiResOverlay_mainline.apk	1.0		1.0
+com.google.android.youtube	YouTube	21.32.4	1561190505	data	user	true	1	L	other:fa41615	37	arm64-v8a	user	/data/app/~~Vk7iT-I32hoz6DHjlbTe8w==/com.google.android.youtube-lsROUvGjAbpwWyVay7cDAw==	21.03.36	18.42.36	
+com.google.ar.core		1.57.262640093	262640093	data	user	true	0		other:fd17c870	37	arm64-v8a	user	/data/app/~~LMj_kby2Ul02-Cn8Iog_bw==/com.google.ar.core-UD2ZIMo46357tXJeaqQARw==			
+com.google.ar.lens		1.18.250731009	250731009	data	user	true	0	L	other:5c181395	36	arm64-v8a	user	/data/app/~~zxcim2UzyCiDM4nJDfkfDw==/com.google.ar.lens-l_7kPhOeOSgfcBONrrnufQ==			
+com.imo.android.imoimhd		2026.08.1058	26081058	data	user	true	0	L	other:97d2affa	36	arm64-v8a	user	/data/app/~~KLVzOR2UH8NKJtpZoKHR0g==/com.imo.android.imoimhd-x-pw0k_XuD5uT3ZUPiD55A==			
+com.instagram.android		453.0.0.0.72	385906080	data	user	true	0	L	other:12f09072	37	arm64-v8a	user	/data/app/~~ZQsmYtyi8DkPVsUaruuDsw==/com.instagram.android-4fAybqA7VCdee_9d5VDi-Q==			
+com.intsig.camscanner		7.27.0.2609220000	72701	data	user	true	0	L	other:8e59ae73	36	arm64-v8a	user	/data/app/~~GDZ5aQ1X5gcets_LOPT0GA==/com.intsig.camscanner-ZwTeSUf-Y2uX-n7c3gqJ3Q==			
+com.jacksoftw.webcam		2.9.6	213	data	user	true	0	L	other:13fef619	37	arm64-v8a	user	/data/app/~~ao3PtGNLlziIJTXdKaIzYg==/com.jacksoftw.webcam-659fnIACcz82zXpRGO1V0g==			
+com.konasl.nagad		2.1.6.02	2106	data	user	true	0	L	other:bfd0b4c0	36	arm64-v8a	user	/data/app/~~7RByyDvaxLwSCYgT90w8TA==/com.konasl.nagad-_l0mz6sc_ljXSKMFnCv9dA==			
+com.lbe.security.miui	Permissions	1.9.2	192	system_ext	system	true	0		platform	37	null	HOS4-portbase	/system_ext/priv-app/AuthManager	4.0.0	1.8.4	1.9.2
+com.lemon.lvoverseas		19.8.0	19801600	data	user	true	0	L	other:46633d2f	36	arm64-v8a	user	/data/app/~~jpznQULx1ZvK9TObHd1Qig==/com.lemon.lvoverseas-5Y-enNEw20rn4Zx8EAi0SQ==			
+com.linkedin.android		4.1.1264	217200	data	user	true	0	L	other:a9a69e2a	37	arm64-v8a	user	/data/app/~~_VB78mubjtHFD_9Ipa9HxA==/com.linkedin.android-0Esi6Dpr3sz-_XPq4H2zgQ==			
+com.media365ltd.doctime		0.30.8	230003008	data	user	true	0	L	other:198cf03d	35	arm64-v8a	user	/data/app/~~CCu265okgtL0Z6405sM-nA==/com.media365ltd.doctime-WPtQEjc8Lz5gy3DqRvEsvw==			
+com.mi.android.globalFileexplorer	File Manager	V1-260253	20260253	product	system	true	0	L	platform	36	arm64-v8a	G17-Global	/product/app/MIUIFileExplorerGlobal	V1-260253	V1-230648	
+com.mi.appfinder	App finder	1.22.5	20260428	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/AppFinder	1.22.5		
+com.mi.global.shop	Mi Store	4.35.1	43501	data	user	true	2		other:726f3b5a	35	arm64-v8a	user	/data/app/MISTORE_OVERSEA	4.35.1		
+com.mi.globalbrowser	Mi Browser	14.65.0-gn	202609210	data	updated-sys	true	0	L	other:3331175b	36	arm64-v8a	sys+data-update	/data/app/~~jUUZrdUoB4FM_oXljXT7MA==/com.mi.globalbrowser-nqjoGRZtr7_C13Y0R-Ddxw==	14.54.0.8-gn		
+com.mi.globalminusscreen	App vault	13.33.52	20250368	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUIGlobalMinusScreenWidget	13.33.52		
+com.microsoft.appmanager	Link to Windows	1.26101.103.0-beta	8370410	data	user	true	0	L	other:267a8c2d	36	arm64-v8a	user	/data/app/~~hREzrVvel8bKvbwq9wElRA==/com.microsoft.appmanager-jLf75pmX3CQrjBpBbahzBQ==	1.26052.191.0		
+com.microsoft.emmx		155.0.4283.48	428304823	data	user	true	0	L	other:fc59e503	37	arm64-v8a	user	/data/app/~~LBQJIrKvNL2LZQIuzhoLqA==/com.microsoft.emmx-khU_4G5_jdfM7k_UWhTPTw==			
+com.microsoft.office.outlook		5.2641.1	72641116	data	user	true	0	L	other:b618143a	36	arm64-v8a	user	/data/app/~~n1uz-ykaWUo0i0cr6GNhqQ==/com.microsoft.office.outlook-suyIefZdf0Vqxp_he4JAxw==			
+com.microsoft.office.powerpoint		16.0.20527.20034	2005437911	data	user	true	0	L	other:2ce3ae7c	35	arm64-v8a	user	/data/app/~~z1Q99tSE11fnldmKcUV6cA==/com.microsoft.office.powerpoint-NBGz_dtydiU7CMRUujd2oA==			
+com.microsoft.skydrive		7.64.2	2027640302	data	user	true	0	L	other:cc45fdb9	36	arm64-v8a	user	/data/app/~~oWBwCRIPD6kvDdt37BooQg==/com.microsoft.skydrive-worWC2-rPf4EMCH3GZ9A6g==			
+com.milink.service	Interconnectivity	18.2.0.11.2608151637-global	1518020011	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MiLinkOS4Global	18.2.0.11.2608151637-global		18.1.1.18.2608172242
+com.mime.mimelive		2.2.12	43	data	user	true	0	L	other:df6c56f5	36	arm64-v8a	user	/data/app/~~uhPf1Hh7IA8kYowrFs_GTA==/com.mime.mimelive-bLHd4owvgyr4dhzDw5hHDg==			
+com.mime.mimesuperapp		1.0.26	36	data	user	true	0	L	other:7e14fcbd	36	arm64-v8a	user	/data/app/~~ncOfuovmUZfBrbpCkNUFGQ==/com.mime.mimesuperapp-tBLzqUW1XhvAQfhBOrCtqA==			
+com.miui.accessibility	Mi Ditto	V8.0.8.CN	426070910	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/priv-app/MIUIAccessibility	V0.9.3.GL		V8.0.8.CN
+com.miui.aod	Always-on display and Lock screen editor	DEV-2437.1.0.1-07272237	22437101	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/priv-app/MIUIAod	DEV-2446.3.0.1-09042206	RELEASE-2135.0.0.0-01201002	DEV-2437.1.0.1-07272237
+com.miui.audiomonitor	Voice Call Recorder	17.4.0.11	20260603	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/MiuiAudioMonitor	17.4.0.11	14	17.4.0.11
+com.miui.autoui.ext	AutoUIExtension	17	37	system_ext	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system_ext/app/AutoUIExtension	17		17
+com.miui.backup	Backup	7.2.1.0-OS4	7210	product	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/product/priv-app/Backup	7.2.1.0-OS4	6.5.3.0	7.2.1.0-OS4
+com.miui.bugreport	Feedback	18.0.3.7	18000307	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MiBugReportOS4Global	18.0.3.7	15.0.3.2	
+com.miui.calculator	Calculator	17.3.0	317000030	product	system	true	0	L	other:cadb5830	35	arm64-v8a	G17-Global	/product/app/MIUICalculatorGlobal	17.3.0	15.0.20	17.1.6
+com.miui.cit	CIT	1.9.8	198	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MiuiCit	1.9.8	0.5.3-SNAPSHOT	
+com.miui.cleaner	Cleaner	1057.1.260730.release	101057	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUICleanMasterGlobal-cleaner	1057.1.260730.release	674.1.240620.release	
+com.miui.cloudbackup	Cloud backup	1.12.1.6.51.5	1120106515	product	system	true	0		platform	36	null	G17-Global	/product/priv-app/MIUICloudBackupGlobal	1.12.1.6.51.5	1.12.1.6.15.7	1.12.1.6.51.7
+com.miui.cloudservice	Xiaomi Cloud	1.12.0.10.22	112001022	product	system	true	0		platform	36	null	G17-Global	/product/app/MIUICloudServiceGlobal	1.12.0.10.22	1.12.0.2.70	1.12.0.10.19
+com.miui.compass	Compass	17.1.3.0	1701030	product	system	true	0	L	platform	35	null	G17-Global	/product/app/MIUICompassGlobal	17.1.3.0	15.0.23.0	17.0.9.1
+com.miui.contentcatcher	Application Extension Service	5.1.4	520260730	product	system	true	0		platform	35	arm64-v8a	HOS4-portbase	/product/app/ContentCatcherOS4			5.1.4
+com.miui.contentextension	Taplus	5.1.0	50010	product	system	true	0		platform	35	arm64-v8a	HOS4-portbase	/product/priv-app/MIUIContentExtension			5.1.0
+com.miui.core	System SDK	1.20.2.6-14	1202614	product	system	true	0		other:cadb5830	35	arm64-v8a	HOS4-portbase	/product/app/XmsCore	1.20.2.5-13	1.20.2.5-4	1.20.2.6-14
+com.miui.core.internal.services		2.0	2	product	system	true	0		platform	31	null	HOS4(port+G17)	/product/overlay/MiuiServiceOverlay	2.0	2.0	2.0
+com.miui.cotaservice	CotaService	3.0.0.ms	30000	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/LatinCotaService	3.0.0.ms		
+com.miui.extraphoto	Bokeh	2.2.1.0.1	202010001	product	system	true	0		platform	35	arm64-v8a	HOS4(port+G17)	/product/priv-app/MiuiExtraPhoto	2.2.1.0.1-global	1.8.7.4.0-global	2.2.1.0.1
+com.miui.face	Biometric	1.44.0-A140036	1440000	product	system	true	0		platform	35	arm64-v8a	HOS4-portbase	/product/app/Biometric		1.37.4-A140026	1.44.0-A140036
+com.miui.gallery	Gallery	4.3.1.6-global	4030106	product	system	true	0	L	platform	35	arm64-v8a	HOS4-portbase	/product/priv-app/MIUIGallery	5.4.2.10-0907-global	3.7.2.5-global	4.3.1.6-global
+com.miui.global.packageinstaller	Package installer	3.9.4	394	data	updated-sys	true	0		platform	36	arm64-v8a	sys+data-update	/data/app/~~oC2HZ761_pkHX7FZ6N2jnw==/com.miui.global.packageinstaller-m4Vb5ovAO0hQBxTqIqb6yA==	3.8.2	3.1.8	
+com.miui.guardprovider	System security components	3.0.1-20260708.1	301	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MIUIGuardProviderGlobal	3.0.1-20260708.1	1.8.4-20231108.1	3.0.8-20260807.0
+com.miui.home	System launcher	RELEASE-8.01.02.7719-260904-09181616-R	801027719	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/priv-app/MiuiHome	RELEASE-8.01.02.7653-260904-09092231-R		RELEASE-8.01.02.7719-260904-09181616-R
+com.miui.mediaeditor	Gallery Editor	2.10.40.4.8-global	210994048	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MIMediaEditorGlobal	2.10.40.4.8-global	1.9.0.6-global	2.11.10.0.3
+com.miui.mediaviewer	Media viewer	v2104260902(MediaViewer-Global-ROM)	2104260902	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MediaViewerGlobal	v2104260902(MediaViewer-Global-ROM)		v2104260701(MediaViewer-ROM)
+com.miui.micloudsync	MiCloudSync	1.12.0.2.00	112000200	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/MIUIMiCloudSyncGlobal	1.12.0.2.00	1.12.0.0.40	1.12.0.2.00
+com.miui.miservice	Services & feedback	18.0.1.0.gb	18000100	product	system	true	0	L	platform	36	arm64-v8a	G17-Global	/product/priv-app/MIServiceGlobal	18.0.1.0.gb	15.0.0.5.gb	
+com.miui.mishare.connectivity	Xiaomi Share	5.3.4.global_20260826_1634	50304	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIShareGlobal	5.3.4.global_20260826_1634	2.23.0.global	
+com.miui.misightservice	System quality monitoring	1.0.0.8.20260826001	100000806	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/MiSightServiceGlobal	0.9.5		0.9.5
+com.miui.misound	Earphones	2.0	210924	product	system	true	0		platform	30	arm64-v8a	HOS4-portbase	/product/app/MiSound	16-4.0-4-20260903	2.0	2.0
+com.miui.miwallpaper	MiWallpaper	7.0.5-ALPHA-08102201	500705003	product	system	true	0		platform	37	arm64-v8a	HOS4-portbase	/product/app/MiWallpaper	7.0.7-ALPHA-08241616	3.5.4-ALPHA-03111515	7.0.5-ALPHA-08102201
+com.miui.miwallpaper.config.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MIWallpaperOverlay.apk	17	14	17
+com.miui.miwallpaper.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiPOCOLockscreenOverlay.apk	17	14	17
+com.miui.miwallpaper.overlay.customize		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiCustomizeLockscreenOverlay.apk	17	14	17
+com.miui.notes	Notes	3.0.7.1	3071	product	system	true	0	L	platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUINotes	3.2.2.7	7.8.6	3.0.7.1
+com.miui.notification	Notifications	4.0.2.50.0	40025000	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUINotificationCenter	4.1.2.84.0	1.1.6.10	4.0.2.50.0
+com.miui.phrase	Clipboard and frequent phrases	3.9.4	10094	product	system	true	0		platform	34	null	HOS4-portbase	/product/app/MIUIFrequentPhrase	5.7.2	3.5.4	3.9.4
+com.miui.player	Music	9.41.02.090411i	5551	product	system	true	0	L	platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUIMusicGlobal	9.41.02.090411i	9.03.1.070116i	
+com.miui.powerinsight	powerinsight	17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/PowerInsight	17		17
+com.miui.powerinsight.overlay		17	37	product	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/product/overlay/MiuiPowerInsightOverlay.apk	17		17
+com.miui.powerkeeper	Battery and performance	4.2.00	40200	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/app/PowerKeeper	4.2.00	4.2.00	4.2.00
+com.miui.qr		2026_06_11_18_47	20260611	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/DeviceInfoQR	2026_08_18_19_00	2024_12_25_16_22	2026_06_11_18_47
+com.miui.rom		1.11.0.0	1110000	system_ext	system	true	0		platform	37	null	other	/system_ext/framework/framework-ext-res/framework-ext-res.apk			
+com.miui.screenrecorder	Screen Recorder	4.16.2.2.1	41602021	product	system	true	0	L	platform	36	null	HOS4-portbase	/product/app/MIUIScreenRecorder	4.16.2.8.0	2.13.0.18.0	4.16.2.2.1
+com.miui.screenshot	Screenshot	RELEASE-1.6.3.35-08172037	10603035	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUIScreenshot	RELEASE-1.6.3.38-09051623	RELEASE-1.4.113-06271450	RELEASE-1.6.3.35-08172037
+com.miui.securityadd	System service plugin	9.12.11-260806.0.1	91211	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUISecurityAdd	9.12.12-260901.1.1	9.11.66-240312.1.1	9.12.11-260806.0.1
+com.miui.securitycenter	Security	13.5.8-260907.1.1	40001358	product	system	true	0	L	platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUISecurityCenterGlobal	13.5.8-260907.1.1	8.9.4-240516.1.1	13.6.3-260924.0.1
+com.miui.securitycore	System features plug-in	4.4.3.3-4-260814	40004433	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/SecurityCoreAdd	4.4.4.1-4-260902	1.4.2-15-240924	4.4.3.3-4-260814
+com.miui.server.litert		17	37	system_ext	system	true	0		other:cadb5830	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/MiLiteRTServiceStub	17		17
+com.miui.settings.rro.common.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsRroCommonOverlay.apk	1.0		1.0
+com.miui.settings.rro.device.config.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsRroDeviceConfigOverlay.apk	1.0	1.0	1.0
+com.miui.settings.rro.device.hide.statusbar.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsRroDeviceHideStatusBarOverlay.apk	1.0	1.0	1.0
+com.miui.settings.rro.device.systemui.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsRroDeviceSystemUiOverlay.apk	1.0		1.0
+com.miui.settings.rro.device.type.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/SettingsRroDeviceTypeOverlay.apk	1.0	1.0	1.0
+com.miui.system		1.15.0.0	1150000	system_ext	system	true	0		platform	36	null	HOS4(port+G17)	/system_ext/app/miuisystem	1.15.0.0	1.15.0.0	1.15.0.0
+com.miui.system.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiSystemSdkResOverlay.apk	17	14	17
+com.miui.systemui.carriers.overlay	MccMncOverlay	1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MccMncOverlay.apk	1.0	1.0	1.0
+com.miui.systemui.devices.overlay	DevicesOverlay	1.0	1	product	system	true	0		platform	34	null	HOS4(port+G17)	/product/overlay/DevicesOverlay.apk	1.0	1.0	1.0
+com.miui.systemui.overlay.devices.android	DevicesAndroidOverlay	1.0	1	product	system	true	0		platform	35	null	HOS4(port+G17)	/product/overlay/DevicesAndroidOverlay.apk	1.0	1.0	1.0
+com.miui.touchassistant	Quick ball	17.0.0.9.1	170000091	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUITouchAssistant	17.0.0.9.0	15.0.1.0.0	17.0.0.9.1
+com.miui.tsmclient	Smart cards	26.04.07.1.g	1892	product	system	true	0		platform	35	null	G17-Global	/product/app/MITSMClientGlobal	26.04.07.1.g		
+com.miui.videoplayer	Mi Video	2025060109(MiVideo-GROM)	2025060199	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUIVideoPlayer	2025060109(MiVideo-GROM)		
+com.miui.vsimcore	MConnService	1.1.3	113	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/app/VsimCore	1.1.3		1.1.3
+com.miui.wallpaper.overlay		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiPOCOWallpaperOverlay.apk	17	14	17
+com.miui.wallpaper.overlay.customize		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiCustomizeWallpaperOverlay.apk	17	14	17
+com.miui.weather2	Weather	G-18.0.0.24-R	180000240	data	user	true	0	L	other:cadb5830	36	arm64-v8a	user	/data/app/MIUIWeatherGlobal	G-18.0.0.24-R	G-15.0.8.1	17.0.3.15-Peace
+com.miui.wmsvc	WMService	3.0.0	3000001	product	system	true	0		platform	31	arm64-v8a	HOS4-portbase	/product/app/WMService			3.0.0
+com.miui.yellowpage	Yellow pages	24.0.260731	240260731	product	system	true	0		other:d7063f2a	36	arm64-v8a	G17-Global	/product/priv-app/MIUIYellowPageGlobal	24.0.260731		
+com.miuix.editor	floatingwindow	17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/app/MiuixEditor_global	17	14	17
+com.mm.android.DMSS		2.6.22	852	data	user	true	0	L	other:e8509b81	35	arm64-v8a	user	/data/app/~~o1hv5IUR_1MMV4EgtePCLg==/com.mm.android.DMSS-Pt7b-KRaTZSgNRXc5EFbkg==			
+com.mm.android.smartlifeiot		10.6.0	500584	data	user	true	0	L	other:fa847633	36	arm64-v8a	user	/data/app/~~Us-XrlA-fCVTFsN-Hsif5g==/com.mm.android.smartlifeiot-dNW8vGDRfdNBfa6jynDTLw==			
+com.mobiletools.systemhelper	SystemHelper	3.0.1-20260313	34	system	system	true	0		platform	34	arm64-v8a	HOS4-portbase	/system/priv-app/SystemHelper			3.0.1-20260313
+com.mtb.mobilebanking		5.7.2	572	data	user	true	0	L	other:7ad48df8	36	arm64-v8a	user	/data/app/~~Gb4lZ9puaN-qZIKk3DgrNA==/com.mtb.mobilebanking-luxdilVEajKJ2j-ms0fNqg==			
+com.mxtech.videoplayer.ad		3.3.1	2001003541	data	user	true	0	L	other:2b1fde39	36	arm64-v8a	user	/data/app/~~YU-BXipEVzK_qvLvM6gLaQ==/com.mxtech.videoplayer.ad-pmqLYTkDgjiD90iAWXB4dw==			
+com.myprog.netscan		2.7.8	131	data	user	true	0	L	other:6a64487e	35	arm64-v8a	user	/data/app/~~kDcNNrQYshWhIK72B7SDQA==/com.myprog.netscan-Z_XLqD9HEk9Qg6LoZe98Qw==			
+com.newcall.overlay.miui		1.0.1	34	product	system	true	0		platform	37	null	HOS4-portbase	/product/overlay/MiuiNewCallSdkResOverlay.apk			1.0.1
+com.nsave.app		2.3.3	433	data	user	true	0	L	other:168e05e8	36	arm64-v8a	user	/data/app/~~rmORvMWVdMK_QisQC7fDMg==/com.nsave.app-isg9HyCmwXpwhFb1WO0EDQ==			
+com.odoo.mobile		6.2.5	602005	data	user	true	0	L	other:9cb9e256	36	arm64-v8a	user	/data/app/~~g2Mk9IFDu9zTbLaSGQInFw==/com.odoo.mobile-crIHfSrIDL4CwHqnwq8C5w==			
+com.openai.chatgpt		1.2026.286	2628614	data	user	true	0	L	other:9d0cd2	37	arm64-v8a	user	/data/app/~~8Q-MbHApZyjoyYlhlISVqw==/com.openai.chatgpt-ixMsUWB1eX_JF38qd7RnZg==			
+com.opus_bd.lostandfound		3.0.114	3114	data	user	true	0	L	other:22a5c45a	36	arm64-v8a	user	/data/app/~~ErIYQ972WOKthBEz6XJWLQ==/com.opus_bd.lostandfound-YhyU5aLLo13FkYXYnHByyw==			
+com.pathao.user		12.0.6	548	data	user	true	0	L	other:aaeffa44	36	arm64-v8a	user	/data/app/~~ib_Bnmoe-g07JoiTGVaOGg==/com.pathao.user-HvvYcQrRzvXyStZxLvNuNA==			
+com.payoneer.android		8.7.5	10016592	data	user	true	0	L	other:e85e0f41	36	arm64-v8a	user	/data/app/~~tnpVCU_RtlNrwSGuCiUNgQ==/com.payoneer.android-PI0izvCLwYcG5vW7CtccpA==			
+com.portonics.mygp		6.0.0	545	data	user	true	0	L	other:ad966b5f	36	arm64-v8a	user	/data/app/~~8yEuBL3l_6VQMZ_rOBUNFw==/com.portonics.mygp-6K1lWA0msWtGDu94LqCKAA==			
+com.ppstrong.weeye		6.2.8	643	data	user	true	0	L	other:c6238810	36	arm64-v8a	user	/data/app/~~Lz7TLTfxRXxMw8xrKumAOg==/com.ppstrong.weeye-hZ6LAj_DwugDpfTbsVdbGw==			
+com.qcy.audio.google		1.2.1	121	data	user	true	0	L	other:e123bad8	36	arm64-v8a	user	/data/app/~~-fQEzQAIL9GQI9hGM_ecWg==/com.qcy.audio.google-6AqbKmVggeiM1tpDmXiFDw==			
+com.qti.dcf	dcf	1.0	1	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/dcf	1.0	1.0	1.0
+com.qti.ltebc	LTE Broadcast Manager	MSDC_LA_5.4.06.00.0	5406000	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/QAS_DVC_MSP	MSDC_LA_5.4.06.00.0		MSDC_LA_5.4.06.00.0
+com.qti.phone		17	37	system_ext	system	true	0		other:59d83b16	36	null	HOS4(port+G17)	/system_ext/priv-app/QtiTelephony	17	14	17
+com.qti.qcc	QCC	QCC17.0-20260406-af36bb2	6	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/QCC	QCC17.0-20260527-b0d04e1	QCC14.2-20230818-959503a	QCC17.0-20260406-af36bb2
+com.qti.qualcomm.deviceinfo	Device Info	17	37	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/app/DeviceInfo	17	14	17
+com.qti.service.colorservice		1.0	1	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/colorservice	1.0	1.0	1.0
+com.qualcomm.atfwd		17	37	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/app/atfwd	17	14	17
+com.qualcomm.location	EmergencyLocServices	17.2026.04.07	17001	system_ext	system	true	0		other:d7f1f224	36	null	HOS4(port+G17)	/system_ext/priv-app/com.qualcomm.location	17.2026.04.07	20240102	17.2026.04.07
+com.qualcomm.qcrilmsgtunnel		17	37	system_ext	system	true	0		platform	36	null	HOS4(port+G17)	/system_ext/priv-app/qcrilmsgtunnel	17	14	17
+com.qualcomm.qti.cne		1.0	1	vendor	system	true	0		platform	30	arm64-v8a	vendor(H1)	/vendor/app/CneApp			
+com.qualcomm.qti.confdialer	ConfDialer	17	37	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/ConferenceDialer	17	14	17
+com.qualcomm.qti.gpudrivers.kona.api30		0.1.0	4096	vendor	system	true	0		other:f669a162	30	null	vendor(H1)	/vendor/app/com.qualcomm.qti.gpudrivers.kona.api30			
+com.qualcomm.qti.ims		1.0	1	system_ext	system	true	0		platform	36	null	HOS4(port+G17)	/system_ext/app/imssettings	1.0		1.0
+com.qualcomm.qti.poweroffalarm	PowerOffAlarm	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/PowerOffAlarm	17	14	17
+com.qualcomm.qti.powersavemode	Usable Power Mode	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/PowerSaveMode	17	14	17
+com.qualcomm.qti.qcolor	QColor	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/app/QColor	17	14	17
+com.qualcomm.qti.remoteSimlockAuth		17	37	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/remoteSimLockAuthentication	17	14	17
+com.qualcomm.qti.ridemodeaudio	RideMode Recording list	17	37	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/RideModeAudio	17	14	17
+com.qualcomm.qti.server.qtiwifi	QtiWifiService	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/QtiWifiService	17	14	17
+com.qualcomm.qti.server.wigig.tethering.rro		1.0	1	system_ext	system	true	0		other:cadb5830	37	null	HOS4(port+G17)	/system_ext/app/WigigTetheringRRO	1.0		1.0
+com.qualcomm.qti.services.systemhelper	System Helper Service	1.1	1	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/com.qualcomm.qti.services.systemhelper	1.1	1.0	1.1
+com.qualcomm.qti.uim		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/app/remotesimlockservice	17	14	17
+com.qualcomm.qti.uimGbaApp		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/app/uimgbaservice	17	14	17
+com.qualcomm.qti.workloadclassifier		17	37	system_ext	system	true	0		platform	36	null	HOS4(port+G17)	/system_ext/app/workloadclassifier	17	14	17
+com.qualcomm.qti.xrcb	XRCB	17	37	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/xrcbservice	17	14	17
+com.qualcomm.qti.xrvd.service	XRVD	17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/xrvdservice	17	14	17
+com.qualcomm.qti.xrwifi	XR Wifi Service	0.1.3	4	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/xrwifiservice	0.1.3		0.1.3
+com.qualcomm.timeservice		13	30	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/TimeService			
+com.qualcomm.uimremoteclient		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/app/uimremoteclient	17	14	17
+com.qualcomm.uimremoteserver		17	37	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/app/uimremoteserver	17	14	17
+com.qualcomm.wfd.service	Wfd Service	2.0	2	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/WfdService	2.0	2.0	2.0
+com.redotpay		3.14.4	371	data	user	true	0	L	other:22356a6b	37	arm64-v8a	user	/data/app/~~QPBN9RcrP79Ib7LSD-JgDg==/com.redotpay-yC0PdxEHuL0KyqJDoKxQ9Q==			
+com.rongcard.eid	Eid-Service	13	30	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/EidService			
+com.shazam.android		16.64.0-261015	1606400	data	user	true	0	L	other:cf40187	36	arm64-v8a	user	/data/app/~~KIGpgNFat718CPIPHloG0A==/com.shazam.android-PNn2_pQK065B8vGT51HkZw==			
+com.spotify.music		9.1.92.3058	147346334	data	user	true	0	L	other:e47393c5	37	arm64-v8a	user	/data/app/~~wy5JgSl-ptUM59uCy3Tk_g==/com.spotify.music-8b-hdXcaXTqttk3MfNXxVA==			
+com.st.android.nfc_extensions_16	ST Extension Service	16	36	system_ext	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/system_ext/priv-app/StNfcExtensionService			16
+com.tencent.soter.soterserver	SoterService	13	30	vendor	system	true	0		other:cadb5830	32	null	vendor(H1)	/vendor/app/SoterService	2.0.260714		2.0.250811
+com.tiqiaa.remote		5.4.5	545	data	user	true	0	L	other:869b5633	37	arm64-v8a	user	/data/app/~~p0tJ5PEYCSrdWfPWYKvLqw==/com.tiqiaa.remote-mS4_Oat1kMOm4keIIL_7Jw==			
+com.transferwise.android		9.47.0	1735	data	user	true	0	L	other:d38133cc	36	arm64-v8a	user	/data/app/~~9h9QQu-Kmfi4AZdYhZ3RuQ==/com.transferwise.android-7xPx41_4bQAXBxxs9iYSsw==			
+com.transsion.magazineservice.xos		15.1.2.26115	1513019	data	user	true	0		other:cf77e704	36	null	user	/data/app/~~D1LkI1x-tiBBFTRca3229w==/com.transsion.magazineservice.xos-emuJXqtzifkHAl8uE9LE0Q==			
+com.truecaller		26.41.5	2641005	data	user	true	0	L	other:2927e164	37	arm64-v8a	user	/data/app/~~1_-tGooEd4VbRnw8ci3GIw==/com.truecaller-jDb8i3eAg7Zq3qBGRB86ZA==			
+com.tuya.smart		7.11.6	867	data	user	true	0	L	other:9ce62fd5	36	arm64-v8a	user	/data/app/~~IyjFymvjm5U70ghg7HB_ow==/com.tuya.smart-U8w4cGAJdhlvcb1rPxhH3g==			
+com.twitter.android		12.36.1-prod.01	312361001	data	user	true	0	L	other:aac7ece	36	arm64-v8a	user	/data/app/~~8J0nLViSdr2yj7s1poBdvw==/com.twitter.android-xyTK-WVC2gOVgvBQE6HePw==			
+com.ubercab		4.653.10004	319956	data	user	true	0	L	other:1b3f52f1	36	arm64-v8a	user	/data/app/~~jQ_k6j-Z5W9T9byr0fFA2w==/com.ubercab-pjxjCTjODy-ErYcoKCci-w==			
+com.ubnt.usurvey		2.13.0	213000001	data	user	true	0	L	other:f7b1b942	35	arm64-v8a	user	/data/app/~~uJvKqyWyCdRa_AocEnyL0A==/com.ubnt.usurvey-SIRepKH_Mm9P522u_GshEg==			
+com.upwork.android.apps.main		2.16.0	2024	data	user	true	0	L	other:a3b6174e	36	arm64-v8a	user	/data/app/~~XM9LJC4SktYL2IujBcXe8A==/com.upwork.android.apps.main-8Nyz2Gr1fb9Q6yllNNkQhg==			
+com.wakdev.wdnfc		9.8	154	data	user	true	0	L	other:5339d417	37	null	user	/data/app/~~WDA-2Q9b969hvBkYiv_v2Q==/com.wakdev.wdnfc-SLzqKtcGbUuKfFN6CbFfoQ==			
+com.wapi.wapicertmanage	WAPI certificate	17	37	system	system	true	0		platform	37	arm64-v8a	HOS4-portbase	/system/app/WapiCertManage			17
+com.whatsapp		2.26.41.77	264107700	data	user	true	0	L	other:d5acdcd2	36	arm64-v8a	user	/data/app/~~HZn6Q4FqVl-ijB38MY0-Cg==/com.whatsapp-DRXQ6LkAw4PuuzNQpQgw1Q==			
+com.whatsapp.w4b		2.26.41.77	264107714	data	user	true	0	L	other:d5acdcd2	36	arm64-v8a	user	/data/app/~~cnkVnZPXLQb91qAf3_HiSg==/com.whatsapp.w4b-VJOccVJgZxBeKO9zPeHMiw==			
+com.xiaomi.account	Xiaomi Account	R-26.09.01.00	326090100	product	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/product/app/MIUIXiaomiAccountGlobal	R-26.09.01.00	R-24.11.05.06	R-26.09.01.00
+com.xiaomi.aiasst.vision	Translate	5.12.10.60	540121060	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/AiAsstVision	5.12.10.60		
+com.xiaomi.aicr	Xiaomi HyperAI Engine	4.12.19	2030041219	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUIAICR	4.12.19	2.0	3.0.1-2025091215
+com.xiaomi.aiservice	AI Service	4.2.10_836e74c_260831_exp	402010	product	system	true	0		other:cadb5830	36	arm64-v8a	G17-Global	/product/priv-app/AIService	4.2.10_836e74c_260831_exp		
+com.xiaomi.aon		5.0.127	127	product	system	true	0		platform	35	arm64-v8a	HOS4-portbase	/product/app/MiAONServiceW	5.0.130		5.0.127
+com.xiaomi.apn		19.0.0	19	system_ext	system	true	0		platform	37	null	HOS4-portbase	/system_ext/priv-app/CarrierStudioApn	23.0.0		19.0.0
+com.xiaomi.app.toolbox	Toolbox	1.0	1	product	system	true	0		platform	35	null	HOS4-portbase	/product/priv-app/Toolbox			1.0
+com.xiaomi.barrage	Bullet screen notification	1.1.13	135	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MIUIBarrage	1.1.13	1.1.7	3.0.0.260609
+com.xiaomi.bluetooth	Bluetooth Extension	17	37	system_ext	system	true	0		other:18bad640	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/BluetoothExtension	17	14	17
+com.xiaomi.bluetooth.rro.device.config.overlay		1.0	1	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiuiBtRRODeviceConfigOverlay.apk	1.0	1.0	1.0
+com.xiaomi.calendar	Calendar	G-18.0.6	180006000	data	user	true	0	L	other:cadb5830	36	arm64-v8a	user	/data/app/MiuiCalendarGlobal	G-18.0.6		
+com.xiaomi.cameramind	Imaging enhancement engine	1.0.0	1	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/CameraMind	1.0.0		1.0.0
+com.xiaomi.carrierconfig		1.0.0	1	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/CarrierStudioCarrierConfig	1.0.0		1.0.0
+com.xiaomi.continuity.sdkapp		6.0.163.10.0706138	6000163	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/LyraSdkSpp	6.0.424.10.0731180		6.0.163.10.0706138
+com.xiaomi.digitalkey	digitalkey	13.0.47	247	system_ext	system	true	0		platform	37	arm64-v8a	HOS4-portbase	/system_ext/app/digitalkey			13.0.47
+com.xiaomi.discover	System apps updater	26.09.18.888	2000888	data	updated-sys	true	0		platform	36	arm64-v8a	sys+data-update	/data/app/~~CV3d3XJMtKiD9hkbUMi5Pw==/com.xiaomi.discover-28OSEImTD3N0iL55agQrZQ==	26.06.29.880	24.07.01.800	
+com.xiaomi.ecc		4.0.0	4	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/CarrierStudioEcc	4.0.0		4.0.0
+com.xiaomi.finddevice	Find device	20.0.8	2008	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MiuiFindDevice	20.0.8	20.0.0	
+com.xiaomi.glgm	Game Center	3.9.13	2026092000	data	updated-sys	true	0	L	platform	36	arm64-v8a	sys+data-update	/data/app/~~dg3kqIaLtVbzxoplGlYvgA==/com.xiaomi.glgm-LUV39z_bAJCqITGvDpS1tg==	3.6.7.27		
+com.xiaomi.gnss.polaris	Polaris	2026.05.20.0	17006	system_ext	system	true	0		platform	37	arm64-v8a	HOS4-portbase	/system_ext/priv-app/Polaris			2026.05.20.0
+com.xiaomi.hypercomm	HyperComm	15.0.0	38	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/HyperComm	15.0.0		15.0.0
+com.xiaomi.incallui	XiaomiPhone	1.0.0.8	3763	product	system	true	0		other:d7063f2a	36	arm64-v8a	G17-Global	/product/app/XiaomiInCallUI	1.0.0.8		
+com.xiaomi.joyose	Joyose	2.5.21	521	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/app/Joyose	2.5.21		2.5.20
+com.xiaomi.macro	MiMacro	2.2.14.S	31220534	product	system	true	0		platform	33	arm64-v8a	HOS4-portbase	/product/app/com.xiaomi.macro			2.2.14.S
+com.xiaomi.mi_connect_service	Mi Connect	6.0.163.10	60001631	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/mi_connect_service	6.0.424.10		6.0.163.10
+com.xiaomi.micloud.sdk		2.0.0.0	20	system_ext	system	true	0		platform	37	null	HOS4(port+G17)	/system_ext/priv-app/RtMiCloudSDK	2.0.0.0	2.0.0.0	2.0.0.0
+com.xiaomi.mipicks	GetApps	602-16.6.2.0	6021662	data	updated-sys	true	0	L	platform	36	arm64-v8a	sys+data-update	/data/app/~~2yM54c9rJjXPqMKMq9dbPg==/com.xiaomi.mipicks-RfF1bwSlC-_lsbYXzBjLPQ==	602-15.2.4.0		
+com.xiaomi.mirror	Device interconnectivity services	18.00.16-26.07.14	180016	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/priv-app/MirrorOS4	18.01.07-26.08.13.global		18.00.16-26.07.14
+com.xiaomi.misettings	Settings	16.4.260829.00	260829400	product	system	true	0		platform	36	arm64-v8a	G17-Global	/product/priv-app/MISettings	16.4.260829.00	2.9.9.92	16.4.260730.00
+com.xiaomi.mtb	Rueban(MTB)	17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/ModemTestBox	17	14	17
+com.xiaomi.phone	HyperPhone	15.0.2	38	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/HyperPhone	15.0.2		15.0.2
+com.xiaomi.phone.overlay		1.0.3	34	product	system	true	0		platform	37	null	HOS4(port+G17)	/product/overlay/MiTelephonyExtResOverlay.apk	1.0.3		1.0.3
+com.xiaomi.scanner	Scanner	13.2204.25	13220255	data	user	true	0	L	platform	34	arm64-v8a	user	/data/app/MiuiScanner	13.2204.25	13.2204.5	
+com.xiaomi.security.onetrack	SecurityOnetrackService	1.0.260407	260407	product	system	true	0		platform	35	arm64-v8a	HOS4-portbase	/product/app/SecurityOnetrackService			1.0.260407
+com.xiaomi.simactivate.service	Xiaomi SIM Activation Service	26.08.10-R	1260810	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/XiaomiSimActivateServiceGlobal	26.08.10-R	25.02.18-R	26.08.10-R
+com.xiaomi.smarthome	Xiaomi Home	11.1.838	11010838	data	user	true	0	L	other:ce02d4c8	35	arm64-v8a	user	/data/app/SmartHome	11.1.838		
+com.xiaomi.touchservice		17	37	system_ext	system	true	0		platform	36	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/TouchService	17		17
+com.xiaomi.trustservice	MiTrustService	1.2.260807	12260807	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MiTrustService	1.2.260825	1.2.240115	1.2.260807
+com.xiaomi.ugd	GPU Driver Updater	1.2.3	123	product	system	true	0		platform	36	null	HOS4(port+G17)	/product/app/com.xiaomi.ugd	1.2.3	1.2.0	1.2.3
+com.xiaomi.xmsf	Xiaomi service framework	6.2.67-G	60002067	data	updated-sys	true	0		platform	36	null	sys+data-update	/data/app/~~fuYhfypnDXw2sZkIvVYO6g==/com.xiaomi.xmsf-sALwuiQ1SmT97l5YXiHxkw==	6.2.42-G	6.1.61-G	
+com.xiaomi.xmsfkeeper	Xiaomi Service Framework Keeper	1.0.8	10008	product	system	true	0		platform	36	null	G17-Global	/product/app/XMSFKeeperAll	1.0.8	1.0.5	1.0.6
+com.yc.imikilife		1.0.12	53	data	user	true	0	L	other:13bcff3f	36	arm64-v8a	user	/data/app/~~6kIpPQ9SCDfJEPGeG9-PWw==/com.yc.imikilife-fVCF6DEWtCvPeGjhECfr8A==			
+com.zhiliaoapp.musically		47.4.3	2024704030	data	user	true	0	L	other:89d01293	36	arm64-v8a	user	/data/app/~~o0UjZK_q04ZuJGtTK-Q_Jg==/com.zhiliaoapp.musically-GebcfLaCmD3x05Y8WiPeOA==			
+miui.systemui.plugin	System UI Plug-in	18.3.2.34.0	183023400	product	system	true	0		platform	36	arm64-v8a	HOS4-portbase	/product/app/MIUISystemUIPlugin	18.3.2.22.0	15.0.2.93.0	18.3.2.34.0
+net.omobio.robisc		10.15.2	10000098	data	user	true	0	L	other:ab55312b	36	arm64-v8a	user	/data/app/~~w50umVIRM7gqUfHdv9rnnQ==/net.omobio.robisc-x1epdVWQvOE8aYkKSLJQcQ==			
+org.codeaurora.ims		1.0	1	system_ext	system	true	0		platform	35	arm64-v8a	HOS4(port+G17)	/system_ext/priv-app/ims	1.0	1.0	1.0
+org.codeaurora.snapcam	LMC8.4	8.4.300.414775575.18	64764891	data	user	true	0	L	other:d7f1f224	29	arm64-v8a	user	/data/app/~~Dm8kCJLgm9RXB6wUX4kKng==/org.codeaurora.snapcam-5kTKPGtCAoKMCNz6yORQTw==			
+org.ifaa.aidl.manager	IfaaService	13	30	vendor	system	true	0		other:cadb5830	32	null	vendor(H1)	/vendor/app/IFAAService	1.0.260714		1.0.250812
+org.kde.kdeconnect_tp		1.36.0	13600	data	user	true	0	L	other:7d670386	37	arm64-v8a	user	/data/app/~~VGIBqd0L2ymAwOfyqp6Jpw==/org.kde.kdeconnect_tp-lJNpxXGcTtZIJa6o_6kioQ==			
+org.mipay.android.manager	MipayService	13	30	vendor	system	true	0		other:cadb5830	32	null	vendor(H1)	/vendor/app/MipayService			
+org.telegram.messenger		13.1.1	72371	data	user	true	0	L	other:9744bfe6	36	arm64-v8a	user	/data/app/~~NxffIg-pXbWW0yX-CRimGQ==/org.telegram.messenger-n-Ux3xPUZEJ0kEot2GaiRg==			
+org.zwanoo.android.speedtest		7.1.2	264218	data	user	true	0	L	other:4f705a43	36	arm64-v8a	user	/data/app/~~P-pQpVwVJQ2h-HKG8G9FUw==/org.zwanoo.android.speedtest-NCajnyEgPF9E74rlfFVnDg==			
+teletalk.teletalkcustomerapp		2026.08.19.62	62	data	user	true	0	L	other:6fa38669	36	null	user	/data/app/~~vA41rroHSQwp2TJtq2DuVw==/teletalk.teletalkcustomerapp-3M-4TmsuCkwGPoBMZf7dNA==			
+theoaktroop.appoframadan		6.3.3	253	data	user	true	0	L	other:a77bc509	36	arm64-v8a	user	/data/app/~~12BWej8eeNfJn-mu-3T9Tw==/theoaktroop.appoframadan-F4_MjJmQQ02pgY6WCFSDBA==			
+us.zoom.videomeetings		7.2.1.43844	6702010	data	user	true	0	L	other:d43453fb	36	arm64-v8a	user	/data/app/~~zQdUN2q3r1QwVqOcdXKpaw==/us.zoom.videomeetings-9wIWYOLPb0NzdQ8-J7LfMg==			
+vendor.qti.bluetooth.xpan		1.0.1	1	system_ext	system	true	0		platform	36	null	HOS4(port+G17)	/system_ext/priv-app/Xpan	1.0.1		1.0.1
+vendor.qti.data.ntnsatapp		17.1	17	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/NtnSatApp	17.1		17.1
+vendor.qti.hardware.cacert.server		1.0	1	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/CACertService			
+vendor.qti.imsdatachannel		17	37	system_ext	system	true	0		platform	37	arm64-v8a	HOS4(port+G17)	/system_ext/app/ImsDataChannelService	17	14	17
+vendor.qti.iwlan		1.0	1	vendor	system	true	0		platform	30	null	vendor(H1)	/vendor/app/IWlanService			

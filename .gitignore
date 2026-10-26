@@ -1,0 +1,95 @@
+# Allowlist: only our own text work goes to git. ROM images, APKs, Xiaomi/Qualcomm binaries,
+# photos, screenshots and downloaded ROMs stay local (size, licensing, privacy).
+*
+!*/
+!*.py
+!*.sh
+!*.md
+!*.tsv
+!*.remove
+!*.prop
+!*.rc
+!*.xml
+!*.conf
+!*.ini
+!*.json
+!*.meta
+!*.txt
+!.gitignore
+!tools/erofs_patch/*.patch
+!tools/erofs_patch/*.h
+!secure_build/payload_tele/product/etc/selinux/*
+!release/*.bat
+!docs/screenshots/*.jpg
+
+# downloaded / extracted ROMs and build outputs
+stock_rom_*/
+rom_extract/
+secure_build/out*/
+secure_build/parked/
+secure_build/rollback*/
+secure_build/staging_vendor_official/
+secure_build/work/
+secure_build/payload/
+# proprietary payload binaries are excluded by extension; also skip large vendor blobs folders
+secure_build/payload_global/**/lib/
+secure_build/payload_global/**/lib64/
+secure_build/payload_global/**/firmware/
+secure_build/payload_global/product/etc/security/adb_keys
+# APK / photo / test folders
+gcam_download/*.apk
+gcam_latest/
+hyperai_apks/
+apk_certs/
+camera_test1/
+camera_test2/
+photo_check/
+screens/
+root_download/
+global_fix_apks/
+finddevice_module/
+stock_test/
+audit/port/
+audit/global17/*.img
+audit/**/scratch/
+audit/agents/
+# huge dumps
+super_strings.txt
+# local tool binaries (rebuildable)
+tools/erofs/
+tools/e2fs/
+tools/secilc/
+tools/setools/
+tools/__pycache__/
+.claude/
+
+# release staging (images + copies of release/ scripts)
+secure_build/release_pkg/
+
+# kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
+secure_build/payload_g64/
+secure_build/build_g64.sh
+secure_build/flash_global.sh
+secure_build/flash_secure.sh
+secure_build/post_setup_restore.sh
+secure_build/meta/
+port_fixes/battery_fixes/
+port_fixes/brightness_overlay/
+port_fixes/camera_tune_add/
+port_fixes/global_test/
+port_fixes/hw_optimize/
+port_fixes/hyperai_k90/
+port_fixes/module.prop
+port_fixes/secure_sepolicy/
+/apk_analysis.tsv
+/camera_dump.txt
+/camera_dump_after.txt
+/flash_rom.sh
+/install_core.sh
+/install_global_apks.sh
+/install_selected.sh
+/packages_full.txt
+bd_region_module/
+camera_tune/
+gcam_download/
+tools/dashboard.sh

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for vendor-specific config values. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+    <carrier_config include="default_v2.9.1.xml"/>
+    <!--中国移动-->
+    <carrier_config mcc="460" mnc="00,02,04,07,08,13">
+        <boolean name="config_miui_sms_optimization" value="true" />
+    </carrier_config>
+    <!--中国联通-->
+    <carrier_config mcc="460" mnc="01,06,09">
+        <boolean name="config_miui_sms_optimization" value="true" />
+    </carrier_config>
+    <!--美国 AT&T-->
+    <carrier_config mcc="310" mnc="30,70,90,150,170,280,380,410,560,650,680,980">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 Sprint-->
+    <carrier_config mcc="310" mnc="120">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 T-Mobile-->
+    <carrier_config mcc="310" mnc="160,200,210,220,230,240,250,260,270,310,490,660,800">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 Verizon-->
+    <carrier_config mcc="310" mnc="590,890">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 AT&T-->
+    <carrier_config mcc="311" mnc="180">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 Verizon-->
+    <carrier_config mcc="311" mnc="480,270">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 Sprint-->
+    <carrier_config mcc="312" mnc="190,530">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 Verizon-->
+    <carrier_config mcc="312" mnc="770">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--美国 AT&T-->
+    <carrier_config mcc="901" mnc="18">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--菲律宾 PH DITO-->
+    <carrier_config mcc="515" mnc="66">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--泰国 TH AIS-->
+    <carrier_config mcc="520" mnc="03">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--新加坡 SG Singtel-->
+    <carrier_config mcc="525" mnc="01">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+        <boolean name="config_wfc_disable_sa" value="true" />
+    </carrier_config>
+    <!--新加坡 M1-->
+    <carrier_config mcc="525" mnc="03">
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+    </carrier_config>
+    <!--新加坡 SG Starhub-->
+    <carrier_config mcc="525" mnc="05">
+        <boolean name="carrier_disable_sa_mode_bool" value="false" />
+        <boolean name="carrier_sa_mode_available_bool" value="true" />
+    </carrier_config>
+</carrier_config_list>

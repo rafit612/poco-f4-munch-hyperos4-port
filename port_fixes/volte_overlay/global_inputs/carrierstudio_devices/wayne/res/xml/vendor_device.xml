@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for vendor-specific config values. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+<!--中国电信-->
+<carrier_config mcc="460" mnc="03,05,11,12">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--中国联通-->
+<carrier_config mcc="460" mnc="01,06,09">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--香港CSL-->
+<carrier_config mcc="454" mnc="00,02,16,18,19">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--香港CM HK-->
+<carrier_config mcc="454" mnc="12,13">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--香港Smartone-->
+<carrier_config mcc="454" mnc="06,15,17">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--台湾 远传-->
+<carrier_config mcc="466" mnc="01">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--台湾 T Star-->
+<carrier_config mcc="466" mnc="89">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--台湾 中华电信-->
+<carrier_config mcc="466" mnc="92">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--印尼 Smartfren-->
+<carrier_config mcc="510" mnc="09">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="510" mnc="28">
+<boolean name="carrier_volte_available_bool" value="true" />
+<boolean name="carrier_vt_available_bool" value="true" />
+</carrier_config>
+<!--新加坡 Singtel-->
+<carrier_config mcc="525" mnc="01">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--新加坡 Starhub-->
+<carrier_config mcc="525" mnc="05">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--新加坡 M1-->
+<carrier_config mcc="525" mnc="03">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+<!--俄罗斯 megafon-->
+<carrier_config mcc="250" mnc="02">
+<boolean name="carrier_volte_available_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

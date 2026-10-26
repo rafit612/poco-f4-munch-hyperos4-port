@@ -1,0 +1,17 @@
+erofs-utils 1.9.1: apply noinline_data to symlinks too (built by hand: lib/*.c + mkfs/main.c, lz4/lz4hc, no selinux/zstd).
+Why: kernel 4.19 refuses inline symlinks whose target crosses a 4 KB block (erofs_fill_symlink), and
+stock 1.9.1 places them across blocks. Check an image with tools/erofs_symlink_check.py.
+
+--- a/lib/inode.c	2026-10-25 14:29:05.724475929 +0600
++++ b/lib/inode.c	2026-10-25 14:29:05.728730479 +0600
+@@ -995,7 +995,9 @@
+ 		goto noinline;
+ 
+ 	if (!is_inode_layout_compression(inode)) {
+-		if (params->no_datainline && S_ISREG(inode->i_mode)) {
++		if (params->no_datainline &&
++		    (S_ISREG(inode->i_mode) || S_ISLNK(inode->i_mode))) {
++			/* munch: old kernels (4.19) refuse inline symlinks crossing a block */
+ 			inode->datalayout = EROFS_INODE_FLAT_PLAIN;
+ 			goto noinline;
+ 		}

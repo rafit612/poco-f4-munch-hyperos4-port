@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- This is a place for vendor-specific config values. The format and
+     filtering rules are the same as those in carrier_config*.xml files. This
+     file is read after any specific config file from the assets folder, so it
+     must use explicit filters for MCC ad MNC if that is desired. -->
+<carrier_config_list>
+    <carrier_config include="globalization.xml"/>
+    <carrier_config include="default_v2.9.4.xml"/>
+    <!--satellite-->
+    <carrier_config>
+        <double name="config_pitch_antenna_compensation" value="20"/>
+        <double name="config_azimuth_antenna_compensation" value="80"/>
+        <double name="config_pitch_antenna_compensation_fold" value="0"/>
+        <double name="config_azimuth_antenna_compensation_fold" value="0"/>
+    </carrier_config>
+    <carrier_config mcc="454" mnc="00,06,19,31">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <carrier_config mcc="455" mnc="07">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <!-- 老挝 ETL-->
+    <carrier_config mcc="457" mnc="02">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <carrier_config mcc="460" mnc="01,09">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <carrier_config mcc="460" mnc="11,59">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <carrier_config mcc="460" mnc="04" imsi="^46004496.*">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <!-- 全球（国际码号）中国电信-->
+    <carrier_config mcc="901" mnc="09">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <!-- 移动支持卫星 -->
+    <carrier_config mcc="460" mnc="00,02,04,07,08,13">
+        <boolean name="config_satellite_support" value="true" />
+    </carrier_config>
+    <!--加拿大 CA Bell-->
+    <carrier_config mcc="302" mnc="610,651,690">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+    <!--加拿大 CA Telus-->
+    <carrier_config mcc="302" mnc="220,221,361,653,657">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+    <!--加拿大 CA Rogers-->
+    <carrier_config mcc="302" mnc="370,720,721,820">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+    <!--香港 CT-->
+    <carrier_config mcc="454" mnc="31">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="460">
+        <boolean name="config_miui_sms_sa_fallback_optimization" value="true" />
+    </carrier_config>
+    <!--中国移动-->
+    <carrier_config mcc="460" mnc="00,02,04,07,08,13">
+        <boolean name="config_miui_sms_optimization" value="true" />
+    </carrier_config>
+    <!--中国联通-->
+    <carrier_config mcc="460" mnc="01,06,09">
+        <boolean name="config_miui_sms_optimization" value="true" />
+    </carrier_config>
+    <!--中国电信-->
+    <carrier_config mcc="460" mnc="03,05,11,12">
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool_develop" value="true" />
+        <boolean name="carrier_hide_wfc_bool" value="true" />
+        <boolean name="config_wfc_disable_sa" value="true" />
+    </carrier_config>
+</carrier_config_list>

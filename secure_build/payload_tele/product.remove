@@ -1,0 +1,5 @@
+# China carrier device self-registration app (com.mobiletools.systemhelper, Baidu location SDK):
+# reports IMEI / IMSI / cell IDs / location to China Unicom and Baidu servers. Not in any Global or official munch ROM.
+pangu/system/priv-app/SystemHelper
+# Public release: no pre-authorised ADB key (the build PC's key was in the port image); USB debugging asks every user
+etc/security/adb_keys

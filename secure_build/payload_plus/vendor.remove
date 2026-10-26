@@ -1,0 +1,3 @@
+# porter's reboot kill-switch (zyn_f4 check) and its broken self-recursive boot-marking script
+bin/show_alert_native
+bin/bootctl

@@ -1,0 +1,4 @@
+source rohmanurip/kernel_munch branch base e852ebd6278227d221f88d95acc73673dd576857
+KernelSU rsuntk/KernelSU 1aafcfa03efa931a28b493714c4f53d295cf1e24
+clang Android (13174946, +pgo, +bolt, +lto, +mlgo, based on r547379) clang version 20.0.0 (https://android.googlesource.com/toolchain/llvm-project b718bcaf8c198c82f3021447d943401e3ab5bd54)
+patches: 0002-zram-writeback-4.19-block-api.patch 0003-sched-trace-cass-pelt.patch 0004-kgsl-drop-stubbed-trace.patch 0005-ufs-trace-needs-cmd-logging.patch 0006-nf_log-missing-semicolon.patch 0007-mm-debug-config-prefix.patch 0008-ramoops-keep-oops-records.patch 

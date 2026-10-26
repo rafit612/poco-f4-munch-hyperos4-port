@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- hw_optimize: no hypervisor (/dev/kvm, gunyah) on SM8250 kernel 4.19 -->
+<permissions/>

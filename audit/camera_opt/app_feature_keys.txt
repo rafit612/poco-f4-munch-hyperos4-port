@@ -1,0 +1,12 @@
+enable_film_picture
+enable_float
+enable_keyguard
+enable_push
+enable_upload_as
+support_alpha
+support_bluetooth_mic
+support_processing_media_api
+support_quickview_operation
+support_scale
+support_security_line_toast
+support_wifi_digest

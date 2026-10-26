@@ -1,0 +1,27 @@
+date	2026-10-26 14:47:37
+build	OS4.0.0.24.XPKCNXM
+kernel	4.19.325-zyndong-perf-g7e817c4ca270
+uptime_s	515
+boot_enable_screen_ms	59516
+idle_cpu_pct	18.0
+top_idle_procs	hwservicemanager:58.6 system_server:31.0 9:10.3 com.ppstrong.weeye:10.3 
+mem_available_mb	2104
+swap_used_mb	0
+cached_apps	39
+battery_temp_c	33.3
+thermal_status	0
+launch_settings_ms	637
+launch_camera_ms	674
+launch_gallery_ms	967
+launch_contacts_ms	322
+launch_messages_ms	966
+launch_clock_ms	519
+launch_calculator_ms	491
+launch_files_ms	157
+launch_chrome_ms	627
+jank_systemui_pct	2.81
+jank_settings_pct	0.15
+frame_p90_settings_ms	16
+ping_ms	46.726
+battery_drain_ma	0.0
+charging	1

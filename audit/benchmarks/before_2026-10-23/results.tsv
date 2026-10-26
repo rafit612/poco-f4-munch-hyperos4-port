@@ -1,0 +1,27 @@
+date	2026-10-23 23:20:58
+build	OS4.0.0.24.XPKCNXM
+kernel	4.19.325-zyndong-perf-g7e817c4ca270
+uptime_s	5800
+boot_enable_screen_ms	71914
+idle_cpu_pct	18.3
+top_idle_procs	hwservicemanager:44.8 system_server:37.9 9:13.7 android.hardware.biometrics.fingerprint@2.1-service:10.3 
+mem_available_mb	1212
+swap_used_mb	0
+cached_apps	120
+battery_temp_c	50
+thermal_status	0
+launch_settings_ms	825
+launch_camera_ms	510
+launch_gallery_ms	701
+launch_contacts_ms	339
+launch_messages_ms	
+launch_clock_ms	1315
+launch_calculator_ms	541
+launch_files_ms	1123
+launch_chrome_ms	
+jank_systemui_pct	0.00
+jank_launcher_pct	
+frame_p90_launcher_ms	
+ping_ms	38.282
+battery_current_ma	na
+charging	0

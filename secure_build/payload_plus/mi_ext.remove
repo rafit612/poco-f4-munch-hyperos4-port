@@ -1,0 +1,29 @@
+# Xiaomi 17 (pudding) hardware / SM8850-only / not applicable to munch
+product/etc/cust_features/device_features.xml
+product/ai
+product/overlay/AICoreConfigOverlay-release-unsigned.apk
+product/app/MiAONServiceW
+# no eSIM on munch
+product/priv-app/EuiccGoogle_arm64
+product/priv-app/MIUIEsimLPA
+product/overlay/EsimTransferOverlay.apk
+product/etc/permissions/EuiccGoogle-permissions.xml
+product/etc/default-permissions/EuiccGoogle-default-permissions-google.xml
+product/etc/sysconfig/android.hardware.telephony.euicc.xml
+product/etc/sysconfig/android.hardware.telephony.euicc.mep.xml
+# Latin-American carrier (Claro/Tigo) apps
+product/priv-app/com.dti.aone
+product/priv-app/com.dti.millicom
+product/etc/default-permissions/default-permissions-com.dti.aone.xml
+product/etc/permissions/permission_ignite_com.dti.aone.xml
+product/etc/permissions/permission_ignite_com.dti.millicom.xml
+product/etc/sysconfig/whitelist_com.dti.aone.xml
+product/etc/sysconfig/whitelist_com.dti.millicom.xml
+# user keeps the port's (China) MIUI Phone/Contacts + its matching InCallUI; Global copies would shadow them
+product/priv-app/MIUIContactsTGlobal
+product/priv-app/InCallUI
+# user: remove Google Messages + Google Contacts (Xiaomi Messages/Contacts are default)
+product/priv-app/Messages_arm64_xxhdpi
+product/app/GoogleContacts
+# user: Xiaomi Phone is default, remove Google Phone
+product/priv-app/GoogleDialer_arm64

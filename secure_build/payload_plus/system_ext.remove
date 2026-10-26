@@ -1,0 +1,14 @@
+# Region: exactly like Global - no China/fallback cust variants; the user picks the region in setup
+etc/cust/cn
+etc/cust/cn_chinamobile
+etc/cust/cn_chinamobile-cta
+etc/cust/cn_chinatelecom
+etc/cust/cn_chinaunicom
+etc/cust/cn_cta
+# dead: porter-added RCS shim whose 5 required uce libraries do not exist
+app/uceShimService
+etc/sysconfig/whitelist_com.qualcomm.qti.uceShimService.xml
+# China MiSight replaced by product/app/MiSightServiceGlobal
+app/MiSightService
+# China car digital key
+app/digitalkey

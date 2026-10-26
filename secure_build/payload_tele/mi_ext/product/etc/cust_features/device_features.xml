@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- POCO F4 (munch): device layer of HyperOSCustFeatureResolve, as on Xiaomi Global ROMs.
+     When this file exists, a key that is not configured resolves to null instead of an empty list,
+     so TeleService shows its built-in Preferred network type page (5G/4G/3G/2G) for every operator. -->
+<cust_features>
+    <cust_feature>
+        <bool name="munch_device_features">true</bool>
+    </cust_feature>
+</cust_features>

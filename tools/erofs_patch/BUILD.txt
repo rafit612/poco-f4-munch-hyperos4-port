@@ -1,0 +1,11 @@
+Builds tools/erofs/munch/mkfs.erofs (erofs-utils 1.9.1 + symlink_noinline.patch), without autotools:
+  source: https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.9.1.tar.gz
+  lz4:    liblz4-dev .deb unpacked locally (apt-get download liblz4-dev; dpkg-deb -x) -> $R
+  cd erofs-utils-1.9.1 && patch -p1 < symlink_noinline.patch && cp config.h .
+  for each of lib/{config,io,cache,super,inode,xattr,exclude,namei,data,compress,compressor,zmap,decompress,
+    compress_hints,hashmap,sha256,blobchunk,dir,fragments,dedupe,uuid_unparse,uuid,tar,block_list,rebuild,diskbuf,
+    bitops,dedupe_ext,vmdk,metabox,global,importer,base64,compressor_lz4,compressor_lz4hc,kite_deflate,
+    compressor_deflate,xxhash,workqueue,gzran,remotes/oci,remotes/docker_config}.c and mkfs/main.c:
+    gcc -O2 -DHAVE_CONFIG_H -include config.h -I. -Iinclude -Ilib -I$R/usr/include -c <src>
+  gcc -o mkfs.erofs *.o $R/usr/lib/x86_64-linux-gnu/liblz4.a -lpthread
+  mkfs.erofs --version  ->  1.9.1-munch-symlink-noinline

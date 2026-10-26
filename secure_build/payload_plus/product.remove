@@ -1,0 +1,69 @@
+# Kaorios attestation spoofer, xiaomi.eu ext (WRITE_SECURE_SETTINGS), ViPER4Android (ads SDKs), Via browser
+priv-app/KaoriosToolbox
+etc/permissions/com.kousei.kaorios.xml
+priv-app/ext
+etc/permissions/privapp_whitelist_eu.xiaomi.ext.xml
+app/Viperfx
+data-app/Via
+# Full Global: China apps replaced by Global versions or not used outside China, porter hooks (MiCTS, back-gesture), InstallerX
+app/CTS
+app/Gemini
+app/Gesture
+app/HybridPlatform
+app/HyperGalleryPluginCn
+app/MiType
+app/MIUICleanMaster
+app/MIUICloudService
+app/MIUIFileExplorer
+app/MIUIThemeStore
+app/MIUIWeather
+app/OTrPBroker
+data-app/wps-lite
+overlay/GmsCnConfigOverlay.apk
+overlay/GmsCnTelecommOverlay.apk
+overlay/VoiceAssistAndroidOverlay
+priv-app/AutoRegistration
+priv-app/MetokNLP
+priv-app/MIUICloudBackup
+# priv-app/MIUIGallery kept: Global Gallery 5.4 needs Rust runtime 3.9, port has 3.1 (crashes)
+priv-app/MIUIPersonalAssistantPhoneOS4
+priv-app/MIUIQuickSearchBox
+priv-app/MIUISecurityCenter
+priv-app/MIUIThemeManager
+priv-app/PackageInstaller
+priv-app/RegService
+priv-app/MIUIAICR/lib
+# China builds replaced by the Global ones (same version string, different build)
+app/MIUIXiaomiAccount
+app/MIUIMiCloudSync
+app/XiaomiSimActivateServiceCn
+# dead China app: requires miui-uninstall-empty.jar which does not exist
+app/MIUISecurityManager
+# China copies that shadowed the Global versions (Global copies in mi_ext or added in payload)
+priv-app/MiuiMms
+app/MIUICompass
+app/MIUISoundRecorderTargetSdk30
+app/MIUIDeskClock
+app/MIUICalculator
+app/MIUICalendar
+app/MiLinkOS4Cn
+app/MIUIGuardProvider
+app/MiMediaEditor
+app/MediaViewer
+app/MiuixEditor
+priv-app/MiuiBarrage
+app/split-XiaomiServiceFrameworkCN
+app/XMSFKeeperCN
+overlay/GmsCnSettingsOverlay.apk
+overlay/GmsCnSystemUIOverlay.apk
+overlay/MiuiThemeManagerCnOverlay.apk
+priv-app/Velvet
+# China-only apps (app audit 2026-10-23)
+priv-app/MIUIContentExtension
+app/ContentCatcherOS4
+app/com.xiaomi.macro
+priv-app/Toolbox
+app/SecurityOnetrackService
+overlay/MiuiNewCallSdkResOverlay.apk
+# ConfigUpdater crashes on every boot (DownloadProvider column mismatch)
+priv-app/ConfigUpdater
