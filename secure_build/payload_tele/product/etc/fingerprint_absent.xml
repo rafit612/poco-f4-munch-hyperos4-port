@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- POCO F4: bind-mounted over /vendor/etc/permissions/android.hardware.fingerprint.xml when the fingerprint HAL
+     found no sensor (persist.vendor.sys.fp.vendor=none). See /product/etc/init/munch_fp_absent.rc. -->
+<permissions />

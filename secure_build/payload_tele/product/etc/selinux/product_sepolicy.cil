@@ -553,3 +553,5 @@
 (allow munch_gcam_configs media_rw_data_file (dir (read write create getattr setattr open add_name search)))
 (allow munch_gcam_configs media_rw_data_file (file (read write create getattr setattr open)))
 (allow munch_gcam_configs self (capability (chown fowner dac_override dac_read_search)))
+; POCO F4 munch: init bind-mounts an empty feature file over the fingerprint feature when no sensor is present
+(allow init vendor_configs_file (file (mounton)))

@@ -229,3 +229,16 @@ Checked and left out on purpose (2026-10-25, details in `audit/research/firmware
 - Checked on the phone: camera/microphone privacy indicator (green dot) works; "Hey Google" cannot work (above).
 - Repo made public with one clean commit: shelved builds, personal scripts and old KernelSU modules removed; scripts
   use repo-relative paths; README / INSTALL / docs/BUILD.md / AGENTS.md written for public use.
+
+## 10. Phones without a fingerprint sensor (2026-10-27)
+The developer's phone now has a plain power key (no sensor). The fingerprint HAL records
+`persist.vendor.sys.fp.vendor=none`, but system_server's biometric scheduler kept restarting its "update active user"
+job (`HidlToAidlSensorAdapter$2.getStartUserClient` → `FingerprintUpdateActiveUserClient` → "HIDL daemon is null")
+about 1000 times a second: hwservicemanager 21 %, system_server 22 %, HAL 4 %, 674 000 jobs per boot. Xiaomi's
+`isFpHardwareDetected()` knows (it reads the same property) but the scheduler never asks it.
+Fix (product, automatic for everyone): `etc/init/munch_fp_absent.rc` bind-mounts `etc/fingerprint_absent.xml` (empty
+feature list) over `/vendor/etc/permissions/android.hardware.fingerprint.xml` only when the property is `none`, so the
+fingerprint service is not started; one SELinux rule `(allow init vendor_configs_file (file (mounton)))` + new policy
+hash, checked offline (`secilc -N`, neverallow count unchanged at 321). Phones with a sensor report fpc/goodix and are
+unchanged; a sensor fitted later returns after one reboot. Result: whole-phone idle CPU 18 % → 4 %, loop gone,
+boot 40.9 s.

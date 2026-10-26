@@ -161,7 +161,7 @@ runs 64-bit apps with 32-bit support (`arm64-v8a, armeabi-v7a`), which also keep
 | VoLTE on some operators (e.g. Banglalink) | Network-side handset whitelist, not the ROM |
 | Gemini Nano, UWB, satellite, LE Audio, Leica | Not supported by the SD870 hardware or certification |
 | Security patch of vendor/firmware 2025-04-01 | munch is end of life; no newer official firmware exists |
-| Fingerprint, 120 Hz | Official HAL/display config are included; the developer's phone has a damaged fingerprint flex and a 60 Hz replacement panel, so these two were not tested on original parts |
+| Fingerprint, 120 Hz | Official HAL/display config are included; the developer's phone has a plain replacement power key and a 60 Hz replacement panel, so these two were not tested on original parts. Phones without a working sensor hide the fingerprint feature automatically (no wasted CPU) |
 
 Sensors: 69 sensors are present (LSM6DSO accelerometer/gyroscope, AK0991x magnetometer, TCS3701 light/colour,
 Elliptic ultrasonic proximity, Semtech SAR, Xiaomi virtual sensors). GPS, NFC, IR blaster, vibration with amplitude

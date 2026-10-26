@@ -1,0 +1,8 @@
+# POCO F4: phones without a working fingerprint sensor (e.g. a plain replacement power key).
+# The fingerprint HAL records persist.vendor.sys.fp.vendor=none when it finds neither FPC nor Goodix. Without this,
+# system_server retries the missing sensor about 1000 times a second (~1 CPU core, log spam).
+# Hide the fingerprint feature for that boot so the fingerprint service is not started. Persistent properties load
+# before zygote, so this takes effect on the next boot after the HAL first writes "none"; when a sensor is fitted
+# again the HAL writes fpc/goodix and the feature returns on the following boot.
+on property:persist.vendor.sys.fp.vendor=none
+    mount none /product/etc/fingerprint_absent.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
