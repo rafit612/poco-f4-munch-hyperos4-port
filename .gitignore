@@ -65,6 +65,7 @@ tools/__pycache__/
 
 # release staging (images + copies of release/ scripts)
 secure_build/release_pkg/
+secure_build/release_out/
 
 # kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
 secure_build/payload_g64/
