@@ -15,6 +15,7 @@ setup, working telephony for every operator, and a long list of fixes, security 
 | | |
 |---|---|
 | **Download** | [Releases](../../releases) — `POCO-F4-munch-HyperOS4-A17-T20261026` (zip in parts) |
+| **New to custom ROMs?** | [Beginner's guide](docs/BEGINNER_GUIDE.md) — every step explained, with a Bangla summary |
 | **Install guide** | [INSTALL.md](INSTALL.md) (Linux, Windows, macOS; commands included) |
 | **Every change and why** | [ROM_HISTORY.md](ROM_HISTORY.md) |
 | **Build it yourself / patch it** | [docs/BUILD.md](docs/BUILD.md) · rules for AI coding agents: [AGENTS.md](AGENTS.md) |

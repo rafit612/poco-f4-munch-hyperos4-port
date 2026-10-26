@@ -1,5 +1,7 @@
 # Install guide — HyperOS 4 / Android 17 for POCO F4 5G (munch)
 
+First time installing a ROM? Use the **[beginner's guide](docs/BEGINNER_GUIDE.md)** — it explains every step and every word.
+
 > [!CAUTION]
 > **POCO F4 5G (`munch`) only. At your own risk.** A clean install erases everything on the phone. Unlocking the
 > bootloader also erases everything and may affect warranty. Back up first. Never relock the bootloader while this
@@ -65,7 +67,8 @@ and `SHA256SUMS.txt` into one folder.
 1. Power the phone off, then hold **Power + Volume down** until **FASTBOOT** appears. Connect USB.
 2. Check the connection: `fastboot devices` (shows a serial number) and `fastboot getvar product` (must say `munch`).
 3. Run the script from the ROM folder:
-   - Linux / macOS: `bash flash_linux.sh`
+   - Linux / macOS: `bash flash_linux.sh` (macOS with release T20261026: `brew install coreutils`, then
+     `PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" bash flash_linux.sh`)
    - Windows: double-click `flash_windows.bat` (or run it in `cmd`)
 4. Type `YES` when asked. The script then:
    - refuses to continue unless the phone reports `munch` and the bootloader is unlocked;

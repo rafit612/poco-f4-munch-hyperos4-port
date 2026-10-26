@@ -15,7 +15,8 @@ run() { echo "> $FB $*"; "$FB" "$@" || die "fastboot $* failed"; }
 
 command -v "$FB" >/dev/null || die "fastboot not found (install Android platform-tools)"
 echo "Checking image files (SHA256SUMS) ..."
-(cd images && sha256sum -c --quiet ../SHA256SUMS) || die "checksum mismatch: download again"
+if command -v sha256sum >/dev/null; then SUM="sha256sum"; else SUM="shasum -a 256"; fi   # macOS has shasum
+(cd images && $SUM -c --quiet ../SHA256SUMS) || die "checksum mismatch: download again"
 echo "Waiting for the phone in fastboot mode ..."
 "$FB" wait-for-device 2>/dev/null || true
 product=$("$FB" getvar product 2>&1 | awk '/^product:/{print $2}')
