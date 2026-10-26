@@ -44,9 +44,39 @@ Available partitions: system, system_ext, product, mi_ext. **Not available: vend
 Conclusion: the app-level Xiaomi 17 camera is already ported; the work is mainly **tuning** (Part C) on the official
 OV64B40/OV8856/IMX596/GC02M1 HAL tuning.
 
+### Step 2: munch vendor camera stack (official HyperOS 1.0.9, in `out_tele/vendor.img`) [Observed]
+- Sensor modules + tuning (`lib64/camera/`): OV64B40 (Sunny) and IMX582 (OFilm) main, OV8856 UW, IMX596 front (Sunny/OFilm),
+  GC02M1 macro (Sunny/OFilm): `com.qti.sensormodule.*.bin`, `com.qti.tuned.*.bin`, EEPROM and actuator drivers.
+- CamX/CHI core + 57 CHI nodes: Xiaomi HDR, `superlowlightraw` (night), `mibokeh`/`realtimebokeh`/`videobokeh`, `mifilter`,
+  `misegment`, skin beautifier, AIIE, ASD, EIS v2/v3, LDC, remosaic (64 MP), SW registration, watermark, Vidhance AEC.
+- Algorithms: ArcSoft (super-night RAW, HDR, MF super-resolution, portrait lighting, beauty), Xiaomi `libmialgo*` (AI vision,
+  image enhance capture/preview, colour keeping, video enhance/segmentation), Almalence SR, Vidhance, SNPE + HTA runtime,
+  `.dlc` models in `etc/camera/` (segmentation, front/back bokeh, AI enhance, tracking), 20+ filter LUTs.
+
+### App profile [Observed]
+The camera app contains only `com.mi.device.Marble`, `Marble_pre`, `Marble_pro` (POCO F5); no munch profile. Readable values:
+`b1="2:9248x6944"` (OV64B40 full size), `p="true:4000x3000"`, `z8="ultra_wide:wide"`, `n="mfnr:1"`, DDF family 8781825.
+126 obfuscated getters; meanings are confirmed only through behaviour on the phone.
+
+### Step 3: classification [Inferred]
+| Class | Items |
+|---|---|
+| Portable / native to SD870 | the whole official munch vendor stack above (made for this SoC) |
+| Needs newer NPU/ISP | Xiaomi 17 vendor algorithms (`libmialgo*` for SM8850, QNN models, MIVI) — not present, not portable |
+| Tied to source HAL | `quickcamera` service; laser AF (`sensor type 6`) and OIS link expected by the Marble profile |
+
+### Problems seen in the log (2026-10-27, photo mode) [Observed]
+| Log | Meaning | Priority |
+|---|---|---|
+| `FindBestSensorMode() FORCING SENSOR MODE 1 (4624x3472)` ×71, `MODE 0 (3264x2448)` ×20 | requested sizes do not match sensor mode tables; CamX overrides | check (quality/speed) |
+| `DoStreamNegotiation() Could not extract snapshot stream (type -1)` | a feature graph got no snapshot stream | high |
+| `WaitOfflineFeatureCompleted failed` | offline HDR/night processing not finished | high |
+| `OIS_MANAGER: Sensor type does not match` | OIS data link mismatch | check (stabilisation) |
+| `Laser … Sensor 6 probe failed` | profile expects laser AF; munch has none | low, disable cleanly |
+| `GetInterpZoneDataGeneric did not find an appropriate zone` | AEC tuning table edge case | L4 tuning |
+| beauty items FAIL, cloud-config JSON missing, shutter sound 6 missing | app-side mismatches | L1 |
+
 ### Next steps
-- Step 2: inventory munch's vendor camera HAL (CamX/CHI), sensor modules, tuning binaries, `device_features`, `dumpsys media.camera`.
-- Step 3: classify every library (portable CPU/GPU, needs newer NPU/ISP, tied to source HAL).
 - Step 4: module with app-config fixes, correct camera-ID mapping, unsupported features disabled cleanly.
 
 ## Part C — Tuning (main focus)
