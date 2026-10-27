@@ -1,0 +1,6 @@
+id=camera_tune
+name=Camera tuning (official POCO F4 values)
+version=A1
+versionCode=1
+author=local
+description=Test A: official camera auto-recovery (10) and camera hardware sync (on). Remove to undo.

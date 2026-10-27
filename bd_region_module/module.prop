@@ -1,0 +1,6 @@
+id=bd_region
+name=Bangladesh Region
+version=v1
+versionCode=1
+author=local
+description=Bangladesh region (ro.miui.region=BD, locale en-BD) + marks each boot successful so A/B retries never run out

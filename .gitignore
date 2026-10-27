@@ -29,15 +29,4 @@
 
 # kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
 
-/apk_analysis.tsv
-/camera_dump.txt
-/camera_dump_after.txt
-/flash_rom.sh
-/install_core.sh
-/install_global_apks.sh
-/install_selected.sh
-/packages_full.txt
-bd_region_module/
-camera_tune/
-gcam_download/
-tools/dashboard.sh
+
