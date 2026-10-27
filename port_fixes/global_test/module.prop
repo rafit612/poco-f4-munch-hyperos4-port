@@ -1,0 +1,6 @@
+id=global_test
+name=TEST: Global region (BD)
+version=1
+versionCode=1
+author=local
+description=Prototype of the Full Global switch before it goes into the images. Disable + reboot to undo.

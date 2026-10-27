@@ -1,0 +1,6 @@
+id=port_fixes
+name=Port service fixes (SELinux)
+version=v1
+versionCode=1
+author=local
+description=Narrow SELinux rules so perf boost, sleep/battery, Xiaomi charging and network-optimisation services work on this port. Remove to undo.

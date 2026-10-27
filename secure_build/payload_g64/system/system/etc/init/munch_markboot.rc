@@ -1,0 +1,11 @@
+# Mark the A/B slot as successfully booted. The port never does this (its vendor script could not
+# run), so after 7 boots the bootloader stops at fastboot. The binary is AOSP bootctl, labelled
+# update_verifier_exec so init runs it in the update_verifier domain, which may call the boot HAL.
+service munch_markboot /system/bin/munch_bootctl mark-boot-successful
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start munch_markboot

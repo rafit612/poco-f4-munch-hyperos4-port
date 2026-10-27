@@ -1,0 +1,129 @@
+# Copyright 2016, Tresys Technology, LLC
+# Copyright 2018, Chris PeBenito <pebenito@ieee.org>
+#
+# SPDX-License-Identifier: LGPL-2.1-only
+#
+from collections import defaultdict
+from dataclasses import dataclass
+
+from ..policyrep import MLSRule, MLSRuletype, Range
+
+from .descriptors import DiffResultDescriptor
+from .difference import Difference, DifferenceResult, Wrapper
+from .mls import RangeWrapper
+from .objclass import class_wrapper_factory
+from .types import type_or_attr_wrapper_factory
+from .typing import RuleList
+
+
+@dataclass(frozen=True, order=True)
+class ModifiedMLSRule(DifferenceResult):
+
+    """Difference details for a modified MLS rule."""
+
+    rule: MLSRule
+    added_default: Range
+    removed_default: Range
+
+
+class MLSRulesDifference(Difference):
+
+    """Determine the difference in MLS rules between two policies."""
+
+    def diff_range_transitions(self) -> None:
+        """Generate the difference in range_transition rules between the policies."""
+
+        self.log.info(
+            f"Generating range_transition differences from {self.left_policy} "
+            f"to {self.right_policy}")
+
+        if self._left_mls_rules is None or self._right_mls_rules is None:
+            self._create_mls_rule_lists()
+
+        assert self._left_mls_rules is not None, "Left MLS rules did not load, this is a bug."
+        assert self._right_mls_rules is not None, "Right MLS rules did not load, this is a bug."
+
+        added, removed, matched = self._set_diff(
+            self._expand_generator(self._left_mls_rules[MLSRuletype.range_transition],
+                                   MLSRuleWrapper),
+            self._expand_generator(self._right_mls_rules[MLSRuletype.range_transition],
+                                   MLSRuleWrapper))
+
+        modified = list[ModifiedMLSRule]()
+
+        for left_rule, right_rule in matched:
+            # Criteria for modified rules
+            # 1. change to default range
+            if RangeWrapper(left_rule.default) != RangeWrapper(right_rule.default):
+                modified.append(ModifiedMLSRule(left_rule,
+                                                right_rule.default,
+                                                left_rule.default))
+
+        self.added_range_transitions = added
+        self.removed_range_transitions = removed
+        self.modified_range_transitions = modified
+
+    added_range_transitions = DiffResultDescriptor[MLSRule](diff_range_transitions)
+    removed_range_transitions = DiffResultDescriptor[MLSRule](diff_range_transitions)
+    modified_range_transitions = DiffResultDescriptor[ModifiedMLSRule](diff_range_transitions)
+
+    # Lists of rules for each policy
+    _left_mls_rules: RuleList[MLSRuletype, MLSRule] = None
+    _right_mls_rules: RuleList[MLSRuletype, MLSRule] = None
+
+    #
+    # Internal functions
+    #
+    def _create_mls_rule_lists(self) -> None:
+        """Create rule lists for both policies."""
+        # do not expand yet, to keep memory
+        # use down as long as possible
+        self._left_mls_rules = defaultdict(list)
+        self.log.debug(f"Building MLS rule lists from {self.left_policy}")
+        for rule in self.left_policy.mlsrules():
+            self._left_mls_rules[rule.ruletype].append(rule)
+
+        self._right_mls_rules = defaultdict(list)
+        self.log.debug(f"Building MLS rule lists from {self.right_policy}")
+        for rule in self.right_policy.mlsrules():
+            self._right_mls_rules[rule.ruletype].append(rule)
+
+        self.log.debug("Completed building MLS rule lists.")
+
+    def _reset_diff(self) -> None:
+        """Reset diff results on policy changes."""
+        self.log.debug("Resetting MLS rule differences")
+        del self.added_range_transitions
+        del self.removed_range_transitions
+        del self.modified_range_transitions
+
+        # Sets of rules for each policy
+        self._left_mls_rules = None
+        self._right_mls_rules = None
+
+
+class MLSRuleWrapper(Wrapper[MLSRule]):
+
+    """Wrap MLS rules to allow set operations."""
+
+    __slots__ = ("ruletype", "source", "target", "tclass")
+
+    def __init__(self, rule: MLSRule) -> None:
+        self.origin = rule
+        self.source = type_or_attr_wrapper_factory(rule.source)
+        self.target = type_or_attr_wrapper_factory(rule.target)
+        self.tclass = class_wrapper_factory(rule.tclass)
+        self.key = hash(rule)
+
+    def __hash__(self):
+        return self.key
+
+    def __lt__(self, other):
+        return self.key < other.key
+
+    def __eq__(self, other):
+        # because MLSRuleDifference groups rules by ruletype,
+        # the ruletype always matches.
+        return self.source == other.source and \
+            self.target == other.target and \
+            self.tclass == other.tclass

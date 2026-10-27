@@ -1,0 +1,7 @@
+# Call app: the port's MIUIContactsT / InCallUI are kept (product); remove Global copies (mi_ext overlays /product)
+product/priv-app/MIUIContactsTGlobal
+product/priv-app/InCallUI
+# Google call/message/contacts apps (user removed them before; no duplicates of the Call and Messages apps)
+product/priv-app/GoogleDialer_arm64
+product/priv-app/Messages_arm64_xxhdpi
+product/app/GoogleContacts

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 64-bit Global build for POCO F4 (munch): privileged permissions not covered by Global's allowlists
+     (ro.control_privapp_permissions=enforce stops boot on any gap). Checked with tools/privcheck.py. -->
+<permissions>
+    <privapp-permissions package="com.android.camera">
+        <permission name="android.permission.START_TASKS_FROM_RECENTS"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.android.providers.calendar">
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    </privapp-permissions>
+</permissions>

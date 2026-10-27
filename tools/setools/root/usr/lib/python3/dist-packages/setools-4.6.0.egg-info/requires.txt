@@ -1,0 +1,10 @@
+
+[analysis]
+networkx>=2.6
+pygraphviz
+
+[gui]
+PyQt6
+
+[test]
+tox

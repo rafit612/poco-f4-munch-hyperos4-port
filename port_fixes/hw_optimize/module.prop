@@ -1,0 +1,6 @@
+id=hw_optimize
+name=POCO F4 hardware optimize
+version=5
+versionCode=5
+author=local
+description=Official munch thermal, Doze on, official SF timers, templimit on, keep-alive list removed, dead fingerprint hidden, munch.xml real hardware values + official features, virtualization flag hidden, official Wi-Fi cfg, pasr on, full power-key boost, traced/atfwd crash loops fixed, official audio surround/gapless.

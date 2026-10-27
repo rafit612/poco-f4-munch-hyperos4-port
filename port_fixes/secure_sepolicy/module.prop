@@ -1,0 +1,6 @@
+id=secure_sepolicy
+name=Port SELinux fixes (Find Device, perf HAL, micharge, dpmtcm)
+version=1
+versionCode=1
+author=local
+description=Allow rules the port needs; the image CIL used wrong unversioned names (platform_app instead of the port domain platform_app_36).

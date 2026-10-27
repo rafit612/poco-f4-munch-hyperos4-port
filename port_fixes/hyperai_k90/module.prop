@@ -1,0 +1,6 @@
+id=hyperai_k90
+name=HyperOS 4 AI apps (from official K90 OS4.0.0.34)
+version=1
+versionCode=1
+author=local
+description=AIService, AiasstVision, MIUIAiasstService, XiaoAi voice assistant, XiaoaiRecommendation, ThirdAppAssistant, Game AI - Xiaomi-signed, copied unmodified from official HyperOS 4.

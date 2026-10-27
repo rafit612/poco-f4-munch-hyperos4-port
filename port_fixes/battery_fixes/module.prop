@@ -1,0 +1,6 @@
+id=battery_fixes
+name=Battery fixes (Android app freezer instead of broken Millet)
+version=1
+versionCode=1
+author=local
+description=Stops millet_monitor (needs the Xiaomi millet netlink driver, missing in this kernel: errno 93, restart loop every 9 s). Android cached-apps freezer is enabled instead.

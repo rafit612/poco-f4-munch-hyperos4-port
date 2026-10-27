@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- POCO F4 Global64 build: last carrier-config layer read by com.xiaomi.carrierconfig
+     (/mi_ext/product/etc/vendor_device.xml). Turns on Xiaomi's VoLTE globalization for every
+     operator, so TeleService (MiuiImsGlobalizationManager) offers the VoLTE switch (off by default)
+     wherever Xiaomi has no operator rule. Xiaomi's VoLTE blacklist from assets/default/globalization.xml
+     is repeated below, so those operators stay without VoLTE. Operator-specific Xiaomi rules are unchanged. -->
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="carrier_volte_globalization_enable" value="true" />
+    </carrier_config>
+
+    <!--荷兰 NL/Tele2 New/Tele2 Old DT -->
+    <carrier_config mcc="204" mnc="20,02">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--法国 EIT MVNO-->
+    <carrier_config mcc="208" mnc="26" gid1="4E524A31">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--西班牙 ES amena-->
+    <carrier_config mcc="214" mnc="03" spn="amena">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--西班牙 ES JAZZTEL-->
+    <carrier_config mcc="214" mnc="21" spn="JAZZTEL">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--俄罗斯 RU SberMobile-->
+    <carrier_config mcc="250" mnc="50">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--缅甸 MM MPT-->
+    <carrier_config mcc="414" mnc="01">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--澳门 SMARTONE-->
+    <carrier_config mcc="455" mnc="00,06">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+
+    <!--英国 UK Vodafone-->
+    <carrier_config mcc="999" mnc="29">
+        <boolean name="carrier_volte_unavailable_bool" value="true" />
+    </carrier_config>
+</carrier_config_list>

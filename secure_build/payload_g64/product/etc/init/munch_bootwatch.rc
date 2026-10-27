@@ -1,0 +1,8 @@
+# Boot watchdog: restarts the phone if the boot gets stuck (see /product/bin/munch_bootwatch).
+# Started from the first line of "on early-init" in /system/etc/init/hw/init.rc.
+service munch_bootwatch /product/bin/munch_bootwatch
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:munch_bootwatch:s0

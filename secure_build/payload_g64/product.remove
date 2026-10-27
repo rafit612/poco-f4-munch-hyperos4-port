@@ -1,0 +1,6 @@
+# Xiaomi 17 (pudding) hardware files; munch equivalents are in the payload
+etc/device_features/pudding.xml
+etc/displayconfig/display_id_4630946555188253075.xml
+etc/displayconfig/display_id_4630947230830355603.xml
+# ST NFC chip app (com.android.nfc); munch uses NQNfcNci in system_ext
+pangu/system/app/Nfc_st

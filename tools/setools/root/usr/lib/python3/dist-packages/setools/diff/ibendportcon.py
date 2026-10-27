@@ -1,0 +1,83 @@
+# Copyright 2018, Chris PeBenito <pebenito@ieee.org>
+#
+# SPDX-License-Identifier: LGPL-2.1-only
+#
+from dataclasses import dataclass
+
+from ..policyrep import Context, Ibendportcon
+
+from .context import ContextWrapper
+from .descriptors import DiffResultDescriptor
+from .difference import Difference, DifferenceResult, Wrapper
+
+
+@dataclass(frozen=True, order=True)
+class ModifiedIbendportcon(DifferenceResult):
+
+    """Difference details for a modified ibendportcon."""
+
+    rule: Ibendportcon
+    added_context: Context
+    removed_context: Context
+
+
+class IbendportconsDifference(Difference):
+
+    """Determine the difference in ibendportcons between two policies."""
+
+    def diff_ibendportcons(self) -> None:
+        """Generate the difference in ibendportcons between the policies."""
+
+        self.log.info(
+            f"Generating ibendportcon differences from {self.left_policy} to {self.right_policy}")
+
+        self.added_ibendportcons, self.removed_ibendportcons, matched_ibendportcons = \
+            self._set_diff(
+                (IbendportconWrapper(n) for n in self.left_policy.ibendportcons()),
+                (IbendportconWrapper(n) for n in self.right_policy.ibendportcons()))
+
+        self.modified_ibendportcons = list[ModifiedIbendportcon]()
+
+        for left_ibep, right_ibep in matched_ibendportcons:
+            # Criteria for modified ibendportcons
+            # 1. change to context
+            if ContextWrapper(left_ibep.context) != ContextWrapper(right_ibep.context):
+                self.modified_ibendportcons.append(
+                    ModifiedIbendportcon(left_ibep, right_ibep.context, left_ibep.context))
+
+    added_ibendportcons = DiffResultDescriptor[Ibendportcon](diff_ibendportcons)
+    removed_ibendportcons = DiffResultDescriptor[Ibendportcon](diff_ibendportcons)
+    modified_ibendportcons = DiffResultDescriptor[ModifiedIbendportcon](diff_ibendportcons)
+
+    #
+    # Internal functions
+    #
+    def _reset_diff(self) -> None:
+        """Reset diff results on policy changes."""
+        self.log.debug("Resetting ibendportcon differences")
+        del self.added_ibendportcons
+        del self.removed_ibendportcons
+        del self.modified_ibendportcons
+
+
+class IbendportconWrapper(Wrapper[Ibendportcon]):
+
+    """Wrap ibendportcon statements for diff purposes."""
+
+    __slots__ = ("name", "port")
+
+    def __init__(self, ocon: Ibendportcon) -> None:
+        self.origin = ocon
+        self.name = ocon.name
+        self.port = ocon.port
+        self.key = hash(ocon)
+
+    def __hash__(self):
+        return self.key
+
+    def __lt__(self, other):
+        return self.origin < other.origin
+
+    def __eq__(self, other):
+        return self.name == other.name and \
+            self.port == other.port

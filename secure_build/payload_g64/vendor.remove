@@ -1,0 +1,13 @@
+# 32-bit-only vendor programs (no 64-bit build exists); audio and codec2 are replaced by tools/hal64
+bin/hw/android.hardware.media.omx@1.0-service
+etc/init/android.hardware.media.omx@1.0-service.rc
+bin/hw/android.hardware.cas@1.2-service
+etc/init/android.hardware.cas@1.2-service.rc
+bin/wifidisplayhalservice
+etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
+bin/vsimd
+etc/init/vendor.xiaomi.hardware.vsimapp@1.0-service.rc
+bin/antdtx
+etc/init/vendor.xiaomi.hardware.antdtx@1.0-service.rc
+bin/mm-vidc-omx-test
+bin/boringssl_self_test32

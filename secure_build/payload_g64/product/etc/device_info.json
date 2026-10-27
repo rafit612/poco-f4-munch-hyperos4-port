@@ -1,0 +1,13 @@
+{
+  "basic": {
+    "cpu": "Snapdragon 870 Gen 2",
+    "battery": "4500mAh",
+    "camera": "64MP+8MP+5MP",
+    "screen": "6.67″ AMOLED",
+    "resolution": "2400×1080"
+  },
+  "camera": {
+    "front_camera": "20MP",
+    "rear_camera": "64MP+8MP+5MP"
+  }
+}

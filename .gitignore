@@ -57,32 +57,10 @@ audit/agents/
 # huge dumps
 super_strings.txt
 # local tool binaries (rebuildable)
-tools/erofs/
-tools/e2fs/
-tools/secilc/
-tools/setools/
-tools/__pycache__/
-.claude/
 
-# release staging (images + copies of release/ scripts)
-secure_build/release_pkg/
-secure_build/release_out/
 
 # kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
-secure_build/payload_g64/
-secure_build/build_g64.sh
-secure_build/flash_global.sh
-secure_build/flash_secure.sh
-secure_build/post_setup_restore.sh
-secure_build/meta/
-port_fixes/battery_fixes/
-port_fixes/brightness_overlay/
-port_fixes/camera_tune_add/
-port_fixes/global_test/
-port_fixes/hw_optimize/
-port_fixes/hyperai_k90/
-port_fixes/module.prop
-port_fixes/secure_sepolicy/
+
 /apk_analysis.tsv
 /camera_dump.txt
 /camera_dump_after.txt
