@@ -24,20 +24,6 @@
 !tools/re/*.java
 
 # downloaded / extracted ROMs and build outputs
-stock_rom_*/
-rom_extract/
-secure_build/out*/
-secure_build/parked/
-secure_build/rollback*/
-secure_build/staging_vendor_official/
-secure_build/work/
-secure_build/payload/
-# proprietary payload binaries are excluded by extension; also skip large vendor blobs folders
-secure_build/payload_global/**/lib/
-secure_build/payload_global/**/lib64/
-secure_build/payload_global/**/firmware/
-secure_build/payload_global/product/etc/security/adb_keys
-# APK / photo / test folders
 
 
 

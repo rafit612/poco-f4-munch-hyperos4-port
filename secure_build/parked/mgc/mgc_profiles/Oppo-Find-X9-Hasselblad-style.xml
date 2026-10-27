@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- MGC 9.8 style profile for POCO F4 (munch): Hasli tone + Hasselblad gamma: accurate, smooth highlights -->
+<map>
+    <string name="tone_preset_pthcr_key">55</string>
+    <string name="gamma_preset_pthcr_key">22</string>
+</map>

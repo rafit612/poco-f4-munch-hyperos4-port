@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- MGC 9.8 style profile for POCO F4 (munch): Etalon reference tone + R1 final gamma: natural, film contrast -->
+<map>
+    <string name="tone_preset_pthcr_key">35</string>
+    <string name="gamma_preset_pthcr_key">13</string>
+</map>

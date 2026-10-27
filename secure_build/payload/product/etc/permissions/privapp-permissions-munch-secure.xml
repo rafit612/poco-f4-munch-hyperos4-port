@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- munch secure build: privileged-permission allowlist so ro.control_privapp_permissions=enforce boots.
+     Product apps found in "log" mode on the live port + the HyperOS 4 AI apps (from official annibale OS4.0.0.34). -->
+<permissions>
+<privapp-permissions package="com.android.camera">
+        <permission name="android.permission.START_TASKS_FROM_RECENTS"/>
+    </privapp-permissions>
+<privapp-permissions package="com.android.thememanager">
+        <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+        <permission name="android.permission.BIND_WALLPAPER"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+<privapp-permissions package="com.google.android.googlequicksearchbox">
+        <permission name="android.permission.ACCESS_COMPUTER_CONTROL"/>
+        <permission name="android.permission.BIND_APPWIDGET"/>
+        <permission name="android.permission.CALL_PRIVILEGED"/>
+        <permission name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+        <permission name="android.permission.CAPTURE_MEDIA_OUTPUT"/>
+        <permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
+        <permission name="android.permission.ENTER_CAR_MODE_PRIORITIZED"/>
+        <permission name="android.permission.EXECUTE_APP_FUNCTIONS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_SOUND_TRIGGER"/>
+        <permission name="android.permission.MANAGE_USB"/>
+        <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.QUERY_USERS"/>
+        <permission name="android.permission.READ_DREAM_STATE"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+        <permission name="android.permission.SET_MEDIA_KEY_LISTENER"/>
+        <permission name="android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER"/>
+        <permission name="android.permission.SOUND_TRIGGER_RUN_IN_BATTERY_SAVER"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.STOP_APP_SWITCHES"/>
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"/>
+        <permission name="android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_DREAM_STATE"/>
+    </privapp-permissions>
+<privapp-permissions package="com.google.android.inputmethod.latin">
+        <permission name="android.permission.QUERY_USERS"/>
+    </privapp-permissions>
+<privapp-permissions package="com.miui.gallery">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+<privapp-permissions package="com.miui.voiceassist">
+      <permission name="android.permission.READ_PHONE_STATE" />
+      <permission name="android.permission.START_TASKS_FROM_RECENTS" />
+      <permission name="android.permission.MODIFY_PHONE_STATE" />
+      <permission name="android.permission.MODIFY_AUDIO_ROUTING" />
+      <permission name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+      <permission name="android.permission.READ_PHONE_STATE" />
+      <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+      <permission name="android.permission.READ_PRECISE_PHONE_STATE" />
+      <permission name="android.permission.CALL_PRIVILEGED" />
+      <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
+      <permission name="android.permission.STATUS_BAR" />
+      <permission name="android.permission.SEND_RESPOND_VIA_MESSAGE" />
+      <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+      <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+      <permission name="android.permission.INTERACT_ACROSS_USERS" />
+      <permission name="android.permission.MEDIA_CONTENT_CONTROL" />
+      <permission name="android.permission.REBOOT" />
+      <permission name="android.permission.REAL_GET_TASKS" />
+      <permission name="android.permission.STOP_APP_SWITCHES" />
+      <permission name="android.permission.FORCE_STOP_PACKAGES" />
+      <permission name="android.permission.CHANGE_APP_IDLE_STATE" />
+      <permission name="android.permission.UPDATE_APP_OPS_STATS" />
+      <permission name="android.permission.MANAGE_USERS" />
+      <permission name="android.permission.MANAGE_USERS" />
+      <permission name="android.permission.GLOBAL_SEARCH" />
+      <permission name="android.permission.DUMP" />
+      <permission name="android.permission.MODIFY_DAY_NIGHT_MODE" />
+      <permission name="android.permission.PACKAGE_USAGE_STATS" />
+      <permission name="android.permission.READ_SEARCH_INDEXABLES" />
+      <permission name="android.permission.TURN_SCREEN_ON" />
+      <permission name="android.permission.TETHER_PRIVILEGED" />
+      <permission name="android.permission.EXECUTE_APP_FUNCTIONS" />
+      <permission name="android.permission.BIND_TELECOM_CONNECTION_SERVICE" />
+      <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+      <permission name="android.permission.INSTALL_PACKAGES" />
+      <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+      <permission name="android.permission.READ_CLIPBOARD_IN_BACKGROUND" />
+      <permission name="android.permission.BIND_INCALL_SERVICE" />
+      <permission name="android.permission.CONTROL_INCALL_EXPERIENCE" />
+      <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
+   </privapp-permissions>
+<privapp-permissions package="com.xiaomi.aiservice">
+      <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+   </privapp-permissions>
+</permissions>

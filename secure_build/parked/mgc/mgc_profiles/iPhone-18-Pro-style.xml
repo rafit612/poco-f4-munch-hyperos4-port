@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- MGC 9.8 style profile for POCO F4 (munch): IQ tone + IQ gamma: natural, soft, warm-neutral -->
+<map>
+    <string name="tone_preset_pthcr_key">15</string>
+    <string name="gamma_preset_pthcr_key">6</string>
+</map>

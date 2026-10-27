@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- MGC 9.8 style profile for POCO F4 (munch): TapTapLDR curves: bright, lifted shadows -->
+<map>
+    <string name="tone_preset_pthcr_key">16</string>
+    <string name="gamma_preset_pthcr_key">9</string>
+</map>

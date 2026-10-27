@@ -1,0 +1,7 @@
+# Kaorios attestation spoofer, xiaomi.eu ext (WRITE_SECURE_SETTINGS), ViPER4Android (ads SDKs), Via browser
+priv-app/KaoriosToolbox
+etc/permissions/com.kousei.kaorios.xml
+priv-app/ext
+etc/permissions/privapp_whitelist_eu.xiaomi.ext.xml
+app/Viperfx
+data-app/Via
