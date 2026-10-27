@@ -1,0 +1,7 @@
+etc/camera/camerabooster.json
+etc/media_profiles_V1_0.xml
+etc/munch.build.prop
+etc/munchg.build.prop
+etc/munchin.build.prop
+etc/NOTICE_GPL.xml.gz
+etc/permissions/com.google.android.feature.services_updater.xml

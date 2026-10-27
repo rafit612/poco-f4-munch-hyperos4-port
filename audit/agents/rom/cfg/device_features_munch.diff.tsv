@@ -1,0 +1,73 @@
+# keys official=271 port=299
+CHANGED	battery_capacity_typ	4520  ==>  5000
+CHANGED	camera_adjust_picture_size_cmd_list	<item>com.ludashi:0, add, 8000, 6000, 33,false</item> <item>com.ludashi:1, add, 5184, 3904, 33,false</item> <item>com.antutu:0, ssize, 8000, 6000;1, s  ==>  <item>com.antutu:0, ssize, 9248, 6944;1, ssize, 4608, 3456</item>
+OFF_ONLY	camera_adjust_picture_size_cmd_list_pro	<item>com.ludashi:0, add, 9248, 6944, 33,false</item> <item>com.ludashi:1, add, 5184, 3904, 33,false</item> <item>com.antutu:0, ssize, 9248, 6944;1, ssize, 5184, 3904</item> <item>com.tencent.mobileqq
+PORT_ONLY	camera_exposable_role_id	<item>21</item> <item>61</item>
+PORT_ONLY	config_displayBlanksAfterDoze	false
+OFF_ONLY	config_with_gesture_shortcut_settings	true
+CHANGED	cpu_max_freq	320  ==>  291
+CHANGED	defaultFps	60  ==>  120
+CHANGED	device_body_sar	0.812  ==>  0.860
+CHANGED	device_head_sar	0.840  ==>  0.857
+PORT_ONLY	display_version_18_knock_area	<item>270</item> <item>267</item> <item>1170</item> <item>2933</item>
+PORT_ONLY	display_width	3200
+PORT_ONLY	doze_display_state_supported	true
+PORT_ONLY	doze_proximity_check_before_pulse_intent	true
+CHANGED	dynamic_partition_list	<item>/system</item> <item>/system_ext</item> <item>/product</item> <item>/vendor</item> <item>/odm</item> <item>/mi_ext</item>  ==>  <item>/system</item> <item>/system_ext</item> <item>/product</item> <item>/vendor</item> <item>/odm</item> <item>/vendor_dlkm</item> <item>/mi_ext</it
+CHANGED	edge_suppresson_absolute	<item>0</item> <item>3</item> <item>5</item> <item>8</item> <item>10</item>  ==>  <item>0</item> <item>0</item> <item>0</item> <item>5</item> <item>5</item>
+CHANGED	edge_suppresson_condition	<item>50</item> <item>2</item> <item>4</item> <item>6</item> <item>8</item> <item>10</item>  ==>  <item>60</item> <item>20</item> <item>50</item> <item>75</item> <item>100</item> <item>100</item>
+CHANGED	edge_suppresson_corner	<item>150</item> <item>300</item> <item>170</item> <item>170</item>  ==>  <item>180</item> <item>400</item> <item>280</item> <item>280</item> <item>150</item> <item>300</item> <item>250</item> <item>400</item> <item>180</ite
+PORT_ONLY	finger_alipay_ifaa_model	Xiaomi-umi
+CHANGED	fpsList	<item>120</item> <item>60</item>  ==>  <item>120</item> <item>90</item> <item>60</item> <item>1</item>
+PORT_ONLY	gallery_cpu_series	8550
+PORT_ONLY	gallery_device_series	2
+PORT_ONLY	gallery_support_analytic_face_and_scene	true
+PORT_ONLY	gallery_support_dolby	true
+PORT_ONLY	gallery_support_media_feature	true
+PORT_ONLY	gallery_support_time_burst_video	true
+PORT_ONLY	gallery_support_video_compress	true
+PORT_ONLY	gallery_use_mace	true
+OFF_ONLY	global_uninstallable_system_packagename_list	<item>com.xiaomi.scanner</item> <item>com.miui.weather2</item> <item>com.miui.notes</item> <item>com.miui.compass</item> <item>com.miui.calculator</item> <item>com.xiaomi.midrop</item> <item>com.andro
+PORT_ONLY	hide_flicker_backlight	true
+PORT_ONLY	is_aod_need_grayscale	false
+PORT_ONLY	is_aod_normal_brightness	true
+PORT_ONLY	knock_support_display_version	<item>18</item>
+CHANGED	paper_mode_min_level	58.0  ==>  50.0
+OFF_ONLY	remove_vgpaper	true
+PORT_ONLY	support_24bit_record	true
+PORT_ONLY	support_AI_display	true
+PORT_ONLY	support_adv_audio_bca	false
+PORT_ONLY	support_adv_audio_bcs	false
+PORT_ONLY	support_adv_audio_unicast	false
+OFF_ONLY	support_aod	true
+PORT_ONLY	support_aod_aon	true
+PORT_ONLY	support_aod_fullscreen	true
+PORT_ONLY	support_aod_notification_animate	true
+PORT_ONLY	support_audio_share	true
+PORT_ONLY	support_autobrightness_by_application_category	true
+OFF_ONLY	support_backlight_bit_switch	false
+OFF_ONLY	support_cloud_dim	true
+PORT_ONLY	support_conversation_toolbox_voiprecord	true
+PORT_ONLY	support_dark_mode_notify	true
+PORT_ONLY	support_dolby_version_brighten	true
+PORT_ONLY	support_edgesuppression_with_sensor	false
+CHANGED	support_face_unlock_region_dom	<item>CN</item>  ==>  <item>ALL</item>
+OFF_ONLY	support_game_dim	true
+PORT_ONLY	support_hdr_hbm_brighten	true
+PORT_ONLY	support_heartbeat_rate	true
+PORT_ONLY	support_high_resolution	true
+PORT_ONLY	support_local_ocr	true
+PORT_ONLY	support_low_flicker_backlight	false
+OFF_ONLY	support_main_xiaoai	true
+PORT_ONLY	support_manual_dimming	true
+PORT_ONLY	support_nature_mode	true
+OFF_ONLY	support_ota_validate	true
+PORT_ONLY	support_qcom_sound	true
+OFF_ONLY	support_secret_dc_backlight	false
+OFF_ONLY	support_simple_launcher	false
+PORT_ONLY	support_special_localized_aod_brightness	true
+CHANGED	support_true_color	true  ==>  false
+CHANGED	support_truetone	true  ==>  false
+CHANGED	support_widevine_l1	1  ==>  2
+OFF_ONLY	system_data_packagename_list	<item>com.xiaomi.pass</item> <item>com.xiaomi.scanner</item> <item>com.xiaomi.gamecenter</item> <item>com.miui.weather2</item> <item>com.miui.notes</item> <item>com.miui.compass</item> <item>com.miui.
+OFF_ONLY	system_data_path_list	<item>/system/data-app/XMPass/XMPass.apk</item> <item>/system/data-app/MIUIScannerGlobal/MIUIScannerGlobal.apk</item> <item>/system/data-app/GameCenter/GameCenter.apk</item> <item>/system/data-app/MIU

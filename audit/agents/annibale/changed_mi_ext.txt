@@ -1,0 +1,4 @@
+etc/build.prop
+product/etc/cust_features/cust_features.xml
+product/etc/cust_features/cust_sim_features.xml
+system/priv-app/com.mobiletools.systemhelper/com.mobiletools.systemhelper.apk

@@ -1,0 +1,198 @@
+{
+  "version": "1.0.0",
+  "cache": {
+    "cacheNotifyErrorCodes": [
+      920005004,
+      920005005,
+      920005024,
+      920005025,
+      920005043,
+      920005044
+    ],
+    "statsConfig": {
+      "999999999": ["AppName", "ActivityName"]
+    },
+    "concatConfig": [
+      {
+        "errorCode": 920005024,
+        "groupBy": ["RoleId", "ShakeModeIndex"],
+        "concatFields": ["StatusShakeSensor", "shakePowerOnTimeDiff", "shakeSensorEventTimeDiff"],
+        "sumFields": ["totalShakePowerOnTime", "totalShakeSensorEventTime"],
+        "threshold": 50
+      },
+      {
+        "errorCode": 920005025,
+        "groupBy": ["RoleId"],
+        "concatFields": ["diffTime"],
+        "sumFields": [],
+        "threshold": 100
+      },
+      {
+        "errorCode": 920005044,
+        "groupBy": ["RoleId"],
+        "concatFields": ["Count", "Time"],
+        "sumFields": [],
+        "threshold": 100
+      },
+      {
+        "errorCode": 920005043,
+        "groupBy": ["RoleId"],
+        "concatFields": ["StatusShakeSensor", "TimeDiff"],
+        "sumFields": [],
+        "threshold": 100
+      }
+    ]
+  },
+  "enhancer": {
+    "enhancements": [
+      {
+        "function": "calcMd5",
+        "errorCodes": [920014002]
+      },
+      {
+        "function": "addFromCache",
+        "errorCodes": [920034001, 920034003, 920034004, 920014002, 920014001,
+          920099002, 920014022, 920034002, 920034007, 920013003,
+          "1190000-1199999", "2100000-2109999", "1340000-1349999","1090000-1099999",
+          "1150000-1189999", "5020000-5029999", "5220000-5229999", "920012000-920012999"],
+        "fields": ["AppName", "ActivityName", "StreamUsecase"]
+      },
+      {
+        "function": "addSystemStatus",
+        "errorCodes": [920030351, 920030352],
+        "fields": ["AftFMemFree", "AftMemCache", "AftMemAvailable", "PreSlabReclaimable",
+          "AftSlabReclaimable", "PreSlabUnReclaimable", "AftSlabUnReclaimable",
+          "PreGPUMem", "AftGPUMem", "PreReserveFreeOd", "AftReserveFreeOd",
+          "PreSrcPoolFreeOd", "AftSrcPoolFreeOd", "ReservePoolUsedOd",
+          "ReserveRefillCount", "ReserveRefillAccount"]
+      }
+    ],
+    "cacheEvents": {
+      "cache": {
+        "920092001": ["AppName", "ActivityName", "StreamUsecase"],
+        "920132002": ["AppName", "ActivityName", "StreamUsecase"]
+      }
+    }
+  },
+  "frequencySuppress": {
+    "enabled": true,
+    "interval": {
+      "1": [920005001, 920010001, 920010003, 920010601, 920010007,
+          920092001, 920092002, 920092021, 920132002],
+      "300000" : [920099002, 920005061]
+    },
+    "dailyLimit": {
+      "200": [999999999]
+    },
+    "crossSuppress": [
+      {
+        "root": 920014002,
+        "windowMs": 20000,
+        "derived": "*"
+      },
+      {
+        "root": 920053001,
+        "windowMs": 5000,
+        "derived": "*"
+      }
+    ]
+  },
+  "traceIdCache": [
+    {
+      "master": [920030351, 920030352, 920030402, 920030401],
+      "slave": [920012011, 920012012, 920012018, 920092011, 920034003, 920034007],
+      "timeWindowMs": 5000,
+      "maxSlaveCount": 10,
+      "slaveFields": {
+        "920012011": ["CameraId", "OpMode", "TimeStamp", "TimeCost"],
+        "920012012": ["TimeStamp", "TimeCost"],
+        "920012018": ["TimeStamp", "TimeCost"],
+        "920092011": ["TimeStamp", "TimeCost"],
+        "920034003": ["Event", "TimeCost", "Time", "StagesCost"],
+        "920034007": ["TimeStamp", "TimeCost"]
+      }
+    }
+  ],
+  "reportConditions": {
+    "999999999": {
+      "logic": "AND",
+      "reporters": ["MisightReporter"],
+      "conditions": [
+        { "field": "frameCount", "operator": ">", "value": 100 },
+        { "field": "appName", "operator": "=", "value": "com.android.camera" }
+      ]
+    }
+  },
+  "appLogCollect": {
+    "enabled": true,
+    "maxFolders": 3,
+    "errorCodeMapping": {
+      "920099002": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010001": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010021": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010004": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010005": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010007": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010201": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010003": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010601": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010202": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ],
+      "920010603": [
+        {
+          "package": "com.android.camera",
+          "filePatterns": ["com\\.android\\.camera\\.log(\\.[12])?"]
+        }
+      ]
+    }
+  }
+}

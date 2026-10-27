@@ -1,0 +1,225 @@
+######## munch_sunny_ov64b40_wide
+39635944 t_h1.bin
+39635944 t_m14.bin
+39635944 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1ae87d00ad24
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1ae87d00ad24
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1ae87d00ad24
+rawdiff m14-h1 16806343 bytes = 42.40%
+rawdiff h1-pt 16814592 bytes = 42.42%
+rawdiff m14-pt 16704084 bytes = 42.14%
+t_m14.bin vs t_h1.bin: value-words 5264957, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 5264957, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 5264957, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 1410054 diff 36
+t_m14.bin t_h1.bin 64..65535 total 2957 diff 40
+t_m14.bin t_h1.bin (name,size) blobs total 12380 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 1410054 diff 65
+t_m14.bin t_pt.bin 64..65535 total 2957 diff 54
+t_m14.bin t_pt.bin (name,size) blobs total 12380 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 1410059 diff 78
+t_h1.bin t_pt.bin 64..65535 total 2952 diff 63
+t_h1.bin t_pt.bin (name,size) blobs total 12380 diff 0
+######## munch_aac_ov8856_ultra
+26657496 t_h1.bin
+26657496 t_m14.bin
+26657496 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 5f124f189ef5
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 5f124f189ef5
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 5f124f189ef5
+rawdiff m14-h1 11059011 bytes = 41.48%
+rawdiff h1-pt 11178280 bytes = 41.93%
+rawdiff m14-pt 11181567 bytes = 41.94%
+t_m14.bin vs t_h1.bin: value-words 3624889, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 3624889, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 3624889, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 896038 diff 21
+t_m14.bin t_h1.bin 64..65535 total 2139 diff 37
+t_m14.bin t_h1.bin (name,size) blobs total 8618 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 896038 diff 23
+t_m14.bin t_pt.bin 64..65535 total 2139 diff 81
+t_m14.bin t_pt.bin (name,size) blobs total 8618 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 896043 diff 19
+t_h1.bin t_pt.bin 64..65535 total 2134 diff 76
+t_h1.bin t_pt.bin (name,size) blobs total 8618 diff 0
+######## munch_sunny_ov8856_ultra
+26656296 t_h1.bin
+26656296 t_m14.bin
+26656296 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 67c267f73452
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 67c267f73452
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 67c267f73452
+rawdiff m14-h1 11056165 bytes = 41.47%
+rawdiff h1-pt 11176189 bytes = 41.92%
+rawdiff m14-pt 11179282 bytes = 41.93%
+t_m14.bin vs t_h1.bin: value-words 3624743, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 3624743, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 3624743, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 896014 diff 21
+t_m14.bin t_h1.bin 64..65535 total 2139 diff 37
+t_m14.bin t_h1.bin (name,size) blobs total 8614 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 896014 diff 23
+t_m14.bin t_pt.bin 64..65535 total 2139 diff 81
+t_m14.bin t_pt.bin (name,size) blobs total 8614 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 896019 diff 19
+t_h1.bin t_pt.bin 64..65535 total 2134 diff 76
+t_h1.bin t_pt.bin (name,size) blobs total 8614 diff 0
+######## munch_sunny_gc02m1_macro
+5827584 t_h1.bin
+5827584 t_m14.bin
+5827584 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 163de6406bdb
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 163de6406bdb
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 163de6406bdb
+rawdiff m14-h1 2601903 bytes = 44.64%
+rawdiff h1-pt 2650553 bytes = 45.48%
+rawdiff m14-pt 2689965 bytes = 46.15%
+t_m14.bin vs t_h1.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 240139 diff 29
+t_m14.bin t_h1.bin 64..65535 total 709 diff 7
+t_m14.bin t_h1.bin (name,size) blobs total 3305 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 240139 diff 23
+t_m14.bin t_pt.bin 64..65535 total 709 diff 28
+t_m14.bin t_pt.bin (name,size) blobs total 3305 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 240131 diff 19
+t_h1.bin t_pt.bin 64..65535 total 717 diff 36
+t_h1.bin t_pt.bin (name,size) blobs total 3305 diff 0
+######## munch_ofilm_gc02m1_macro
+5827584 t_h1.bin
+5827584 t_m14.bin
+5827584 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 892ccc137cf8
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 892ccc137cf8
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 892ccc137cf8
+rawdiff m14-h1 2601976 bytes = 44.64%
+rawdiff h1-pt 2650406 bytes = 45.48%
+rawdiff m14-pt 2689820 bytes = 46.15%
+t_m14.bin vs t_h1.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 731288, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 240139 diff 29
+t_m14.bin t_h1.bin 64..65535 total 709 diff 7
+t_m14.bin t_h1.bin (name,size) blobs total 3305 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 240139 diff 23
+t_m14.bin t_pt.bin 64..65535 total 709 diff 28
+t_m14.bin t_pt.bin (name,size) blobs total 3305 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 240131 diff 19
+t_h1.bin t_pt.bin 64..65535 total 717 diff 36
+t_h1.bin t_pt.bin (name,size) blobs total 3305 diff 0
+######## munch_sunny_imx596_front
+10600872 t_h1.bin
+10600872 t_m14.bin
+10600944 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+rawdiff m14-h1 4145708 bytes = 39.10%
+rawdiff h1-pt 4407019 bytes = 41.57%
+rawdiff m14-pt 4215196 bytes = 39.76%
+t_m14.bin vs t_h1.bin: value-words 1210916, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 1210916, differing(sym) 2629 = 0.109% ; symbol-name-sets equal: True ; names with changed values: 3
+   changed: CustRefPt mod_tf20_cct_data triggerData
+t_h1.bin vs t_pt.bin: value-words 1210916, differing(sym) 2629 = 0.109% ; symbol-name-sets equal: True ; names with changed values: 3
+   changed: CustRefPt mod_tf20_cct_data triggerData
+t_m14.bin t_h1.bin small<64 + REF total 504863 diff 37
+t_m14.bin t_h1.bin 64..65535 total 1025 diff 16
+t_m14.bin t_h1.bin (name,size) blobs total 4670 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 504863 diff 26
+t_m14.bin t_pt.bin 64..65535 total 1025 diff 16
+t_m14.bin t_pt.bin (name,size) blobs total 4670 diff 2
+t_h1.bin t_pt.bin small<64 + REF total 504843 diff 25
+t_h1.bin t_pt.bin 64..65535 total 1045 diff 30
+t_h1.bin t_pt.bin (name,size) blobs total 4670 diff 2
+######## munch_ofilm_imx596_front
+10600872 t_h1.bin
+10600872 t_m14.bin
+10600944 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1151497885ec
+rawdiff m14-h1 4145724 bytes = 39.10%
+rawdiff h1-pt 4406987 bytes = 41.57%
+rawdiff m14-pt 4215241 bytes = 39.76%
+t_m14.bin vs t_h1.bin: value-words 1210916, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 1210916, differing(sym) 2629 = 0.109% ; symbol-name-sets equal: True ; names with changed values: 3
+   changed: CustRefPt mod_tf20_cct_data triggerData
+t_h1.bin vs t_pt.bin: value-words 1210916, differing(sym) 2629 = 0.109% ; symbol-name-sets equal: True ; names with changed values: 3
+   changed: CustRefPt mod_tf20_cct_data triggerData
+t_m14.bin t_h1.bin small<64 + REF total 504863 diff 37
+t_m14.bin t_h1.bin 64..65535 total 1025 diff 16
+t_m14.bin t_h1.bin (name,size) blobs total 4670 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 504863 diff 26
+t_m14.bin t_pt.bin 64..65535 total 1025 diff 16
+t_m14.bin t_pt.bin (name,size) blobs total 4670 diff 2
+t_h1.bin t_pt.bin small<64 + REF total 504843 diff 25
+t_h1.bin t_pt.bin 64..65535 total 1045 diff 30
+t_h1.bin t_pt.bin (name,size) blobs total 4670 diff 2
+######## munch_ofilm_imx582_wide
+67228000 t_h1.bin
+67228000 t_m14.bin
+67228000 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 51bc9a1ccbfb
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 51bc9a1ccbfb
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 51bc9a1ccbfb
+rawdiff m14-h1 28978426 bytes = 43.10%
+rawdiff h1-pt 29047816 bytes = 43.20%
+rawdiff m14-pt 29334711 bytes = 43.63%
+t_m14.bin vs t_h1.bin: value-words 9065088, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 9065088, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_h1.bin vs t_pt.bin: value-words 9065088, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin t_h1.bin small<64 + REF total 2351977 diff 23
+t_m14.bin t_h1.bin 64..65535 total 4438 diff 26
+t_m14.bin t_h1.bin (name,size) blobs total 19421 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 2351977 diff 68
+t_m14.bin t_pt.bin 64..65535 total 4438 diff 48
+t_m14.bin t_pt.bin (name,size) blobs total 19421 diff 0
+t_h1.bin t_pt.bin small<64 + REF total 2351983 diff 71
+t_h1.bin t_pt.bin 64..65535 total 4432 diff 51
+t_h1.bin t_pt.bin (name,size) blobs total 19421 diff 0
+######## default
+39635944 t_h1.bin
+39635944 t_m14.bin
+67228000 t_pt.bin
+m14 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1ae87d00ad24
+h1 header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 1ae87d00ad24
+pt header: QTI Chromatix Header|Parameter Parser V2.0.0 (1907311625)|  strings-sha1: 51bc9a1ccbfb
+rawdiff m14-h1 16806343 bytes = 42.40%
+rawdiff h1-pt 17493060 bytes = 44.13%
+rawdiff m14-pt 17564265 bytes = 44.31%
+t_m14.bin vs t_h1.bin: value-words 5264957, differing(sym) 0 = 0.000% ; symbol-name-sets equal: True ; names with changed values: 0
+   changed: 
+t_m14.bin vs t_pt.bin: value-words 5264957, differing(sym) 3907937 = 37.113% ; symbol-name-sets equal: False ; names with changed values: 188
+   changed: AFAlgoTuning Arbitration BAF CCT CCTBasedExpComp ContrastAF Convergence CustRefPt Description Face Flash HAF LLSExpTimeLUT LuxFaceWeightZone MWBGainV1 Metering Name PDAF PDLib ROICustom ROIHistAdjZone SnapshotControl StartUp Touch abf40_bps abf40_ife asf30_ipe bls12_bps cc13_bps cc13_ipe confidenceEntries cst12_ipe cv12_ipe data demux13_bps dofScalerEntries expKneeEntries expTables extrmClrLumaTargetZone flashRefPtV1 focusEntries gamma15_ipe gic30_bps gra10_ipe hardwarePattern histLumaTargetZone hnr10_ipe horizontalConfWeightTuning indexEntries lenr10_ipe linearization34_bps linear
+t_h1.bin vs t_pt.bin: value-words 5264957, differing(sym) 3907937 = 37.113% ; symbol-name-sets equal: False ; names with changed values: 188
+   changed: AFAlgoTuning Arbitration BAF CCT CCTBasedExpComp ContrastAF Convergence CustRefPt Description Face Flash HAF LLSExpTimeLUT LuxFaceWeightZone MWBGainV1 Metering Name PDAF PDLib ROICustom ROIHistAdjZone SnapshotControl StartUp Touch abf40_bps abf40_ife asf30_ipe bls12_bps cc13_bps cc13_ipe confidenceEntries cst12_ipe cv12_ipe data demux13_bps dofScalerEntries expKneeEntries expTables extrmClrLumaTargetZone flashRefPtV1 focusEntries gamma15_ipe gic30_bps gra10_ipe hardwarePattern histLumaTargetZone hnr10_ipe horizontalConfWeightTuning indexEntries lenr10_ipe linearization34_bps linear
+t_m14.bin t_h1.bin small<64 + REF total 1410054 diff 36
+t_m14.bin t_h1.bin 64..65535 total 2957 diff 40
+t_m14.bin t_h1.bin (name,size) blobs total 12380 diff 0
+t_m14.bin t_pt.bin small<64 + REF total 1410054 diff 3029
+t_m14.bin t_pt.bin 64..65535 total 2957 diff 307
+t_m14.bin t_pt.bin (name,size) blobs total 12380 diff 367
+t_h1.bin t_pt.bin small<64 + REF total 1410059 diff 3014
+t_h1.bin t_pt.bin 64..65535 total 2952 diff 321
+t_h1.bin t_pt.bin (name,size) blobs total 12380 diff 367

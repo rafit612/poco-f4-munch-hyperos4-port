@@ -50,13 +50,6 @@ root_download/
 global_fix_apks/
 finddevice_module/
 stock_test/
-audit/port/
-audit/global17/*.img
-audit/**/scratch/
-audit/agents/
-# huge dumps
-super_strings.txt
-# local tool binaries (rebuildable)
 
 
 # kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
