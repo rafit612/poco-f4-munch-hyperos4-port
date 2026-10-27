@@ -38,18 +38,7 @@ secure_build/payload_global/**/lib64/
 secure_build/payload_global/**/firmware/
 secure_build/payload_global/product/etc/security/adb_keys
 # APK / photo / test folders
-gcam_download/*.apk
-gcam_latest/
-hyperai_apks/
-apk_certs/
-camera_test1/
-camera_test2/
-photo_check/
-screens/
-root_download/
-global_fix_apks/
-finddevice_module/
-stock_test/
+
 
 
 # kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)

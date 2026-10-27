@@ -1,0 +1,6 @@
+id=finddevice_priv
+name=Xiaomi Find Device (system app)
+version=20.13.81
+versionCode=201381
+author=local
+description=Installs Xiaomi Find Device as a privileged system app (missing from this port). Remove this module to undo.

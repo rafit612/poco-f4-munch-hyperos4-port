@@ -1,0 +1,6 @@
+id=camera_test1
+name=Camera test 1 (Xiaomi camera 6.5.000280.1)
+version=v1
+versionCode=1
+author=local
+description=Replaces the ported MiuiCamera with the official Xiaomi-signed camera 6.5.000280.1 for testing. Remove this module to restore the original camera.
