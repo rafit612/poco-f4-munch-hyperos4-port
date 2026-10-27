@@ -101,6 +101,18 @@ Named profile per change (git), fixed test scenes, comparison scripts (SNR, Lapl
 - [x] Analysis tools: Ghidra 12.1.4 (`~/re_tools/ghidra_12.1.4_PUBLIC`) and jadx-headless-mcp 0.7.1 (`~/re_tools/jadx/`),
       both checked against their published SHA-256. Helpers: `tools/re/Decomp.java` (JADX library: decompile chosen
       classes) and `tools/re/Smali.java` (dexlib2: disassemble/assemble a dex). REA's MCP registration still to do.
+- [ ] **Leica looks (Xiaomi 17)** — patched 2026-10-27, waiting for the phone test. [Observed] Photo filters are LUTs inside
+      the app (275 `res/raw/lut_*`, rendered by the app, no HAL needed), including the 7 new Xiaomi 17 Leica looks
+      (`lut_l_chr/cls/cnt/etn/brs/tel/ia`, app effects 248–254). The device profile's `E1()` picks the back-camera set:
+      16 = L_CUSTOM_BACK (Leica Vivid/Natural + mono), **17 = NORMAL_CUSTOM_BACK (Marble's value, no Leica)**,
+      25 = LC_CUSTOM_BACK (Vivid, Natural, Chrome, Classic, Contemporary, Eternal, Brass, Teal, IModelA). All E1 callers
+      are filter code (EffectController, `Ii.i0`, `w2.S`). Patch: `Marble.E1()` 17 → 25, in `camera_watermark_patch.sh`.
+      Video mode is different: the app sends a HAL ID in `xiaomi.videofilter.filterApplied` (table `E9.i`: Vivid 129,
+      Natural 130, Chrome…Teal 169–174, IModelA 175 — same IDs as the Xiaomi 17 `odm/etc/camera/videofilter/*.png`), but
+      munch's `com.xiaomi.node.mifilter.so` only knows IDs 102–128 → Leica in **video** needs a HAL table patch (later).
+      Lesson: an APK copied in with `adb push` keeps owner `shell` and label `shell_data_file`; PackageManager then drops
+      the app ("System package … no longer exists; its data will be wiped"). Always `chown root:root` +
+      `chcon u:object_r:system_file:s0` before the reboot.
 - [ ] Note: the camera app runs on the **Marble (POCO F5) device profile**; check which of its camera features/limits
       fit munch (Part B step 2) — this profile is the main L1 tuning lever.
 - [ ] Part B step 2–4.
