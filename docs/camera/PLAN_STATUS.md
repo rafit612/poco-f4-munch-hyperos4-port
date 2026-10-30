@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-30 23:06 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 00:14 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -14,7 +14,7 @@ Generated 2026-10-30 23:06 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Video baseline: 4K/1080p, stabilisation, 10-min thermal, audio
 - [ ] Gate G1: owner reviews baseline + stable camera
 
-## P1 — Stop the crashes (Portrait, Night, modes) (active, 10/12 done)
+## P1 — Stop the crashes (Portrait, Night, modes) (active, 11/12 done)
 
 - [x] Mode test of every mode (MODE_TEST_RESULTS.md)
 - [x] Short video: save/delete buttons fixed (camera v5)
@@ -25,9 +25,9 @@ Generated 2026-10-30 23:06 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Front Portrait works
 - [x] Leftover test setting forcenoncalib reset to normal
 - [x] Stock kernel RAM-boot test (not possible on Android 17: bpfloader)
-- [~] Back Portrait: crash point found (seg/human2 network), not fixed yet - LMC Portrait works meanwhile
+- [~] Back Portrait: crashes again on real use (libwa_depth / MegEngine); LMC Portrait works. NEW open bugs: movielens/SNPE effect mode SIGSEGV, mode-screen NPE registerProtocol
 - [x] VLOG mode crash (Illegal config item 172)
-- [ ] OWNER (outside): Panorama - one real hand sweep, confirm it saves
+- [x] Panorama: owner hand sweep saved (native 18104x4224, 2026-10-30; OWNER_TESTS_2026-10-30.md)
 
 ## P2 — Read app + OS layer (done, 7/7 done)
 
@@ -105,11 +105,11 @@ Generated 2026-10-30 23:06 from the live dashboard checklist (`wlog task`). [x] 
 - [~] Night: auto-night cause found (o.h0); NEW BUG: Night mode output has a purple cast (MIA MMCP 'no child node') - open; use LMC at night
 - [x] U15 higher video bitrate
 - [ ] OWNER (optional): window/backlit scene - normal HDR highlight look (C2 itself closed)
-- [ ] OWNER (outside/evening): night - short dark test, night highlights + colour
+- [~] Night (owner indoor dark test 2026-10-30): native purple cast confirmed on real scene, LMC Night fine; outdoor night highlights still untested
 - [ ] OWNER (indoor, quick): video Bokeh in native Video mode with a person in frame - is the blur good?
 - [x] Lock-screen toggle: accessibility service 'Restart/PowerMenuService' was in Crashed list, autostart denied; toggle itself works (docs/system/PHONE_CHECKS)
 - [x] Google Dialer + Contacts as ROM default: flashed, system apps, no chooser, data intact; owner real-call test pending
-- [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14)
+- [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14) - only indoor evening shots so far
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
 
