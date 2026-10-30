@@ -32,3 +32,6 @@ Not judged here: stabilisation/OIS and Bokeh quality (need eyes on the clips).
 
 ## Still needed from the owner
 Daylight outside (native vs LMC vs PhotoStage), backlit portrait, judge the stage copies, real call on both SIMs, walking video for OIS: `OWNER_HELP_NEEDED.md`.
+
+## Follow-up: protocol NPE analysed offline (2026-10-31)
+`ht.d` (a camera fragment) creates its `vt.a` protocol object only when `Te.b.h1()` is true (`m2() == 4`, a device layout class from `S4.b().C8()` / `Va.b.f17555D`); otherwise `this.p` stays null and `registerProtocol()` throws. So the crash is a layout-class mismatch of the Marble profile for one mode screen, not a vendor/HAL fault. Which mode it is still needs one on-phone sweep (the phone was locked and the PIN pad did not accept the taps at 00:30, so it was not run).
