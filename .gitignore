@@ -23,10 +23,16 @@
 !docs/screenshots/*.jpg
 !tools/re/*.java
 
-# downloaded / extracted ROMs and build outputs
+# Never publish raw device dumps or scratch work: getprop / settings dumps hold the IMEI, serials and MAC addresses.
+# (These lines come after the allowlist so they win over the extension rules above.)
+audit/agents/*/scratch/
+*getprop*
+*_all.txt
+*imei*
+*serial*
+__pycache__/
+*.log
+*.bak
+*.draft*
 
-
-
-# kept locally, not part of the public repo (shelved builds, personal scripts, superseded KernelSU modules, dumps)
-
-
+# Backups of the phone (persist, EFS, modem) live outside the repo in ~/poco_f4_private_backup/ and must never be copied in.

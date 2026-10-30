@@ -242,3 +242,21 @@ fingerprint service is not started; one SELinux rule `(allow init vendor_configs
 hash, checked offline (`secilc -N`, neverallow count unchanged at 321). Phones with a sensor report fpc/goodix and are
 unchanged; a sensor fitted later returns after one reboot. Result: whole-phone idle CPU 18 % → 4 %, loop gone,
 boot 40.9 s.
+
+## 11. Google Phone + Contacts as the ROM default, camera 6.7 v13 baked in (2026-10-30, built from `payload_tele`, FLASHED no-wipe)
+Owner request (reverses the 2026-10-24 choice of the China MIUI "Call" app). The shipped ROM is the **tele** build (port images
+`out_sunday_plus` + `payload_tele`); the pure 64-bit Global build (`payload_g64`) failed to boot earlier and is shelved, so it was
+NOT used. State before: Google Dialer 243 / Contacts 4.90 were Play-Store user apps; MIUI `MIUIContactsT` shipped but was never
+started; two contacts handlers made `VIEW contacts` open a chooser.
+Change (product partition only): `priv-app/GoogleDialer` and `priv-app/GoogleContacts` (base + arm64/en/xxhdpi splits) added;
+`priv-app/MIUIContactsT` dropped through `product.remove`; `priv-app/MiuiCamera` = camera v13 (sha 3a76a1e3: watermark, Leica set,
+bitrates, 20 MP front, ultra-wide LDC off, zoom SR off). `InCallUI` kept (the port's `MiuiTelecomResOverlay`, priority 45, still names
+it). The privapp allowlist for both Google apps already exists in the base (`privapp-permissions-gms-international-product.xml`, and
+`GoogleDialer-...xml` shipped in mi_ext): `privcheck.py` 44 priv-apps, 0 missing; verify_img errors 0; erofs_symlink_check crossing 0.
+Flash: `secure_build/flash_product_nowipe.sh` (fastbootd, `fastboot flash product`, no erase), 2 min; boot 25 s; SELinux enforcing; crash
+buffer empty; contacts 1387 and call log intact; both apps are SYSTEM + UPDATED_SYSTEM_APP; DIAL, VIEW contacts and PICK resolve to
+Google Dialer / Google Contacts / contacts picker without a chooser; cold start Dialer 1.1 s, Contacts 0.68 s (warm 0.22 / 0.16 s).
+Open: a real call (place + receive, SIM 1 and SIM 2) must be tested by the owner; `VIEW calls` resolves to Truecaller (user app).
+Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (that image is byte-identical to the
+product partition that was on the phone before; checksums verified). Build note: the product image step needs ~14 GB free
+(tar 4.4 GB + about 8 GB of working output); at 12 GB it ran out of disk and aborted.

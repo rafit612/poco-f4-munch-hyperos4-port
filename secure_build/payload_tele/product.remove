@@ -3,3 +3,5 @@
 pangu/system/priv-app/SystemHelper
 # Public release: no pre-authorised ADB key (the build PC's key was in the port image); USB debugging asks every user
 etc/security/adb_keys
+# Google Phone + Contacts are the default dialer/contacts (priv-apps added below); the China MIUI Call app (MIUIContactsT) would be a second handler for contacts/call-log intents. Parked, not lost: it stays in out_tele_T20261026_prev.
+priv-app/MIUIContactsT

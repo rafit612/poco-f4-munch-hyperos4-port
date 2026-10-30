@@ -79,6 +79,38 @@ The camera app contains only `com.mi.device.Marble`, `Marble_pre`, `Marble_pro` 
 ### Next steps
 - Step 4: module with app-config fixes, correct camera-ID mapping, unsupported features disabled cleanly.
 
+## Mode test, 2026-10-27 (camera 6.7 + Marble profile, automated: open mode, take one shot, read crash log) [Observed]
+| Mode | Result |
+|---|---|
+| Photo, Pro, Video, Documents, ID photo, Time-lapse, Slow motion, Dual video, Ultra HD, Long exposure | no crash, file saved |
+| Night | works, but ~870 error lines in the log (most of any mode) — to examine |
+| Short video | opens, no file saved by the test (needs a manual check) |
+| Movie, Panorama | not reached by the test script (panel position) — manual check |
+| **Portrait (back)** | **crashes the app** on opening: depth engine (`libwa_depth` → `libanc_dc_base`) aborts on a zero-size tensor |
+
+Portrait experiments (all rolled back; v3 = watermark + E1 25 + C 4625 is installed):
+- force non-calibrated depth (`persist.vendor.camera.forcenoncalib=1`): same crash → calibration file is not the cause;
+- bokeh picture width 4000 → 4625 (official `Munch_pro` value): depth stream is now 4624x3472, same crash;
+- official 5.1 `libcamera_algoup_jni` instead of the port's: app dies at start (`init(String)` missing) → different JNI version;
+- app opmode 0x9003 (single bokeh) or 0x9005 (normal): app survives but the **camera HAL crashes**
+  (`CamX::Session::Initialize` null deref while creating an offline feature graph). Not fixable at app level.
+Leica style button (top right) is only a two-way Leica Vibrant/Authentic switch; the 7 extra looks (E9.i table) are not in the
+filter strip, which is built from `cloud_filter_*.json` (15 entries). `Marble.E1` 17→25 did not add them.
+Official munch app 5.1 (`stock_rom_1.0.9` product) has the real `com.mi.device.Munch`/`Munch_pro` profile (K40S/F4 watermark,
+zoom "capture:0.6:1.0:2.0", 960 fps slow-mo, `Oooo00o`=4625).
+
+### Portrait crash — root-cause narrowing, 2026-10-27 [Observed]
+- Crash = **dual-camera depth only**: back Portrait aborts, **front Portrait (single bokeh, same `libanc_dc_base` neural-network library) works**.
+- The abort is on a worker thread of `libwa_depth` (`dc_nnstereo_helper`: loads the stereo model, prints model size, runs the first network
+  pass); tensors have zero size (`WarpPerspective img={1,15,2,20,4} mat={1,0,0} out2d={0,0}`; other runs: `layout.shape[i]`, `bad input shape`).
+- **Ruled out:** calibration file (also with `forcenoncalib=1`), depth size 4000→4625, `capture_cache/model/policy` (byte-identical to stock
+  HyperOS 1.0.9), `dof_l11r_mecp.bin` present, `ro.hardware.chipname` (unset on stock too), ultra-wide-bokeh pref, app JNI bridge
+  (official 5.1 bridge: `init(String)` unresolved), forcing single/normal opmode (HAL itself crashes: `CamX::Session::Initialize`).
+- The official 5.1 app cannot be used as an A/B test: built for Android 13, its engine bridge does not load on this Android 17 system.
+- Vendor engine files and models are identical to stock, so the remaining differences are the **port kernel (4.19.325 vs stock 4.19.157)**,
+  the Android 17 runtime (bionic/libc++/linker namespaces/SELinux) and the 6.7 app's graph descriptor. Next: stock-kernel RAM boot (A/B),
+  then trace `dc_nnstereo_helper` with Ghidra/strace.
+
 ## Part C — Tuning (main focus)
 Layer order: L1 app config / feature flags → L2 Camera2 request params + Xiaomi vendor tags → L3 app post-processing
 (LUT / shader / tone curve) → L4 HAL tuning binaries (only with approval per change).
