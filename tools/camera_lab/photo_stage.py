@@ -68,6 +68,12 @@ def denoise(L, a, b, amount):
     return L, a, b, sig
 
 
+def nlm(rgb8, h):
+    """Non-local-means denoise (OpenCV, Lab internally): luma strength h, chroma 1.6 h. h=5 on a photo taken with the HAL noise reduction OFF
+    keeps edges/holes/text and removes the grain; much stronger than that flattens low-contrast texture."""
+    return cv2.fastNlMeansDenoisingColored(rgb8, None, h, 1.6 * h, 7, 21)
+
+
 def tone(L, amount):
     x = np.clip(L / 100.0, 0, 1)
     med = float(np.median(L))
@@ -92,7 +98,9 @@ def colour(a, b, amount, target=TARGET_CHROMA):
     return a * gain, b * gain
 
 
-def process(rgb8, d=1.0, t=1.0, c=1.0, n=0.0):
+def process(rgb8, d=1.0, t=1.0, c=1.0, n=0.0, h=0.0):
+    if h > 0:
+        rgb8 = nlm(rgb8, h)
     bgr = cv2.cvtColor(rgb8, cv2.COLOR_RGB2BGR).astype(np.float32) / 255.0
     lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2Lab)
     L, a, b = [lab[..., i].copy() for i in range(3)]
@@ -142,12 +150,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("src"), ap.add_argument("dst")
     ap.add_argument("--detail", type=float, default=1.0), ap.add_argument("--tone", type=float, default=1.0)
-    ap.add_argument("--colour", type=float, default=1.0), ap.add_argument("--denoise", type=float, default=0.0), ap.add_argument("--report", action="store_true")
+    ap.add_argument("--colour", type=float, default=1.0), ap.add_argument("--denoise", type=float, default=0.0), ap.add_argument("--nlm", type=float, default=0.0, help="non-local-means strength h (5 for NR-off photos)"), ap.add_argument("--report", action="store_true")
     a = ap.parse_args()
     im = Image.open(a.src)
     exif, icc = im.info.get("exif"), im.info.get("icc_profile")
     rgb = np.asarray(im.convert("RGB"))
-    out, sig = process(rgb, a.detail, a.tone, a.colour, a.denoise)
+    out, sig = process(rgb, a.detail, a.tone, a.colour, a.denoise, a.nlm)
     kw = {"quality": 95, "subsampling": 0}
     if exif:
         kw["exif"] = exif
