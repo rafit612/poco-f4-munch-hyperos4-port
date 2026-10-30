@@ -1,7 +1,9 @@
 # Camera project — final report (DRAFT, 2026-10-30)
 
-Status: **draft before flashing.** Camera v13 runs on the phone (app update + module copy for the next boot) and is in the ROM
-payload. To finish: P9 build (needs ~1 GB more laptop space), flash (owner approval), regression after flashing, release notes.
+Status: **v13 is flashed (2026-10-30, product partition only, no data wipe).** It boots in 25 s, 0 crashes, camera works, contacts and call log
+intact. Built from `payload_tele` (the shipped 32-bit-capable build; the pure 64-bit Global build failed to boot and is shelved).
+Open: owner's real-call test (both SIMs), post-flash heat + LMC regression, release tag/notes, owner's look decision for the photo stage.
+Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (byte-identical to the previous product).
 
 ## 1. What changed for the owner (native camera, MiuiCamera 6.7 on the Marble profile)
 
@@ -46,8 +48,14 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
   (`~/camera_builds/MiuiCamera_v11.apk`, pendrive `camera_project/camera_builds/`) and the module disabled with `ksud module disable`.
 * ROM payload: previous product image kept on the pendrive before flashing (P9 plan).
 
-## 6. To complete this report after flashing
-- [ ] P9 build + EROFS symlink check + sha256
-- [ ] Flash (owner approval), module disabled at flash
-- [ ] Regression after flash (modes, back/front, 4K60/1080p, LMC, heat, crash buffer, SELinux)
-- [ ] Release notes with the table in §1
+## 6. Also done on 2026-10-30
+* **Google Phone + Contacts are the ROM default** (system priv-apps, MIUI Call removed, no chooser, Dialer cold start 1.1 s, Contacts 0.68 s): `ROM_HISTORY.md` §11.
+* **Photo stage prototype** (`08_PHOTO_STAGE.md`): blown highlights 4-10x lower, pale colour C* 8.5 -> 11.5, noise unchanged, in-focus fine detail 2-4x; cannot restore smeared or blurred detail; not for LMC photos; phone app not built yet.
+* **Network and lock-screen findings** (`docs/system/PHONE_CHECKS_2026-10-30.md`): Wi-Fi drops every 85 s come from the router/channel (hit the laptop too, also with the phone's Wi-Fi off); mobile data is off on both SIMs; the lock-screen toggle is a third-party accessibility service with autostart denied.
+
+## 7. To complete this report
+- [x] Product image built (verify_img errors 0, symlink check 0, privcheck 0 missing), flashed no-wipe, boot + data + camera verified
+- [ ] Owner real-call test (place + receive, SIM 1 and SIM 2), contacts and call log
+- [ ] Heat (10 min 4K60) and LMC photo/video/Portrait regression on the flashed ROM
+- [ ] Release tag (`ro.build.fingerprint` tag in `product/etc/build.prop`), release notes with the table in section 1, public package
+- [ ] Owner decisions: photo-stage look, then the phone app
