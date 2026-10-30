@@ -1,4 +1,5 @@
 #!/bin/bash
+# RESULT 2026-10-31: tested on the phone and it did NOT stop the deletions (the cap is not enforced on this port and long clips were lost with the cap raised); NOT shipped. Kept as a record only.
 # Long videos were lost: the camera caps one recording file at 3,670,016,000 bytes (VideoUtil.getRecorderMaxFileSize, device flag J3() is true on the Marble
 # profile). On this port a recording that passes the cap is not split: the app calls it invalid and DELETES it (seen 2026-10-31: 6 min of 4K60 at 100 Mbit/s,
 # file 4.79 GB, "delete invalid video ... .pending-..."; the v9 bitrate doubling made it happen after ~4.7 min instead of ~9 min).
