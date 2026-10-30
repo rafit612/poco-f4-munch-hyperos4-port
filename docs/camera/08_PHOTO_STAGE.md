@@ -27,7 +27,15 @@ Reading:
 * The root cause of soft native photos is the HAL's own NR (see `REFERENCE_LIBRARY.md`, "Why native photos are smooth/soft"); the stage's detail step only partly compensates.
   A better denoiser (non-local means / BM3D class, ideally multi-frame) is the missing piece before the HAL NR can be reduced for everyone.
 
+## Update 2026-10-30 late: on-device app (built, tested on one photo)
+* `tools/camera_lab/photo_stage_app/`: OpenCV 4.9 (Apache 2.0) + `StageEngine.java` (port of this script) + `StageJob` (JobScheduler content-trigger job on MediaStore images).
+  It only handles photos owned by `com.android.camera` in `DCIM/Camera`, writes a copy to `Pictures/PhotoStage/<same name>` (EXIF date/make/model/exposure/GPS copied, Software = PhotoStage), never touches the original, runs only with battery not low. One switch in the app.
+* Port check: mean pixel difference to the Python result 1.6/255 (JPEG level).
+* NLM is only run when the measured flat-area noise is > 0.6 (HAL-NR photos 0.25-0.36, NR-off photo 1.15); h = 4.4 x noise, max 6.
+* Speed on the SD870: 16 MP, NLM h~4.4 + detail/tone/colour = ~25 s; no NLM = ~15 s. Real photo test (IMG_20261030_225507, dim room): copy appeared ~30 s after the shutter; edge slope 5.0 -> 6.2, L 42.4 -> 44.2, C 8.1 -> 10.8, noise unchanged (0.25 -> 0.27, NLM skipped).
+* Debug build today (Android shows a debuggable/16 KB-alignment dialog; OpenCV 4.9 libs are not 16 KB aligned). Release build + ROM priv-app packaging not done.
+
 ## What is not done
-* Not an app yet. Plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
-* No on-device speed/heat measurement yet; no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).
+* (Done as a user app, see update above; C++/NDK port not needed at this speed.) Original plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
+* Heat under a batch not measured yet (idle battery 33.4 C while charging); no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).
 * Owner comparison images: `~/camera_builds/stage_lab/compare/` (stand, office person, banknote crop) — decide whether the look is right before the app is built.
