@@ -36,3 +36,6 @@ __pycache__/
 *.draft*
 
 # Backups of the phone (persist, EFS, modem) live outside the repo in ~/poco_f4_private_backup/ and must never be copied in.
+
+# knowledge-graph output and cache: local only
+docs/camera/graphify-out/

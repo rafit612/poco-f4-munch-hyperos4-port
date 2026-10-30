@@ -156,3 +156,68 @@ Only our own scripts, patches, configs and docs go into git — no Xiaomi binari
 - Soft native photos = HAL noise reduction; the answer for now is a post-capture stage, not a camera patch. PhotoStage app (`tools/camera_lab/photo_stage_app`): OpenCV NLM + detail/tone/colour, JobScheduler watcher, copy to Pictures/PhotoStage, originals untouched. Details and numbers: `08_PHOTO_STAGE.md`.
 - Release APK built (not debuggable, project key outside the repo), installed on the phone, tested on a real native photo (copy in ~30 s). Staged for the next product build in `secure_build/payload_tele/product/app/PhotoStage/`.
 - What only the owner can do is collected in `OWNER_HELP_NEEDED.md`; plan state in `PLAN_STATUS.md`.
+
+## Imported 2026-10-31 from branch claude/sleepy-turing-kznnh7 (Portrait investigation of 2026-10-27)
+### Portrait crash investigation (2026-10-27) [Observed unless marked]
+Symptom: the camera aborts ~1 s after Portrait (back camera) opens, before any shot:
+`libwa_depth.so → libanc_dc_base.so`, `DNNError: assertion layout.shape[i] && layout.stride[i] >= 0`, thread
+`ParallelDataZip`, right after the depth runtime loads `/vendor/lib64/libOpenCL.so`. Same crash before and after the
+Leica change, so it comes from the port, not from our patches.
+
+Reference: official munch camera **5.1.001140.0** (HyperOS 1.0.9) has a real `com.mi.device.Munch` / `Munch_pro`
+profile; `ro.boot.camera.config=0` selects `Munch_pro` (OV64B40). It uses dual bokeh on the back camera too
+(`SESSION_OPERATION_MODE_ALGO_UP_DUAL_BOKEH`, 0x9000), writes the same calibration file from the same HAL tag, and
+the same 7-function engine API (`MIAInit … MIAProcessFrameWithSync`).
+
+| Tried | Result |
+|---|---|
+| Portrait max width 4000 → 4625 (Munch_pro value); sizes now native 4624×3472 | still crashes |
+| `persist.vendor.camera.forcenoncalib=1` (non-calibrated depth) | still crashes → calibration ruled out (reverted) |
+| Official 5.1 `libcamera_algoup_jni.xiaomi.so` (RAM bind mount) | app cannot start: `init(String)` missing (removed) |
+| Back Portrait forced to single bokeh (0x9003) | camera HAL provider crashes (SIGSEGV) → reverted |
+| Stream binding to physical cameras | same condition as 5.1 (MediaTek only) → not the cause |
+
+**Strongest remaining lead [Inferred]: SELinux app domain.** 5.1 is platform-signed and runs as `platform_app`;
+munch's vendor policy (v30, Android 11 era) grants its camera/GPU/DSP/property rules to `platform_app`/`priv_app`.
+The re-signed 6.7 runs as **`priv_app_36`**, a domain that did not exist when the vendor policy was written, so none
+of those vendor rules apply (already seen: touchfeature `find`, `vendor_display_prop`, `vendor_frc_prop`,
+`vendor_camera_sensor_prop`, `ptrace` denials). A depth runtime that silently fails to open a backend or a file
+(SNPE/CDSP, OpenCL cache) can end with zero-sized tensors. Some denials may be hidden by `dontaudit`.
+
+Decisive, reversible test (phone + root): `tools/re/portrait_selinux_test.sh diag` (`setenforce 0` → Portrait →
+`setenforce 1`, nothing written).
+
+**Proposed fix (if `diag` shows no crash):** run the camera in the same domain as HyperOS 1, not new rules for every
+`priv_app_36` app. One line in `product_seapp_contexts`:
+`user=_app isPrivApp=true name=com.android.camera domain=platform_app type=app_data_file levelFrom=all`
+(`name=` outranks `isPrivApp`/`minTargetSdkVersion` in seapp matching, so only the camera moves). PackageManager
+relabels app data when the seapp hash changes. Test first as KSU module (`portrait_selinux_test.sh install`, reboot,
+`check`; `remove` to undo), then bake into `payload_tele/product/etc/selinux/`.
+Fallback if seapp is refused: `(typeattributeset platform_app_30_0 (priv_app_36))` in `product_sepolicy.cil` gives
+every priv_app_36 app the vendor's platform_app rules — broader, needs the offline secilc compile (AGENTS rule 2).
+- No crash with permissive → write the missing `priv_app_36` rules (copied from the vendor's `priv_app` /
+  `platform_app` rules for camera) into `product_sepolicy.cil`, after `dontaudit` is lifted once
+  (`semodule`-free: `auditallow`-style check via `dmesg` with permissive) and an offline `secilc` compile (AGENTS rule 2).
+- Still crashes → the cause is in the app↔engine data (6.7 vs 2022 depth engine 2.5.3); then compare the
+  MIA session parameters of 5.1 and 6.7 frame by frame, and fall back to hiding dual-camera Portrait cleanly.
+
+**Second suspect [Observed in `audit/agents/camera/inventory.tsv`]:** every depth/bokeh engine file
+(`libwa_depth`, `libanc_dc_base`, `libmialgoengine`, `libmibokeh_855`, `dof_l11r_mecp.bin`) is byte-identical in
+MIUI 14, HyperOS 1.0.9 and the port, so the engine itself is not the difference. But the wide+ultra dual-camera
+reference files `etc/camera/com.xiaomi.dcal.wu.golden` and `.golden2` are the same in MIUI 14 and HyperOS 1
+(`c0e7e796…`) and **different in the port** (and different from each other). Whether today's vendor image still has
+the porter's copies must be checked on the phone. Test: `portrait_selinux_test.sh golden <folder>` (RAM-only bind
+mount of the official files). If that fixes Portrait, add both files to `payload_tele/vendor/etc/camera/`.
+**Third suspect [Observed in `audit/agents/rom/*_system_ext.tsv`]:** official HyperOS 1 `system_ext` ships
+`lib{,64}/libopencl-camera.so`; the port has none (both have `libOpenCL_system.so`, different builds, and different
+`public.libraries-qti.txt`). The depth engine runs inside the camera app and aborts right after it loads OpenCL.
+Test: `portrait_selinux_test.sh opencl <official system_ext root>` (KSU module, reboot; adds the two libraries and any
+official public-library entries the phone lacks).
+Other HyperOS 1-only camera files (no Portrait link seen yet): `vendor.xiaomi.hardware.quickcamera-V1-ndk_platform.so`,
+`etc/camerabooster.json`, `CameraTools_beta`.
+Order on the phone: `diag` first (one step, no change), then `golden`, then `opencl`, then `install`.
+
+HyperOS 4 Portrait features that can come over afterwards [Inferred]: the 6.7 Portrait UI (bokeh strength, Leica
+portrait looks, lens styles) is app-side and stays; anything that needs Xiaomi 17's MIVI/NPU bokeh models does not
+exist on munch's vendor and runs on munch's own `mibokeh`/JiiGAN engines instead.
+

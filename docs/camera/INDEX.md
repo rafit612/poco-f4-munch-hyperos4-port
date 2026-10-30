@@ -30,8 +30,8 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * [07_IMPROVEMENT_PLAN.md](07_IMPROVEMENT_PLAN.md) — 15 ranked items (gain / risk / effort / layer), recommended order, gate G3 decisions.
 
 ## Knowledge graph (P6)
-* [graphify-out/graph.html](graphify-out/graph.html) — interactive map of all documents (open in a browser), [graph.svg](graphify-out/graph.svg),
-  [GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md). 699 concepts, 1464 links, 42 groups (updated 2026-10-30). Rebuild after doc changes: graphify skill `--update`.
+* (local only, not in this repo) `graphify-out/graph.html` — interactive map of all documents (open in a browser), `graph.svg`,
+  `GRAPH_REPORT.md`. 699 concepts, 1464 links, 42 groups (updated 2026-10-30). Rebuild after doc changes: graphify skill `--update`.
 
 ## Photo stage
 * [08_PHOTO_STAGE.md](08_PHOTO_STAGE.md) — post-capture stage (detail / tone / colour / NLM denoise): laptop prototype, measured results, on-device PhotoStage app (`tools/camera_lab/photo_stage_app`).
