@@ -480,4 +480,4 @@ persist.dbg.vt_avail_ovr=0
 # POCO F4: explicit build fingerprint with a release tag. TeleService (CarrierConfigLoader) keeps each SIM's
 # carrier config cached until Build.FINGERPRINT changes, so change the tag on every release, otherwise users
 # who update keep the old VoLTE / Wi-Fi calling settings. ro.build.version.incremental stays unchanged.
-ro.build.fingerprint=POCO/munch/munch:17/CP2A.260605.016/OS4.0.0.24.XPKCNXM.T20261026:user/release-keys
+ro.build.fingerprint=POCO/munch/munch:17/CP2A.260605.016/OS4.0.0.24.XPKCNXM.T20261031:user/release-keys

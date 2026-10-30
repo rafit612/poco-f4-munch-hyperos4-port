@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 01:28 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 02:08 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -114,10 +114,10 @@ Generated 2026-10-31 01:28 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
 
-## P9 — Ship + report (todo, 2/5 done)
+## P9 — Ship + report (todo, 3/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
-- [~] Regression run: post-flash boot/crash/camera/data checks OK 2026-10-30; heat + LMC + owner call test still open
-- [~] Release build + rollback plan: ROM rollback image exists (out_tele_T20261026_prev); PhotoStage release APK + ROM packaging in progress
+- [~] Regression after the 2026-10-31 flash: boot 65 s, enforcing, 0 crashes, 18-mode sweep OK, PhotoStage copies work; open: LMC regression (LMC not installed), 10-min 4K60 heat, owner call test
+- [x] Release build + rollback: product image built, verified and FLASHED 2026-10-31 (camera v14 + PhotoStage + tag T20261031); rollback = out_tele_T20261030_v13
 - [~] Final report + release notes draft (RELEASE_NOTES_DRAFT.md) written 2026-10-31; tag waits for next product build
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it

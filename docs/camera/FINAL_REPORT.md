@@ -1,6 +1,6 @@
-# Camera project — final report (DRAFT, 2026-10-30)
+# Camera project — final report (DRAFT, updated 2026-10-31)
 
-Status: **v13 is flashed (2026-10-30, product partition only, no data wipe).** It boots in 25 s, 0 crashes, camera works, contacts and call log
+Status: **v14 (v13 + Mimoji/Clone/Movie effects hidden) and the PhotoStage app were flashed 2026-10-31 (product only, no wipe; `ROM_HISTORY.md` §12); v13 was flashed 2026-10-30.** It boots in 25 s, 0 crashes, camera works, contacts and call log
 intact. Built from `payload_tele` (the shipped 32-bit-capable build; the pure 64-bit Global build failed to boot and is shelved).
 Open: owner real-call test (both SIMs), owner look decision, daylight A/B for v14, release tag (see `RELEASE_NOTES_DRAFT.md`), crash analysis of two new mode crashes (`OWNER_TESTS_2026-10-30.md`).
 Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (byte-identical to the previous product).
