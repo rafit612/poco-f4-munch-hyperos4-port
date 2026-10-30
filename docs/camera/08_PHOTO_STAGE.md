@@ -37,5 +37,5 @@ Reading:
 
 ## What is not done
 * (Done as a user app, see update above; C++/NDK port not needed at this speed.) Original plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
-* Heat under a batch not measured yet (idle battery 33.4 C while charging); no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).
+* Heat: 6 full runs back to back, battery 34.0 -> 35.2 °C (charging), hottest zone 64 °C then ~56 °C, no throttling (22-26 s per photo); no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).
 * Owner comparison images: `~/camera_builds/stage_lab/compare/` (stand, office person, banknote crop) — decide whether the look is right before the app is built.

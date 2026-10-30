@@ -6,6 +6,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 ## Plan and status
 * [MASTER_PLAN.md](MASTER_PLAN.md) — phases P0–P9, owner decisions, steps 1–17, added steps N1–N14, candidates C1–C5.
 * [PLAN_STATUS.md](PLAN_STATUS.md) — done / partly done / to do per phase (generated from the live dashboard checklist).
+* [OWNER_HELP_NEEDED.md](OWNER_HELP_NEEDED.md) — everything only the owner can do (outdoor/indoor test shots, calls, router, decisions), with what each one decides.
 * [G2_REVIEW.md](G2_REVIEW.md) — gate G2 review: maps complete?, open items, owner decisions D1/D2.
 * [CAMERA_PROJECT.md](CAMERA_PROJECT.md) — running log since 2026-10-27 (watermark, Leica looks, Portrait history).
 
@@ -29,6 +30,9 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * [graphify-out/graph.html](graphify-out/graph.html) — interactive map of all documents (open in a browser), [graph.svg](graphify-out/graph.svg),
   [GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md). 699 concepts, 1464 links, 42 groups (updated 2026-10-30). Rebuild after doc changes: graphify skill `--update`.
 
+## Photo stage
+* [08_PHOTO_STAGE.md](08_PHOTO_STAGE.md) — post-capture stage (detail / tone / colour / NLM denoise): laptop prototype, measured results, on-device PhotoStage app (`tools/camera_lab/photo_stage_app`).
+
 ## Tests and evidence
 * [MODE_TEST_RESULTS.md](MODE_TEST_RESULTS.md) — every mode, fixes (Short video v5/v6, VLOG v7), Portrait investigation with native trace.
 * [REFERENCE_LIBRARY.md](REFERENCE_LIBRARY.md) — reference photo sets A/B/C and comparison method.
@@ -43,6 +47,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * `camera_lab/measure_photos.py` — sharpness, noise, clipping, L*, chroma, white balance per photo.
 * `camera_lab/nnapi_probe/` — lists NNAPI devices as seen by an ordinary process.
 * `camera_lab/nr_probe/` — tiny Camera2 test app (built with plain SDK tools): same scene with different noise-reduction / edge modes; `re/nr_variant.sh` — the same lever inside the native app (test build, 29 s).
+* `camera_lab/photo_stage.py` — the stage on the laptop; `camera_lab/photo_stage_app/` — the same stage as an Android app (OpenCV, JobScheduler watcher, plain SDK build).
 * `camera_lab/map_modes.py`, `camera_lab/mode_sweep.py`, `camera_lab/build_reference_index.py`, `payload_extract_remote.py`, `kallsyms_dump.py`.
 * Test builds go in as **app updates** (`adb install -r`, same debug key) and roll back with `pm uninstall-system-updates com.android.camera`
   — no reboot, no module change (2026-10-30).

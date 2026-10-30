@@ -34,7 +34,7 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 | **Night mode photos are purple** | HAL SuperNight pipeline gives no output buffer; app graph only copies → unprocessed frame saved | use **LMC** in the dark | HAL-level (CHI SuperNight node) |
 | Photo mode never switches to night by itself | `o.h0()` hard-wired; HAL lacks in-Photo night; forcing it gives streaks | LMC / Night mode after fix | depends on the Night fix |
 | Back Portrait crashes | MegEngine GPU engine vs the port's Adreno driver (same engine as the UW crash) | **LMC Portrait** | driver-level |
-| Native photos softer than LMC (4-6x less detail) | not AIIE, not MFNR, not snapshot ANR (tested); ISP NR/sharpening strength | **LMC** for detail | own sharpening stage (L3) or Chromatix field mapping |
+| Native photos softer than LMC (4-6x less detail) | **HAL high-strength noise reduction** (not AF, AIIE, MFNR or ANR); NR off gives LMC-like edges but grain | **LMC** for detail, or the **PhotoStage app** (copy with sharper detail, better tone and colour) | camera v14 = NR off + PhotoStage denoise, after a daylight A/B (owner shots, `OWNER_HELP_NEEDED.md`) |
 | HDR super-resolution (hdsr) | app needs a HAL vendor tag that does not exist | — | closed |
 | HDR10 video | HAL offers no 10-bit streams | — | closed |
 
@@ -50,12 +50,15 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 
 ## 6. Also done on 2026-10-30
 * **Google Phone + Contacts are the ROM default** (system priv-apps, MIUI Call removed, no chooser, Dialer cold start 1.1 s, Contacts 0.68 s): `ROM_HISTORY.md` §11.
-* **Photo stage prototype** (`08_PHOTO_STAGE.md`): blown highlights 4-10x lower, pale colour C* 8.5 -> 11.5, noise unchanged, in-focus fine detail 2-4x; cannot restore smeared or blurred detail; not for LMC photos; phone app not built yet.
+* **Photo stage prototype** (`08_PHOTO_STAGE.md`): blown highlights 4-10x lower, pale colour C* 8.5 -> 11.5, noise unchanged, in-focus fine detail 2-4x; cannot restore smeared or blurred detail; not for LMC photos; **phone app built and tested on one photo** (see below).
 * **Network and lock-screen findings** (`docs/system/PHONE_CHECKS_2026-10-30.md`): Wi-Fi drops every 85 s come from the router/channel (hit the laptop too, also with the phone's Wi-Fi off); mobile data is off on both SIMs; the lock-screen toggle is a third-party accessibility service with autostart denied.
+
+* **PhotoStage app** (`tools/camera_lab/photo_stage_app`, `08_PHOTO_STAGE.md`): background job; every new native-camera photo (DCIM/Camera, owner com.android.camera) gets a processed copy in Pictures/PhotoStage ~30 s later, original untouched, EXIF kept; non-local-means denoise only when the photo is grainy. 16 MP takes 22-26 s on the SD870; six photos back to back raised the battery temperature from 34.0 to 35.2 °C (phone charging; hottest thermal zone 64 °C on the first run, then ~56 °C; no slowdown, runs 3-6 were even faster at 22 s).
+* Plan status and what only the owner can do: `PLAN_STATUS.md`, `OWNER_HELP_NEEDED.md`.
 
 ## 7. To complete this report
 - [x] Product image built (verify_img errors 0, symlink check 0, privcheck 0 missing), flashed no-wipe, boot + data + camera verified
 - [ ] Owner real-call test (place + receive, SIM 1 and SIM 2), contacts and call log
-- [ ] Heat (10 min 4K60) and LMC photo/video/Portrait regression on the flashed ROM
+- [~] Heat: PhotoStage batch measured (see section 6); still open: 10 min 4K60 video heat and LMC photo/video/Portrait regression on the flashed ROM
 - [ ] Release tag (`ro.build.fingerprint` tag in `product/etc/build.prop`), release notes with the table in section 1, public package
-- [ ] Owner decisions: photo-stage look, then the phone app
+- [ ] Owner decisions: photo-stage look (`OWNER_HELP_NEEDED.md` #7), then PhotoStage as ROM app (release APK is built; ROM packaging needs one more product build + flash)

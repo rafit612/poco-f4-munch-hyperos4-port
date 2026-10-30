@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-30 21:20 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-30 23:06 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -80,7 +80,7 @@ Generated 2026-10-30 21:20 from the live dashboard checklist (`wlog task`). [x] 
 - [x] 07_IMPROVEMENT_PLAN.md ranked + Gate G3
 - [x] Rate owner-approved candidates C1-C5 (gain/risk/effort)
 
-## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 17/27 done)
+## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 17/30 done)
 
 - [x] Watermark POCO F4 5G
 - [x] Leica looks filter set enabled (Marble E1 25)
@@ -91,7 +91,7 @@ Generated 2026-10-30 21:20 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Third-party app capability matrix + fixes (Camera2, extensions)
 - [x] One GCam xml (13 files -> 1)
 - [x] Xiaomi 17 portable parts: only the look is portable (HAL is AIDL/sm8x50, 07 §5)
-- [~] Own processing stage: offline prototype built + measured (08_PHOTO_STAGE.md): highlights 4-10x better, colour up, detail modest; app not built, waits for owner look decision
+- [~] Own processing stage: laptop prototype + on-device PhotoStage app (OpenCV NLM + detail/tone/colour, background job, copy to Pictures/PhotoStage) built and tested on 1 real photo 2026-10-30; ~25 s per 16 MP; owner must judge the look (OWNER_HELP_NEEDED.md #7); release build + ROM packaging open
 - [x] C1 Sensor RAW HDR (3-exposure) - test module, quality check
 - [x] C2 DSP stage of Xiaomi HDR (hdsr) - closed: app requests it via vendor tag xiaomi.hdr.sr.enabled, which the munch HAL lacks (VTNF) -> not usable
 - [x] C3 60 fps + ISO above 877 for other apps
@@ -100,7 +100,7 @@ Generated 2026-10-30 21:20 from the live dashboard checklist (`wlog task`). [x] 
 - [~] OIS check: handheld video/long exposure OIS on vs off (port)
 - [x] Soft photos path 3: LMC daily camera + one tuned xml
 - [x] Soft photos path 2: lighter photo path in Xiaomi app - closed: daylight A/B shows no-AIIE / no-MFNR add no detail (not the cause)
-- [~] Soft photos path 1: HAL snapshot NR tuning (L4) - t1b no effect; parked: next step needs Chromatix field meanings (ANR/ASF strength)
+- [~] Soft photos path 1: ROOT CAUSE = HAL high-strength noise reduction (not AF/AIIE/MFNR); NR off gives LMC edges but grain; NLM on phone is the denoiser for it; camera v14 (NR off + stage) only after a daylight A/B (owner shots)
 - [x] Fix: fast shots saved as 1440x1080 placeholders (v8 fix; dark re-test 2026-10-30: 14 dark shots all full-size processed)
 - [~] Night: auto-night cause found (o.h0); NEW BUG: Night mode output has a purple cast (MIA MMCP 'no child node') - open; use LMC at night
 - [x] U15 higher video bitrate
@@ -109,11 +109,14 @@ Generated 2026-10-30 21:20 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER (indoor, quick): video Bokeh in native Video mode with a person in frame - is the blur good?
 - [x] Lock-screen toggle: accessibility service 'Restart/PowerMenuService' was in Crashed list, autostart denied; toggle itself works (docs/system/PHONE_CHECKS)
 - [x] Google Dialer + Contacts as ROM default: flashed, system apps, no chooser, data intact; owner real-call test pending
+- [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14)
+- [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
+- [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
 
 ## P9 — Ship + report (todo, 2/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
 - [~] Regression run: post-flash boot/crash/camera/data checks OK 2026-10-30; heat + LMC + owner call test still open
-- [ ] Release build + rollback plan
-- [~] Final report with before/after sheets + kernel notes (draft FINAL_REPORT.md 2026-10-30; finish after flash)
+- [~] Release build + rollback plan: ROM rollback image exists (out_tele_T20261026_prev); PhotoStage release APK + ROM packaging in progress
+- [~] Final report: updated 2026-10-30 after the flash (FINAL_REPORT.md); open items listed in section 7
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it

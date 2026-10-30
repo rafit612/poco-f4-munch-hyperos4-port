@@ -260,3 +260,5 @@ Open: a real call (place + receive, SIM 1 and SIM 2) must be tested by the owner
 Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (that image is byte-identical to the
 product partition that was on the phone before; checksums verified). Build note: the product image step needs ~14 GB free
 (tar 4.4 GB + about 8 GB of working output); at 12 GB it ran out of disk and aborted.
+
+Note 2026-10-30 night: `payload_tele/product/app/PhotoStage/` (release APK, background photo stage for native-camera photos) is staged for the next product build; not part of the flashed image. See `docs/camera/08_PHOTO_STAGE.md`.

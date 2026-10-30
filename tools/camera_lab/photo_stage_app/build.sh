@@ -1,15 +1,16 @@
 #!/bin/bash
 # Builds the PhotoStage APK (watcher job + speed test) with plain SDK tools + OpenCV Android (Apache 2.0; fetched by the caller into $OCV, not stored in the repo).
-# usage: OCV=~/camera_builds/ocv build.sh <out.apk>
+# usage: OCV=~/camera_builds/ocv [DEBUG=1] [KS=<release keystore>] build.sh <out.apk>   (default: release, not debuggable, signed with $KS or the debug key)
 set -e
 D="$(cd "$(dirname "$0")" && pwd)"; OUT=${1:?out.apk}; OCV=${OCV:-$HOME/camera_builds/ocv}
 SDK=${SDK:-$HOME/Android/Sdk}; BT=${BT:-$SDK/build-tools/37.0.0}; export PATH=/opt/android-studio/jbr/bin:$PATH
 AJ=$(ls -d "$SDK"/platforms/android-3[0-9]*/android.jar | sort -V | tail -1)
 W=$(mktemp -d)
-cat > "$W/AndroidManifest.xml" <<'XML'
+DBG=; [ "${DEBUG:-0}" = 1 ] && DBG='android:debuggable="true" '
+cat > "$W/AndroidManifest.xml" <<XML
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.munch.photostage">
   <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
-  <application android:label="PhotoStage" android:debuggable="true" android:largeHeap="true" android:extractNativeLibs="true">
+  <application android:label="PhotoStage" ${DBG}android:largeHeap="true" android:extractNativeLibs="true">
     <activity android:name=".StageMain" android:exported="true">
       <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
     </activity>
@@ -25,5 +26,6 @@ javac --release 8 -nowarn -cp "$AJ:$OCV/classes.jar" -d "$W/cls" "$D"/*.java 2>&
 cp "$OCV/jni/arm64-v8a/libopencv_java4.so" "$OCV/jni/arm64-v8a/libc++_shared.so" "$W/lib/arm64-v8a/"
 (cd "$W/dex" && zip -q "$W/base.apk" classes*.dex); (cd "$W" && zip -q -0 -r base.apk lib)
 "$BT/zipalign" -f -p 4 "$W/base.apk" "$W/aligned.apk"
-"$BT/apksigner" sign --ks ~/.android/debug.keystore --ks-pass pass:android --out "$OUT" "$W/aligned.apk"
+KS=${KS:-$HOME/.android/debug.keystore}; KP=${KP:-android}; KA=${KA:-}
+"$BT/apksigner" sign --ks "$KS" ${KA:+--ks-key-alias "$KA"} --ks-pass pass:$KP --out "$OUT" "$W/aligned.apk"
 rm -rf "$W"; ls -l "$OUT" | awk '{print $5, $9}'

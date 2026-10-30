@@ -331,3 +331,12 @@ luminance grain in mid-tones** (the noise number is taken in the flattest areas 
 **Conclusion:** the native softness is the HAL's high-strength noise reduction (not autofocus, not AIIE/MFNR, not Chromatix snapshot ANR). Turning it down trades smear for grain;
 only "minimal + edge off" is a safe mild gain (+29 % detail, noise 0.72 → 1.15) and was NOT shipped (marginal). A real fix needs better denoising after the HAL (multi-frame or a
 proper NLM/BM3D-class denoiser in the post stage) — see `08_PHOTO_STAGE.md`. AF check same day: native shots consistent, same sharp tiles as LMC.
+
+## Why Xiaomi's AI denoise stage (AIIE) never helps here, and NLM as the substitute (2026-10-30 22:40) [Observed]
+* Every native photo logs `AIIECapture: [init] AIIECapture Init w=4624,h=3472` → `E AIIECapture: ALGO_VIDEO_SEG_Init Init process fail` → `E MIA_N_AIIE: MiaNodeAIIE ERROR init false`.
+  The AI enhance node is "enabled" but its segmentation-model init fails: same AI-engine family as the back-Portrait crash (`seg/human2`, MegEngine/OpenCL on this port's Adreno
+  driver). So the intended design (light HAL noise reduction, then AI cleanup) cannot run, and the earlier "no AIIE" builds changed nothing because AIIE already did nothing.
+* Substitute tested offline: HAL NR **off** + OpenCV non-local means (`photo_stage.py --nlm 5`, luma h=5, chroma 8): on the stand scene the basket holes are crisp and clean, colours natural,
+  mild grain; full-frame tile detail 215 (default 20, LMC 344), adaptive (keeps busy areas, flattens empty dark ones). Cost on the laptop: 48 s and 1.5 GB RAM per 16 MP photo.
+  h=7 and above already flatten fine texture; h=3 leaves visible grain.
+* Still open: daylight comparison (the stand tests are dim, where the HAL NR matters most), a phone-speed implementation, and the owner's look judgement.

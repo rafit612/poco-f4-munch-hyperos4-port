@@ -9,6 +9,12 @@
    (meta unchanged: `0 0 644 u:object_r:system_file:s0`). The old payload build (2026-10-24, sha fbeda85d, no camera
    fixes) is backed up on the pendrive: `camera_project/camera_builds/MiuiCamera_payload_g64_old_2026-10-24.apk`.
 
+## Update 2026-10-30 night
+* Done: camera v13 and Google Dialer/Contacts built and flashed (see header). PhotoStage release APK (sha 92b1abc4, signed with a project key kept outside the repo, not debuggable) is staged in `secure_build/payload_tele/product/app/PhotoStage/` for the **next** product build; the APK itself is git-ignored (like the other APKs), only its `.meta` is committed. It is installed on the phone as a normal app today and works there; as a ROM app it is untested until a rebuild.
+* Space for the next product build: ~14 GB free needed (laptop had 17 GB after cleanup); rollback image `out_tele_T20261026_prev` must stay.
+* Heat measured for the stage (6 runs, +1.2 °C); LMC regression could not be run (LMC not installed on the phone right now).
+* One more product build + flash is only worth it together with camera v14 and/or other fixes; do not build for the app alone unless the owner asks.
+
 ## Still to do (in this order)
 2. **Wait for the outdoor tests** ("night", "window"/HDR, Panorama) — a fix from them goes into the camera first, then the
    payload APK is replaced again with the final build.
