@@ -1,5 +1,5 @@
 #!/bin/bash
-# Builds the PhotoStage speed-test APK with plain SDK tools + OpenCV Android (Apache 2.0; fetched by the caller into $OCV, not stored in the repo).
+# Builds the PhotoStage APK (watcher job + speed test) with plain SDK tools + OpenCV Android (Apache 2.0; fetched by the caller into $OCV, not stored in the repo).
 # usage: OCV=~/camera_builds/ocv build.sh <out.apk>
 set -e
 D="$(cd "$(dirname "$0")" && pwd)"; OUT=${1:?out.apk}; OCV=${OCV:-$HOME/camera_builds/ocv}
@@ -8,10 +8,13 @@ AJ=$(ls -d "$SDK"/platforms/android-3[0-9]*/android.jar | sort -V | tail -1)
 W=$(mktemp -d)
 cat > "$W/AndroidManifest.xml" <<'XML'
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.munch.photostage">
+  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
   <application android:label="PhotoStage" android:debuggable="true" android:largeHeap="true" android:extractNativeLibs="true">
-    <activity android:name=".StageTest" android:exported="true">
+    <activity android:name=".StageMain" android:exported="true">
       <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
     </activity>
+    <activity android:name=".StageTest" android:exported="true"/>
+    <service android:name=".StageJob" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
   </application>
 </manifest>
 XML
