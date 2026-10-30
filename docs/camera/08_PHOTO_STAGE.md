@@ -21,6 +21,12 @@ Reading:
 * **Detail: real but limited.** On an in-focus subject with fine structure (banknote) the "watercolour" patches turn into visible line texture (Laplacian ×4, edge +46 %) with unchanged noise; at 2× strength it starts to look crunchy. On a blurred or out-of-focus frame nothing legible appears (laptop-screen text stays unreadable while LMC's is legible): the stage cannot recover what the native pipeline smeared away or what was out of focus. LMC keeps the real-detail advantage.
 * **Do not run it on LMC photos**: LMC already sharpens (halo 1.3 % → 3.2 %).
 
+## Update 2026-10-30 night: denoise option and the NR lever
+* `photo_stage.py --denoise A` (edge-aware chroma blur + luma blur in flat areas) was added for photos taken with the HAL noise reduction off. On the "NR off" stand photo it raised
+  nothing visibly: measured flat-area noise 4.0 → 1.2 but mid-tone grain stays at 100 % — **a single-frame denoise like this is not enough** to turn "NR off" into LMC quality.
+* The root cause of soft native photos is the HAL's own NR (see `REFERENCE_LIBRARY.md`, "Why native photos are smooth/soft"); the stage's detail step only partly compensates.
+  A better denoiser (non-local means / BM3D class, ideally multi-frame) is the missing piece before the HAL NR can be reduced for everyone.
+
 ## What is not done
 * Not an app yet. Plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
 * No on-device speed/heat measurement yet; no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).

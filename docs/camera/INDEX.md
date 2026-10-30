@@ -42,6 +42,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * `camera_lab/tile_detail.py` — detail per 3x3 tile (Laplacian variance) for stand A/B shots.
 * `camera_lab/measure_photos.py` — sharpness, noise, clipping, L*, chroma, white balance per photo.
 * `camera_lab/nnapi_probe/` — lists NNAPI devices as seen by an ordinary process.
+* `camera_lab/nr_probe/` — tiny Camera2 test app (built with plain SDK tools): same scene with different noise-reduction / edge modes; `re/nr_variant.sh` — the same lever inside the native app (test build, 29 s).
 * `camera_lab/map_modes.py`, `camera_lab/mode_sweep.py`, `camera_lab/build_reference_index.py`, `payload_extract_remote.py`, `kallsyms_dump.py`.
 * Test builds go in as **app updates** (`adb install -r`, same debug key) and roll back with `pm uninstall-system-updates com.android.camera`
   — no reboot, no module change (2026-10-30).

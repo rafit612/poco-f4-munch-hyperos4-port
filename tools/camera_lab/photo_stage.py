@@ -5,6 +5,7 @@ Works on the saved JPEG, in CIE Lab, in three steps (each can be switched off):
   detail  noise-gated two-scale unsharp mask on L*; the gate is derived from the image's own noise level so flat areas are not
           boosted; overshoot is clamped to the local min/max (no halos)
   tone    lifts shadows slightly, compresses highlights (shoulder) and adds mid contrast only when the photo is flat
+  denoise (--denoise A, off by default) edge-aware chroma/luma denoise for photos taken with the HAL noise reduction off
   colour  chroma gain towards a target mean C*, rolled off for very saturated pixels and halved for skin hues; near-neutrals are kept
 usage: photo_stage.py <in.jpg> <out.jpg> [--detail A] [--tone A] [--colour A] [--report]      (A = strength, 0 = off, 1 = default)
 Run with ~/camlab-venv/bin/python (numpy, opencv, pillow). EXIF and ICC are copied unchanged.
@@ -50,6 +51,23 @@ def detail(L, amount):
     return np.clip(out, lo - slack, hi + slack), sig
 
 
+def denoise(L, a, b, amount):
+    """Edge-aware noise removal for photos taken with the HAL noise reduction off: strong chroma blur (colour speckle is cheap to remove),
+    luma blur only in flat areas (same gate as detail), edges and texture keep their pixels."""
+    sig, gm = noise_sigma(L)
+    gate = smoothstep(gm, 2.0 * sig, 7.0 * sig)
+    # chroma: guide with the luma gradient so colour does not bleed across real edges
+    ke = smoothstep(gm, 3.0 * sig, 10.0 * sig)
+    a2 = cv2.GaussianBlur(a, (0, 0), 3.0)
+    b2 = cv2.GaussianBlur(b, (0, 0), 3.0)
+    a = a + amount * (1 - ke) * (a2 - a)
+    b = b + amount * (1 - ke) * (b2 - b)
+    # luma: pull flat areas toward a light blur, keep gated (edge/texture) pixels
+    Lb = cv2.GaussianBlur(L, (0, 0), 1.3)
+    L = L + amount * (1 - gate) * (Lb - L)
+    return L, a, b, sig
+
+
 def tone(L, amount):
     x = np.clip(L / 100.0, 0, 1)
     med = float(np.median(L))
@@ -74,11 +92,13 @@ def colour(a, b, amount, target=TARGET_CHROMA):
     return a * gain, b * gain
 
 
-def process(rgb8, d=1.0, t=1.0, c=1.0):
+def process(rgb8, d=1.0, t=1.0, c=1.0, n=0.0):
     bgr = cv2.cvtColor(rgb8, cv2.COLOR_RGB2BGR).astype(np.float32) / 255.0
     lab = cv2.cvtColor(bgr, cv2.COLOR_BGR2Lab)
     L, a, b = [lab[..., i].copy() for i in range(3)]
     sig = None
+    if n > 0:
+        L, a, b, sig = denoise(L, a, b, n)
     if d > 0:
         L, sig = detail(L, d)
     if t > 0:
@@ -122,12 +142,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("src"), ap.add_argument("dst")
     ap.add_argument("--detail", type=float, default=1.0), ap.add_argument("--tone", type=float, default=1.0)
-    ap.add_argument("--colour", type=float, default=1.0), ap.add_argument("--report", action="store_true")
+    ap.add_argument("--colour", type=float, default=1.0), ap.add_argument("--denoise", type=float, default=0.0), ap.add_argument("--report", action="store_true")
     a = ap.parse_args()
     im = Image.open(a.src)
     exif, icc = im.info.get("exif"), im.info.get("icc_profile")
     rgb = np.asarray(im.convert("RGB"))
-    out, sig = process(rgb, a.detail, a.tone, a.colour)
+    out, sig = process(rgb, a.detail, a.tone, a.colour, a.denoise)
     kw = {"quality": 95, "subsampling": 0}
     if exif:
         kw["exif"] = exif

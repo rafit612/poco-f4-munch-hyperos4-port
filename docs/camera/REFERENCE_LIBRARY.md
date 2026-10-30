@@ -292,3 +292,42 @@ inflated by brighter shadows (no-AIIE lifts shadows), so detail is measured on l
 * What remains is the ISP realtime path (IPE noise reduction / ASF sharpening strength in the Chromatix file). t1b (whole snapshot
   ANR blocks = preview) changed nothing; the next step would need the meaning of individual fields (ANR/ASF strength), which our
   reader cannot map → path 1 parked. Practical answer stays: LMC for detail (path 3, done), or our own sharpening stage (L3, 07 §5).
+
+## Autofocus check: is the soft native photo a focus problem? (2026-10-30 22:08, camera v13 flashed, stand, dim room ISO 650-800) [Observed]
+6 native shots (fresh app start each) and 3 LMC 8.4 shots of the same scene within 3 minutes; Laplacian variance per 3x3 tile (`tile_detail.py`):
+| Camera | Tile mean (9 tiles) per shot | Flat-area noise |
+|---|---|---|
+| Native v13 | 21.5, 15.5, 19.9, 20.7, 20.2, 20.6 | 0.7-1.15 |
+| LMC 8.4 | 344, 323, 328 | 1.8 |
+* **No random focus misses**: native shots 4-6 differ by < 3 %, LMC by < 7 %. Both are sharpest in the same tiles (bottom row, t6-t8) → both focus on the same plane.
+* The gap is **~16-20x here (dim light)**, vs 4-6x in the daylight stand test: it grows as light drops → the native noise reduction, not focus, removes the detail.
+* Native capture log: continuous-picture AF (`applyAfMode: focusMode=4`) on every shot; no AF errors.
+* Conclusion: AF ruled out as the cause of soft native photos. Remaining lever = the realtime ISP noise reduction / sharpening (Chromatix) or our own post stage (`08_PHOTO_STAGE.md`).
+
+## Why native photos are smooth/soft: the HAL noise-reduction lever (2026-10-30 22:00-22:35, stand, dim room ISO ~650-875) [Observed]
+**1. The HAL honours Camera2 noise-reduction (NR) and edge modes** (own test app `tools/camera_lab/nr_probe/`, camera 0, 3264x2448 JPEG, same scene/exposure,
+results echo the requested modes). `android.noiseReduction.availableNoiseReductionModes` = [0 off, 1 fast, 2 high quality, 3 minimal, 4 zsl], edge = [0 off, 1 fast, 2 hq, 3 zsl].
+| NR / edge | JPEG size | Tile Laplacian | Flat-area noise | Look at 100 % |
+|---|---|---|---|---|
+| HQ / HQ | 1.17 MB | 6.7 | 0.43 | very smooth, smeared |
+| fast / fast | 1.39 MB | 16.1 | 0.54 | slightly crisper, clean |
+| minimal / off | 2.86 MB | 141 | 2.0 | sharp, grainy |
+| off / off | 3.28 MB | 318 | 2.8 | sharp, grainier |
+| minimal / HQ | 3.69 MB | 588 | 3.8 | crunchy |
+| off / HQ | 4.16 MB | 1190 | 5.5 | very crunchy |
+**2. The native app never sets these keys** (no reference in any dex) → it gets the HAL default for its still request, which behaves like fast/fast (tile mean ~20 at 16 MP, noise 0.72).
+All app requests are built in `Eh.c.a()` (session ordinal 0 preview, **1 still capture**, 2 record, 3 video snapshot).
+**3. Same lever inside the app** (`tools/re/nr_variant.sh`, 29 s per variant, installed as app update, rolled back after): same scene, same minute:
+| Variant (still template) | Tile mean | Noise | JPEG | Look |
+|---|---|---|---|---|
+| app default (baseline, 3 shots, ±1 %) | 20.3-20.5 | 0.72 | 3.3 MB | smeared "watercolour" |
+| NR fast + edge fast | 20.4-20.6 | 0.72-0.73 | 3.3 MB | identical → this is the current default |
+| NR minimal + edge off | 26.0-26.2 | 1.15 | 4.8 MB | a bit cleaner/more natural, not really crisper |
+| NR off + edge off (all templates) | 394 | 4.04 | 7.9 MB | LMC-level edges, strong colour speckle |
+| NR minimal + edge off, preview template only | 20.3-20.8 | 0.72 | 3.3 MB | no effect (photos use the still template) |
+| LMC 8.4 | 323-344 | 1.8 | ~10 MB | sharp, clean, brighter (multi-frame merge) |
+**4. Post-fix test:** HAL NR off + our edge-aware denoise (`photo_stage.py --denoise 1 --detail 0.6`): tile mean 314, measured noise 1.24, **but the 100 % crops still show
+luminance grain in mid-tones** (the noise number is taken in the flattest areas only). A single-frame post filter does not reach LMC's clean look.
+**Conclusion:** the native softness is the HAL's high-strength noise reduction (not autofocus, not AIIE/MFNR, not Chromatix snapshot ANR). Turning it down trades smear for grain;
+only "minimal + edge off" is a safe mild gain (+29 % detail, noise 0.72 → 1.15) and was NOT shipped (marginal). A real fix needs better denoising after the HAL (multi-frame or a
+proper NLM/BM3D-class denoiser in the post stage) — see `08_PHOTO_STAGE.md`. AF check same day: native shots consistent, same sharp tiles as LMC.
