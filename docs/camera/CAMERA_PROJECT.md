@@ -151,3 +151,8 @@ Named profile per change (git), fixed test scenes, comparison scripts (SNR, Lapl
 
 ## Repository rule
 Only our own scripts, patches, configs and docs go into git — no Xiaomi binaries, no backups.
+
+## Log 2026-10-30 night: photo stage on the phone
+- Soft native photos = HAL noise reduction; the answer for now is a post-capture stage, not a camera patch. PhotoStage app (`tools/camera_lab/photo_stage_app`): OpenCV NLM + detail/tone/colour, JobScheduler watcher, copy to Pictures/PhotoStage, originals untouched. Details and numbers: `08_PHOTO_STAGE.md`.
+- Release APK built (not debuggable, project key outside the repo), installed on the phone, tested on a real native photo (copy in ~30 s). Staged for the next product build in `secure_build/payload_tele/product/app/PhotoStage/`.
+- What only the owner can do is collected in `OWNER_HELP_NEEDED.md`; plan state in `PLAN_STATUS.md`.
