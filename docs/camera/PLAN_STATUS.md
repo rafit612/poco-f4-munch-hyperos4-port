@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 02:08 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 03:51 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -81,7 +81,7 @@ Generated 2026-10-31 02:08 from the live dashboard checklist (`wlog task`). [x] 
 - [x] 07_IMPROVEMENT_PLAN.md ranked + Gate G3
 - [x] Rate owner-approved candidates C1-C5 (gain/risk/effort)
 
-## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 17/30 done)
+## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 17/31 done)
 
 - [x] Watermark POCO F4 5G
 - [x] Leica looks filter set enabled (Marble E1 25)
@@ -113,11 +113,12 @@ Generated 2026-10-31 02:08 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14) - only indoor evening shots so far
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
+- [ ] BUG: long native 4K60 recordings (>5 min) are sometimes deleted (duration read 0 after stop); intermittent, cause open
 
-## P9 — Ship + report (todo, 3/5 done)
+## P9 — Ship + report (todo, 5/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
-- [~] Regression after the 2026-10-31 flash: boot 65 s, enforcing, 0 crashes, 18-mode sweep OK, PhotoStage copies work; open: LMC regression (LMC not installed), 10-min 4K60 heat, owner call test
+- [x] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, 12-min 4K60 heat all OK; open: owner call test; bug: long native 4K60 clips sometimes deleted
 - [x] Release build + rollback: product image built, verified and FLASHED 2026-10-31 (camera v14 + PhotoStage + tag T20261031); rollback = out_tele_T20261030_v13
-- [~] Final report + release notes draft (RELEASE_NOTES_DRAFT.md) written 2026-10-31; tag waits for next product build
+- [x] Final report + release notes written 2026-10-31 (FINAL_REPORT.md, RELEASE_NOTES_DRAFT.md)
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it

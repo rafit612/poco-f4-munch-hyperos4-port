@@ -1,4 +1,4 @@
-# Release notes (DRAFT) — camera v13 + Google Phone/Contacts, 2026-10-30
+# Release notes — camera v13 + Google Phone/Contacts, 2026-10-30
 
 Status: **v14 + PhotoStage flashed 2026-10-31, tag T20261031 in the fingerprint** (`ROM_HISTORY.md` §12). Not published yet. (Older text: a tag means a new `ro.build.fingerprint` tag in `product/etc/build.prop`, which needs a product rebuild (~14 GB free, flash with owner approval). Plan: tag **together with** the next build (PhotoStage app, camera v14 if the daylight A/B says so), not for these notes alone.
 
@@ -9,6 +9,7 @@ Status: **v14 + PhotoStage flashed 2026-10-31, tag T20261031 in the fingerprint*
 
 ## Known issues (use LMC for these)
 Night mode purple cast; back Portrait crashes; Mimoji, Clone and Movie effects modes crash (unsupported runtime; fix prepared in `tools/re/hide_modes.sh`); Photo mode never switches to night by itself; native photos are much softer than LMC (HAL noise reduction). Details: `OWNER_TESTS_2026-10-30.md`, `FINAL_REPORT.md` §3.
+Long native 4K60 clips (over ~5 min) are sometimes deleted by the app (not size-related, cause open): use LMC for long videos.
 Network: Wi-Fi drops every ~85 s were traced to the router/channel, not the phone (`docs/system/PHONE_CHECKS_2026-10-30.md`).
 
 ## Install / rollback
