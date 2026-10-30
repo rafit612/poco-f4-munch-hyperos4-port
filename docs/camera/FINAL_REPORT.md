@@ -60,6 +60,6 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 ## 7. To complete this report
 - [x] Product image built (verify_img errors 0, symlink check 0, privcheck 0 missing), flashed no-wipe, boot + data + camera verified
 - [ ] Owner real-call test (place + receive, SIM 1 and SIM 2), contacts and call log
-- [x] Heat: PhotoStage batch (+1.2 C) and 12 min of native 4K60 recording (battery 35.7 -> 39.2 C, hottest zone 64-79 C, no throttling); LMC photo, Portrait and video regression on the flashed ROM: 0 crashes, PhotoStage ignores LMC photos
+- [x] Heat: PhotoStage batch (+1.2 C) and native 4K60 recording, about 10 min from warm (battery up to 39.2 C, hottest zone up to 80 C, on the charger; dropped frames and throttling not checked); LMC photo, Portrait and video regression on the flashed ROM: 0 crashes, PhotoStage ignores LMC photos
 - [x] Release tag T20261031 in the fingerprint (flashed); release notes: `RELEASE_NOTES_DRAFT.md`; public package not made (owner decision to publish)
 - [ ] Owner decisions: photo-stage look (`OWNER_HELP_NEEDED.md` #7), then PhotoStage as ROM app (release APK is built; ROM packaging needs one more product build + flash)

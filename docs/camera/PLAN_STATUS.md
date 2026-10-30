@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 03:51 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 03:52 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -118,7 +118,7 @@ Generated 2026-10-31 03:51 from the live dashboard checklist (`wlog task`). [x] 
 ## P9 — Ship + report (todo, 5/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
-- [x] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, 12-min 4K60 heat all OK; open: owner call test; bug: long native 4K60 clips sometimes deleted
+- [x] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, about 10-min 4K60 heat on the charger (39.2 C battery; dropped frames not checked); open: owner call test; bug: long native 4K60 clips sometimes deleted
 - [x] Release build + rollback: product image built, verified and FLASHED 2026-10-31 (camera v14 + PhotoStage + tag T20261031); rollback = out_tele_T20261030_v13
 - [x] Final report + release notes written 2026-10-31 (FINAL_REPORT.md, RELEASE_NOTES_DRAFT.md)
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it
