@@ -33,5 +33,8 @@ Not judged here: stabilisation/OIS and Bokeh quality (need eyes on the clips).
 ## Still needed from the owner
 Daylight outside (native vs LMC vs PhotoStage), backlit portrait, judge the stage copies, real call on both SIMs, walking video for OIS: `OWNER_HELP_NEEDED.md`.
 
-## Follow-up: protocol NPE analysed offline (2026-10-31)
-`ht.d` (a camera fragment) creates its `vt.a` protocol object only when `Te.b.h1()` is true (`m2() == 4`, a device layout class from `S4.b().C8()` / `Va.b.f17555D`); otherwise `this.p` stays null and `registerProtocol()` throws. So the crash is a layout-class mismatch of the Marble profile for one mode screen, not a vendor/HAL fault. Which mode it is still needs one on-phone sweep (the phone was locked and the PIN pad did not accept the taps at 00:30, so it was not run).
+## Follow-up (2026-10-31): both new crashes are modes this phone cannot run
+* **Null protocol NPE** = the **Mimoji** (Sticker avatars) mode screen: `ht.d` only creates its protocol when the prop `camera.support.mimoji.version` is 4 or more (or the device layout class is 4); on this phone the prop is unset (-1), so opening Mimoji crashes the app.
+* **SNPE SIGSEGV** (`libSNPE.so` / `libfenshen_snpe.so`, `movielens` module) = the **Clone** / **Movie effects** modes (both run in FunModule); the Hexagon/SNPE runtime of the port does not work for them (same family as the Portrait failures).
+* All four entries (Mimoji, Mimoji video, Clone, Movie effects) answer `support() = true` unconditionally, so the mode bar offers them. Fix prepared: `tools/re/hide_modes.sh` sets `support()` to false for them. Test build `~/camera_builds/MiuiCamera_v14test_hide_modes.apk` (v13 + the four hidden). **Built, not installed or tested** (phone was locked); intended as part of camera v14.
+* Setting the prop instead would enable a mode whose AI runtime then crashes in SNPE, so hiding is the safer fix.

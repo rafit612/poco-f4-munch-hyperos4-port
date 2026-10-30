@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 00:29 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 01:15 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -14,7 +14,7 @@ Generated 2026-10-31 00:29 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Video baseline: 4K/1080p, stabilisation, 10-min thermal, audio
 - [ ] Gate G1: owner reviews baseline + stable camera
 
-## P1 — Stop the crashes (Portrait, Night, modes) (active, 11/12 done)
+## P1 — Stop the crashes (Portrait, Night, modes) (active, 11/13 done)
 
 - [x] Mode test of every mode (MODE_TEST_RESULTS.md)
 - [x] Short video: save/delete buttons fixed (camera v5)
@@ -28,6 +28,7 @@ Generated 2026-10-31 00:29 from the live dashboard checklist (`wlog task`). [x] 
 - [~] Back Portrait: crashes again on real use (libwa_depth / MegEngine); LMC Portrait works. NEW open bugs: movielens/SNPE effect mode SIGSEGV, mode-screen NPE registerProtocol
 - [x] VLOG mode crash (Illegal config item 172)
 - [x] Panorama: owner hand sweep saved (native 18104x4224, 2026-10-30; OWNER_TESTS_2026-10-30.md)
+- [~] Crashes of Mimoji + Clone + Movie effects modes (unsupported runtime on munch): hide_modes.sh built (v13 + 4 entries support()=false); install + test on unlocked phone, then include in v14
 
 ## P2 — Read app + OS layer (done, 7/7 done)
 

@@ -8,7 +8,7 @@ Status: flashed on the owner's phone (product partition, no wipe). Not tagged an
 * **PhotoStage app** (optional, next build): copies of native-camera photos with denoise/detail/tone/colour in Pictures/PhotoStage; originals untouched; see `08_PHOTO_STAGE.md`.
 
 ## Known issues (use LMC for these)
-Night mode purple cast; back Portrait crashes; a movie-effects AI mode (SNPE) crashes; one mode screen crashes with a null protocol (layout class); Photo mode never switches to night by itself; native photos are much softer than LMC (HAL noise reduction). Details: `OWNER_TESTS_2026-10-30.md`, `FINAL_REPORT.md` §3.
+Night mode purple cast; back Portrait crashes; Mimoji, Clone and Movie effects modes crash (unsupported runtime; fix prepared in `tools/re/hide_modes.sh`); Photo mode never switches to night by itself; native photos are much softer than LMC (HAL noise reduction). Details: `OWNER_TESTS_2026-10-30.md`, `FINAL_REPORT.md` §3.
 Network: Wi-Fi drops every ~85 s were traced to the router/channel, not the phone (`docs/system/PHONE_CHECKS_2026-10-30.md`).
 
 ## Install / rollback

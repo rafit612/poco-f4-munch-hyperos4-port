@@ -6,6 +6,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 ## Plan and status
 * [MASTER_PLAN.md](MASTER_PLAN.md) — phases P0–P9, owner decisions, steps 1–17, added steps N1–N14, candidates C1–C5.
 * [PLAN_STATUS.md](PLAN_STATUS.md) — done / partly done / to do per phase (generated from the live dashboard checklist).
+* `re/hide_modes.sh` — hides Mimoji / Clone / Movie effects (crash on this phone) by making their `support()` false.
 * [RELEASE_NOTES_DRAFT.md](RELEASE_NOTES_DRAFT.md) — draft release notes, tag plan, rollback.
 * [OWNER_TESTS_2026-10-30.md](OWNER_TESTS_2026-10-30.md) — results of the owner test session (native vs LMC numbers, modes, crashes, video probe).
 * [OWNER_HELP_NEEDED.md](OWNER_HELP_NEEDED.md) — everything only the owner can do (outdoor/indoor test shots, calls, router, decisions), with what each one decides.
