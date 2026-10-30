@@ -2,7 +2,7 @@
 
 Status: **v13 is flashed (2026-10-30, product partition only, no data wipe).** It boots in 25 s, 0 crashes, camera works, contacts and call log
 intact. Built from `payload_tele` (the shipped 32-bit-capable build; the pure 64-bit Global build failed to boot and is shelved).
-Open: owner's real-call test (both SIMs), post-flash heat + LMC regression, release tag/notes, owner's look decision for the photo stage.
+Open: owner real-call test (both SIMs), owner look decision, daylight A/B for v14, release tag (see `RELEASE_NOTES_DRAFT.md`), crash analysis of two new mode crashes (`OWNER_TESTS_2026-10-30.md`).
 Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (byte-identical to the previous product).
 
 ## 1. What changed for the owner (native camera, MiuiCamera 6.7 on the Marble profile)
