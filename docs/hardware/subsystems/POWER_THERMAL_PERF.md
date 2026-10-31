@@ -31,8 +31,8 @@ The HAL binary is byte-identical to official HyperOS 1 (sha 05031fcf), so the HA
 ### 3. Kernel features [Observed, `/proc/kallsyms` by symbol name]
 | Feature | State |
 |---|---|
-| uclamp | Not found (schedtune present) |
-| Binder freezer | Not found (`cgroup_freezer` present) |
+| uclamp | Off: only the 3 helper functions that always compile (`uclamp_task`, `uclamp_boosted`, `uclamp_latency_sensitive`), no `uclamp_rq` or `uclamp_se`. schedtune is used instead |
+| App freezer | **Works** (corrected 2026-10-31): `binder_add_freeze_work` and `binder_ioctl_get_freezer_info` exist, `use_freezer=true`, `freeze_binder_enabled=true`, `dumpsys activity` reports `Apps frozen: 50` |
 | BBR | Not found, TCP is cubic |
 | MGLRU | Not found |
 | PSI | System-wide `/proc/pressure/memory` works; `cgroup_disable=pressure` is on the command line. lmkd uses minfree levels, same as official |
@@ -52,20 +52,17 @@ Their battery effect isn't measured yet. Measure screen-off wakeups before and a
 * Cooling device `battery` was at level 2 while on the charger at 100 %. Check whether it affects charge speed.
 
 ### 6. Who controls what [Observed]
-* **Thermal:** `mi_thermald` runs; `thermal-engine` exists but isn't running. Xiaomi's profiles (`thermal-normal`, `-mgame`, `-camera`, `-video`...) are encrypted on the phone; decrypted copies are in `audit/agents/perf/thermal_decrypted`. Current profile: `local_danger` in `thermal.current.ini`, not yet understood.
+* **Thermal:** `mi_thermald` runs; `thermal-engine` exists but isn't running. Xiaomi's profiles (`thermal-normal`, `-mgame`, `-camera`, `-video`...) are encrypted on the phone; decrypted copies are in `audit/agents/perf/thermal_decrypted`. Only the `official` folder is usable: most files in `port` are empty, so that decrypt failed and says nothing about the phone.
+  * **`mi_thermald` does limit the CPU** even though the Thermal API has no temperatures. `/data/vendor/thermal/thermal.dump` showed, on 2026-10-31: virtual sensor 36.3 C, `cpu4` capped at 1862400 kHz, `cpu7` at 1977600 kHz. That matches `official/thermal-normal.conf`, where 35 C is the first real cap (`cpu7` 2745600 down to 1977600). In a warm room this first step could come early, so measure it under load before any change.
+  * `thermal.current.ini` = `local_danger` in `/vendor/etc`: no vendor program, library or init file checked refers to `thermal.current` or `local_danger`. It looks unused by the vendor. The framework and apps weren't checked. Low priority.
 * **Performance:** `perfservice` + perf HAL 2.2 with 40 boost entries, `miperf`, `miui.powerkeeper.PerfEngService`, plus Android `performance_hint`, which is inactive.
 * **Memory:** lmkd in minfree mode, swappiness 60, 8 GiB zram. Same design as official.
 * The heap values match official HyperOS 1's product overrides.
 
-## A better kernel base: LineageOS [Source]
-[`LineageOS/android_kernel_xiaomi_sm8250`](https://github.com/LineageOS/android_kernel_xiaomi_sm8250) is what LineageOS builds for munch (device config `vendor/xiaomi/munch.config`).
-* Also 4.19.325, branches up to `lineage-24.0`; the `lineage-24.0` manifest is on `android-17.0.0_r1`. Device tree `android_device_xiaomi_munch` stops at `lineage-23.2`.
-* Latest commits include `v4.19.325-cip136` (September 2026), so it still gets 4.19 security backports through CIP.
-* Source has `UCLAMP_TASK` and `BINDER_FREEZE`, plus CFI and shadow call stack in its defconfig. UCLAMP wasn't set in the config files checked, so it would need enabling and testing.
-* **Main risk:** it's built for AOSP-style ROMs. Notes from another munch kernel project say the AOSP display driver doesn't display properly on MIUI/HyperOS, and the vendor stack here expects Xiaomi's. Untested. Audio and camera may also differ.
+## Kernel base
+Compared in [`KERNEL_BASE_COMPARISON.md`](KERNEL_BASE_COMPARISON.md). Decision: start from `liyafe1997/kernel_xiaomi_sm8250_mod` with its MIUI build and eBPF branch, and bring in LineageOS's CIP patches after it boots. `UCLAMP_TASK` exists in the sources compared but isn't enabled in the configs read.
 
 ## Next
-1. Compare the Lineage kernel with `rohmanurip/kernel_munch` and the porter's symbols: display, camera, audio, Xiaomi-specific drivers.
-2. Read `thermal_decrypted` and what `local_danger` means.
-3. Framework side: how Joyose and computility levels drive performance.
-4. Capture a boot log for the thermal zone name.
+1. Framework side: how Joyose and computility levels drive performance.
+2. Measure where thermal caps start under load, in a normal warm room.
+3. Capture a boot log for the thermal zone name.
