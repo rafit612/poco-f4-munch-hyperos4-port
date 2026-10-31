@@ -16,10 +16,11 @@ echo "battery $(s dumpsys battery | grep -E 'level|temperature|AC powered|USB po
 a=$(s head -1 /proc/stat); w0=$(su_ "cat /proc/stat" | grep -E '^ctxt|^intr' | awk '{print $2}' | tr '\n' ' ')
 su_ "dumpsys batterystats --reset" >/dev/null 2>&1 &
 su_ "logcat -b all -c"
-c0=$(su_ "cat /proc/[0-9]*/stat 2>/dev/null" | awk '{gsub(/[()]/,"",$2); t[$1" "$2]=$14+$15} END{for(k in t) print k,t[k]}')
+snap() { su_ "for p in /proc/[0-9]*; do cat \$p/stat; done 2>/dev/null" | awk '{gsub(/[()]/,"",$2); print $1,$2,$14+$15}'; }
+T0=$(mktemp); T1=$(mktemp); snap > "$T0"
 sleep "$S"
 b=$(s head -1 /proc/stat); w1=$(su_ "cat /proc/stat" | grep -E '^ctxt|^intr' | awk '{print $2}' | tr '\n' ' ')
-c1=$(su_ "cat /proc/[0-9]*/stat 2>/dev/null" | awk '{gsub(/[()]/,"",$2); t[$1" "$2]=$14+$15} END{for(k in t) print k,t[k]}')
+snap > "$T1"
 python3 - "$a" "$b" "$w0" "$w1" "$S" <<'PY'
 import sys
 a,b,w0,w1,S=sys.argv[1:]; S=float(S)
@@ -29,14 +30,15 @@ x=w0.split();y=w1.split()
 if len(x)==2 and len(y)==2: print('ctxt_per_s %d  irq_per_s %d'%((int(y[1])-int(x[1]))/S,(int(y[0])-int(x[0]))/S))
 PY
 echo "--- top processes by CPU in the window (percent of one core)"
-python3 - "$S" "$c0" "$c1" <<'PY'
+python3 - "$S" "$T0" "$T1" <<'PY'
 import sys
-S=float(sys.argv[1]);p=lambda s:{' '.join(l.split()[:2]):int(l.split()[-1]) for l in s.splitlines() if len(l.split())>=3}
+S=float(sys.argv[1]);p=lambda f:{' '.join(l.split()[:-1]):int(l.split()[-1]) for l in open(f) if len(l.split())>=3}
 a=p(sys.argv[2]);b=p(sys.argv[3])
 r=sorted(((b[k]-a.get(k,b[k]))/100/S*100,k.split(' ',1)[1]) for k in b)[::-1][:14]
 for v,n in r:
     if v>=0.1: print('%5.1f %s'%(v,n))
 PY
+rm -f "$T0" "$T1"
 echo "--- memory"; su_ "cat /proc/meminfo" | grep -E 'MemTotal|MemAvailable|SwapTotal|SwapFree|^Cached' | tr -s ' ' | tr '\n' ';'; echo; s cat /proc/vmstat | grep -E '^(pswpin|pswpout|pgmajfault|allocstall_normal|workingset_refault_file) ' | tr '\n' ';'; echo
 echo "--- thermal"; su_ "for z in /sys/class/thermal/thermal_zone*; do echo \$(cat \$z/type) \$(cat \$z/temp); done" | awk '$2>1000{printf "%s=%.0f ",$1,$2/1000}' | tr ' ' '\n' | sort -t '=' -k2 -rn | head -6 | tr '\n' ' '; echo
 echo "--- log volume in the window"; su_ "logcat -b all -d" > /tmp/bl_$$.log; echo "lines $(wc -l < /tmp/bl_$$.log)"

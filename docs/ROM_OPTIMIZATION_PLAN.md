@@ -10,7 +10,7 @@ Nothing here has been changed on the phone yet.
 |---|---|
 | Android 17 (SDK 37) runs on an Android 11-frozen vendor (SDK 30, `ro.board.first_api_level=30`) | New HyperOS 4 hardware interfaces have no vendor service behind them. Each one needs a shim, a fallback or a clean disable |
 | Firmware is the final official set (modem, ADSP, Wi-Fi, BT, TrustZone); no newer version exists | Firmware work means reading and understanding, plus config files. **Never write modem, EFS or persist** |
-| Kernel 4.19.325 is the final 4.19 release; the kona drivers exist only for 4.19 | "New kernel" means a better 4.19 build, not 5.x |
+| 4.19.325 is the final upstream 4.19 release; the kona drivers exist only for 4.19 | "New kernel" means a better 4.19 build, not 5.x. LineageOS's copy still gets CIP security backports |
 | This phone has a replacement 60 Hz panel and a dead fingerprint flex (both hardware) | Do not "unlock" 120 Hz. In-display fingerprint can't work without a repair |
 | The USB link on this laptop drops during long sessions (again on 2026-10-31) | Run long phone jobs on the phone itself. Check cable and port before any flash |
 | Laptop free space is low; a product build needs about 14 GB, and `~/kernel_build` (8.6 GB) must stay | Free space before building anything |
@@ -40,14 +40,14 @@ Nothing here has been changed on the phone yet.
 | Item | Result | Note |
 |---|---|---|
 | `hwservicemanager` CPU drain (58 % of a core on 26 Oct) | Not in today's top list | Looks gone; confirm in the baseline |
-| `vendor.qti.gnss.ILocAidlGnss` | Waited for 897 times in the log | Client looks for a service that never comes: wasted wakeups |
+| `vendor.qti.gnss.ILocAidlGnss` | About 1/s, from `loc_sys_service` | Client looks for a service that never comes: wasted wakeups |
 | SettingsProvider `Permission denial` | 526 repeats | Some app or service retries a forbidden write |
 | Bluetooth wake lock errors | 331 repeats | Vendor file permission or path |
 | Wi-Fi `Fail to get mlo info` | 295 repeats | New framework call on an old vendor |
 | Thermal HAL | Connected, no temperatures | Mechanism found: `docs/hardware/subsystems/POWER_THERMAL_PERF.md` |
-| ADPF | Hint sessions unsupported; CPU/GPU headroom unsupported | Needs kernel uclamp + a power HAL; games and apps get no performance hints |
+| ADPF | Hint sessions unsupported; CPU/GPU headroom unsupported | Power HAL is `IPower` V1, same as official; needs a newer HAL and probably uclamp |
 | I/O scheduler `cfq`, TCP `cubic` (no BBR) | | Candidates, measure first |
-| `dalvik.vm.isa.arm64.variant=kryo300` | SD870 has Cortex-A77/A55-class cores | Check against official HyperOS 1, test |
+| `dalvik.vm.isa.arm64.variant=kryo300` | Same as official vendor | Low priority |
 | zram 8 GiB lz4 with writeback | zstd also available | Candidate, measure |
 | 32-bit | 9 vendor programs; 0 apps reported a 32-bit ABI of 99 user apps + system | 64-bit-only costs less than feared; recheck in B1 |
 | Max charging current | HAL reports 1.1 A on this USB port | Inconclusive here: retest on the real charger |
@@ -74,8 +74,8 @@ Also: framework map of each HyperOS 4 service with no vendor counterpart (this p
 Stop the log spam found above, fix what the framework waits for, then test tuning candidates one by one: scheduler, dalvik variant, zram, heap, background limits. Keep only what the baseline shows as better.
 
 ### Phase 3: Kernel (`ROADMAP` track A)
-A1 RAM-only test of v4 -> read pstore -> fix. Before more guessing, compare with a maintained base: [`liyafe1997/kernel_xiaomi_sm8250_mod`](https://newreleases.io/project/github/liyafe1997/kernel_xiaomi_sm8250_mod/release/20250403) has MIUI/HyperOS builds and munch fixes, but its notes cover Android 11-14, so Android 17 is unproven.
-Then one feature at a time: uclamp -> binder freezer -> zram -> BBR -> audio modules ("Hey Google"). uclamp is what opens the door to ADPF. Everything RAM-only first, and flashing needs a few days of daily use.
+**Base decision first:** compare the [LineageOS munch kernel](https://github.com/LineageOS/android_kernel_xiaomi_sm8250) (4.19.325 + CIP backports, uclamp and binder freeze in source, maintained) with our `rohmanurip` base and [`liyafe1997/kernel_xiaomi_sm8250_mod`](https://newreleases.io/project/github/liyafe1997/kernel_xiaomi_sm8250_mod/release/20250403) (MIUI/HyperOS builds, notes cover Android 11-14). The risk with Lineage's is its AOSP display driver on HyperOS. Then the A1 RAM-only test, with v4 still useful for its crash logging.
+Then one feature at a time: uclamp -> binder freezer -> zram -> BBR -> audio modules ("Hey Google"). uclamp plus a newer power HAL (LineageOS uses libperfmgr on this chip) is the path to ADPF. Everything RAM-only first, and flashing needs a few days of daily use.
 
 ### Phase 4: 64-bit only (`ROADMAP` track B)
 B1 inventory -> audio + codec2 launchers in vendor -> the other 7 programs one at a time -> `zygote64` -> remove libraries. Expected gain is an estimated 100-150 MB of RAM and a faster boot, to be measured. It loses Miracast and Xiaomi virtual SIM unless replaced.
