@@ -11,8 +11,9 @@ import java.util.Collections;
 public class Smali {
     public static void main(String[] a) throws Exception {
         if (a[0].equals("d")) {
-            DexFile dex = DexFileFactory.loadDexFile(new File(a[1]), Opcodes.getDefault());
+            DexFile dex = DexFileFactory.loadDexFile(new File(a[1]), Opcodes.forApi(34)); // not getDefault(): that API level misreads invoke-polymorphic as an odex opcode and the assembler then drops it
             BaksmaliOptions o = new BaksmaliOptions();
+            o.apiLevel = 34;
             if (!Baksmali.disassembleDexFile(dex, new File(a[2]), 8, o)) System.exit(1);
         } else {
             SmaliOptions o = new SmaliOptions();
