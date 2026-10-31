@@ -2,7 +2,7 @@
 
 Things only a person with the phone in hand can do: real scenes, daylight, a real call. Everything else in the plan is done or is being done on the laptop.
 Where to put the photos: just take them with the Xiaomi camera (and, where it says so, with LMC too). Say "done" in the chat and the shots are pulled and measured; nothing needs to be copied by hand.
-Status of the rest of the plan: `PLAN_STATUS.md` (generated). Last updated 2026-10-31. **The project is paused until these photos and videos are taken.**
+Status of the rest of the plan: `PLAN_STATUS.md` (generated). Last updated 2026-10-31. **Camera work is paused: the owner shoots photos and videos for about one week from 2026-10-31, then they get analysed.**
 
 ## A. Photo and video tests (about 30 minutes in total)
 
@@ -24,7 +24,7 @@ Tips: keep the phone steady, tap to focus, do not use zoom unless the row says s
 | 8 | Make one outgoing call on **SIM 1** that is answered, and say if voice works both ways on both SIMs. SIM 2 outgoing and incoming and SIM 1 incoming already connected. | The log cannot show sound |
 | 9 | Change the router (Wi-Fi 5 GHz) channel to 36-48 or 149-165 and width 80 MHz; keep it off 161 if you want 160 MHz tests. Then say if the 85-second drops stop. | Router login |
 | 10 | Restart-app setting: allow autostart + no battery restriction for the accessibility service app (the one that crashed the lock-screen toggle). | Needs phone settings screens |
-| 11 | Decide: remove the disabled KernelSU module `munch_cam_watermark`? | Your call |
+| 11 | Done 2026-10-31: all three disabled camera modules removed at the owner's request. | Done |
 | 12 | Decide: what to do with `~/kernel_build` (about 20 GB, kernel work was stopped). | Your call |
 | 13 | GitHub: history is rewritten locally (no Gmail) but not pushed; the force-push must be run by the owner. Old commits may stay reachable by hash until GitHub support purges them: the purge request (also for the old IMEI commit) is yours to send. | Account owner |
 | 14 | Gate G1 (P0): read `MODE_TEST_RESULTS.md` baseline and say "stable". | Sign-off |
