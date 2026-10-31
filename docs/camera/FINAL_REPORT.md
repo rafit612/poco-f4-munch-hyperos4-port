@@ -1,9 +1,9 @@
 # Camera project — final report (2026-10-31)
 
-Status: **v14 (v13 + Mimoji/Clone/Movie effects hidden) and the PhotoStage app were flashed 2026-10-31 (product only, no wipe; `ROM_HISTORY.md` §12); v13 was flashed 2026-10-30.** It boots in 25 s, 0 crashes, camera works, contacts and call log
+Status: **camera v15 (v13 + Mimoji/Clone/Movie effects hidden + finished videos no longer deleted) and the PhotoStage app were flashed 2026-10-31 (product only, no wipe; tag T20261031b; `ROM_HISTORY.md` §12).** It boots in 25 s, 0 crashes, camera works, contacts and call log
 intact. Built from `payload_tele` (the shipped 32-bit-capable build; the pure 64-bit Global build failed to boot and is shelved).
 Open: owner real-call test (both SIMs), owner look decision, daylight A/B for v14, release tag (see `RELEASE_NOTES_DRAFT.md`), crash analysis of two new mode crashes (`OWNER_TESTS_2026-10-30.md`).
-Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261026_prev "rollback"` (byte-identical to the previous product).
+Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261031_v14 "rollback"` (v14), or `out_tele_T20261030_v13`, `out_tele_T20261026_prev`.
 
 ## 1. What changed for the owner (native camera, MiuiCamera 6.7 on the Marble profile)
 
@@ -18,6 +18,8 @@ Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T2026
 | Selfies | 1600x1200, processed at 800x600, wrong colours | 20 MP 5184x3904, correct colours | v11 |
 | **Ultra-wide (0.6x) photos** | **never saved** (app crashed in distortion correction; 16 MB placeholder kept) | save at 3264x2448 (distortion correction off by default) | v12 |
 | **Zoom photos 2x / 5x** | **not zoomed** (1x framing, noisy, unmerged SR frame) | correctly cropped, normal colour | v13 |
+| Crashing modes (Sticker avatars, Mimoji video, Clone, Movie effects) | app crash | hidden | v14 |
+| **Long 4K60 clips** | sometimes deleted after recording | a file with data is no longer deleted | v15 |
 
 All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from the stock app). Profile values: `01_APP_OS_LAYER.md` §7.
 
@@ -34,14 +36,14 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 | **Night mode photos are purple** | HAL SuperNight pipeline gives no output buffer; app graph only copies → unprocessed frame saved | use **LMC** in the dark | HAL-level (CHI SuperNight node) |
 | Photo mode never switches to night by itself | `o.h0()` hard-wired; HAL lacks in-Photo night; forcing it gives streaks | LMC / Night mode after fix | depends on the Night fix |
 | Back Portrait crashes | MegEngine GPU engine vs the port's Adreno driver (same engine as the UW crash) | **LMC Portrait** | driver-level |
-| Native photos softer than LMC (4-6x less detail) | **HAL high-strength noise reduction** (not AF, AIIE, MFNR or ANR); NR off gives LMC-like edges but grain | **LMC** for detail, or the **PhotoStage app** (copy with sharper detail, better tone and colour) | camera v14 = NR off + PhotoStage denoise, after a daylight A/B (owner shots, `OWNER_HELP_NEEDED.md`) |
+| Native photos softer than LMC (~20x less on the owner's indoor set) | **HAL high-strength noise reduction** (not AF, AIIE, MFNR or ANR); NR off gives LMC-like edges but grain | **LMC** for detail, or the **PhotoStage app** (copy with sharper detail, better tone and colour) | camera v14 = NR off + PhotoStage denoise, after a daylight A/B (owner shots, `OWNER_HELP_NEEDED.md`) |
 | HDR super-resolution (hdsr) | app needs a HAL vendor tag that does not exist | — | closed |
 | HDR10 video | HAL offers no 10-bit streams | — | closed |
-| **Long native 4K60 clips (over ~5 min) are sometimes deleted** (3 of 4 tests) | the save step reads duration 0 and deletes the file; intermittent, not size (see `OWNER_TESTS_2026-10-30.md`) | record long clips in LMC or keep native 4K60 under ~4 min | find why the duration read fails (MediaMetadataRetriever on the pending file) |
+| Long 4K60 clips were sometimes deleted | app read duration 0; **root cause unknown**, not seen again since 2026-10-31 03:30 | v15 keeps such files (rescue path tested with a forced 0) | if the log tag `MunchVideoDur` ever appears, it shows the cause |
 
 ## 4. Recommended daily use
 * **LMC 8.4 (`POCO-F4-ONE.xml`)**: default for photos, especially low light and Portrait.
-* **Native camera v13**: video (4K60 100 Mbit/s, OIS), 0.6x / 2x / 5x, selfies, filters, Short video / VLOG.
+* **Native camera v15**: video (4K60 100 Mbit/s, OIS), 0.6x / 2x / 5x, selfies, filters, Short video / VLOG.
 * Native Night mode: avoid until fixed.
 
 ## 5. Rollback
@@ -62,4 +64,4 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 - [ ] Owner real-call test (place + receive, SIM 1 and SIM 2), contacts and call log
 - [x] Heat: PhotoStage batch (+1.2 C) and native 4K60 recording, about 10 min from warm (battery up to 39.2 C, hottest zone up to 80 C, on the charger; dropped frames and throttling not checked); LMC photo, Portrait and video regression on the flashed ROM: 0 crashes, PhotoStage ignores LMC photos
 - [x] Release tag T20261031 in the fingerprint (flashed); release notes: `RELEASE_NOTES_DRAFT.md`; public package not made (owner decision to publish)
-- [ ] Owner decisions: photo-stage look (`OWNER_HELP_NEEDED.md` #7), then PhotoStage as ROM app (release APK is built; ROM packaging needs one more product build + flash)
+- [ ] Owner decisions: photo-stage look (`OWNER_HELP_NEEDED.md` #7), PhotoStage is in the ROM; its look is still the owner's call

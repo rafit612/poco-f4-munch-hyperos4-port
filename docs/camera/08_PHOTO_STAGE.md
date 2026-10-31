@@ -35,6 +35,16 @@ Reading:
 * Speed on the SD870: 16 MP, NLM h~4.4 + detail/tone/colour = ~25 s; no NLM = ~15 s. Real photo test (IMG_20261030_225507, dim room): copy appeared ~30 s after the shutter; edge slope 5.0 -> 6.2, L 42.4 -> 44.2, C 8.1 -> 10.8, noise unchanged (0.25 -> 0.27, NLM skipped).
 * Debug build today (Android shows a debuggable/16 KB-alignment dialog; OpenCV 4.9 libs are not 16 KB aligned). Release build + ROM priv-app packaging not done.
 
+## Update 2026-10-31: in the ROM, and four real defects fixed
+Found only by testing the copy in `/product` and by killing it on purpose:
+1. **Memory:** the engine left every intermediate OpenCV image to the Java GC, which cannot see native memory: about 3.4 GB peak for one photo, so the system killed the app (SIGKILL, memory pressure level 4) when the camera was open. Now released explicitly: 0.96 GB (0.88 GB with denoise), output **pixel-identical** (max difference 0).
+2. **Reboot:** a content-trigger job cannot be persisted. Added a BOOT_COMPLETED receiver; the job is back without opening the app (~40 s after unlock).
+3. **After a kill the watcher never ran again.** Added a persisted 15-minute catch-up job that re-arms it and finishes missed photos.
+4. **A photo was marked done before processing**, so a kill lost it. Now marked only after the copy is saved, max 3 tries.
+5. **From `/product`, MediaProvider hides `owner_package_name`** (`owner=null`), so every photo was skipped. Added `<queries>` and a fallback: with no owner, `IMG_` in DCIM/Camera is native, LMC's `F4_...` names are skipped.
+On the flashed ROM: native photo copied in ~30 s with the camera still open, LMC photo skipped. Over 24 MP is skipped by design (64 MP mode, panoramas). Worst case after a kill: the copy waits up to 15 minutes (forced run verified; the natural 15-minute timer was not waited for).
+The earlier note that the stage stalled because of the panorama's memory was probably wrong: the process kill above fits better.
+
 ## What is not done
 * (Done as a user app, see update above; C++/NDK port not needed at this speed.) Original plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
 * Heat: 6 full runs back to back, battery 34.0 -> 35.2 °C (charging), hottest zone 64 °C then ~56 °C, no throttling (22-26 s per photo); no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).

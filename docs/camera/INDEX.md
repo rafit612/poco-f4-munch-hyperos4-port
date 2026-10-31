@@ -7,6 +7,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * [MASTER_PLAN.md](MASTER_PLAN.md) — phases P0–P9, owner decisions, steps 1–17, added steps N1–N14, candidates C1–C5.
 * [PLAN_STATUS.md](PLAN_STATUS.md) — done / partly done / to do per phase (generated from the live dashboard checklist).
 * `re/hide_modes.sh` — hides Mimoji / Clone / Movie effects (crash on this phone) by making their `support()` false.
+* `re/video_keep_fix.sh` + `re/VideoDur.java` — finished videos are not deleted when the app reads duration 0 (v15). `re/video_maxsize.sh` — disproved idea, kept as a record.
 * [RELEASE_NOTES_DRAFT.md](RELEASE_NOTES_DRAFT.md) — draft release notes, tag plan, rollback.
 * [OWNER_TESTS_2026-10-30.md](OWNER_TESTS_2026-10-30.md) — results of the owner test session (native vs LMC numbers, modes, crashes, video probe).
 * [OWNER_HELP_NEEDED.md](OWNER_HELP_NEEDED.md) — everything only the owner can do (outdoor/indoor test shots, calls, router, decisions), with what each one decides.
@@ -57,6 +58,5 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 
 ## Camera builds
 v3 (watermark, Leica set, bokeh width) → v5 (Short video buttons) → v6 (Short video names) → v7 (VLOG fix) → v8 (placeholder trim)
-→ v9 (video bitrates) → v11 (front 20 MP fix) → v12 (ultra-wide photos fixed) → **v13 (zoom 2x+ fixed: SR off; installed as app update + module for next boot,
-sha 3a76a1e3; also in the ROM payload)**. Rollback build: v11 (c8eb90f4).
+→ v9 (video bitrates) → v11 (front 20 MP fix) → v12 (ultra-wide photos fixed) → v13 (zoom 2x+ fixed: SR off, sha 3a76a1e3) → v14 (crashing modes hidden) → **v15 (finished videos not deleted, sha b2e51dfb; in the ROM)**. Rollback build: v11 (c8eb90f4).
 Builds in `~/camera_builds` and on the pendrive `camera_project/camera_builds/`; rollback = `ksud module disable`.

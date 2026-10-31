@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 03:52 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 06:33 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -92,7 +92,7 @@ Generated 2026-10-31 03:52 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Third-party app capability matrix + fixes (Camera2, extensions)
 - [x] One GCam xml (13 files -> 1)
 - [x] Xiaomi 17 portable parts: only the look is portable (HAL is AIDL/sm8x50, 07 §5)
-- [~] Own processing stage: laptop prototype + on-device PhotoStage app (OpenCV NLM + detail/tone/colour, background job, copy to Pictures/PhotoStage) built and tested on 1 real photo 2026-10-30; ~25 s per 16 MP; owner must judge the look (OWNER_HELP_NEEDED.md #7); release build + ROM packaging open
+- [~] Own processing stage: PhotoStage in the ROM, tested on the flashed image (memory 3.4 GB -> 0.96 GB, retry, catch-up, boot start); owner must judge the look (OWNER_HELP_NEEDED #7)
 - [x] C1 Sensor RAW HDR (3-exposure) - test module, quality check
 - [x] C2 DSP stage of Xiaomi HDR (hdsr) - closed: app requests it via vendor tag xiaomi.hdr.sr.enabled, which the munch HAL lacks (VTNF) -> not usable
 - [x] C3 60 fps + ISO above 877 for other apps
@@ -113,12 +113,12 @@ Generated 2026-10-31 03:52 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14) - only indoor evening shots so far
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
-- [ ] BUG: long native 4K60 recordings (>5 min) are sometimes deleted (duration read 0 after stop); intermittent, cause open
+- [~] Long 4K60 clips sometimes deleted (duration read 0): v15 keeps them, rescue path tested; root cause unknown, not seen again
 
 ## P9 — Ship + report (todo, 5/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
 - [x] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, about 10-min 4K60 heat on the charger (39.2 C battery; dropped frames not checked); open: owner call test; bug: long native 4K60 clips sometimes deleted
-- [x] Release build + rollback: product image built, verified and FLASHED 2026-10-31 (camera v14 + PhotoStage + tag T20261031); rollback = out_tele_T20261030_v13
+- [x] Release build + rollback: camera v15 + PhotoStage + tag T20261031b FLASHED 2026-10-31; rollback out_tele_T20261031_v14
 - [x] Final report + release notes written 2026-10-31 (FINAL_REPORT.md, RELEASE_NOTES_DRAFT.md)
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it

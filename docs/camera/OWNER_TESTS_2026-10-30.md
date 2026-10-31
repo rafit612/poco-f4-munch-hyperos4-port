@@ -39,16 +39,23 @@ Daylight outside (native vs LMC vs PhotoStage), backlit portrait, judge the stag
 * All four entries (Mimoji, Mimoji video, Clone, Movie effects) answer `support() = true` unconditionally, so the mode bar offers them. Fix prepared: `tools/re/hide_modes.sh` sets `support()` to false for them. Test build `~/camera_builds/MiuiCamera_v14test_hide_modes.apk` (v13 + the four hidden). **Installed as an app update and swept 2026-10-31 01:25**: the mode bar and the More panel no longer list Sticker avatars, Clone or Movie effects; 18 modes opened, 0 crashes (Pro, Video, Photo, Documents, Night, Ultra HD, ID photo, Slow motion, Time-lapse, Movie, Long exposure, Dual video, Panorama, both Short videos, VLOG, Short film, Pocket mirror). Rollback: `pm uninstall-system-updates com.android.camera` (back to the ROM's v13). The ROM payload still holds v13; this build goes into the next product build as part of v14 (the noise-reduction part is still undecided).
 * Setting the prop instead would enable a mode whose AI runtime then crashes in SNPE, so hiding is the safer fix.
 
-## 2026-10-31: long 4K60 recordings are sometimes deleted by the camera (heat test side finding)
-Native camera, 4K 60 fps (100 Mbit/s), plain recording:
-| Length | File | Result |
-|---|---|---|
-| 12 s, 70 s, 3 min 38 s | 0.15 / 0.87 / 2.73 GB | saved, duration correct |
-| 6 min 22 s | 4.79 GB | **deleted** |
-| 11 min 42 s | 8.78 GB | **deleted** |
-| 5 min 56 s | 4.46 GB | **deleted** |
-| 6 min 17 s | 4.73 GB | **saved** (duration 376 s) |
-Log of the deleted ones: the muxer finishes (`MPEG4Writer: final fsync ... file size 4793557269`), the save step reads the duration as 0 (`VideoSaveRequest: save video: mVideoSaveCallback ... duration -> 0`, `getVideoExifFromFd: ParcelFileDescriptor is null`), then `VideoModule.videoFileDurationInvalid` -> `VideoUtil: delete invalid video .pending-...mp4`. The same lines appear in the run that was saved, but there the duration came back (376926 ms), so the failure is **intermittent and not a file-size rule**: three of four recordings over 5.5 min were lost, none under 4 min.
-Ruled out: the 3,670,016,000-byte cap in `VideoUtil.getRecorderMaxFileSize` (raising it to 64 GB with `tools/re/video_maxsize.sh` did not help and the cap is not enforced on this port: a 4.79 GB file was written with the cap at 3.67 GB), auto hibernation (`keepAutoHibernation` 175 s: the preview goes black, recording continues), the 4 GiB boundary (a 4.73 GB file saved). **Not ruled out**: the reading of the duration right after the stop (MediaMetadataRetriever on the pending file) failing under load or timing. The patch is NOT shipped (the ROM keeps v14).
-**Advice until fixed:** record long 4K60 clips in **LMC** (its 7 s, 4K clips saved, long ones not tested) or keep native 4K60 clips under ~4 minutes; 1080p60 / 4K30 would not hit the problem as soon but are untested for length.
-Heat, three separate recordings at 4K60, phone on the charger, stand, screen on: a 5.5 min run from cool: battery 35.7 -> 35.9 C (peak 36.0), hottest zone 64-74 C; two runs of about 10 min from warm (right after other recordings): battery 38.1 -> 38.9 C and 38.6 -> 38.7 C (peak 39.2), hottest zone 71-80 C. Recording kept running and the crash buffer stayed empty. **Not checked:** dropped frames or thermal throttling (the long clips were deleted or removed before a frame count), and heat on battery, in daylight or in the hand.
+## 2026-10-31: long 4K60 recordings: three were deleted by the camera; safety net added (camera v15)
+Native camera, 4K 60 fps (100 Mbit/s). Build = what was installed.
+| Build | Length | File | Result |
+|---|---|---|---|
+| v14 | 12 s | 0.15 GB | saved |
+| v14 | 6 min 22 s | 4.79 GB | **deleted** |
+| test (cap raised) | 11 min 42 s | 8.78 GB | **deleted** |
+| test (cap raised) | 5 min 56 s | 4.46 GB | **deleted** |
+| test (cap raised) | 70 s, 3 min 38 s | 0.87, 2.73 GB | saved |
+| test (cap raised) | 6 min 17 s | 4.73 GB | saved |
+| v15 app update | 6 min 13 s, 6 min 33 s, 6 min 54 s, 6 min 3 s, 3 min 27 s | 4.68, 4.93, 5.19, 4.55, 2.59 GB | saved |
+| **v15 in the ROM** | 6 min 50 s | 5.14 GB | saved |
+What happened to the deleted ones: the muxer finishes normally, then the save step (`n7.Q.a`) reads duration 0 (`save video ... duration -> 0`), and `VideoModule.videoFileDurationInvalid` deletes the file (`delete invalid video .pending-...mp4`).
+**The root cause of the duration 0 is still unknown, and the failure has not come back since 03:30**, so none of the later runs exercised the fix by chance. Ruled out by test: the 3,670,016,000-byte cap (`tools/re/video_maxsize.sh`, not shipped; a 4.79 GB file was written with the cap in place, and clips were lost with it raised), auto hibernation, a 4 GiB limit, and waking the sleeping preview with a tap on the shutter area.
+**Fix in v15 (`tools/re/video_keep_fix.sh`, `VideoDur.java`):** after the app's two reads, if the duration is 0 and the file holds at least 1 MB, the length is read from the MP4 header (`mvhd`), so the app no longer deletes it; a file without a readable header is kept too, with a nominal 1 s length. Verified by a one-off test build that forced duration 0 on every save: the file was kept, length correct (31.95 s, log `MunchVideoDur`), normal 4K60 file. Parser also checked on the laptop: moov at end, 64-bit moov header, version-1 mvhd, no moov, under-1 MB file.
+If it fires in real use, the log tag `MunchVideoDur` records what the framework reports, which should finally show the cause.
+Auto hibernation note: ~175 s after the last touch the preview goes black and the first tap only wakes it. Recording continues. A real user may think the button did nothing.
+
+### 4K60 heat
+Separate recordings, on the charger, phone on a stand, screen on: 5.5 min from cool: battery 35.7 -> 35.9 C (peak 36.0), hottest zone 64-74 C. About 10 min from warm, two runs: battery 38.1 -> 38.9 C and 38.6 -> 38.7 C (peak 39.2), hottest zone 71-80 C. ROM v15, 6 min 50 s right after the mode sweep: battery 37.4 -> 38.3 C. Recording kept running, crash buffer empty. **Not checked:** dropped frames, throttling, heat on battery, in daylight or in the hand.

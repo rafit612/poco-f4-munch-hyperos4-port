@@ -10,11 +10,14 @@ DBG=; [ "${DEBUG:-0}" = 1 ] && DBG='android:debuggable="true" '
 cat > "$W/AndroidManifest.xml" <<XML
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.munch.photostage">
   <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <queries><package android:name="com.android.camera"/></queries>
   <application android:label="PhotoStage" ${DBG}android:largeHeap="true" android:extractNativeLibs="true">
     <activity android:name=".StageMain" android:exported="true">
       <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
     </activity>
     <activity android:name=".StageTest" android:exported="true"/>
+    <receiver android:name=".StageBoot" android:exported="true"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/></intent-filter></receiver>
     <service android:name=".StageJob" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
   </application>
 </manifest>

@@ -261,10 +261,11 @@ Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T2026
 product partition that was on the phone before; checksums verified). Build note: the product image step needs ~14 GB free
 (tar 4.4 GB + about 8 GB of working output); at 12 GB it ran out of disk and aborted.
 
-## 12. Camera v14 + PhotoStage app + release tag T20261031 (2026-10-31, built from `payload_tele`, FLASHED no-wipe)
-Owner approved the flash on 2026-10-31. Product partition only (`fastboot flash product`, fastbootd, no erase), via `flash_product_nowipe.sh`; 1 min 20 s flash, boot 65 s.
-Changes: `priv-app/MiuiCamera` = camera **v14** (v13 + `tools/re/hide_modes.sh`: Sticker avatars/Mimoji, Mimoji video, Clone and Movie effects hidden; they crashed the app, see `docs/camera/OWNER_TESTS_2026-10-30.md`), sha 25b5af1e; new `app/PhotoStage` (release APK, project key; background photo stage, see `docs/camera/08_PHOTO_STAGE.md`); `ro.build.fingerprint` tag T20261026 -> **T20261031** (refreshes cached carrier config).
-Checks: verify_img errors 0, erofs_symlink_check crossing 0, privcheck 44 priv-apps 0 missing; image mounted and checked (camera sha, PhotoStage, Google Dialer/Contacts present, MIUIContactsT gone); after boot fingerprint with the new tag, SELinux enforcing, crash buffer empty; camera and PhotoStage run from /product after `pm uninstall-system-updates`; mode sweep 18 modes, 0 crashes.
-Image: `secure_build/out_tele/product.img` sha256 35f5cfbc...; previous (v13, flashed 2026-10-30) = `secure_build/out_tele_T20261030_v13`; older = `out_tele_T20261026_prev`.
-Known: the PhotoStage APK inside this image is the first release build; the fixed one (skips images over 24 MP, re-schedules when opened) is installed on the phone as an app update and staged in `payload_tele` for the next product build.
-Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261030_v13 "rollback to v13"`.
+## 12. Camera v15 + PhotoStage app, release tag T20261031b (2026-10-31, built from `payload_tele`, FLASHED no-wipe)
+Owner approved. Product partition only (`flash_product_nowipe.sh`, fastbootd, no erase). Flashed in steps the same night: T20261031 (camera v14 + first PhotoStage), then T20261031b rebuilt three times while testing the ROM copy exposed PhotoStage defects; the last image is the one on the phone.
+`priv-app/MiuiCamera` = **v15**, sha b2e51dfb: v13 + `tools/re/hide_modes.sh` (Sticker avatars/Mimoji, Mimoji video, Clone, Movie effects hidden; they crashed) + `tools/re/video_keep_fix.sh` (finished videos no longer deleted when the app reads duration 0). New `app/PhotoStage`, sha 8f66f269 (`docs/camera/08_PHOTO_STAGE.md`).
+Image `secure_build/out_tele/product.img`, sha256 fbc668b2...: verify_img errors 0, erofs_symlink_check crossing 0, privcheck 44 priv-apps 0 missing.
+On the phone: boot ~60 s, SELinux enforcing, crash buffer empty, camera and PhotoStage run from /product; 19-entry mode sweep 0 crashes; native photo copied with the camera open; LMC photo skipped; 6 min 50 s 4K60 clip saved (5.14 GB). LMC photo, Portrait and video were checked on the T20261031 image (0 crashes), photo again on the final image. A Facebook startup crash appeared once after one reboot (`Liger initialization failed`), not again in later use or boots.
+Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261031_v14 "rollback to v14"`; older: `out_tele_T20261030_v13`, `out_tele_T20261026_prev`.
+Build notes: `build_tele.sh` stops at its final `fusermount -u` (busy) before writing SHA256SUMS: run `fusermount -uz` and write the sums by hand; the image itself is complete. Never `rm -rf` the work dir before checking `mount | grep work_tele`.
+Still to do by the owner: a real call on both SIMs.
