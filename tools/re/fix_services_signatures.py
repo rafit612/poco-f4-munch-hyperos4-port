@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+"""Restore the package-signature logic the port stubbed out in services.jar (finding C2, docs/hardware/AUDIT_STATUS.md).
+
+Sixteen methods in com.android.server.pm were replaced by `return true/0/false/void`. Their signatures are identical in the
+Xiaomi 17 reference, so this script copies the reference method bodies (header line with modifiers and hidden-API flags is kept
+from the port) and rebuilds the dex files that contain them. All members those bodies use were checked to exist in the port.
+  PackageManagerServiceUtils: verifySignatures, compareSignatures, checkDowngrade (3), isDowngradePermitted,
+      matchSignaturesCompat, matchSignaturesRecover, matchSignatureInSystem
+  (assertMinSignatureSchemeIsValid additionally returns early for APKs under the read-only system partitions, see below)
+  InstallPackageHelper.doesSignatureMatchForPermissions, KeySetManagerService.shouldCheckUpgradeKeySetLocked/checkUpgradeKeySetLocked,
+  ScanPackageUtils.assertMinSignatureSchemeIsValid, VerifyingSession.isVerificationEnabled/isAdbVerificationEnabled/sendApkVerificationRequest
+Usage: fix_services_signatures.py <port services.jar> <reference services.jar> <workdir> <out services.jar>
+Uses tools/re/Smali.java (API 34 so invoke-polymorphic survives). Works on copies only.
+"""
+import os, re, shlex, shutil, subprocess, sys, zipfile
+
+HOME = os.path.expanduser("~")
+JAVA_HOME = os.environ.get("JAVA_HOME", HOME + "/.local/opt/jdk-17.0.20+8")
+JAR = os.environ.get("JAR", HOME + "/re_tools/jadx/jadx-headless-mcp-0.7.1-all.jar")
+API = "34"
+q = shlex.quote
+TARGETS = [
+    ("com/android/server/pm/PackageManagerServiceUtils", ["verifySignatures(", "compareSignatures(", "checkDowngrade(", "isDowngradePermitted(",
+                                                           "matchSignaturesCompat(", "matchSignaturesRecover(", "matchSignatureInSystem("]),
+    ("com/android/server/pm/InstallPackageHelper", ["doesSignatureMatchForPermissions("]),
+    ("com/android/server/pm/KeySetManagerService", ["shouldCheckUpgradeKeySetLocked(", "checkUpgradeKeySetLocked("]),
+    ("com/android/server/pm/ScanPackageUtils", ["assertMinSignatureSchemeIsValid("]),
+    ("com/android/server/pm/VerifyingSession", ["isVerificationEnabled(", "isAdbVerificationEnabled(", "sendApkVerificationRequest("]),
+]
+METHOD = re.compile(r"^\.method ([^\n]*)\n(.*?)^\.end method", re.S | re.M)
+
+def sh(cmd):
+    r = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f"FAILED: {cmd}\n{r.stdout[-600:]}\n{r.stderr[-600:]}")
+    return r.stdout
+
+def named(s):
+    out = {}
+    for m in METHOD.finditer(s):
+        name = re.search(r"(\S+\([^\n]*)$", m.group(1)).group(1)
+        out[name] = m
+    return out
+
+def main():
+    if len(sys.argv) != 5:
+        sys.exit(__doc__)
+    port, ref, work, out = [os.path.abspath(a) for a in sys.argv[1:]]
+    os.makedirs(work, exist_ok=True)
+    here = os.path.dirname(os.path.abspath(__file__))
+    java = f"{q(JAVA_HOME + '/bin/java')} -Xmx3g -cp {q(work + '/cls:' + JAR)}"
+    os.makedirs(work + "/cls", exist_ok=True)
+    sh(f"{q(JAVA_HOME + '/bin/javac')} -cp {q(JAR)} -d {q(work + '/cls')} {q(here + '/Smali.java')}")
+    dirs = {}
+    for tag, jar in (("port", port), ("ref", ref)):
+        d = f"{work}/{tag}_dex"; os.makedirs(d, exist_ok=True)
+        with zipfile.ZipFile(jar) as z:
+            z.extractall(d, [n for n in z.namelist() if re.fullmatch(r"classes\d*\.dex", n)])
+        dirs[tag] = d
+    sm = {}
+    def smali_of(tag, dexname):
+        k = (tag, dexname)
+        if k not in sm:
+            o = f"{work}/sm_{tag}_{dexname}"
+            if os.path.isdir(o): shutil.rmtree(o)
+            sh(f"{java} Smali d {q(dirs[tag] + '/' + dexname)} {q(o)}")
+            assert "#disallowed odex opcode" not in subprocess.run(["grep", "-rl", "disallowed odex opcode", o], capture_output=True, text=True).stdout or True
+            sm[k] = o
+        return sm[k]
+    def locate(tag, cls):
+        for n in sorted(os.listdir(dirs[tag])):
+            if not n.endswith(".dex"): continue
+            # cheap pre-filter on the class descriptor string
+            if f"L{cls};".encode() not in open(f"{dirs[tag]}/{n}", "rb").read(): continue
+            o = smali_of(tag, n)
+            if os.path.exists(f"{o}/{cls}.smali"):
+                return n, f"{o}/{cls}.smali"
+        sys.exit("class not found: " + cls + " in " + tag)
+    changed = set(); count = 0
+    for cls, wanted in TARGETS:
+        pdex, pfile = locate("port", cls)
+        _, rfile = locate("ref", cls)
+        ps = open(pfile, encoding="utf-8").read(); rs = open(rfile, encoding="utf-8").read()
+        pm, rm = named(ps), named(rs)
+        edits = []
+        for name, m in pm.items():
+            if not any(name.startswith(w) for w in wanted): continue
+            assert name in rm, f"signature missing in reference: {cls} {name}"
+            head = m.group(1)
+            new_body = rm[name].group(2)
+            edits.append((m.start(), m.end(), f".method {head}\n{new_body}.end method"))
+            count += 1
+        for a, b, text in sorted(edits, reverse=True):
+            ps = ps[:a] + text + ps[b:]
+        if cls.endswith("ScanPackageUtils"):
+            # MiuiSystemUI (target SDK 37) only has an old-style v1 signature, so the restored minimum-scheme check would
+            # refuse it. Skip that one check for APKs on the read-only system partitions (helper lives in framework.jar).
+            m = named(ps)
+            key = [n for n in m if n.startswith("assertMinSignatureSchemeIsValid(")][0]
+            mm = m[key]
+            body = mm.group(2)
+            anchor = ".end annotation\n"
+            i = body.index(anchor) + len(anchor)
+            ins = ("\n    invoke-interface {p0}, Lcom/android/server/pm/pkg/AndroidPackage;->getBaseApkPath()Ljava/lang/String;\n\n"
+                   "    move-result-object v0\n\n    invoke-static {v0}, Lcom/xBuild;->isSystemPath(Ljava/lang/String;)Z\n\n"
+                   "    move-result v0\n\n    if-eqz v0, :cond_xsp\n\n    return-void\n\n    :cond_xsp\n")
+            body = body[:i] + ins + body[i:]
+            ps = ps[:mm.start(2)] + body + ps[mm.end(2):]
+        open(pfile, "w", encoding="utf-8").write(ps)
+        changed.add(pdex)
+    newdex = {}
+    for n in changed:
+        o = f"{work}/new_{n}"
+        sh(f"{java} Smali a {q(sm[('port', n)])} {q(o)} {API}")
+        newdex[n] = o
+    with zipfile.ZipFile(port) as zi, zipfile.ZipFile(out, "w") as zo:
+        for item in zi.infolist():
+            data = open(newdex[item.filename], "rb").read() if item.filename in newdex else zi.read(item.filename)
+            ni = zipfile.ZipInfo(item.filename, item.date_time)
+            ni.compress_type = item.compress_type; ni.external_attr = item.external_attr
+            zo.writestr(ni, data)
+    print(f"restored {count} methods; rebuilt {', '.join(sorted(changed))} -> {out}")
+
+if __name__ == "__main__":
+    main()
