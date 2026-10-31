@@ -59,3 +59,19 @@ Auto hibernation note: ~175 s after the last touch the preview goes black and th
 
 ### 4K60 heat
 Separate recordings, on the charger, phone on a stand, screen on: 5.5 min from cool: battery 35.7 -> 35.9 C (peak 36.0), hottest zone 64-74 C. About 10 min from warm, two runs: battery 38.1 -> 38.9 C and 38.6 -> 38.7 C (peak 39.2), hottest zone 71-80 C. ROM v15, 6 min 50 s right after the mode sweep: battery 37.4 -> 38.3 C. Recording kept running, crash buffer empty. **Not checked:** dropped frames, throttling, heat on battery, in daylight or in the hand.
+
+## 2026-10-31 midday: owner daylight session on the final ROM (T20261031b), overcast, outdoors, same scene
+**Stability:** no crash in either camera, crash buffer empty. PhotoStage made all 15 copies of the 16 MP native shots without being killed; LMC shots were skipped. Photos stay local (neighbouring buildings).
+
+**Native vs LMC, daylight, ISO 50.** Native shots aligned onto the LMC frame (SIFT homography, 669-873 inliers), identical region:
+| | Laplacian variance | Look at 100 % |
+|---|---|---|
+| LMC | 105.6 | fine wall texture and thin lines kept |
+| native v15 (two shots) | 55.1, 51.2 | clean but smooth; wall texture gone |
+| PhotoStage copy | 135.6, 127.3 | crisp edges, texture **not** restored; saturated blue and red pushed too far |
+The gap is about 2x in daylight (about 20x in the indoor evening set). The PhotoStage number is higher than LMC only because sharpening raises this metric; it is not more real detail.
+**Reading:** native softness is present at ISO 50 too, where there is little noise to remove, so a camera build with the HAL noise reduction off is worth a daylight test: `~/camera_builds/MiuiCamera_v15_NRoff.apk` (v15 + NR off + edge off on STILL), built, not installed. PhotoStage colour: the chroma gain is too strong on already saturated colours; the owner has not given a verdict yet.
+
+**Video.** All four clips have audio and no dropped frames by count: native 4K60 16.8 s, 101 Mbit/s, 1006 frames; LMC 4K60 9.6 s, 80 Mbit/s, 579 frames; LMC 4K30 and 1080p30 also fine. Stabilisation not judged.
+
+**Calls on the final ROM: placed, not completed.** SIM 2 (IMS/VoLTE, reached progressing) and SIM 1 (no IMS session, circuit-switched) both dialled for about 8-10 s and were ended locally; neither reached active, call log duration 0. So dialling works from Google Phone on both SIMs, but voice in a connected call and incoming calls are still untested on this ROM.

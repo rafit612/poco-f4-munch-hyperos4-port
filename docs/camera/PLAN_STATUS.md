@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 06:33 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 12:49 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -92,7 +92,7 @@ Generated 2026-10-31 06:33 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Third-party app capability matrix + fixes (Camera2, extensions)
 - [x] One GCam xml (13 files -> 1)
 - [x] Xiaomi 17 portable parts: only the look is portable (HAL is AIDL/sm8x50, 07 §5)
-- [~] Own processing stage: PhotoStage in the ROM, tested on the flashed image (memory 3.4 GB -> 0.96 GB, retry, catch-up, boot start); owner must judge the look (OWNER_HELP_NEEDED #7)
+- [~] Own processing stage: PhotoStage in the ROM, tested on the flashed image (memory 3.4 GB -> 0.96 GB, retry, catch-up, boot start); 15 of 15 copies in real use; colour gain too strong on saturated colours; owner must judge the look (OWNER_HELP_NEEDED #7)
 - [x] C1 Sensor RAW HDR (3-exposure) - test module, quality check
 - [x] C2 DSP stage of Xiaomi HDR (hdsr) - closed: app requests it via vendor tag xiaomi.hdr.sr.enabled, which the munch HAL lacks (VTNF) -> not usable
 - [x] C3 60 fps + ISO above 877 for other apps
@@ -110,15 +110,15 @@ Generated 2026-10-31 06:33 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER (indoor, quick): video Bokeh in native Video mode with a person in frame - is the blur good?
 - [x] Lock-screen toggle: accessibility service 'Restart/PowerMenuService' was in Crashed list, autostart denied; toggle itself works (docs/system/PHONE_CHECKS)
 - [x] Google Dialer + Contacts as ROM default: flashed, system apps, no chooser, data intact; owner real-call test pending
-- [ ] OWNER (daylight, outside): same scene native vs LMC vs PhotoStage copy (decides v14) - only indoor evening shots so far
+- [~] Daylight native vs LMC vs PhotoStage done 2026-10-31 (overcast): native about 2x softer than LMC at ISO 50, stage cannot restore texture, colour too strong on saturated; NR-off test build ready, needs one owner shot set
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
 - [~] Long 4K60 clips sometimes deleted (duration read 0): v15 keeps them, rescue path tested; root cause unknown, not seen again
 
-## P9 — Ship + report (todo, 5/5 done)
+## P9 — Ship + report (todo, 4/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
-- [x] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, about 10-min 4K60 heat on the charger (39.2 C battery; dropped frames not checked); open: owner call test; bug: long native 4K60 clips sometimes deleted
+- [~] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, about 10-min 4K60 heat on the charger (39.2 C battery; dropped frames not checked); open: a connected call on both SIMs + incoming (2026-10-31 test calls dialled but were not answered); long-clip bug has a safety net
 - [x] Release build + rollback: camera v15 + PhotoStage + tag T20261031b FLASHED 2026-10-31; rollback out_tele_T20261031_v14
 - [x] Final report + release notes written 2026-10-31 (FINAL_REPORT.md, RELEASE_NOTES_DRAFT.md)
 - [x] Space: deleted verified duplicate port zip (4.7 GB) from Downloads; pendrive keeps it
