@@ -7,7 +7,11 @@ The port replaced seven checks with `invoke-static {}, Lcom/xBuild;->isOne()Z` (
   2. adds `com.xBuild.isSystemPath(String)` and makes `ParsingPackageUtils.getSigningDetails(...)` skip the full
      verification only for APKs under /system, /system_ext, /product, /vendor, /odm and /mi_ext (read-only OS
      partitions; the porter modified 12 of those apps after signing). Anything under /data is verified for real.
-It works on copies only: usage  fix_framework_signatures.py <framework.jar> <workdir> <out framework.jar>
+4. (needs the reference framework.jar as 4th argument) restores the methods the port reduced to `return true` / empty, copying the bodies
+     from the Xiaomi 17 reference: SigningDetails and PackageParser$SigningDetails .checkCapability/.checkCapabilityRecover/
+     .hasAncestorOrSelf/.hasCommonAncestor (certificate continuity, shared-uid and signature-permission checks) and
+     ApkSigningBlockUtils.verifyIntegrityForVerityBasedAlgorithm.
+It works on copies only: usage  fix_framework_signatures.py <framework.jar> <workdir> <out framework.jar> [<reference framework.jar>]
 Needs: JDK 17 on PATH or JAVA env, JADX/smali "all" jar in JAR env (default ~/re_tools/jadx/jadx-headless-mcp-0.7.1-all.jar),
 and tools/re/Smali.java compiled into <workdir>/cls (this script compiles it).
 """
@@ -90,9 +94,10 @@ def method_span(s, sig_fragment):
     sys.exit("method not found: " + sig_fragment)
 
 def main():
-    if len(sys.argv) != 4:
+    if len(sys.argv) not in (4, 5):
         sys.exit(__doc__)
-    jar_in, work, jar_out = [os.path.abspath(a) for a in sys.argv[1:]]
+    jar_in, work, jar_out = [os.path.abspath(a) for a in sys.argv[1:4]]
+    ref_jar = os.path.abspath(sys.argv[4]) if len(sys.argv) == 5 else None
     os.makedirs(work, exist_ok=True)
     q = shlex.quote
     java = f"{q(JAVA_HOME + '/bin/java')} -Xmx3g -cp {q(work + '/cls:' + JAR)}"
@@ -122,6 +127,46 @@ def main():
             body = body.replace(ISONE, r, 1)
         open(p, "w", encoding="utf-8").write(s[:a] + body + s[b:])
         changed[dexname] = True
+    # 1b. methods stubbed to `return true`: copy the reference bodies
+    if ref_jar:
+        METH = re.compile(r"^\.method ([^\n]*)\n(.*?)^\.end method", re.S | re.M)
+        rdex = f"{work}/refdex"; os.makedirs(rdex, exist_ok=True)
+        with zipfile.ZipFile(ref_jar) as z:
+            z.extractall(rdex, [n for n in z.namelist() if re.fullmatch(r"classes\d*\.dex", n)])
+        def locate(dirpath, cls, tag):
+            for n in sorted(os.listdir(dirpath)):
+                if not n.endswith(".dex"): continue
+                if f"L{cls};".encode() not in open(f"{dirpath}/{n}", "rb").read(): continue
+                o = f"{work}/sm_{tag}_{n}"
+                if not os.path.isdir(o): sh(f"{java} Smali d {q(dirpath + '/' + n)} {q(o)}")
+                if os.path.exists(f"{o}/{cls}.smali"): return n, f"{o}/{cls}.smali"
+            sys.exit("class not found: " + cls)
+        TARGETS = [("android/content/pm/SigningDetails", ["checkCapability(", "checkCapabilityRecover(", "hasAncestorOrSelf(", "hasCommonAncestor("]),
+                   ("android/content/pm/PackageParser$SigningDetails", ["checkCapability(", "checkCapabilityRecover(", "hasAncestorOrSelf(", "hasCommonAncestor("]),
+                   ("android/util/apk/ApkSigningBlockUtils", ["verifyIntegrityForVerityBasedAlgorithm("])]
+        for cls, wanted in TARGETS:
+            pdx = pfile = None
+            for n in sorted(os.listdir(dex)):          # same disassembled trees (get) as the other steps, so no edit is lost
+                if n.endswith(".dex") and f"L{cls};".encode() in open(f"{dex}/{n}", "rb").read():
+                    f = f"{get(n)}/{cls}.smali"
+                    if os.path.exists(f): pdx, pfile = n, f; break
+            assert pdx, "class not found in port: " + cls
+            _, rfile = locate(rdex, cls, "r")
+            ps, rs = open(pfile, encoding="utf-8").read(), open(rfile, encoding="utf-8").read()
+            def named(src):
+                return {re.search(r"(\S+\([^\n]*)$", m.group(1)).group(1): m for m in METH.finditer(src)}
+            pm, rm = named(ps), named(rs)
+            edits = []
+            for name, m in pm.items():
+                if not any(name.startswith(w) for w in wanted): continue
+                assert name in rm, "signature missing in reference: " + cls + " " + name
+                edits.append((m.start(), m.end(), ".method " + m.group(1) + "\n" + rm[name].group(2) + ".end method"))
+            assert edits, cls
+            for a, b, text in sorted(edits, reverse=True):
+                ps = ps[:a] + text + ps[b:]
+            open(pfile, "w", encoding="utf-8").write(ps)
+            changed[pdx] = True
+            print("restored", len(edits), "methods in", cls)
     # 2. system-path exemption in ParsingPackageUtils.getSigningDetails(ParseInput,String,boolean,boolean,SigningDetails,int)
     d5 = [n for n in os.listdir(dex) if n.endswith(".dex")]
     target = None

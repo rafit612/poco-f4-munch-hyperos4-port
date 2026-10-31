@@ -17,6 +17,18 @@ for part in ${PARTS:-mi_ext product}; do
     "$MK" -zlz4hc,12 -b4096 -T"$(date +%s)" --all-time -E^xattr-name-filter,noinline_data --tar=f "$O/$part.img" "$TMP/$part.tar" > "$TMP/$part.mkfs.log" 2>&1
     rm -f "$TMP/$part.tar"
     mkdir -p "$TMP/new_$part"; "$E/erofsfuse" "$O/$part.img" "$TMP/new_$part" > /dev/null 2>&1
+    # root directory of the image must equal the original's (a symlink as $orig once gave the root mode 0777, uid 1000, no label: system-as-root then fails to boot)
+    [ -L "$orig" ] && { echo "ERROR: $orig is a symlink, mount the image there"; exit 1; }
+    python3 -I - "$orig" "$TMP/new_$part" <<'PY' || { echo "ERROR: root directory differs from the original"; exit 1; }
+import os, sys
+a, b = sys.argv[1:3]
+def r(p):
+    s = os.lstat(p)
+    return (s.st_mode, s.st_uid, s.st_gid, {k: os.getxattr(p, k, follow_symlinks=False) for k in os.listxattr(p, follow_symlinks=False)})
+x, y = r(a), r(b)
+print("root dir check:", "OK" if x == y else "DIFFERENT %r vs %r" % (x, y))
+sys.exit(0 if x == y else 1)
+PY
     python3 -I "$T/verify_img.py" "$orig" "$TMP/new_$part" "$Y/$part" "$Y/$part.remove" | tail -1
     python3 -I "$T/erofs_symlink_check.py" "$O/$part.img" | tail -1
     fusermount -u "$TMP/new_$part"
