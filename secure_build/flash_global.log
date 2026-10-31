@@ -1,0 +1,615 @@
+12:09:12 Flashing FULL GLOBAL build
+12:09:57 adb: rebooting to fastbootd
+12:10:18 in fastbootd, current slot: current-slot: a
+12:10:18 flashing vendor (1.1G)
+Resizing 'vendor_a'                                OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'vendor_a' 1/5 (247388 KB)          OKAY [  5.930s]
+Writing 'vendor_a'                                 OKAY [  0.505s]
+Sending sparse 'vendor_a' 2/5 (262140 KB)          OKAY [  6.660s]
+Writing 'vendor_a'                                 OKAY [  0.461s]
+Sending sparse 'vendor_a' 3/5 (262140 KB)          OKAY [  6.479s]
+Writing 'vendor_a'                                 OKAY [  0.401s]
+Sending sparse 'vendor_a' 4/5 (262140 KB)          OKAY [  6.447s]
+Writing 'vendor_a'                                 OKAY [  0.433s]
+Sending sparse 'vendor_a' 5/5 (37936 KB)           OKAY [  0.968s]
+Writing 'vendor_a'                                 OKAY [  0.120s]
+Finished. Total time: 28.626s
+12:10:47 flashing system (901M)
+Resizing 'system_a'                                OKAY [  0.003s]
+Invalid sparse file format at header magic
+Sending sparse 'system_a' 1/4 (262140 KB)          OKAY [  6.268s]
+Writing 'system_a'                                 OKAY [  0.549s]
+Sending sparse 'system_a' 2/4 (262140 KB)          OKAY [  6.636s]
+Writing 'system_a'                                 OKAY [  0.444s]
+Sending sparse 'system_a' 3/4 (262140 KB)          OKAY [  6.666s]
+Writing 'system_a'                                 OKAY [  0.466s]
+Sending sparse 'system_a' 4/4 (135348 KB)          OKAY [  3.427s]
+Writing 'system_a'                                 OKAY [  0.261s]
+Finished. Total time: 25.763s
+12:11:13 flashing system_ext (788M)
+Resizing 'system_ext_a'                            OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'system_ext_a' 1/4 (262140 KB)      OKAY [  6.365s]
+Writing 'system_ext_a'                             OKAY [  0.541s]
+Sending sparse 'system_ext_a' 2/4 (262140 KB)      OKAY [  6.646s]
+Writing 'system_ext_a'                             OKAY [  0.462s]
+Sending sparse 'system_ext_a' 3/4 (262140 KB)      OKAY [  6.600s]
+Writing 'system_ext_a'                             OKAY [  0.428s]
+Sending sparse 'system_ext_a' 4/4 (20204 KB)       OKAY [  0.511s]
+Writing 'system_ext_a'                             OKAY [  0.077s]
+Finished. Total time: 22.642s
+12:11:36 flashing product (2.9G)
+Resizing 'product_a'                               OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/12 (262140 KB)        OKAY [  6.077s]
+Writing 'product_a'                                OKAY [  0.517s]
+Sending sparse 'product_a' 2/12 (262140 KB)        OKAY [  6.204s]
+Writing 'product_a'                                OKAY [  0.476s]
+Sending sparse 'product_a' 3/12 (262140 KB)        OKAY [  6.314s]
+Writing 'product_a'                                OKAY [  0.446s]
+Sending sparse 'product_a' 4/12 (262140 KB)        OKAY [  6.189s]
+Writing 'product_a'                                OKAY [  0.478s]
+Sending sparse 'product_a' 5/12 (262140 KB)        OKAY [  6.223s]
+Writing 'product_a'                                OKAY [  0.449s]
+Sending sparse 'product_a' 6/12 (262140 KB)        OKAY [  6.215s]
+Writing 'product_a'                                OKAY [  0.449s]
+Sending sparse 'product_a' 7/12 (262140 KB)        OKAY [  6.127s]
+Writing 'product_a'                                OKAY [  0.445s]
+Sending sparse 'product_a' 8/12 (262140 KB)        OKAY [  6.184s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 9/12 (262140 KB)        OKAY [  6.227s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 10/12 (262140 KB)       OKAY [  6.163s]
+Writing 'product_a'                                OKAY [  0.437s]
+Sending sparse 'product_a' 11/12 (262140 KB)       OKAY [  6.843s]
+Writing 'product_a'                                OKAY [  0.465s]
+Sending sparse 'product_a' 12/12 (52812 KB)        OKAY [  1.253s]
+Writing 'product_a'                                OKAY [  0.111s]
+Finished. Total time: 78.352s
+12:12:55 flashing mi_ext (890M)
+Resizing 'mi_ext_a'                                OKAY [  0.002s]
+Invalid sparse file format at header magic
+Sending sparse 'mi_ext_a' 1/4 (262140 KB)          OKAY [  5.911s]
+Writing 'mi_ext_a'                                 OKAY [  0.522s]
+Sending sparse 'mi_ext_a' 2/4 (262140 KB)          OKAY [  6.137s]
+Writing 'mi_ext_a'                                 OKAY [  0.436s]
+Sending sparse 'mi_ext_a' 3/4 (262140 KB)          OKAY [  6.181s]
+Writing 'mi_ext_a'                                 OKAY [  0.463s]
+Sending sparse 'mi_ext_a' 4/4 (124636 KB)          OKAY [  3.100s]
+Writing 'mi_ext_a'                                 OKAY [  0.243s]
+Finished. Total time: 24.758s
+12:13:20 rebooting to bootloader to wipe userdata + metadata
+******** Did you mean to fastboot format this ext4 partition?
+Erasing 'metadata'                                 OKAY [  0.007s]
+Finished. Total time: 0.020s
+******** Did you mean to fastboot format this f2fs partition?
+Erasing 'userdata'                                 OKAY [  0.631s]
+Finished. Total time: 0.643s
+12:13:29 rebooting to Android (first boot takes a few minutes)
+Rebooting                                          OKAY [  0.001s]
+Finished. Total time: 0.201s
+12:13:29 DONE
+13:22:15 Flashing FULL GLOBAL build
+13:23:00 no adb device: assuming the phone is already in fastboot
+13:23:22 in fastbootd, current slot: current-slot: a
+13:23:22 flashing vendor (1.1G)
+Resizing 'vendor_a'                                OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'vendor_a' 1/5 (247388 KB)          OKAY [  5.981s]
+Writing 'vendor_a'                                 OKAY [  0.526s]
+Sending sparse 'vendor_a' 2/5 (262140 KB)          OKAY [  6.320s]
+Writing 'vendor_a'                                 OKAY [  0.469s]
+Sending sparse 'vendor_a' 3/5 (262140 KB)          OKAY [  6.699s]
+Writing 'vendor_a'                                 OKAY [  0.453s]
+Sending sparse 'vendor_a' 4/5 (262140 KB)          OKAY [  6.590s]
+Writing 'vendor_a'                                 OKAY [  0.498s]
+Sending sparse 'vendor_a' 5/5 (37936 KB)           OKAY [  0.966s]
+Writing 'vendor_a'                                 OKAY [  0.105s]
+Finished. Total time: 29.941s
+13:23:52 flashing system (901M)
+Resizing 'system_a'                                OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'system_a' 1/4 (262140 KB)          OKAY [  6.439s]
+Writing 'system_a'                                 OKAY [  0.548s]
+Sending sparse 'system_a' 2/4 (262140 KB)          OKAY [  6.614s]
+Writing 'system_a'                                 OKAY [  0.453s]
+Sending sparse 'system_a' 3/4 (262140 KB)          OKAY [  6.329s]
+Writing 'system_a'                                 OKAY [  0.450s]
+Sending sparse 'system_a' 4/4 (135440 KB)          OKAY [  3.417s]
+Writing 'system_a'                                 OKAY [  0.267s]
+Finished. Total time: 25.698s
+13:24:18 flashing system_ext (790M)
+Resizing 'system_ext_a'                            OKAY [  0.003s]
+Invalid sparse file format at header magic
+Sending sparse 'system_ext_a' 1/4 (262140 KB)      OKAY [  6.279s]
+Writing 'system_ext_a'                             OKAY [  0.514s]
+Sending sparse 'system_ext_a' 2/4 (262140 KB)      OKAY [  6.665s]
+Writing 'system_ext_a'                             OKAY [  0.451s]
+Sending sparse 'system_ext_a' 3/4 (262140 KB)      OKAY [  6.633s]
+Writing 'system_ext_a'                             OKAY [  0.431s]
+Sending sparse 'system_ext_a' 4/4 (22316 KB)       OKAY [  0.560s]
+Writing 'system_ext_a'                             OKAY [  0.080s]
+Finished. Total time: 22.330s
+13:24:41 flashing product (3.0G)
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/12 (262140 KB)        OKAY [  6.391s]
+Writing 'product_a'                                OKAY [  0.539s]
+Sending sparse 'product_a' 2/12 (262140 KB)        OKAY [  6.500s]
+Writing 'product_a'                                OKAY [  0.451s]
+Sending sparse 'product_a' 3/12 (262140 KB)        OKAY [  6.373s]
+Writing 'product_a'                                OKAY [  0.462s]
+Sending sparse 'product_a' 4/12 (262140 KB)        OKAY [  6.404s]
+Writing 'product_a'                                OKAY [  0.401s]
+Sending sparse 'product_a' 5/12 (262140 KB)        OKAY [  6.414s]
+Writing 'product_a'                                OKAY [  0.426s]
+Sending sparse 'product_a' 6/12 (262140 KB)        OKAY [  6.041s]
+Writing 'product_a'                                OKAY [  0.435s]
+Sending sparse 'product_a' 7/12 (242524 KB)        OKAY [  5.898s]
+Writing 'product_a'                                OKAY [  0.422s]
+Sending sparse 'product_a' 8/12 (262140 KB)        OKAY [  6.616s]
+Writing 'product_a'                                OKAY [  0.439s]
+Sending sparse 'product_a' 9/12 (262140 KB)        OKAY [  6.447s]
+Writing 'product_a'                                OKAY [  0.421s]
+Sending sparse 'product_a' 10/12 (262140 KB)       OKAY [  6.442s]
+Writing 'product_a'                                OKAY [  0.438s]
+Sending sparse 'product_a' 11/12 (262140 KB)       OKAY [  6.395s]
+Writing 'product_a'                                OKAY [  0.461s]
+Sending sparse 'product_a' 12/12 (210428 KB)       OKAY [  5.054s]
+Writing 'product_a'                                OKAY [  0.362s]
+Finished. Total time: 82.383s
+13:26:04 flashing mi_ext (890M)
+Resizing 'mi_ext_a'                                OKAY [  0.003s]
+Invalid sparse file format at header magic
+Sending sparse 'mi_ext_a' 1/4 (262140 KB)          OKAY [  6.222s]
+Writing 'mi_ext_a'                                 OKAY [  0.513s]
+Sending sparse 'mi_ext_a' 2/4 (262140 KB)          OKAY [  6.266s]
+Writing 'mi_ext_a'                                 OKAY [  0.455s]
+Sending sparse 'mi_ext_a' 3/4 (262140 KB)          OKAY [  6.532s]
+Writing 'mi_ext_a'                                 OKAY [  0.460s]
+Sending sparse 'mi_ext_a' 4/4 (124636 KB)          OKAY [  3.187s]
+Writing 'mi_ext_a'                                 OKAY [  0.217s]
+Finished. Total time: 24.653s
+13:26:29 flashing odm (3.5M)
+Resizing 'odm_a'                                   OKAY [  0.005s]
+Sending 'odm_a' (3492 KB)                          OKAY [  0.079s]
+Writing 'odm_a'                                    OKAY [  0.089s]
+Finished. Total time: 0.182s
+13:26:29 rebooting to bootloader to wipe userdata + metadata
+******** Did you mean to fastboot format this ext4 partition?
+Erasing 'metadata'                                 OKAY [  0.006s]
+Finished. Total time: 0.019s
+******** Did you mean to fastboot format this f2fs partition?
+Erasing 'userdata'                                 OKAY [  0.585s]
+Finished. Total time: 0.597s
+13:26:38 rebooting to Android (first boot takes a few minutes)
+Rebooting                                          OKAY [  0.001s]
+Finished. Total time: 0.201s
+13:26:38 DONE
+15:20:04 Flashing FULL GLOBAL build
+15:21:29 no adb device: assuming the phone is already in fastboot
+15:21:49 in fastbootd, current slot: current-slot: a
+15:21:49 flashing vendor (1.1G)
+Resizing 'vendor_a'                                OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'vendor_a' 1/5 (247388 KB)          OKAY [  5.698s]
+Writing 'vendor_a'                                 OKAY [  0.535s]
+Sending sparse 'vendor_a' 2/5 (262140 KB)          OKAY [  6.014s]
+Writing 'vendor_a'                                 OKAY [  0.461s]
+Sending sparse 'vendor_a' 3/5 (262140 KB)          OKAY [  6.037s]
+Writing 'vendor_a'                                 OKAY [  0.462s]
+Sending sparse 'vendor_a' 4/5 (262140 KB)          OKAY [  6.079s]
+Writing 'vendor_a'                                 OKAY [  0.481s]
+Sending sparse 'vendor_a' 5/5 (37936 KB)           OKAY [  0.863s]
+Writing 'vendor_a'                                 OKAY [  0.116s]
+Finished. Total time: 27.662s
+15:22:17 flashing system (901M)
+Resizing 'system_a'                                OKAY [  0.003s]
+Invalid sparse file format at header magic
+Sending sparse 'system_a' 1/4 (262140 KB)          OKAY [  6.007s]
+Writing 'system_a'                                 OKAY [  0.559s]
+Sending sparse 'system_a' 2/4 (262140 KB)          OKAY [  5.960s]
+Writing 'system_a'                                 OKAY [  0.472s]
+Sending sparse 'system_a' 3/4 (262140 KB)          OKAY [  5.955s]
+Writing 'system_a'                                 OKAY [  0.457s]
+Sending sparse 'system_a' 4/4 (135440 KB)          OKAY [  3.087s]
+Writing 'system_a'                                 OKAY [  0.250s]
+Finished. Total time: 23.311s
+15:22:41 flashing system_ext (790M)
+Resizing 'system_ext_a'                            OKAY [  0.002s]
+Invalid sparse file format at header magic
+Sending sparse 'system_ext_a' 1/4 (262140 KB)      OKAY [  5.934s]
+Writing 'system_ext_a'                             OKAY [  0.529s]
+Sending sparse 'system_ext_a' 2/4 (262140 KB)      OKAY [  5.962s]
+Writing 'system_ext_a'                             OKAY [  0.433s]
+Sending sparse 'system_ext_a' 3/4 (262140 KB)      OKAY [  5.979s]
+Writing 'system_ext_a'                             OKAY [  0.416s]
+Sending sparse 'system_ext_a' 4/4 (22120 KB)       OKAY [  0.496s]
+Writing 'system_ext_a'                             OKAY [  0.088s]
+Finished. Total time: 20.468s
+15:23:02 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.766s]
+Writing 'product_a'                                OKAY [  0.529s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.737s]
+Writing 'product_a'                                OKAY [  0.463s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.758s]
+Writing 'product_a'                                OKAY [  0.425s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.728s]
+Writing 'product_a'                                OKAY [  0.448s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.754s]
+Writing 'product_a'                                OKAY [  0.429s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.747s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.734s]
+Writing 'product_a'                                OKAY [  0.466s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.770s]
+Writing 'product_a'                                OKAY [  0.458s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.747s]
+Writing 'product_a'                                OKAY [  0.433s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.746s]
+Writing 'product_a'                                OKAY [  0.394s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.734s]
+Writing 'product_a'                                OKAY [  0.449s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.752s]
+Writing 'product_a'                                OKAY [  0.455s]
+Sending sparse 'product_a' 13/13 (83604 KB)        OKAY [  1.828s]
+Writing 'product_a'                                OKAY [  0.179s]
+Finished. Total time: 79.430s
+15:24:21 flashing mi_ext (890M)
+Resizing 'mi_ext_a'                                OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'mi_ext_a' 1/4 (262140 KB)          OKAY [  5.887s]
+Writing 'mi_ext_a'                                 OKAY [  0.526s]
+Sending sparse 'mi_ext_a' 2/4 (262140 KB)          OKAY [  5.949s]
+Writing 'mi_ext_a'                                 OKAY [  0.402s]
+Sending sparse 'mi_ext_a' 3/4 (262140 KB)          OKAY [  5.943s]
+Writing 'mi_ext_a'                                 OKAY [  0.445s]
+Sending sparse 'mi_ext_a' 4/4 (124636 KB)          OKAY [  2.844s]
+Writing 'mi_ext_a'                                 OKAY [  0.247s]
+Finished. Total time: 23.394s
+15:24:45 flashing odm (3.5M)
+Resizing 'odm_a'                                   OKAY [  0.002s]
+Sending 'odm_a' (3492 KB)                          OKAY [  0.078s]
+Writing 'odm_a'                                    OKAY [  0.096s]
+Finished. Total time: 0.187s
+15:24:46 rebooting to bootloader to wipe userdata + metadata
+******** Did you mean to fastboot format this ext4 partition?
+Erasing 'metadata'                                 OKAY [  0.006s]
+Finished. Total time: 0.018s
+******** Did you mean to fastboot format this f2fs partition?
+Erasing 'userdata'                                 OKAY [  0.634s]
+Finished. Total time: 0.646s
+15:24:55 rebooting to Android (first boot takes a few minutes)
+Rebooting                                          OKAY [  0.001s]
+Finished. Total time: 0.201s
+15:24:55 DONE
+17:10:15 NO-WIPE update: system_ext product mi_ext (Global apps, China duplicates removed, Updater, original Gallery)
+17:10:34 in fastbootd current-slot: a
+17:10:34 flashing system_ext
+Resizing 'system_ext_a'                            OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'system_ext_a' 1/4 (262140 KB)      OKAY [  6.434s]
+Writing 'system_ext_a'                             OKAY [  0.552s]
+Sending sparse 'system_ext_a' 2/4 (262140 KB)      OKAY [  6.377s]
+Writing 'system_ext_a'                             OKAY [  0.427s]
+Sending sparse 'system_ext_a' 3/4 (262140 KB)      OKAY [  6.442s]
+Writing 'system_ext_a'                             OKAY [  0.478s]
+Sending sparse 'system_ext_a' 4/4 (16632 KB)       OKAY [  0.410s]
+Writing 'system_ext_a'                             OKAY [  0.082s]
+Finished. Total time: 22.201s
+17:10:56 flashing product
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.880s]
+Writing 'product_a'                                OKAY [  0.549s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.851s]
+Writing 'product_a'                                OKAY [  0.452s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.944s]
+Writing 'product_a'                                OKAY [  0.456s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  6.002s]
+Writing 'product_a'                                OKAY [  0.478s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.989s]
+Writing 'product_a'                                OKAY [  0.431s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.995s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.987s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  6.140s]
+Writing 'product_a'                                OKAY [  0.436s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  6.406s]
+Writing 'product_a'                                OKAY [  0.438s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  6.443s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  6.407s]
+Writing 'product_a'                                OKAY [  0.457s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  6.422s]
+Writing 'product_a'                                OKAY [  0.454s]
+Sending sparse 'product_a' 13/13 (157280 KB)       OKAY [  3.855s]
+Writing 'product_a'                                OKAY [  0.281s]
+Finished. Total time: 87.453s
+17:12:24 flashing mi_ext
+Resizing 'mi_ext_a'                                OKAY [  0.003s]
+Invalid sparse file format at header magic
+Sending sparse 'mi_ext_a' 1/4 (262140 KB)          OKAY [  6.451s]
+Writing 'mi_ext_a'                                 OKAY [  0.546s]
+Sending sparse 'mi_ext_a' 2/4 (262140 KB)          OKAY [  6.514s]
+Writing 'mi_ext_a'                                 OKAY [  0.450s]
+Sending sparse 'mi_ext_a' 3/4 (262140 KB)          OKAY [  6.467s]
+Writing 'mi_ext_a'                                 OKAY [  0.416s]
+Sending sparse 'mi_ext_a' 4/4 (105180 KB)          OKAY [  2.587s]
+Writing 'mi_ext_a'                                 OKAY [  0.202s]
+Finished. Total time: 24.810s
+17:12:49 rebooting (no wipe)
+17:12:49 DONE
+18:13:22 NO-WIPE update: product (official camera 5.1, LMC 8.4)
+19:01:06 NO-WIPE update: product (official camera 5.1, LMC 8.4)
+19:09:40 NO-WIPE update: vendor (official camera HAL+tuning, audio HAL, fingerprint, thermal)
+21:25:02 NO-WIPE update: system system_ext product mi_ext (China apps removed, Global apps, Google Messages/Contacts/Dialer removed, HyperOS tuning, adb secure + preauthorized PC key)
+21:37:05 NO-WIPE update: product (camera 6.7 test with official vendor tuning)
+21:43:20 NO-WIPE update: vendor (HighQualityQuickShotSupportMask=0 for camera 6.7)
+01:12:16 NO-WIPE update: vendor system_ext product from out_sunday_plus (schedtune boost, memory extension, 7 Global apps)
+01:36:07 TEST-BOOT (temporary, nothing flashed): kernel_v1/boot_v1.img
+01:40:35 FLASH kernel_v1: boot vendor_boot dtbo (rollback = rom_extract/images boot/vendor_boot/dtbo)
+20:51:23 NO-WIPE update: product (camera v13 baked, Google Dialer+Contacts default, MIUI Call removed) from /home/odoo-dbsl/poco f4 5g 8gb 256gb munch/secure_build/out_tele
+20:51:23 adb: rebooting to fastbootd
+20:51:46 in fastbootd, slot current-slot: a
+20:51:46 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  6.236s]
+Writing 'product_a'                                OKAY [  0.534s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  6.174s]
+Writing 'product_a'                                OKAY [  0.485s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  6.188s]
+Writing 'product_a'                                OKAY [  0.431s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  6.172s]
+Writing 'product_a'                                OKAY [  0.451s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  6.162s]
+Writing 'product_a'                                OKAY [  0.470s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  6.189s]
+Writing 'product_a'                                OKAY [  0.442s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  6.201s]
+Writing 'product_a'                                OKAY [  0.470s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  6.191s]
+Writing 'product_a'                                OKAY [  0.460s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  6.179s]
+Writing 'product_a'                                OKAY [  0.432s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  6.143s]
+Writing 'product_a'                                OKAY [  0.433s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  6.136s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.784s]
+Writing 'product_a'                                OKAY [  0.455s]
+Sending sparse 'product_a' 13/13 (90908 KB)        OKAY [  1.990s]
+Writing 'product_a'                                OKAY [  0.198s]
+Finished. Total time: 82.408s
+20:53:08 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+20:53:08 DONE
+01:47:45 NO-WIPE update: product (product: camera v14 (Mimoji/Clone/Movie effects hidden) + PhotoStage app + tag T20261031) from secure_build/out_tele
+01:47:45 adb: rebooting to fastbootd
+01:48:01 in fastbootd, slot current-slot: a
+01:48:01 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.765s]
+Writing 'product_a'                                OKAY [  0.551s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.756s]
+Writing 'product_a'                                OKAY [  0.425s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.774s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.743s]
+Writing 'product_a'                                OKAY [  0.457s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.748s]
+Writing 'product_a'                                OKAY [  0.479s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.740s]
+Writing 'product_a'                                OKAY [  0.479s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.729s]
+Writing 'product_a'                                OKAY [  0.438s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.831s]
+Writing 'product_a'                                OKAY [  0.468s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.734s]
+Writing 'product_a'                                OKAY [  0.466s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.728s]
+Writing 'product_a'                                OKAY [  0.396s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.705s]
+Writing 'product_a'                                OKAY [  0.438s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.744s]
+Writing 'product_a'                                OKAY [  0.464s]
+Sending sparse 'product_a' 13/13 (103528 KB)       OKAY [  2.257s]
+Writing 'product_a'                                OKAY [  0.203s]
+Finished. Total time: 81.420s
+01:49:23 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+01:49:23 DONE
+04:50:53 NO-WIPE update: product (product: camera v15 (never delete a finished video) + PhotoStage boot receiver + tag T20261031b) from secure_build/out_tele
+04:50:53 adb: rebooting to fastbootd
+04:51:16 in fastbootd, slot current-slot: a
+04:51:16 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.787s]
+Writing 'product_a'                                OKAY [  0.532s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.800s]
+Writing 'product_a'                                OKAY [  0.460s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.785s]
+Writing 'product_a'                                OKAY [  0.475s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.782s]
+Writing 'product_a'                                OKAY [  0.442s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.780s]
+Writing 'product_a'                                OKAY [  0.443s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.784s]
+Writing 'product_a'                                OKAY [  0.451s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.770s]
+Writing 'product_a'                                OKAY [  0.461s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.903s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.766s]
+Writing 'product_a'                                OKAY [  0.462s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.749s]
+Writing 'product_a'                                OKAY [  0.454s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.744s]
+Writing 'product_a'                                OKAY [  0.448s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.748s]
+Writing 'product_a'                                OKAY [  0.420s]
+Sending sparse 'product_a' 13/13 (103528 KB)       OKAY [  2.270s]
+Writing 'product_a'                                OKAY [  0.209s]
+Finished. Total time: 81.635s
+04:52:37 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+04:52:38 DONE
+05:20:08 NO-WIPE update: product (product: camera v15 + PhotoStage (boot receiver, owner fallback) + tag T20261031b) from secure_build/out_tele
+05:20:09 adb: rebooting to fastbootd
+05:20:31 in fastbootd, slot current-slot: a
+05:20:31 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.807s]
+Writing 'product_a'                                OKAY [  0.548s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.796s]
+Writing 'product_a'                                OKAY [  0.476s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.793s]
+Writing 'product_a'                                OKAY [  0.459s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.783s]
+Writing 'product_a'                                OKAY [  0.437s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.803s]
+Writing 'product_a'                                OKAY [  0.429s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.797s]
+Writing 'product_a'                                OKAY [  0.414s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.804s]
+Writing 'product_a'                                OKAY [  0.452s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.825s]
+Writing 'product_a'                                OKAY [  0.442s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.799s]
+Writing 'product_a'                                OKAY [  0.413s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.796s]
+Writing 'product_a'                                OKAY [  0.460s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.800s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.794s]
+Writing 'product_a'                                OKAY [  0.433s]
+Sending sparse 'product_a' 13/13 (103528 KB)       OKAY [  2.285s]
+Writing 'product_a'                                OKAY [  0.191s]
+Finished. Total time: 78.270s
+05:21:49 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+05:21:49 DONE
+05:53:13 NO-WIPE update: product (product: camera v15 + final PhotoStage (retry, catch-up job, boot receiver) + tag T20261031b) from secure_build/out_tele
+05:53:13 adb: rebooting to fastbootd
+05:53:35 in fastbootd, slot current-slot: a
+05:53:35 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.814s]
+Writing 'product_a'                                OKAY [  0.533s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.788s]
+Writing 'product_a'                                OKAY [  0.460s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.810s]
+Writing 'product_a'                                OKAY [  0.437s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.799s]
+Writing 'product_a'                                OKAY [  0.425s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.808s]
+Writing 'product_a'                                OKAY [  0.467s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.823s]
+Writing 'product_a'                                OKAY [  0.437s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.821s]
+Writing 'product_a'                                OKAY [  0.479s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.830s]
+Writing 'product_a'                                OKAY [  0.450s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.809s]
+Writing 'product_a'                                OKAY [  0.467s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.793s]
+Writing 'product_a'                                OKAY [  0.451s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.785s]
+Writing 'product_a'                                OKAY [  0.450s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.792s]
+Writing 'product_a'                                OKAY [  0.453s]
+Sending sparse 'product_a' 13/13 (103532 KB)       OKAY [  2.281s]
+Writing 'product_a'                                OKAY [  0.222s]
+Finished. Total time: 78.550s
+05:54:54 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+05:54:54 DONE
+06:10:38 NO-WIPE update: product (product: camera v15 + final PhotoStage (native memory released, retry, catch-up, boot receiver) + tag T20261031b) from secure_build/out_tele
+06:10:38 adb: rebooting to fastbootd
+06:10:53 in fastbootd, slot current-slot: a
+06:10:53 flashing product (3.1G)
+Resizing 'product_a'                               OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'product_a' 1/13 (262140 KB)        OKAY [  5.823s]
+Writing 'product_a'                                OKAY [  0.549s]
+Sending sparse 'product_a' 2/13 (262140 KB)        OKAY [  5.796s]
+Writing 'product_a'                                OKAY [  0.436s]
+Sending sparse 'product_a' 3/13 (262140 KB)        OKAY [  5.784s]
+Writing 'product_a'                                OKAY [  0.459s]
+Sending sparse 'product_a' 4/13 (262140 KB)        OKAY [  5.831s]
+Writing 'product_a'                                OKAY [  0.472s]
+Sending sparse 'product_a' 5/13 (262140 KB)        OKAY [  5.785s]
+Writing 'product_a'                                OKAY [  0.447s]
+Sending sparse 'product_a' 6/13 (262140 KB)        OKAY [  5.799s]
+Writing 'product_a'                                OKAY [  0.481s]
+Sending sparse 'product_a' 7/13 (262140 KB)        OKAY [  5.793s]
+Writing 'product_a'                                OKAY [  0.447s]
+Sending sparse 'product_a' 8/13 (262140 KB)        OKAY [  5.833s]
+Writing 'product_a'                                OKAY [  0.470s]
+Sending sparse 'product_a' 9/13 (262140 KB)        OKAY [  5.797s]
+Writing 'product_a'                                OKAY [  0.467s]
+Sending sparse 'product_a' 10/13 (262140 KB)       OKAY [  5.791s]
+Writing 'product_a'                                OKAY [  0.440s]
+Sending sparse 'product_a' 11/13 (262140 KB)       OKAY [  5.783s]
+Writing 'product_a'                                OKAY [  0.420s]
+Sending sparse 'product_a' 12/13 (262140 KB)       OKAY [  5.756s]
+Writing 'product_a'                                OKAY [  0.444s]
+Sending sparse 'product_a' 13/13 (103532 KB)       OKAY [  2.288s]
+Writing 'product_a'                                OKAY [  0.196s]
+Finished. Total time: 78.474s
+06:12:12 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.201s
+06:12:12 DONE
+20:53:31 NO-WIPE update: system (signature + speaker fix) from secure_build/out_sigfix
+20:53:31 adb: rebooting to fastbootd
+20:53:49 in fastbootd, slot current-slot: a
+20:53:49 flashing system (864M)
+Resizing 'system_a'                                OKAY [  0.004s]
+Invalid sparse file format at header magic
+Sending sparse 'system_a' 1/4 (262140 KB)          OKAY [  5.743s]
+Writing 'system_a'                                 OKAY [  0.547s]
+Sending sparse 'system_a' 2/4 (262140 KB)          OKAY [  5.777s]
+Writing 'system_a'                                 OKAY [  0.450s]
+Sending sparse 'system_a' 3/4 (262140 KB)          OKAY [  5.791s]
+Writing 'system_a'                                 OKAY [  0.465s]
+Sending sparse 'system_a' 4/4 (97376 KB)           OKAY [  2.151s]
+Writing 'system_a'                                 OKAY [  0.189s]
+Finished. Total time: 21.439s
+20:54:10 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.251s
+20:54:11 DONE
+21:07:13 NO-WIPE update: system (rollback: sigfix image did not boot) from secure_build/out_tele_T20261030_v13
+21:07:13 no adb device: assuming the phone is already in fastboot
+21:07:36 in fastbootd, slot current-slot: a
+21:07:36 flashing system (869M)
+Resizing 'system_a'                                OKAY [  0.005s]
+Invalid sparse file format at header magic
+Sending sparse 'system_a' 1/4 (262140 KB)          OKAY [  6.346s]
+Writing 'system_a'                                 OKAY [  0.568s]
+Sending sparse 'system_a' 2/4 (262140 KB)          OKAY [  6.394s]
+Writing 'system_a'                                 OKAY [  0.470s]
+Sending sparse 'system_a' 3/4 (262140 KB)          OKAY [  6.576s]
+Writing 'system_a'                                 OKAY [  0.460s]
+Sending sparse 'system_a' 4/4 (103112 KB)          OKAY [  2.624s]
+Writing 'system_a'                                 OKAY [  0.200s]
+Finished. Total time: 23.834s
+21:08:00 rebooting (no wipe)
+Rebooting                                          OKAY [  0.000s]
+Finished. Total time: 0.252s
+21:08:01 DONE
