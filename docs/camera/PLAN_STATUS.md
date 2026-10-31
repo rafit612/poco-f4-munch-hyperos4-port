@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 13:03 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 13:07 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -81,7 +81,7 @@ Generated 2026-10-31 13:03 from the live dashboard checklist (`wlog task`). [x] 
 - [x] 07_IMPROVEMENT_PLAN.md ranked + Gate G3
 - [x] Rate owner-approved candidates C1-C5 (gain/risk/effort)
 
-## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 18/31 done)
+## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 21/31 done)
 
 - [x] Watermark POCO F4 5G
 - [x] Leica looks filter set enabled (Marble E1 25)
@@ -101,9 +101,9 @@ Generated 2026-10-31 13:03 from the live dashboard checklist (`wlog task`). [x] 
 - [~] OIS check: handheld video/long exposure OIS on vs off (port)
 - [x] Soft photos path 3: LMC daily camera + one tuned xml
 - [x] Soft photos path 2: lighter photo path in Xiaomi app - closed: daylight A/B shows no-AIIE / no-MFNR add no detail (not the cause)
-- [~] Soft photos path 1: ROOT CAUSE = HAL high-strength noise reduction; NR off tested indoors at ISO 800 2026-10-31: grain, and NR off + PhotoStage looks worse than LMC or ROM: not shipped; only daylight ISO 50 untested; LMC stays the detail camera
+- [x] KNOWN LIMIT (owner, 2026-10-31): native photos softer than LMC; cause = HAL noise reduction; NR off tested indoors and looks worse, not shipped; use LMC for detail (daylight ISO 50 not tested)
 - [x] Fix: fast shots saved as 1440x1080 placeholders (v8 fix; dark re-test 2026-10-30: 14 dark shots all full-size processed)
-- [~] Night: auto-night cause found (o.h0); NEW BUG: Night mode output has a purple cast (MIA MMCP 'no child node') - open; use LMC at night
+- [x] KNOWN LIMIT (owner, 2026-10-31): Night mode purple cast, vendor pipeline (MIA MMCP no child node), no fix found; use LMC at night
 - [x] U15 higher video bitrate
 - [ ] OWNER (optional): window/backlit scene - normal HDR highlight look (C2 itself closed)
 - [~] Night (owner indoor dark test 2026-10-30): native purple cast confirmed on real scene, LMC Night fine; outdoor night highlights still untested
@@ -113,7 +113,7 @@ Generated 2026-10-31 13:03 from the live dashboard checklist (`wlog task`). [x] 
 - [x] Daylight native vs LMC vs PhotoStage done 2026-10-31 (overcast): native about 2x softer than LMC at ISO 50, stage cannot restore texture, colour too strong on saturated
 - [ ] OWNER: judge 5-6 PhotoStage copies vs originals: better / same / too strong
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
-- [~] Long 4K60 clips sometimes deleted (duration read 0): v15 keeps them, rescue path tested; root cause unknown, not seen again
+- [x] KNOWN LIMIT (owner, 2026-10-31): long 4K60 clips were sometimes deleted (duration read 0), cause unknown, not seen again; v15 keeps such files; log tag MunchVideoDur shows the cause if it returns
 
 ## P9 — Ship + report (todo, 4/5 done)
 
