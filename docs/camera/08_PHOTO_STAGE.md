@@ -45,6 +45,9 @@ Found only by testing the copy in `/product` and by killing it on purpose:
 On the flashed ROM: native photo copied in ~30 s with the camera still open, LMC photo skipped. Over 24 MP is skipped by design (64 MP mode, panoramas). Worst case after a kill: the copy waits up to 15 minutes (forced run verified; the natural 15-minute timer was not waited for).
 The earlier note that the stage stalled because of the panorama's memory was probably wrong: the process kill above fits better.
 
+## Update 2026-10-31: colour made gentler
+Daylight shots showed the chroma gain was too strong: grey scenes got the full 1.55x and blue windows and red cloth went neon. Now max gain 1.25 and saturated colours are left alone from C* 25 to 60 (was 45 to 85). On the overcast test photo: mean C* 6.7 native, 9.4 old, 7.9 new; 99th percentile C* 34.8, 48.5, 40.3; edges unchanged. Running on the phone as an app update; staged in `payload_tele` for the next product build, the flashed ROM copy still has the old values. Owner's verdict still open.
+
 ## What is not done
 * (Done as a user app, see update above; C++/NDK port not needed at this speed.) Original plan: small system app, MediaStore observer on `DCIM/Camera` for `IMG_*.jpg` of the Xiaomi camera only, C++ (NDK) port of this code, writes a **copy** next to the original (originals are never overwritten in the first version), opt-in switch, runs after the shot so it cannot slow capture. Needs the owner's look decision first (target C* 14 vs more/less, detail strength).
 * Heat: 6 full runs back to back, battery 34.0 -> 35.2 °C (charging), hottest zone 64 °C then ~56 °C, no throttling (22-26 s per photo); no test on night / ultra-wide / front photos (front has the base beauty; skin handling needs its own test).

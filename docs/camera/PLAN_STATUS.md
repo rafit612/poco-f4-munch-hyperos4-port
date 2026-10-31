@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 13:08 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 13:14 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -85,7 +85,7 @@ Generated 2026-10-31 13:08 from the live dashboard checklist (`wlog task`). [x] 
 
 - [x] Watermark POCO F4 5G
 - [x] Leica looks filter set enabled (Marble E1 25)
-- [~] Colour/tone tuning: first pass inside the photo stage (target C* 14, shadow lift, highlight shoulder); owner must judge the look (compare images)
+- [~] Colour/tone tuning: PhotoStage gain reduced after the daylight test (max 1.25, saturated colours left alone); on the phone as an app update; owner verdict open
 - [~] Video quality (stabilisation, encode, HDR, 50 Hz flicker)
 - [x] Front camera / selfie track
 - [x] Macro / ultra-wide policy (06_SENSORS_LENS.md §2e: main camera first for close-ups; owner A/B optional)

@@ -24,6 +24,7 @@ public final class StageEngine {
     public static final double NLM_FROM = 0.6;
     public static final double TARGET_CHROMA = 14.0;
     public static final double TARGET_L = 46.0;
+    public static final double MAX_CHROMA_GAIN = 1.25, SAT_FROM = 25.0, SAT_TO = 60.0; // were 1.55, 45, 85: blue and red went too vivid in daylight
 
     public static final class Report {
         public double noise, nlmH, medianL, meanC;
@@ -240,7 +241,7 @@ public final class StageEngine {
         Core.magnitude(a, b, C);
         double cur = Core.mean(C).val[0];
         rep.meanC = cur;
-        double g = Math.max(1.0, Math.min(1.55, TARGET_CHROMA / Math.max(cur, 1e-3)));
+        double g = Math.max(1.0, Math.min(MAX_CHROMA_GAIN, TARGET_CHROMA / Math.max(cur, 1e-3)));
         Mat hue = new Mat();
         Core.phase(a, b, hue, true);
         Mat up = smoothstep(hue, 12.0, 20.0);
@@ -261,7 +262,7 @@ public final class StageEngine {
         Core.multiply(gain, new Scalar((g - 1.0) * amount), gain);
         free(skin);
         Mat neutral = smoothstep(C, 2.0, 8.0);
-        Mat sat = smoothstep(C, 45.0, 85.0);
+        Mat sat = smoothstep(C, SAT_FROM, SAT_TO);
         free(C);
         Core.multiply(sat, new Scalar(-1.0), sat);
         Core.add(sat, new Scalar(1.0), sat);

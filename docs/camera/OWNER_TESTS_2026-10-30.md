@@ -86,3 +86,6 @@ Three shots each, same spot, aligned; region means (Laplacian variance) and flat
 | flat-wall noise | 1.10 | 6.45 | 2.71 | 2.41 |
 At 100 % (the numbers mislead here, grain and sharpening inflate them): LMC is the best by eye: thin flower outlines, clean surfaces. ROM v15 is clean and soft. NR off shows more structure than ROM but with heavy grain. **NR off + PhotoStage is the worst to look at:** the denoise melts the thin lines into blobs and leaves colour blotches.
 **Decision: do not ship NR off.** The test build was removed; the phone runs ROM v15. Not tested: NR off in daylight at ISO 50, where grain would be far lower. That needs the phone pointed at the same outdoor scene.
+
+## 2026-10-31: AI denoise sample test: not run
+The on-phone AI stage (C4) was dropped by the owner; a laptop sample was wanted for information. SCUNet on the laptop: blocked by the session's permission check (downloaded code). Gemini image models: all keys on the free tier, `limit: 0`, billing needed. No AI result exists.

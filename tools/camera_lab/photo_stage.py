@@ -19,6 +19,8 @@ from PIL import Image
 
 TARGET_CHROMA = 14.0   # Xiaomi 17 indoor median 17.4, daylight 11.1; native v13 stand shots ~8
 TARGET_L_MEDIAN = 46.0  # reference sets A/B median L*
+MAX_CHROMA_GAIN = 1.25  # was 1.55: daylight 2026-10-31, grey scenes got the full gain and blue windows and red cloth turned vivid
+SAT_ROLLOFF = (25.0, 60.0)  # was (45, 85)
 SKIN_HUE = (20.0, 75.0)  # Lab hue angle in degrees; skin sits at roughly 35-65
 
 
@@ -90,11 +92,11 @@ def tone(L, amount):
 def colour(a, b, amount, target=TARGET_CHROMA):
     C = np.hypot(a, b)
     cur = float(np.mean(C))
-    g = float(np.clip(target / max(cur, 1e-3), 1.0, 1.55))
+    g = float(np.clip(target / max(cur, 1e-3), 1.0, MAX_CHROMA_GAIN))
     h = (np.degrees(np.arctan2(b, a)) + 360) % 360
     skin = smoothstep(h, SKIN_HUE[0] - 8, SKIN_HUE[0]) * (1 - smoothstep(h, SKIN_HUE[1], SKIN_HUE[1] + 12)) * (1 - smoothstep(C, 45, 70))
     gain = 1.0 + (g - 1.0) * amount * (1 - 0.5 * skin)
-    gain = 1.0 + (gain - 1.0) * smoothstep(C, 2.0, 8.0) * (1 - smoothstep(C, 45, 85))  # keep neutrals, soften saturated
+    gain = 1.0 + (gain - 1.0) * smoothstep(C, 2.0, 8.0) * (1 - smoothstep(C, *SAT_ROLLOFF))  # keep neutrals, leave saturated colours alone
     return a * gain, b * gain
 
 
