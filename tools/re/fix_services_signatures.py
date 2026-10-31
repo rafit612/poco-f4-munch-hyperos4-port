@@ -9,6 +9,8 @@ from the port) and rebuilds the dex files that contain them. All members those b
   (assertMinSignatureSchemeIsValid additionally returns early for APKs under the read-only system partitions, see below)
   InstallPackageHelper.doesSignatureMatchForPermissions, KeySetManagerService.shouldCheckUpgradeKeySetLocked/checkUpgradeKeySetLocked,
   ScanPackageUtils.assertMinSignatureSchemeIsValid, VerifyingSession.isVerificationEnabled/isAdbVerificationEnabled/sendApkVerificationRequest
+Also (needs the patched framework.jar, which supplies com.xBuild.isSystemPath): verifySignatures and doesSignatureMatchForPermissions return true
+at once for packages on the read-only system partitions, and the shared-user join check in ReconcilePackageUtils is skipped for them.
 Usage: fix_services_signatures.py <port services.jar> <reference services.jar> <workdir> <out services.jar>
 Uses tools/re/Smali.java (API 34 so invoke-polymorphic survives). Works on copies only.
 """
@@ -41,6 +43,82 @@ def named(s):
         name = re.search(r"(\S+\([^\n]*)$", m.group(1)).group(1)
         out[name] = m
     return out
+
+def param_regs(sig_line):
+    args = re.search(r"\((.*?)\)", sig_line).group(1); n = 0 if " static " in " " + sig_line + " " else 1; i = 0
+    while i < len(args):
+        c = args[i]
+        if c in "JD": n += 2; i += 1
+        elif c == "L": n += 1; i = args.index(";", i) + 1
+        elif c == "[":
+            while args[i] == "[": i += 1
+            i = args.index(";", i) + 1 if args[i] == "L" else i + 1
+            n += 1
+        else: n += 1; i += 1
+    return n
+
+def prologue(ps, sig_fragment, code):
+    """Insert smali `code` (uses v0 as scratch) before the first real instruction of the method whose header contains sig_fragment."""
+    m = [m for m in METHOD.finditer(ps) if sig_fragment in m.group(1)]
+    assert len(m) == 1, (sig_fragment, len(m))
+    m = m[0]; body = m.group(2); lines = body.split("\n")
+    regs = int(re.search(r"\.registers (\d+)", body).group(1))
+    assert regs - param_regs(m.group(1)) >= 1, "no free local register in " + sig_fragment
+    depth = 0; at = None
+    for i, l in enumerate(lines):
+        t = l.strip()
+        if t.startswith(".annotation"): depth += 1; continue
+        if t.startswith(".end annotation"): depth -= 1; continue
+        if depth or not t or t.startswith((".registers", ".locals", ".param", ".end param", ".prologue", ".local")): continue
+        at = i; break
+    assert at is not None
+    lines[at:at] = code.rstrip("\n").split("\n") + [""]
+    return ps[:m.start(2)] + "\n".join(lines) + ps[m.end(2):]
+
+# NOTE verifySignatures returns true only for the rare 'compat match' (the caller then wipes key-set data), so the exemption returns FALSE
+# (= accepted, nothing special); returning true made KeySetManagerService.removeAppKeySetDataLPw throw at boot.
+# exemption: packages that live on the read-only system partitions keep the port's old permissive behaviour (some of them share a
+# user id but were signed with different keys, so real checks would stop the system server at boot)
+EXEMPT_VERIFY = """    invoke-virtual {p0}, Lcom/android/server/pm/PackageSetting;->getPathString()Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/xBuild;->isSystemPath(Ljava/lang/String;)Z
+    move-result v0
+    if-eqz v0, :cond_xsp
+    const/4 v0, 0x0
+    return v0
+    :cond_xsp"""
+EXEMPT_PERM = """    invoke-interface {p2}, Lcom/android/server/pm/pkg/AndroidPackage;->getBaseApkPath()Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/xBuild;->isSystemPath(Ljava/lang/String;)Z
+    move-result v0
+    if-eqz v0, :cond_xsp
+    const/4 v0, 0x1
+    return v0
+    :cond_xsp"""
+_PROP = 'const-string/jumbo v2, "ro.product.first_api_level"'
+# signature-permission grants (AppIdPermissionPolicy.shouldGrantPermissionBySignature(scope, PackageState p2, Permission)): with the old
+# always-true stubs every app got every signature permission, including user apps. Restored checks apply to apps under /data only;
+# apps on the read-only system partitions keep their grants (some, e.g. com.qualcomm.location, are signed with another key than the
+# platform and crash without them).
+EXEMPT_SIGPERM = """    invoke-interface/range {p2 .. p2}, Lcom/android/server/pm/pkg/PackageState;->getAndroidPackage()Lcom/android/server/pm/pkg/AndroidPackage;
+    move-result-object v0
+    if-eqz v0, :cond_xsp
+    invoke-interface {v0}, Lcom/android/server/pm/pkg/AndroidPackage;->getBaseApkPath()Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/xBuild;->isSystemPath(Ljava/lang/String;)Z
+    move-result v0
+    if-eqz v0, :cond_xsp
+    const/4 v0, 0x1
+    return v0
+    :cond_xsp"""
+CANJOIN_OLD = "\n".join(["    move-result v2", "", "    if-nez v2, :cond_405", "", "    " + _PROP])
+CANJOIN_NEW = "\n".join([
+    "    move-result v2", "", "    if-nez v2, :cond_405", "",
+    "    invoke-interface/range {v34 .. v34}, Lcom/android/internal/pm/parsing/pkg/ParsedPackage;->getBaseApkPath()Ljava/lang/String;", "",
+    "    move-result-object v2", "",
+    "    invoke-static {v2}, Lcom/xBuild;->isSystemPath(Ljava/lang/String;)Z", "",
+    "    move-result v2", "",
+    "    if-nez v2, :cond_405", "", "    " + _PROP])
 
 def main():
     if len(sys.argv) != 5:
@@ -92,6 +170,10 @@ def main():
             count += 1
         for a, b, text in sorted(edits, reverse=True):
             ps = ps[:a] + text + ps[b:]
+        if cls.endswith("PackageManagerServiceUtils"):
+            ps = prologue(ps, "verifySignatures(Lcom/android/server/pm/PackageSetting;", EXEMPT_VERIFY)
+        if cls.endswith("InstallPackageHelper"):
+            ps = prologue(ps, "doesSignatureMatchForPermissions(", EXEMPT_PERM)
         if cls.endswith("ScanPackageUtils"):
             # MiuiSystemUI (target SDK 37) only has an old-style v1 signature, so the restored minimum-scheme check would
             # refuse it. Skip that one check for APKs on the read-only system partitions (helper lives in framework.jar).
@@ -108,6 +190,14 @@ def main():
             ps = ps[:mm.start(2)] + body + ps[mm.end(2):]
         open(pfile, "w", encoding="utf-8").write(ps)
         changed.add(pdex)
+    # shared-user join check in ReconcilePackageUtils: system packages are exempt
+    rdx, rfile = locate("port", "com/android/server/pm/ReconcilePackageUtils")
+    rs_ = open(rfile, encoding="utf-8").read()
+    assert rs_.count(CANJOIN_OLD) == 1, "canJoinSharedUserId call site changed"
+    open(rfile, "w", encoding="utf-8").write(rs_.replace(CANJOIN_OLD, CANJOIN_NEW, 1)); changed.add(rdx)
+    pdx2, pfile2 = locate("port", "com/android/server/permission/access/permission/AppIdPermissionPolicy")
+    ps2 = open(pfile2, encoding="utf-8").read()
+    open(pfile2, "w", encoding="utf-8").write(prologue(ps2, "shouldGrantPermissionBySignature(", EXEMPT_SIGPERM)); changed.add(pdx2)
     newdex = {}
     for n in changed:
         o = f"{work}/new_{n}"

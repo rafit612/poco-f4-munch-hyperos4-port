@@ -12,7 +12,7 @@ Nothing here has been changed on the phone yet.
 | 2 Cleanup and tuning | **List prepared, not applied:** `ROM_PHASE2_CHANGES.md`. Starts after the owner's camera shots are analysed |
 | 3 Kernel | Base decided at source level (`liyafe` MIUI + eBPF + Lineage CIP): `hardware/subsystems/KERNEL_BASE_COMPARISON.md`; target list `HYPEROS4_KERNEL_TARGET.md`. Needs the owner's OK to run `make` from downloaded source |
 | 4-6 | Not started |
-| Fix build | **Flashed and running (2026-10-31 22:13): `out_sigfix2`**, tampered APK and downgrade refused, call-speaker fix in; different-key update still accepted (open): `SIGFIX_FLASH_PLAN.md` |
+| Fix build | **Flashed and running (2026-10-31 23:00): `out_sigfix6`**: C2 fixed for apps under /data (tampered, downgrade and different-key updates refused, real signature-permission grants), call-speaker fix in; interactive tests pending: `SIGFIX_FLASH_PLAN.md` |
 | Owner reports | Loudspeaker bug diagnosed (`hardware/subsystems/CALL_SPEAKER_BUG.md`, fix in `ROM_PHASE2_CHANGES.md` F). Dynamic Island: position correct, code complete, charging island works, other types need app tests (`hardware/subsystems/DYNAMIC_ISLAND.md`, `ROM_PHASE2_CHANGES.md` G) |
 | 7 Security | C2 confirmed in code; fix plan in `ROM_PHASE2_CHANGES.md` section E; other items unchanged |
 Camera: batch 1 of the owner's shots analysed (`camera/SHOTS_2026-10-31_BATCH1.md`); the camera week continues.
