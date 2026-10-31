@@ -19,7 +19,8 @@ Nothing here has been changed on the phone yet.
 
 ## 2. Existing knowledge
 
-* Hardware docs on the pendrive `hardware_docs/`: 1152 devices mapped device -> driver -> source -> Kconfig -> device tree, 57 sensors, SoC and OS architecture, 25 driver source archives. **Not in the repo.**
+* Hardware docs: `docs/hardware/` (1152 devices mapped device -> driver -> source -> Kconfig -> device tree, 57 sensors, SoC and OS architecture). Driver source archives stay on the pendrive `hardware_docs/`.
+* Old audit status, rechecked: `docs/hardware/AUDIT_STATUS.md`. Passive baseline: `tools/baseline.sh`.
 * Audits in `audit/`: hardware health, security, firmware and drivers, ROM architecture, HyperOS 4 features and tuning, performance.
 * Camera stack: fully mapped, `docs/camera/`.
 * Whole-ROM graph, new: `docs/rom_map/graphify-out/graph.html` (local only, 71 files).
@@ -43,7 +44,7 @@ Nothing here has been changed on the phone yet.
 | SettingsProvider `Permission denial` | 526 repeats | Some app or service retries a forbidden write |
 | Bluetooth wake lock errors | 331 repeats | Vendor file permission or path |
 | Wi-Fi `Fail to get mlo info` | 295 repeats | New framework call on an old vendor |
-| Thermal HAL | Connected; earlier audit: no temperatures | Blocks Android's thermal API |
+| Thermal HAL | Connected, no temperatures | Mechanism found: `docs/hardware/subsystems/POWER_THERMAL_PERF.md` |
 | ADPF | Hint sessions unsupported; CPU/GPU headroom unsupported | Needs kernel uclamp + a power HAL; games and apps get no performance hints |
 | I/O scheduler `cfq`, TCP `cubic` (no BBR) | | Candidates, measure first |
 | `dalvik.vm.isa.arm64.variant=kryo300` | SD870 has Cortex-A77/A55-class cores | Check against official HyperOS 1, test |
