@@ -67,6 +67,7 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 - [ ] Owner sign-off G1 and the PhotoStage look verdict
 
 ## 8. Where the project is paused (2026-10-31)
+First batch of the owner's shots (evening of 2026-10-31) is analysed in `SHOTS_2026-10-31_BATCH1.md`: back Portrait still crashes and leaves low-resolution stubs, native foliage is still smeared compared with LMC, 6 videos kept, PhotoStage verdict still open.
 On the phone: ROM T20261031b, camera v15 from `/product`, PhotoStage app update with the gentler colour (the ROM copy has the old colour values; the new APK is staged in `payload_tele`).
 Tests made after the flash, details in `OWNER_TESTS_2026-10-30.md`: daylight native vs LMC vs PhotoStage (native about 2x softer than LMC at ISO 50); noise reduction off indoors (worse, not shipped); on-phone AI stage dropped, and no AI sample result exists.
 Known limits, use LMC: back Portrait, Night purple, Photo auto-night, softer native photos. Long 4K60 clips were sometimes deleted; v15 keeps them, cause unknown.

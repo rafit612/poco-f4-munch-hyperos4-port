@@ -24,7 +24,13 @@ Sources: `audit/agents/security/SECURITY_REPORT.md`, `audit/agents/hardware/HARD
 | 1 | `hwservicemanager` about 55 % of a core | **Gone** in the 2026-10-31 baseline |
 | 2 | Fingerprint dead | **Hardware**: `persist.vendor.sys.fp.vendor=none`, flex damaged |
 | 3 | Display 60 Hz | **Correct**: replacement panel is 60 Hz (`FIX_PLAN.md`). Do not change |
-| 4 | Thermal HAL no temperatures, ADPF off | **Open, mechanism found**: `subsystems/POWER_THERMAL_PERF.md` |
-| 5 | GNSS raw measurements missing | Open, not rechecked |
+| 4 | Thermal HAL no temperatures, ADPF off | **Open, cause found**: `bcl-soc` is disabled in the device tree (official too), so the HAL's `soc` read fails; ADPF needs a newer power HAL and uclamp, and the framework also asks for a Xiaomi `mipowerhal` the vendor lacks: `subsystems/POWER_THERMAL_PERF.md` |
+| 5 | GNSS raw measurements missing | Open. Services run; `loc_sys_service` still loops once a second; no outdoor fix test yet: `subsystems/GNSS_SENSORS_POWER_STORAGE_SECURITY.md` |
 | 6 | `traced`, `vendor_security` restarting | **Fixed**: `traced` stopped on purpose, `vendor_security` removed |
-| 7-9, 13, 16 | Flags and limits (virtualisation flag, LE Audio, Camera2 limits, haptics, spatializer) | Open, Phase 1 subsystems |
+| 7-9, 13, 16 | Flags and limits (virtualisation flag, LE Audio, Camera2 limits, haptics, spatializer) | LE Audio confirmed impossible on this chip (`WIFI_MODEM_AUDIO.md`); the rest still open |
+
+## Corrections found during Phase 1 (2026-10-31)
+* The app freezer works on the port kernel (earlier note said it was missing).
+* The thermal problem is a disabled `bcl-soc`, not a missing zone name.
+* Memory is healthy at normal load; `mi_thermald` caps the CPU from about 35 C (`MEMORY_SCHEDULING.md`, `POWER_THERMAL_PERF.md`).
+* Per-subsystem pages: `subsystems/` (power and thermal, memory, display and touch, Wi-Fi/modem/audio, GNSS/sensors/charging/storage/security, kernel base, HyperOS 4 kernel target).

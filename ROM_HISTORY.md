@@ -269,3 +269,9 @@ On the phone: boot ~60 s, SELinux enforcing, crash buffer empty, camera and Phot
 Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261031_v14 "rollback to v14"`; older: `out_tele_T20261030_v13`, `out_tele_T20261026_prev`.
 Build notes: `build_tele.sh` stops at its final `fusermount -u` (busy) before writing SHA256SUMS: run `fusermount -uz` and write the sums by hand; the image itself is complete. Never `rm -rf` the work dir before checking `mount | grep work_tele`.
 Still to do by the owner: a real call on both SIMs.
+
+## 13. Phase 1 research, nothing flashed (2026-10-31)
+Read-only pass over the running ROM (tag T20261031b) and the Xiaomi 17 HyperOS 4 reference on the pendrive; no change to the phone, no image built. Findings, one page each in `docs/hardware/subsystems/`:
+power and thermal (no temperatures because `bcl-soc` is disabled in the device tree; power HAL is IPower V1, and the framework also looks for a Xiaomi `mipowerhal`; `mi_thermald` caps the CPU from about 35 C), memory and scheduling (healthy at normal load; candidates `page-cluster` 0, zstd, compile threads), display and touch (60 Hz panel, OpenGL renderer, Focaltech touch), Wi-Fi/modem/audio (MLO log noise, Bluetooth cannot hold a wakelock, missing `audio_lowpower_app_list.xml`), GNSS/sensors/charging/storage/security (battery 97.8 %, UFS wear low, `loc_sys_service` loop, SELinux denial candidates).
+Kernel: base decided at source level as `liyafe1997` MIUI + eBPF + LineageOS CIP patches (`KERNEL_BASE_COMPARISON.md`); target list in `HYPEROS4_KERNEL_TARGET.md`. Phase 2 change list prepared, not applied: `docs/ROM_PHASE2_CHANGES.md`.
+Camera batch 1 of the owner's shots analysed: `docs/camera/SHOTS_2026-10-31_BATCH1.md` (back Portrait crash leaves 1440x1080 stubs; 6 videos kept).

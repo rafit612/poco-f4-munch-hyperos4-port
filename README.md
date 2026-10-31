@@ -185,6 +185,7 @@ Full steps, commands, updating, rollback and troubleshooting: **[INSTALL.md](INS
   the rules that come from real failures (image builder, SELinux, system apps, overlays).
 - Research reports (hardware, firmware, telephony, camera, apps, performance): `audit/research/`.
 - What comes next (own kernel build, 64-bit-only system) and how it will be tested: [docs/ROADMAP.md](docs/ROADMAP.md).
+- Whole-ROM optimisation plan and the hardware, firmware and kernel findings behind it: [docs/ROM_OPTIMIZATION_PLAN.md](docs/ROM_OPTIMIZATION_PLAN.md), [docs/hardware/](docs/hardware/00_INDEX.md), prepared (not yet applied) changes: [docs/ROM_PHASE2_CHANGES.md](docs/ROM_PHASE2_CHANGES.md).
 
 ## Credits
 

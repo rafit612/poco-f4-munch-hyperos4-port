@@ -19,8 +19,12 @@ Written 2026-10-26, after release T20261026. Whole-ROM plan around this: `ROM_OP
   of life in December 2024), so "newer kernel" means **our own build of 4.19.325** with better features and settings,
   not a 5.x kernel. munch's Qualcomm (kona) drivers, vendor HALs and DSP firmware exist only for 4.19; moving to 5.x
   would need a different vendor and is out of scope.
-- Source: `rohmanurip/kernel_munch` (base) + KernelSU, clang r547379, full LTO; build tree `~/kernel_build/src`;
-  packing `~/kernel_build/pack_kernel.sh`. History of v1–v4: [`secure_build/KERNEL.md`](../secure_build/KERNEL.md).
+- Source, v1–v4: `rohmanurip/kernel_munch` + KernelSU, clang r547379, full LTO; build tree `~/kernel_build/src`;
+  packing `~/kernel_build/pack_kernel.sh`. History: [`secure_build/KERNEL.md`](../secure_build/KERNEL.md).
+- **Base for the next kernel (decided 2026-10-31, source-level only, nothing built yet):** `liyafe1997/kernel_xiaomi_sm8250_mod` with its MIUI
+  build (`CONFIG_XIAOMI_MIUI`) and eBPF branch, then LineageOS CIP security patches. `rohman` has no WALT and a device tree that differs from
+  the phone (65 of 4605 nodes missing); `liyafe` misses none. Evidence: [`hardware/subsystems/KERNEL_BASE_COMPARISON.md`](hardware/subsystems/KERNEL_BASE_COMPARISON.md);
+  what HyperOS 4 expects from the kernel: [`hardware/subsystems/HYPEROS4_KERNEL_TARGET.md`](hardware/subsystems/HYPEROS4_KERNEL_TARGET.md).
 - v1 reached Android (failed on missing tracing for bpfloader); v2/v3 hung before any log; v4 = v3 + crash safety
   (panic on oops, soft-lockup panic, 1 MB pstore records), **built, never tested**.
 
@@ -29,8 +33,8 @@ Written 2026-10-26, after release T20261026. Whole-ROM plan around this: `ROM_OP
 |---|---|---|
 | Audio as the vendor's own modules (official 4.19.157 layout) | "Hey Google" voice wake can come back without crashing the DSP | built in, DSP crash |
 | uclamp | Android 17 task profiles can boost the foreground app properly (smoother, less power) | missing (schedtune only) |
-| Binder freezer (cgroup freezer + binder freeze) | Cached apps really frozen → less background CPU/battery | missing (check if the source has the ACK backport) |
-| FTRACE / tracepoints / BPF events | Required by Android 17 bpfloader, network stats, Perfetto | present in port kernel, needed in ours |
+| Binder freezer (cgroup freezer + binder freeze) | Cached apps really frozen → less background CPU/battery | **works on the port kernel** (checked 2026-10-31: `binder_add_freeze_work`, 50 apps frozen); the new kernel must keep it |
+| FTRACE / tracepoints / BPF events | Required by Android 17 bpfloader, network stats, Perfetto | present in port kernel, needed in ours; `liyafe`'s `munch_defconfig` doesn't set `FTRACE` or `DEBUG_KERNEL`, so turn them on explicitly |
 | zram writeback, MGLRU (if backported), BBR | Memory pressure and network quality | partly missing (no BBR) |
 | Security: CFI/SCS where the toolchain allows, hardened usercopy, stack protector | Hardening | port kernel has most |
 | KernelSU kept inactive (no manager shipped) | Root stays opt-in | same |
@@ -38,7 +42,8 @@ Written 2026-10-26, after release T20261026. Whole-ROM plan around this: `ROM_OP
 ### Steps
 | # | Step | Risk | Done when |
 |---|---|---|---|
-| A1 | `fastboot boot secure_build/kernel_v4/boot_v4.img` (RAM only) | none (a reboot returns to the installed kernel) | boots to Android, or leaves a pstore record |
+| A0 | Generate the `liyafe` MIUI + eBPF `.config`, add tracing, compare with the porter's feature list (needs the owner's OK to run `make`) | none | config reviewed |
+| A1 | `fastboot boot secure_build/kernel_v4/boot_v4.img` (RAM only; later the new build) | none (a reboot returns to the installed kernel) | boots to Android, or leaves a pstore record |
 | A2 | If A1 fails: boot the installed kernel, read `/sys/fs/pstore/` (needs temporary root), fix the crash, rebuild, repeat A1 | none | a v4.x boots to the home screen |
 | A3 | Feature passes, one per build: tracing/BPF check → uclamp + task profiles → binder freezer → zram writeback → BBR | low (RAM-only each time) | each feature verified on the phone (`/proc/kallsyms`, `/sys`, `dumpsys activity` freezer state) |
 | A4 | Audio modules: build the kernel without built-in audio, load the vendor's audio `.ko` set; compare with official HyperOS 1 (`stock_rom_1.0.9`) | medium (audio/DSP) | sound, calls, BT, wired, mic all OK; then retry Google's hotword engine in `sound_trigger_platform_info.xml` |

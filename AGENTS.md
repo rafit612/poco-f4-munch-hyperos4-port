@@ -34,6 +34,9 @@ a reference ROM, explain, then change. Never flash, wipe or push to a phone with
    config stays cached.
 8. Keep `ro.control_privapp_permissions=enforce`, SELinux enforcing, encryption, and no pre-authorised `adb_keys`.
 
+## Keep the documents current
+After every piece of work, in the same change: update the markdown files it touches (the subsystem page, `docs/ROM_OPTIMIZATION_PLAN.md` status, `ROM_HISTORY.md` for anything that changes the phone or the build, `docs/hardware/AUDIT_STATUS.md` for corrected facts, camera pages for camera work) and the graph copy in `docs/rom_map/corpus`. Say plainly what was checked and what was not.
+
 ## Recovery
 If a flashed image does not boot: in fastbootd (`fastboot reboot fastboot` from the bootloader) flash the previous
 image of that partition, e.g. `fastboot flash vendor <previous vendor.img>`.

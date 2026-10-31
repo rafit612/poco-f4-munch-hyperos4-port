@@ -4,6 +4,18 @@ Written 2026-10-31. Goal: get the best real performance, battery and feature set
 backed by reverse engineering and measurements. This extends `ROADMAP.md` (kernel + 64-bit), which stays valid.
 Nothing here has been changed on the phone yet.
 
+## Status (updated 2026-10-31 evening)
+| Phase | State |
+|---|---|
+| 0 Foundation | Done: hardware docs in the repo (`docs/hardware/`), audit status rechecked, passive baseline `tools/baseline.sh` |
+| 1 Reverse engineering | **First pass finished** for every subsystem, one page each in `docs/hardware/subsystems/`; whole-ROM graph updated (80 files, 419 nodes). Still open inside the pages: game-load measurements, a GPS test outside, framework code (signature bypass), what each computility level changes |
+| 2 Cleanup and tuning | **List prepared, not applied:** `ROM_PHASE2_CHANGES.md`. Starts after the owner's camera shots are analysed |
+| 3 Kernel | Base decided at source level (`liyafe` MIUI + eBPF + Lineage CIP): `hardware/subsystems/KERNEL_BASE_COMPARISON.md`; target list `HYPEROS4_KERNEL_TARGET.md`. Needs the owner's OK to run `make` from downloaded source |
+| 4-7 | Not started |
+Camera: batch 1 of the owner's shots analysed (`camera/SHOTS_2026-10-31_BATCH1.md`); the camera week continues.
+
+**Owner list:** leave the phone unplugged overnight once (screen-off drain baseline); free about 14 GB before any ROM build; allow `make` for the kernel config step; judge the PhotoStage pairs; say if back Portrait was tried on purpose; GPS test outside; real charger test; SIM 1 call both ways; router channel; decide on `~/kernel_build`.
+
 ## 1. What limits the work
 
 | Fact | Consequence |
@@ -44,8 +56,8 @@ Nothing here has been changed on the phone yet.
 | SettingsProvider `Permission denial` | 526 repeats | Some app or service retries a forbidden write |
 | Bluetooth wake lock errors | 331 repeats | Vendor file permission or path |
 | Wi-Fi `Fail to get mlo info` | 295 repeats | New framework call on an old vendor |
-| Thermal HAL | Connected, no temperatures | Mechanism found: `docs/hardware/subsystems/POWER_THERMAL_PERF.md` |
-| ADPF | Hint sessions unsupported; CPU/GPU headroom unsupported | Power HAL is `IPower` V1, same as official; needs a newer HAL and probably uclamp |
+| Thermal HAL | Connected, no temperatures | **Cause found:** `bcl-soc` is `disabled` in the device tree (official too); fix = enable it with the next kernel or `dtbo` |
+| ADPF | Hint sessions unsupported; CPU/GPU headroom unsupported | Power HAL is `IPower` V1, same as official; needs a newer HAL and probably uclamp. The framework also asks for a Xiaomi AIDL `mipowerhal` the vendor lacks |
 | I/O scheduler `cfq`, TCP `cubic` (no BBR) | | Candidates, measure first |
 | `dalvik.vm.isa.arm64.variant=kryo300` | Same as official vendor | Low priority |
 | zram 8 GiB lz4 with writeback | zstd also available | Candidate, measure |
