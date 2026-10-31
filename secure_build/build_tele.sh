@@ -7,7 +7,8 @@ set -e
 # ("erofs_fill_symlink: inline data cross block boundary", e.g. /system/bin/getprop unreadable). Stock
 # mkfs.erofs 1.9.1 applies noinline_data to regular files only, so MK is patched to include symlinks.
 B="${REPO:-$(cd "$(dirname "$0")/.." && pwd)}"; T="$B/tools"; E="$T/erofs/root/usr/bin"; MK="$T/erofs/munch/mkfs.erofs"
-W=${W:?mount work dir}; Y="$B/secure_build/payload_tele"; O="$B/secure_build/out_tele"; TMP="$W/teletmp"
+W=${W:?mount work dir}; Y="${PAYLOAD:-$B/secure_build/payload_tele}"; O="${OUT:-$B/secure_build/out_tele}"; TMP="$W/teletmp"
+# PAYLOAD / OUT (optional) build a separate change set, e.g. secure_build/payload_sigfix -> secure_build/out_sigfix, without touching payload_tele
 mkdir -p "$O" "$TMP"
 for part in ${PARTS:-mi_ext product}; do
     orig="$W/port/$part"

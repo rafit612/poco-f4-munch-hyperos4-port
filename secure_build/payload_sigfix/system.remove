@@ -1,0 +1,8 @@
+# Stale precompiled code of the old services.jar (its dex checksum no longer matches the patched jar): the runtime would reject it
+# at every boot (same problem as the stale boot image in payload_tele/system.remove). odrefresh rebuilds it once on /data.
+system/framework/oat/arm64/services.art
+system/framework/oat/arm64/services.art.fsv_meta
+system/framework/oat/arm64/services.odex
+system/framework/oat/arm64/services.odex.fsv_meta
+system/framework/oat/arm64/services.vdex
+system/framework/oat/arm64/services.vdex.fsv_meta
