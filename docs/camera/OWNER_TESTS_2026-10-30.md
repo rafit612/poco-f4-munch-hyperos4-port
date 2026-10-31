@@ -89,3 +89,7 @@ At 100 % (the numbers mislead here, grain and sharpening inflate them): LMC is t
 
 ## 2026-10-31: AI denoise sample test: not run
 The on-phone AI stage (C4) was dropped by the owner; a laptop sample was wanted for information. SCUNet on the laptop: blocked by the session's permission check (downloaded code). Gemini image models: all keys on the free tier, `limit: 0`, billing needed. No AI result exists.
+
+## 2026-10-31: phone cleared at the owner's request
+All photos and videos from the native camera and LMC, and all PhotoStage copies, were deleted from the phone (Camera folder 5.2 GB to 53 MB). Kept: 17 photos of 22-23 Oct restored by Google during phone setup. The daylight and noise-reduction test shots of 31 Oct are on the pendrive (`camera_project/owner_tests_2026-10-31/`).
+

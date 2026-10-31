@@ -15,7 +15,7 @@ Status of the rest of the plan: `PLAN_STATUS.md` (generated). Last updated 2026-
 | 6 | Outside, walking | Handheld video 15 s, 1080p, native camera, walking slowly. Then the same in 4K. | Stabilisation / OIS (P8 "OIS check") |
 | 7 | Anywhere | Take new photos, then compare 5-6 pairs in Pictures/PhotoStage with the originals (same file names; only copies made after 2026-10-31 13:30 have the gentler colour). Say **better / same / too strong** for sharpness, colour and brightness. | The look of the photo stage |
 
-Tips: keep the phone steady, tap to focus, do not use zoom unless the row says so, do not delete anything afterwards (the shots are measured from the DCIM folder).
+Tips: keep the phone steady, tap to focus, do not use zoom unless the row says so, do not delete the new shots before they are measured (they are read from the DCIM folder).
 
 ## B. Phone and account things
 
