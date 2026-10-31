@@ -1,6 +1,6 @@
 # Roadmap — next kernel and 64-bit-only system
 
-Written 2026-10-26, after release T20261026. Baseline = that release (`secure_build/out_tele` + `rom_extract/images`).
+Written 2026-10-26, after release T20261026. Whole-ROM plan around this: `ROM_OPTIMIZATION_PLAN.md`. Baseline = that release (`secure_build/out_tele` + `rom_extract/images`).
 
 ## Rules for this work
 1. **One change per test build.** The first 64-bit attempt failed because five changes went in at once (below).

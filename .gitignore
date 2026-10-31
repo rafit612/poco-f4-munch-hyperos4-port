@@ -39,3 +39,8 @@ __pycache__/
 
 # knowledge-graph output and cache: local only
 docs/camera/graphify-out/
+
+# whole-ROM knowledge graph: local only
+docs/rom_map/corpus/
+docs/rom_map/graphify-out/
+docs/rom_map/phone_audit/
