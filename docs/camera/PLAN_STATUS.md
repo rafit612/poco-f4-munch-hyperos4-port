@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 13:14 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 13:16 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -115,7 +115,7 @@ Generated 2026-10-31 13:14 from the live dashboard checklist (`wlog task`). [x] 
 - [ ] OWNER (outside): handheld video 1080p + 4K walking, stabilisation/OIS
 - [x] KNOWN LIMIT (owner, 2026-10-31): long 4K60 clips were sometimes deleted (duration read 0), cause unknown, not seen again; v15 keeps such files; log tag MunchVideoDur shows the cause if it returns
 
-## P9 — Ship + report (todo, 4/5 done)
+## P9 — Ship + report (active, 4/5 done)
 
 - [x] Bake final camera into the ROM: camera v13 built from payload_tele and FLASHED no-wipe 2026-10-30 (boots, camera works)
 - [~] Regression after the 2026-10-31 flash: boot, SELinux, crash buffer, 18-mode sweep, LMC photo/Portrait/video, PhotoStage, about 10-min 4K60 heat on the charger (39.2 C battery; dropped frames not checked); calls 2026-10-31: SIM 2 out + in and SIM 1 in connected; open: SIM 1 outgoing answered, owner confirms voice both ways

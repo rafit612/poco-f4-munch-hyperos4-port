@@ -2,12 +2,12 @@
 
 Status: **camera v15 (v13 + Mimoji/Clone/Movie effects hidden + finished videos no longer deleted) and the PhotoStage app were flashed 2026-10-31 (product only, no wipe; tag T20261031b; `ROM_HISTORY.md` §12).** It boots in 25 s, 0 crashes, camera works, contacts and call log
 intact. Built from `payload_tele` (the shipped 32-bit-capable build; the pure 64-bit Global build failed to boot and is shelved).
-Open: owner real-call test (both SIMs), owner look decision, daylight A/B for v14, release tag (see `RELEASE_NOTES_DRAFT.md`), crash analysis of two new mode crashes (`OWNER_TESTS_2026-10-30.md`).
+Paused by the owner on 2026-10-31 after this state; work resumes after the owner has taken more photos and videos (section 8).
 Rollback: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261031_v14 "rollback"` (v14), or `out_tele_T20261030_v13`, `out_tele_T20261026_prev`.
 
 ## 1. What changed for the owner (native camera, MiuiCamera 6.7 on the Marble profile)
 
-| Area | Before (port as received) | Now (camera v13) | Build |
+| Area | Before (port as received) | Now (camera v15) | Build |
 |---|---|---|---|
 | Watermark | "XIAOMI 17 PRO" | "POCO F4 5G" | v1 |
 | Filters | no Leica looks | Leica Vivid / Natural / Chrome / … | v3 |
@@ -47,11 +47,10 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 * Native Night mode: avoid until fixed.
 
 ## 5. Rollback
-* Camera: `pm uninstall-system-updates com.android.camera` removes the v13 app update; the module copy can be replaced with v11
-  (`~/camera_builds/MiuiCamera_v11.apk`, pendrive `camera_project/camera_builds/`) and the module disabled with `ksud module disable`.
-* ROM payload: previous product image kept on the pendrive before flashing (P9 plan).
+* Camera: the ROM holds v15; any test build goes in as an app update and `pm uninstall-system-updates com.android.camera` returns to the ROM copy.
+* ROM: `bash secure_build/flash_product_nowipe.sh secure_build/out_tele_T20261031_v14 "rollback"` (older: `out_tele_T20261030_v13`, `out_tele_T20261026_prev`).
 
-## 6. Also done on 2026-10-30
+## 6. Also done on 2026-10-30 and 2026-10-31
 * **Google Phone + Contacts are the ROM default** (system priv-apps, MIUI Call removed, no chooser, Dialer cold start 1.1 s, Contacts 0.68 s): `ROM_HISTORY.md` §11.
 * **Photo stage prototype** (`08_PHOTO_STAGE.md`): blown highlights 4-10x lower, pale colour C* 8.5 -> 11.5, noise unchanged, in-focus fine detail 2-4x; cannot restore smeared or blurred detail; not for LMC photos; **phone app built and tested on one photo** (see below).
 * **Network and lock-screen findings** (`docs/system/PHONE_CHECKS_2026-10-30.md`): Wi-Fi drops every 85 s come from the router/channel (hit the laptop too, also with the phone's Wi-Fi off); mobile data is off on both SIMs; the lock-screen toggle is a third-party accessibility service with autostart denied.
@@ -59,9 +58,16 @@ All patches: `tools/re/camera_watermark_patch.sh` (rebuilds every version from t
 * **PhotoStage app** (`tools/camera_lab/photo_stage_app`, `08_PHOTO_STAGE.md`): background job; every new native-camera photo (DCIM/Camera, owner com.android.camera) gets a processed copy in Pictures/PhotoStage ~30 s later, original untouched, EXIF kept; non-local-means denoise only when the photo is grainy. 16 MP takes 22-26 s on the SD870; six photos back to back raised the battery temperature from 34.0 to 35.2 °C (phone charging; hottest thermal zone 64 °C on the first run, then ~56 °C; no slowdown, runs 3-6 were even faster at 22 s).
 * Plan status and what only the owner can do: `PLAN_STATUS.md`, `OWNER_HELP_NEEDED.md`.
 
-## 7. To complete this report
-- [x] Product image built (verify_img errors 0, symlink check 0, privcheck 0 missing), flashed no-wipe, boot + data + camera verified
-- [ ] Owner real-call test (place + receive, SIM 1 and SIM 2), contacts and call log
-- [x] Heat: PhotoStage batch (+1.2 C) and native 4K60 recording, about 10 min from warm (battery up to 39.2 C, hottest zone up to 80 C, on the charger; dropped frames and throttling not checked); LMC photo, Portrait and video regression on the flashed ROM: 0 crashes, PhotoStage ignores LMC photos
-- [x] Release tag T20261031 in the fingerprint (flashed); release notes: `RELEASE_NOTES_DRAFT.md`; public package not made (owner decision to publish)
-- [ ] Owner decisions: photo-stage look (`OWNER_HELP_NEEDED.md` #7), PhotoStage is in the ROM; its look is still the owner's call
+## 7. State of the checks
+- [x] Product image built (verify_img errors 0, symlink check 0, privcheck 0 missing), flashed no-wipe, boot + camera verified on tag T20261031b
+- [~] Calls on this ROM: SIM 2 outgoing and incoming and SIM 1 incoming connected; SIM 1 outgoing answered and voice both ways still to be confirmed by the owner
+- [x] Heat: PhotoStage batch; native 4K60 recordings on the charger (battery up to 39.2 C, hottest zone up to 80 C). Dropped frames, throttling and heat on battery not checked
+- [x] LMC photo, Portrait and video on the flashed ROM: 0 crashes; PhotoStage ignores LMC photos
+- [x] Release tag in the fingerprint, release notes written. **No new public ROM package:** the public download is still T20261026
+- [ ] Owner sign-off G1 and the PhotoStage look verdict
+
+## 8. Where the project is paused (2026-10-31)
+On the phone: ROM T20261031b, camera v15 from `/product`, PhotoStage app update with the gentler colour (the ROM copy has the old colour values; the new APK is staged in `payload_tele`).
+Tests made after the flash, details in `OWNER_TESTS_2026-10-30.md`: daylight native vs LMC vs PhotoStage (native about 2x softer than LMC at ISO 50); noise reduction off indoors (worse, not shipped); on-phone AI stage dropped, and no AI sample result exists.
+Known limits, use LMC: back Portrait, Night purple, Photo auto-night, softer native photos. Long 4K60 clips were sometimes deleted; v15 keeps them, cause unknown.
+**To resume:** the owner brings new photos and videos (walking video, bokeh video, backlit, evening shot) and a verdict on the PhotoStage copies, listed in `OWNER_HELP_NEEDED.md`. The next ROM build needs about 14 GB free on the laptop.

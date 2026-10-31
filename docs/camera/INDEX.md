@@ -8,7 +8,7 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 * [PLAN_STATUS.md](PLAN_STATUS.md) — done / partly done / to do per phase (generated from the live dashboard checklist).
 * `re/hide_modes.sh` — hides Mimoji / Clone / Movie effects (crash on this phone) by making their `support()` false.
 * `re/video_keep_fix.sh` + `re/VideoDur.java` — finished videos are not deleted when the app reads duration 0 (v15). `re/video_maxsize.sh` — disproved idea, kept as a record.
-* [RELEASE_NOTES_DRAFT.md](RELEASE_NOTES_DRAFT.md) — draft release notes, tag plan, rollback.
+* [RELEASE_NOTES_DRAFT.md](RELEASE_NOTES_DRAFT.md) — release notes, tag, rollback (no new public package yet).
 * [OWNER_TESTS_2026-10-30.md](OWNER_TESTS_2026-10-30.md) — results of the owner test session (native vs LMC numbers, modes, crashes, video probe).
 * [OWNER_HELP_NEEDED.md](OWNER_HELP_NEEDED.md) — everything only the owner can do (outdoor/indoor test shots, calls, router, decisions), with what each one decides.
 * [G2_REVIEW.md](G2_REVIEW.md) — gate G2 review: maps complete?, open items, owner decisions D1/D2.
@@ -21,8 +21,8 @@ One entry point for every camera document. Large data (photos, ROM images, vendo
 | — generated | [p2_modes_generated.md](p2_modes_generated.md), [p2_mode_sweep_generated.md](p2_mode_sweep_generated.md), [p2_vendor_tags_generated.md](p2_vendor_tags_generated.md) | mode registry, logged sweep, app vs HAL tag lists |
 | Vendor HAL + firmware | [03_FIRMWARE_HAL.md](03_FIRMWARE_HAL.md) | modules on this unit, CamX/CHI files, `camxoverridesettings.txt`, main-camera Chromatix tuning blocks, HDR/bokeh configs, 133 pipelines |
 | Pipelines per use case | [04_PIPELINES.md](04_PIPELINES.md) | shot path per mode: app module, session opmode, HAL processing, app MIA nodes (AIIE/HDR/SkinBeautifier/MiSegment/GPU/bokeh), output size, state |
-| P9 release plan | [P9_RELEASE_PLAN.md](P9_RELEASE_PLAN.md) | bake final camera into the ROM: payload done (v13), space, build, flash (owner OK), regression, release |
-| Final report (draft) | [FINAL_REPORT.md](FINAL_REPORT.md) | what changed (v1-v13), measured state, open issues, daily-use advice, rollback |
+| P9 release plan | [P9_RELEASE_PLAN.md](P9_RELEASE_PLAN.md) | bake final camera into the ROM: done (v15, T20261031b), space, build, flash, regression, release |
+| Final report | [FINAL_REPORT.md](FINAL_REPORT.md) | what changed (v1-v15), measured state, open issues, daily-use advice, rollback, where the project is paused |
 | Kernel | [02_KERNEL_CAMERA_VIDEO.md](02_KERNEL_CAMERA_VIDEO.md) | camera driver tree, active devices, Venus encoder limits, who uses CVP/NPU/DSP/GPU, port vs stock kernel, stage ↔ tuning-block map |
 | Hardware: sensors + lenses | [06_SENSORS_LENS.md](06_SENSORS_LENS.md) | per-camera limits (ISO, exposure, focus, OIS, fps), calibration, module variants |
 | Hardware: unused capability | [06b_UNUSED_CAPABILITY.md](06b_UNUSED_CAPABILITY.md) | U1–U15: HDR10, DSP HDR, RAW HDR, 60 fps/ISO for apps, NPU, CVP, GPU, hidden modes, bitrate |

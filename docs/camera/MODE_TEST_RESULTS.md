@@ -461,3 +461,6 @@ the camera launch (CPU peak 80 %). The run's own photo and clip were deleted aft
 | Video (owner setting 1080p60) | HEVC 1920x1080, 60.02 fps, 39.8 Mbit/s, file plays |
 | Known open | Night mode purple output; back Portrait crash (LMC works) |
 The full P9 regression (after flashing the ROM) repeats this plus heat and LMC.
+
+## Results after 2026-10-30
+Later sweeps, the hidden modes (v14), long-video results (v15), daylight and noise-reduction tests and call results: `OWNER_TESTS_2026-10-30.md`.

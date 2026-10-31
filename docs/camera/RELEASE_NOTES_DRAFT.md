@@ -1,4 +1,4 @@
-# Release notes — camera v13 + Google Phone/Contacts, 2026-10-30
+# Release notes — camera v15, PhotoStage, Google Phone/Contacts (2026-10-31)
 
 Status: **camera v15 + PhotoStage flashed 2026-10-31, tag T20261031b in the fingerprint** (`ROM_HISTORY.md` §12). Not published yet. (Older text: a tag means a new `ro.build.fingerprint` tag in `product/etc/build.prop`, which needs a product rebuild (~14 GB free, flash with owner approval). Plan: tag **together with** the next build (PhotoStage app, camera v14 if the daylight A/B says so), not for these notes alone.
 
@@ -7,6 +7,8 @@ Status: **camera v15 + PhotoStage flashed 2026-10-31, tag T20261031b in the fing
 * **Google Phone and Google Contacts are the default** (system apps, MIUI Call removed, no chooser).
 * **Finished videos are no longer deleted** when the app misreads their length (v15).
 * **PhotoStage app** (in the ROM, switch in the app): copies of native-camera photos with denoise/detail/tone/colour in Pictures/PhotoStage; originals untouched; see `08_PHOTO_STAGE.md`.
+
+PhotoStage colour was made gentler after flashing: it is on the owner's phone as an app update and goes into the next image.
 
 ## Known issues (use LMC for these)
 Night mode purple cast; back Portrait crashes; Mimoji, Clone and Movie effects modes are hidden (they crash on this phone); Photo mode never switches to night by itself; native photos are much softer than LMC (HAL noise reduction). Details: `OWNER_TESTS_2026-10-30.md`, `FINAL_REPORT.md` §3.

@@ -221,3 +221,8 @@ HyperOS 4 Portrait features that can come over afterwards [Inferred]: the 6.7 Po
 portrait looks, lens styles) is app-side and stays; anything that needs Xiaomi 17's MIVI/NPU bokeh models does not
 exist on munch's vendor and runs on munch's own `mibokeh`/JiiGAN engines instead.
 
+## Log 2026-10-31: v15 in the ROM, project paused
+- Flashed T20261031b: camera v15 (crashing modes hidden, finished videos no longer deleted) + PhotoStage (`ROM_HISTORY.md` §12).
+- PhotoStage: testing the `/product` copy exposed five defects, all fixed (`08_PHOTO_STAGE.md`); colour made gentler after the daylight shots.
+- Noise reduction off: tested indoors, worse, not shipped. On-phone AI stage dropped by the owner. Back Portrait, Night purple and soft native photos are known limits: use LMC.
+- Paused until the owner has taken more photos and videos: `FINAL_REPORT.md` section 8, `OWNER_HELP_NEEDED.md`.
