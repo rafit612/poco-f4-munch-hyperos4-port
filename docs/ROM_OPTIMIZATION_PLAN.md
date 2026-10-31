@@ -11,7 +11,8 @@ Nothing here has been changed on the phone yet.
 | 1 Reverse engineering | **First pass finished** for every subsystem, one page each in `docs/hardware/subsystems/`; whole-ROM graph updated (80 files, 419 nodes). Still open inside the pages: game-load measurements, a GPS test outside, framework code (signature bypass), what each computility level changes |
 | 2 Cleanup and tuning | **List prepared, not applied:** `ROM_PHASE2_CHANGES.md`. Starts after the owner's camera shots are analysed |
 | 3 Kernel | Base decided at source level (`liyafe` MIUI + eBPF + Lineage CIP): `hardware/subsystems/KERNEL_BASE_COMPARISON.md`; target list `HYPEROS4_KERNEL_TARGET.md`. Needs the owner's OK to run `make` from downloaded source |
-| 4-7 | Not started |
+| 4-6 | Not started |
+| 7 Security | C2 confirmed in code; fix plan in `ROM_PHASE2_CHANGES.md` section E; other items unchanged |
 Camera: batch 1 of the owner's shots analysed (`camera/SHOTS_2026-10-31_BATCH1.md`); the camera week continues.
 
 **Owner list:** leave the phone unplugged overnight once (screen-off drain baseline); free about 14 GB before any ROM build (laptop root disk was 99 % full with 2.7 GB free on 2026-10-31 evening; regenerable caches of about 5 GB are in `~/.cache` (huggingface, edge, puppeteer, uv) and `~/.npm`, and `~/Downloads` holds about 73 GB, which only the owner can judge); allow `make` for the kernel config step; judge the PhotoStage pairs; say if back Portrait was tried on purpose; GPS test outside; real charger test; SIM 1 call both ways; router channel; decide on `~/kernel_build`.

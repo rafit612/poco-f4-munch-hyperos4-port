@@ -31,6 +31,9 @@ Every change comes from a Phase 1 finding (`docs/hardware/subsystems/`). Rules f
 | `artd` | read `vendor_default_prop` | 4 |
 Review each before adding: allowing a boost path can change heat and battery, so give those their own build or compare before and after.
 
+## E. Security fix, its own build (C2, found 2026-10-31)
+Restore the original signature and downgrade logic in `services.jar` (`PackageManagerServiceUtils`: `verifySignatures`, `compareSignatures`, `checkDowngrade` x3, `isDowngradePermitted`, `matchSignaturesCompat`, `matchSignatureInSystem`), taking the method bodies from the matching AOSP code (the Xiaomi 17 reference is a newer build, so only the logic, not the text, can be reused). Risk: any preinstalled app whose signing key differs from what the package database holds would stop installing or updating, and a wrong patch can stop the system booting, so: system partition build with a ready rollback, boot test, then check every priv-app (`tools/privcheck.py`), updates of Play Store, GMS and the camera/PhotoStage app, and an install of a differently signed APK that must now fail. Also check `framework.jar` first for the same kind of patch. Needs the owner's decision and a flash; goes after the camera shots are analysed.
+
 ## D. Needs a kernel or HAL (Phase 3, not in a ROM build)
 `bcl-soc` on (temperatures), uclamp and a newer power HAL (`mipowerhal` request), `migt` and the other Xiaomi modules, tracing and BPF. See `HYPEROS4_KERNEL_TARGET.md`.
 

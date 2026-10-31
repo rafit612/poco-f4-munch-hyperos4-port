@@ -6,7 +6,7 @@ Sources: `audit/agents/security/SECURITY_REPORT.md`, `audit/agents/hardware/HARD
 | ID | Finding | Now | Evidence |
 |---|---|---|---|
 | C1 | Data not encrypted | **Fixed** | `ro.crypto.type=file`, `/data` mounted with `inlinecrypt`, metadata encryption files present |
-| C2 | Signature/downgrade bypass in the framework | **Open** | `ROM_HISTORY.md`: still in the port framework; to be confirmed by code in Phase 1 |
+| C2 | Signature/downgrade bypass in the framework | **Open, confirmed by code (2026-10-31)** | `services.jar`, class `com.android.server.pm.PackageManagerServiceUtils` (decompiled with JADX, compared with the Xiaomi 17 reference): `verifySignatures` returns `true` without checking, `compareSignatures` returns 0 (match), the three `checkDowngrade` methods are empty, `isDowngradePermitted` returns `true`, `matchSignaturesCompat` and `matchSignatureInSystem` return `false`. Effect: an APK with the same package name signed by anyone can replace an installed app and keep its data, and downgrades are allowed. It still takes the user (or an installer) to install the APK. Not yet checked: `framework.jar` (`ApkSignatureVerifier`, `SigningDetails`) and the permission-grant path |
 | C3 | Unlocked bootloader, status hidden | **Open** | Real state `orange`, while `ro.boot.flash.locked=1` and `vbmeta.device_state=locked` are spoofed |
 | H1 | Kaorios attestation hook | **Disabled** | Package absent; framework code still to check |
 | H2 | Kernel root | **Open, deliberate for now** | `su` works (`u:r:ksu:s0`), ReSukiSU manager installed. Needed for this research; decide in Phase 7 |
