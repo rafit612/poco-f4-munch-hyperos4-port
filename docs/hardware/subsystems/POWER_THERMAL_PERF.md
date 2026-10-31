@@ -68,8 +68,11 @@ Their battery effect isn't measured yet. Measure screen-off wakeups before and a
 * The heap values match official HyperOS 1's product overrides.
 
 ## Joyose and computility levels [Observed, strings only; jadx isn't installed]
-**Computility levels** (`persist.sys.computility*`, all 4 on the phone) are read by `MiuiBooster.jar` (`com.miui.performance.ComputilityLevelUtils`, `DeviceLevelUtils`), `libhyper_os_miui_booster*`, SurfaceFlinger, `miui-framework.hyperviewscale`, `Miui-WindowManager-Shell`, SystemUI, AOD, Gallery, Theme Manager and AiAsstVision. Mostly UI and effects paths, so they look like a choice of visual quality and not a CPU boost. What each level changes isn't mapped yet.
-`secure_build/payload_tele/product/etc/build.prop` sets them twice: 6 at line 296-297, 4 at line 407-408. The phone ends up on 4. Remove the first block in a cleanup so the file says one thing.
+**Two level systems, both read from `MiuiBooster.jar` (decompiled 2026-10-31, `com.miui.performance`):**
+* **Old device level** (`DeviceLevelUtils`): the platform name (`ro.board.platform` = `kona`) is looked up in lists inside the framework resources (high, middle and low CPU and GPU lists, plus a per-device whitelist by `ro.product.device` = `munch`), RAM gives 1 up to 4 GB, 2 up to 6 GB, 3 above. The result is stored in `Settings.System deviceLevelList`: on this phone **`v:1,c:3,g:3`, high for both CPU and GPU**, and RAM 8 GB is high too. So HyperOS 4 treats the phone as a high-end device and leaves its effects on.
+* **Computility levels** (`ComputilityLevelUtils`): version 1 reads `persist.sys.computility.cpulevel` and `gpulevel`, valid 1 to 6, device level = the lower of the two; version 2 reads `persist.sys.computilityV2.*`, valid 1 to 4 with its own device level. Out-of-range values are rejected and logged. Read by SurfaceFlinger, SystemUI, AOD, Gallery, Theme Manager and AiAsstVision, mostly to pick visual effects.
+* **Our values:** version 1 is 4 of 6 and version 2 is 4 of 4. The porter's `build.prop` first sets version 1 to 6, then later under the comment `#Blur Optimize` to 4, and the later line wins. So 4 is deliberate (a cheaper blur), and removing the first block (change A1 in `ROM_PHASE2_CHANGES.md`) only tidies a dead duplicate.
+* **Still unknown:** the exact threshold at which each consumer switches an effect off. That is in each app, not in the booster library.
 
 **Joyose doesn't read computility levels.** `com.xiaomi.joyose` (`SmartOpService`, about 67 MB) is a game and scene tuner, and much of what it names is missing on this phone:
 | Names in Joyose | On this phone |
@@ -86,6 +89,6 @@ So it may do little here. **Phase 2 test:** disable Joyose, then compare a game'
 Compared in [`KERNEL_BASE_COMPARISON.md`](KERNEL_BASE_COMPARISON.md). Decision: start from `liyafe1997/kernel_xiaomi_sm8250_mod` with its MIUI build and eBPF branch, and bring in LineageOS's CIP patches after it boots. `UCLAMP_TASK` exists in the sources compared but isn't enabled in the configs read.
 
 ## Next
-1. Map what each computility level changes (needs jadx, or `baksmali` on `MiuiBooster.jar`).
+1. Find where each computility consumer switches an effect (SystemUI, SurfaceFlinger, AOD). Tools work: JDK 17 at `~/.local/opt/jdk-17.0.20+8`, JADX library in `~/re_tools/jadx`, helper `tools/re/Decomp.java` (compile with javac 17).
 2. Measure where thermal caps start under load, in a normal warm room.
 3. Read the kona sensor list in the HAL binary, to see what follows `soc`.

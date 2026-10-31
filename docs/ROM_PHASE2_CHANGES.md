@@ -5,7 +5,7 @@ Every change comes from a Phase 1 finding (`docs/hardware/subsystems/`). Rules f
 ## A. Cleanup (no behaviour change expected)
 | # | Change | Where | Evidence | Check |
 |---|---|---|---|---|
-| A1 | Remove the first computility block (`persist.sys.computility.cpulevel=6`, `gpulevel=6`, `version=2025`, lines 296-298) | `secure_build/payload_tele/product/etc/build.prop` | The same keys are set to 4 near line 407; the phone ends on 4 | `getprop persist.sys.computility.cpulevel` still 4 |
+| A1 | Remove the first computility block (`persist.sys.computility.cpulevel=6`, `gpulevel=6`, `version=2025`, lines 296-298) | `secure_build/payload_tele/product/etc/build.prop` | The same keys are set to 4 near line 407 under `#Blur Optimize` (deliberate); the phone ends on 4, so this only removes a dead duplicate | `getprop persist.sys.computility.cpulevel` still 4 |
 | A2 | Find who writes `persist.sys.mqs.gps.rtk=ON` and `supl.qxwz.com` | Not in `payload_tele` or any `.prop`/`.rc` of the base images, so a runtime writer (an app writes `persist.*`) | Phase 1 GNSS | Then block or reset it; confirm no connection to port 7275 |
 | A3 | Find who sets `persist.vendor.wifi.interrupt_test_mode=true` | Not found in base images | Phase 1 Wi-Fi | Read-only search first |
 | A4 | `dalvik.vm.background-dex2oat-threads` is 4 in `product/etc/build.prop` but 8 live: `system_ext/etc/init/init.miui.ext.rc` sets it at boot | Base `system_ext` | Phase 1 memory | Decide the value (4 proposed); an rc override needs a base-image change, not just `payload_tele` |

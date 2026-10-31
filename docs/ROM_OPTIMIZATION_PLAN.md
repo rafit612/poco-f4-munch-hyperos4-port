@@ -14,7 +14,7 @@ Nothing here has been changed on the phone yet.
 | 4-7 | Not started |
 Camera: batch 1 of the owner's shots analysed (`camera/SHOTS_2026-10-31_BATCH1.md`); the camera week continues.
 
-**Owner list:** leave the phone unplugged overnight once (screen-off drain baseline); free about 14 GB before any ROM build; allow `make` for the kernel config step; judge the PhotoStage pairs; say if back Portrait was tried on purpose; GPS test outside; real charger test; SIM 1 call both ways; router channel; decide on `~/kernel_build`.
+**Owner list:** leave the phone unplugged overnight once (screen-off drain baseline); free about 14 GB before any ROM build (laptop root disk was 99 % full with 2.7 GB free on 2026-10-31 evening; regenerable caches of about 5 GB are in `~/.cache` (huggingface, edge, puppeteer, uv) and `~/.npm`, and `~/Downloads` holds about 73 GB, which only the owner can judge); allow `make` for the kernel config step; judge the PhotoStage pairs; say if back Portrait was tried on purpose; GPS test outside; real charger test; SIM 1 call both ways; router channel; decide on `~/kernel_build`.
 
 ## 1. What limits the work
 
