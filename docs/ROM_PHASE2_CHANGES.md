@@ -34,6 +34,12 @@ Review each before adding: allowing a boost path can change heat and battery, so
 ## E. Security fix, its own build (C2, found 2026-10-31)
 Restore the original signature and downgrade logic in `services.jar` (`PackageManagerServiceUtils`: `verifySignatures`, `compareSignatures`, `checkDowngrade` x3, `isDowngradePermitted`, `matchSignaturesCompat`, `matchSignatureInSystem`), taking the method bodies from the matching AOSP code (the Xiaomi 17 reference is a newer build, so only the logic, not the text, can be reused). Risk: any preinstalled app whose signing key differs from what the package database holds would stop installing or updating, and a wrong patch can stop the system booting, so: system partition build with a ready rollback, boot test, then check every priv-app (`tools/privcheck.py`), updates of Play Store, GMS and the camera/PhotoStage app, and an install of a differently signed APK that must now fail. Also check `framework.jar` first for the same kind of patch. Needs the owner's decision and a flash; goes after the camera shots are analysed.
 
+## F. Telecom fix: loudspeaker button sometimes does nothing (found 2026-10-31)
+Cause and evidence: `docs/hardware/subsystems/CALL_SPEAKER_BUG.md`. Telecom keeps a stale cached communication device after another app used the speaker, then skips switching to the speaker. Fix: patch `isCurrentCommunicationDevice` in `/system/priv-app/Telecom/Telecom.apk` to read the real device from `AudioManager` (as the Xiaomi 17 reference does). System partition build with rollback; test with a WhatsApp speaker call followed by a phone call. Workaround until then: tap Speaker off and on.
+
+## G. Dynamic Island check (owner request 2026-10-31)
+Find out which Island features HyperOS 4 offers (call, music, timer, navigation, charging, recording, hotspot, delivery and others), which ones work on this phone, and whether the Island sits correctly around the front camera hole. Read-only first (settings, SystemUI resources, device feature flags, window frames, comparison with the Xiaomi 17 reference); fixes only after the findings. Results go into `docs/hardware/subsystems/DYNAMIC_ISLAND.md`.
+
 ## D. Needs a kernel or HAL (Phase 3, not in a ROM build)
 `bcl-soc` on (temperatures), uclamp and a newer power HAL (`mipowerhal` request), `migt` and the other Xiaomi modules, tracing and BPF. See `HYPEROS4_KERNEL_TARGET.md`.
 

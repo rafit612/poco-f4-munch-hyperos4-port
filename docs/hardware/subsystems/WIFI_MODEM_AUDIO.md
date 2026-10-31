@@ -57,6 +57,9 @@ Nothing wrong found. Still open from before, owner only: SIM 1 outgoing answered
 
 **Hotword and Bluetooth silence:** the earlier note stands (Google hotword on the LPI path loops the ADSP). It's a kernel and audio-module matter (`ROADMAP` A4), not a config one.
 
+## Call speaker bug (found 2026-10-31)
+The loudspeaker button can show Speaker while the sound stays on the earpiece, after another app has used the speaker. Cause is a stale device cache in the port's Telecom: `CALL_SPEAKER_BUG.md`. Fix planned in `ROM_PHASE2_CHANGES.md` section F.
+
 ## Kernel consequences
 * The audio and Wi-Fi drivers are Qualcomm's `techpack/audio` and `qcacld` module trees: keep the same versions as the running kernel, and compare `techpack/audio` file by file before the first test (LineageOS and liyafe differ in 9 files there).
 * `wlan` is built from `qca6390` sources; the Wi-Fi module is the porter's (`CONFIG_QCA_CLD_WLAN_PROFILE=qca6390`).
