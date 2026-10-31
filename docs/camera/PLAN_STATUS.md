@@ -1,6 +1,6 @@
 # Camera plan status (generated)
 
-Generated 2026-10-31 13:07 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
+Generated 2026-10-31 13:08 from the live dashboard checklist (`wlog task`). [x] done · [~] partly done · [ ] to do. Plan details: `MASTER_PLAN.md`.
 
 ## P0 — Lab, baseline & reference photo library (active, 8/9 done)
 
@@ -81,7 +81,7 @@ Generated 2026-10-31 13:07 from the live dashboard checklist (`wlog task`). [x] 
 - [x] 07_IMPROVEMENT_PLAN.md ranked + Gate G3
 - [x] Rate owner-approved candidates C1-C5 (gain/risk/effort)
 
-## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 21/31 done)
+## P8 — Implement + tune (colour, video, apps, GCam xml) (active, 22/31 done)
 
 - [x] Watermark POCO F4 5G
 - [x] Leica looks filter set enabled (Marble E1 25)
@@ -96,7 +96,7 @@ Generated 2026-10-31 13:07 from the live dashboard checklist (`wlog task`). [x] 
 - [x] C1 Sensor RAW HDR (3-exposure) - test module, quality check
 - [x] C2 DSP stage of Xiaomi HDR (hdsr) - closed: app requests it via vendor tag xiaomi.hdr.sr.enabled, which the munch HAL lacks (VTNF) -> not usable
 - [x] C3 60 fps + ISO above 877 for other apps
-- [~] C4 Own AI stage on NNAPI/DSP/GPU: hardware reachable without root (U7), design in 07 §5
+- [x] C4 Own AI stage on the phone: DROPPED by the owner 2026-10-31 (large job, uncertain gain, LMC fills the gap); laptop-only sample test for information, design notes kept in 07 section 5
 - [x] C5 Hidden camera modes (13) - which work on SD870
 - [~] OIS check: handheld video/long exposure OIS on vs off (port)
 - [x] Soft photos path 3: LMC daily camera + one tuned xml
