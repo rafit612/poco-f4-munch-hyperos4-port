@@ -74,6 +74,7 @@ Also: framework map of each HyperOS 4 service with no vendor counterpart (this p
 Stop the log spam found above, fix what the framework waits for, then test tuning candidates one by one: scheduler, dalvik variant, zram, heap, background limits. Keep only what the baseline shows as better.
 
 ### Phase 3: Kernel (`ROADMAP` track A)
+**Goal set by the owner: the kernel serves HyperOS 4, not only boots.** Target list, what's portable and what isn't: `docs/hardware/subsystems/HYPEROS4_KERNEL_TARGET.md`.
 **Base decided at source level (2026-10-31, `docs/hardware/subsystems/KERNEL_BASE_COMPARISON.md`):** stop using `rohmanurip`; start from [`liyafe1997/kernel_xiaomi_sm8250_mod`](https://github.com/liyafe1997/kernel_xiaomi_sm8250_mod) with its MIUI build and eBPF branch, and bring in [LineageOS's](https://github.com/LineageOS/android_kernel_xiaomi_sm8250) CIP security patches after it boots. Then the A1 RAM-only test, keeping v4's crash logging.
 Then one feature at a time: uclamp -> zram -> BBR -> audio modules ("Hey Google"). The app freezer already works on the running kernel, so a new kernel must keep it. uclamp plus a newer power HAL (LineageOS uses libperfmgr on this chip) is the path to ADPF. Everything RAM-only first, and flashing needs a few days of daily use.
 
