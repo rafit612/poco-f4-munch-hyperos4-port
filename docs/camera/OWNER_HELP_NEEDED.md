@@ -26,7 +26,7 @@ Tips: keep the phone steady, tap to focus, do not use zoom unless the row says s
 | 10 | Restart-app setting: allow autostart + no battery restriction for the accessibility service app (the one that crashed the lock-screen toggle). | Needs phone settings screens |
 | 11 | Decide: remove the disabled KernelSU module `munch_cam_watermark`? | Your call |
 | 12 | Decide: what to do with `~/kernel_build` (about 20 GB, kernel work was stopped). | Your call |
-| 13 | GitHub history: see the note from the push of 2026-10-31. Old commits may stay reachable by hash until GitHub support purges them: the purge request (also for the old IMEI commit) is yours to send. | Account owner |
+| 13 | GitHub: history is rewritten locally (no Gmail) but not pushed; the force-push must be run by the owner. Old commits may stay reachable by hash until GitHub support purges them: the purge request (also for the old IMEI commit) is yours to send. | Account owner |
 | 14 | Gate G1 (P0): read `MODE_TEST_RESULTS.md` baseline and say "stable". | Sign-off |
 
 ## C. What I will do without you (not blocked)
