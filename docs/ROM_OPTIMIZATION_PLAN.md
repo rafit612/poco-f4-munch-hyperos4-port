@@ -12,7 +12,7 @@ Nothing here has been changed on the phone yet.
 | 2 Cleanup and tuning | **List prepared, not applied:** `ROM_PHASE2_CHANGES.md`. Starts after the owner's camera shots are analysed |
 | 3 Kernel | Base decided at source level (`liyafe` MIUI + eBPF + Lineage CIP): `hardware/subsystems/KERNEL_BASE_COMPARISON.md`; target list `HYPEROS4_KERNEL_TARGET.md`. Needs the owner's OK to run `make` from downloaded source |
 | 4-6 | Not started |
-| Owner reports | Loudspeaker bug diagnosed (`hardware/subsystems/CALL_SPEAKER_BUG.md`, fix in `ROM_PHASE2_CHANGES.md` F). **Dynamic Island: feature completeness and position check added to the plan, see `ROM_PHASE2_CHANGES.md` G** |
+| Owner reports | Loudspeaker bug diagnosed (`hardware/subsystems/CALL_SPEAKER_BUG.md`, fix in `ROM_PHASE2_CHANGES.md` F). Dynamic Island: position correct, code complete, charging island works, other types need app tests (`hardware/subsystems/DYNAMIC_ISLAND.md`, `ROM_PHASE2_CHANGES.md` G) |
 | 7 Security | C2 confirmed in code; fix plan in `ROM_PHASE2_CHANGES.md` section E; other items unchanged |
 Camera: batch 1 of the owner's shots analysed (`camera/SHOTS_2026-10-31_BATCH1.md`); the camera week continues.
 
