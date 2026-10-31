@@ -56,7 +56,7 @@ This phone's panel, `l11r_38_08_0a_dsc_cmd`, is in all three trees. `build.sh` c
 The vendor camera HAL talks to the kernel through `cam_*.h`.
 * liyafe's headers match rohman's in every file but `cam_sensor.h`.
 * Lineage's `camera-xiaomi` is older: it lacks `CAM_REQ_MGR_REQUEST_DUMP` and `cam_req_mgr_custom_msg`, and it has 78 missing functions.
-* **Check before testing:** in `cam_sensor.h`, `struct cam_ois_opcode` has `ois_get_data` only on psyche and apollo in rohman, but always in liyafe. The struct is packed, so a size mismatch with the vendor HAL could break OIS firmware loading on munch. Read which size the HAL uses.
+* **OIS checked:** in `cam_sensor.h`, `struct cam_ois_opcode` has `ois_get_data` only on psyche and apollo in rohman, but always in liyafe. The porter's kernel checks `len < 0x49` (73 bytes) and copies 32 opcode bytes from offset 41 in `cam_ois_driver_cmd`, so it includes the field, the same as liyafe. rohman's munch build would be 4 bytes short.
 
 ### 5. Xiaomi extras
 liyafe's MIUI config enables Xiaomi code the vendor stack may use: `MILLET`, `MIGT`, `BINDER_OPT`, `PERF_HELPER`, `mi_reclaim`, `rtmm`, `board_sensor_temp`. The porter's kernel has these names; neither Lineage nor rohman has `mi_reclaim` or `rtmm`.
@@ -65,17 +65,33 @@ liyafe's MIUI config enables Xiaomi code the vendor stack may use: `MILLET`, `MI
 Our v1 reached Android, then rebooted with `bpfloader-failed`. Tracing and BPF events are the known gap.
 * Lineage's `lineage-24.0` branch is the closest on BPF, and its manifest targets Android 17.
 * liyafe's main branch is not. Its `android15-lineage22-mod-ebpf` branch adds 55 BPF backports but is 12 commits behind, last changed 2025-07.
-* None of the configs read so far sets `FTRACE`, `TRACEPOINTS` or `BPF_EVENTS` by name. Their real values need a generated `.config`.
+* Config, read as text: liyafe's `munch_defconfig` doesn't set `FTRACE` or `DEBUG_KERNEL`, and `FTRACE` only defaults on with `DEBUG_KERNEL`. So tracing has to be switched on explicitly, as in v3: `FTRACE`, event tracing, a probe-events option, then `BPF_EVENTS` follows. rohman sets `# CONFIG_FTRACE is not set`, which matches v1's failure.
 * So the published prebuilt MIUI kernel will likely stop at `bpfloader` too. It could still show display, touch and camera probing in RAM only.
+* Not run: a generated `.config`. The session's permission check blocked running `make` from the downloaded source, so the final values aren't confirmed. It happens at build time, with the owner's permission.
+* uclamp: rohman sets `UCLAMP_TASK=y` and has no WALT. liyafe has WALT and no uclamp. Enabling uclamp next to WALT is a separate test, since the vendor scripts tune WALT.
+
+### 7. Device tree against the live phone
+The liyafe eBPF branch and rohman were compiled with `cpp` + `dtc`, merged with `fdtoverlay` (`kona-v2.1` + munch overlay) and compared with `phone_snapshot/live_fdt.dtb`.
+
+| | liyafe | rohman |
+|---|---:|---:|
+| Live nodes missing from source (of 4605) | **0** | 65 |
+| Thermal zones (live 91) | 91, same names | 91, same names |
+| Reserved memory values | **Same** | `linux,cma` 128 MB vs live 32 MB; `qseecom_region` 32 MB vs live 20 MB |
+| Panel node `l11r_38_08_0a` | Only panel size differs, plus a renumbered reference | Timings, commands, brightness differ; live `timing@2` missing |
+| `cpu-map` | Same | Different, clusters missing |
+
+* The panel size in the source, 155 x 70, is what liyafe's MIUI `build.sh` changes to 1546 x 695, exactly the live values. So the porter very likely used this tree or a close relative, with that script.
+* rohman's mismatches are a plausible reason its device tree dropped to fastboot, but that isn't proven.
+* 21 nodes are only in liyafe (audio packet, `spf_core_platform`, `glink`, `ufsice`) and 129 properties only in source. `chosen` and `memory` values come from the bootloader. Read the rest before the test.
 
 ## What this doesn't explain
-Why v2 and v3 hung before the console is still unknown. "Porter's kernel + rohman's device tree" also dropped to fastboot. A new base doesn't fix this by itself, so the first test keeps the v4 crash logging.
+Why v2 and v3 hung before the console is still unknown. A new base removes several suspects but doesn't prove the cause, so the first test keeps the v4 crash logging.
 
-## Next, in order (no phone change)
-1. Compare liyafe's munch device tree with `phone_snapshot/live_fdt.dtb`.
-2. Read which `cam_ois_opcode` size the vendor HAL uses.
-3. Generate a `.config` for the eBPF branch with MIUI options and compare it with the porter's feature list. Needs a disk location for the tree, about 1.3 GB.
-4. Then, with the owner's OK and after the camera shots: build, then the RAM-only test (`ROADMAP` A1). A failed RAM boot returns to the installed kernel.
+## Next, in order
+1. With the owner's OK and after the camera shots: allow `make` from this source, generate the `.config` with MIUI and tracing options, and compare it with the porter's feature list.
+2. Enable `bcl-soc` for temperatures, as its own step (`POWER_THERMAL_PERF.md`).
+3. Build, then the RAM-only test (`ROADMAP` A1). A failed RAM boot returns to the installed kernel. Needs about 1.3 GB for the tree plus build space.
 
 ## Reproduce
-`tools/kernel_compare/`: `symbol_coverage.py` (table 1), `vendor_paths.sh` (run on the phone as root, writes `/data/local/tmp/paths2.txt`), `path_audit.py` (table 2).
+`tools/kernel_compare/`: `symbol_coverage.py` (table 1), `vendor_paths.sh` (run on the phone as root, writes `/data/local/tmp/paths2.txt`), `path_audit.py` (table 2), `dt_compare.py` (table in section 7).

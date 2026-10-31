@@ -19,10 +19,17 @@ CPU busy 4.6 %. Top: `system_server` 5.1 % of a core, display thread `crtc_event
 
 ### 1. Thermal HAL returns no temperatures [Observed + Source]
 Symptom: `dumpsys thermalservice` lists cooling devices but no temperatures, so Android's Thermal API has no data.
-Binary `android.hardware.thermal@2.0-service.qti` is built from `vendor/qcom/opensource/thermal-hal` ([LineageOS copy](https://github.com/LineageOS/android_hardware_qcom_thermal)). In the `lineage-20.0` revision of that code, `ThermalCommon::initThermalZones` returns -1 if **any** configured sensor has no thermal zone; `ThermalUtils` then leaves `is_sensor_init=false` and `readTemperatures` returns nothing. Cooling devices are set up separately, which matches the symptom.
-The HAL binary is byte-identical to official HyperOS 1 (sha 05031fcf), so the HAL isn't at fault: the mismatch is on the porter's kernel side. Zone names the binary knows but this kernel lacks include `xo-therm-usr` and `quiet-therm-usr`; the kernel has `xo-therm-adc` and `quiet_therm`. The binary's sensor list isn't the same as that source revision, so this is a strong lead, not proof.
-**Still to confirm:** the exact missing zone, from the boot-time line `No thermal zone for sensor:`. The archived bugreport doesn't contain it. Capture `logcat` from the next boot.
-**Fix options:** patch the expected name in the HAL binary, or provide the name from our kernel. Temperature reporting could activate thresholds that were silent, so test with care.
+**Cause (corrected 2026-10-31; the earlier "missing zone name" theory was wrong):** the HAL logs `Temperature read error:1 for sensor soc` then `Sensor Temperature read failure` about once a second, so it starts and then fails at one read.
+* `/sys/class/thermal/thermal_zone74` (`soc`) exists, but reading `temp` returns `Invalid argument`: no sensor is attached.
+* The sensor is the `bcl-soc` node under `pm8150b`, and it has `status = "disabled"`. Driver `bcl_soc_peripheral` is built in but has no device.
+* In the HAL source, a failed read ends the whole list and returns an error, so no temperature gets through.
+* **Not a porter mistake:** the official HyperOS 1.0.9 device tree also has `bcl-soc` disabled, and the HAL binary is byte-identical to official (sha 05031fcf). So official most likely has the same failure, though that wasn't run. The names `xo-therm-usr` and `quiet-therm-usr` belong to the binary's lists for other chips.
+
+**Fix candidate:** enable `bcl-soc` in the device tree, with the next kernel or a `dtbo` change.
+* It reads battery percent from the `battery` supply, which works.
+* The `soc` zone has a trip at 10 % that limits `cpu4`-`cpu7` one step (`low_limits_cap`). Keep that deliberately, or remove those four cooling maps so behaviour doesn't change.
+* Temperatures reaching Android could wake framework thresholds that were silent. Test under load.
+* Other sensors after `soc` in the HAL's list are unverified, because the read stops at the first failure. Five other zones also return `Invalid argument` (`modem-mmw3-usr`, `modem-mmw*-mod-usr`), so if any is in the kona list it would fail next.
 
 ### 2. ADPF unavailable: the power HAL is too old [Observed]
 `Hint Session Support: false`, CPU and GPU headroom unsupported. `android.hardware.power-service` links `android.hardware.power-V1-ndk_platform`, and hint sessions only exist from `IPower` version 2. It's byte-identical to official HyperOS 1 (sha d6fba612), so this isn't a porter mistake. The kernel also has no uclamp.
@@ -59,10 +66,25 @@ Their battery effect isn't measured yet. Measure screen-off wakeups before and a
 * **Memory:** lmkd in minfree mode, swappiness 60, 8 GiB zram. Same design as official.
 * The heap values match official HyperOS 1's product overrides.
 
+## Joyose and computility levels [Observed, strings only; jadx isn't installed]
+**Computility levels** (`persist.sys.computility*`, all 4 on the phone) are read by `MiuiBooster.jar` (`com.miui.performance.ComputilityLevelUtils`, `DeviceLevelUtils`), `libhyper_os_miui_booster*`, SurfaceFlinger, `miui-framework.hyperviewscale`, `Miui-WindowManager-Shell`, SystemUI, AOD, Gallery, Theme Manager and AiAsstVision. Mostly UI and effects paths, so they look like a choice of visual quality and not a CPU boost. What each level changes isn't mapped yet.
+`secure_build/payload_tele/product/etc/build.prop` sets them twice: 6 at line 296-297, 4 at line 407-408. The phone ends up on 4. Remove the first block in a cleanup so the file says one thing.
+
+**Joyose doesn't read computility levels.** `com.xiaomi.joyose` (`SmartOpService`, about 67 MB) is a game and scene tuner, and much of what it names is missing on this phone:
+| Names in Joyose | On this phone |
+|---|---|
+| `/proc/sys/walt/*`, `policy0/walt/target_loads` | Absent. This kernel uses `/proc/sys/kernel/sched_*` and `schedutil` |
+| `/dev/migt_reset`, `/sys/module/mi_game`, `metis`, `turbo_sched` | Absent |
+| `/proc/trace_package/*` | Absent |
+| `/dev/cpuset/game`, `gamelite` | Absent |
+| `bus_dcvs` | Absent |
+Its assets have folders for newer chips (8635, 8735, 8750, 8850, 8950, 8975), and none for SM8250 or model `22021211RG`; `profiles/` and `default_cloud.json` aren't read yet.
+So it may do little here. **Phase 2 test:** disable Joyose, then compare a game's frame rate, heat and idle wakeups. That would also stop its `TcmReceiver` denials. If it does nothing useful, that's about 67 MB back, with no SELinux change needed.
+
 ## Kernel base
 Compared in [`KERNEL_BASE_COMPARISON.md`](KERNEL_BASE_COMPARISON.md). Decision: start from `liyafe1997/kernel_xiaomi_sm8250_mod` with its MIUI build and eBPF branch, and bring in LineageOS's CIP patches after it boots. `UCLAMP_TASK` exists in the sources compared but isn't enabled in the configs read.
 
 ## Next
-1. Framework side: how Joyose and computility levels drive performance.
+1. Map what each computility level changes (needs jadx, or `baksmali` on `MiuiBooster.jar`).
 2. Measure where thermal caps start under load, in a normal warm room.
-3. Capture a boot log for the thermal zone name.
+3. Read the kona sensor list in the HAL binary, to see what follows `soc`.
