@@ -2,7 +2,7 @@
 
 Things only a person with the phone in hand can do: real scenes, daylight, a real call. Everything else in the plan is done or is being done on the laptop.
 Where to put the photos: just take them with the Xiaomi camera (and, where it says so, with LMC too). Say "done" in the chat and the shots are pulled and measured; nothing needs to be copied by hand.
-Status of the rest of the plan: `PLAN_STATUS.md` (generated). Last updated 2026-10-31. **Camera work is paused: the owner shoots photos and videos for about one week from 2026-10-31, then they get analysed.**
+First batch of shots analysed 2026-10-31: `SHOTS_2026-10-31_BATCH1.md`. Status of the rest of the plan: `PLAN_STATUS.md` (generated). Last updated 2026-10-31. **Camera work is paused: the owner shoots photos and videos for about one week from 2026-10-31, then they get analysed.**
 
 ## A. Photo and video tests (about 30 minutes in total)
 
