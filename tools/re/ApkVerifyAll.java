@@ -18,9 +18,12 @@ public class ApkVerifyAll {
                 schemes = (r.isVerifiedUsingV1Scheme() ? "v1 " : "") + (r.isVerifiedUsingV2Scheme() ? "v2 " : "") + (r.isVerifiedUsingV3Scheme() ? "v3 " : "");
                 List<X509Certificate> cs = r.getSignerCertificates();
                 if (cs != null && !cs.isEmpty()) {
-                    byte[] d = MessageDigest.getInstance("SHA-256").digest(cs.get(0).getEncoded());
                     StringBuilder sb = new StringBuilder();
-                    for (int i = 0; i < 4; i++) sb.append(String.format("%02x", d[i]));
+                    for (X509Certificate c : cs) {   // every signer certificate, full SHA-256, comma separated
+                        byte[] d = MessageDigest.getInstance("SHA-256").digest(c.getEncoded());
+                        if (sb.length() > 0) sb.append(',');
+                        for (byte x : d) sb.append(String.format("%02x", x));
+                    }
                     sha = sb.toString();
                 }
                 for (ApkVerifier.IssueWithParams e : r.getErrors()) { err = e.toString(); break; }

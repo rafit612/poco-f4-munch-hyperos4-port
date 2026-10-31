@@ -18,7 +18,7 @@ Base = the image on the phone: `secure_build/out_tele_T20261030_v13/system.img` 
 ## Before the flash (owner)
 1. USB cable and port checked (the link drops on long transfers); battery above 50 %.
 2. Camera shots and PhotoStage verdict finished: this flash makes the first boot slow and resets nothing, but it is a good moment to have everything pulled.
-3. `/data/system/packages.xml` copy pulled for the stored-certificate comparison below.
+3. **Done (2026-10-31, read-only):** installed apps audited for the new rules. All 99 user apps (326 APK files) and all 28 system apps updated through the Play Store (75 files, including Play Services, Dialer, Contacts, WebView, PhotoStage) pass real signature verification, and each base APK's certificate equals the one stored in `packages.xml`. So the fix will not remove or refuse any installed app on signature grounds (Android deletes apps under `/data/app` that fail verification at boot, which would otherwise have been the danger). Tools: `tools/re/verify_installed_apps_drive.py` and `verify_installed_apps_compare.py`. Preinstalled system apps were checked separately (12 modified ones rely on the system-partition exemption).
 4. Owner says go. Rollback ready: `bash secure_build/flash_system_nowipe.sh secure_build/out_tele_T20261030_v13 "rollback"` (about 2 min, reboots into the old system; needs fastbootd, the old image is byte-identical to what runs today).
 
 ## Flash
