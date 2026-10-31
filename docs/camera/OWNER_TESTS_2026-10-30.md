@@ -75,3 +75,14 @@ The gap is about 2x in daylight (about 20x in the indoor evening set). The Photo
 **Video.** All four clips have audio and no dropped frames by count: native 4K60 16.8 s, 101 Mbit/s, 1006 frames; LMC 4K60 9.6 s, 80 Mbit/s, 579 frames; LMC 4K30 and 1080p30 also fine. Stabilisation not judged.
 
 **Calls on the final ROM (from the telecom log).** First round at 12:42: SIM 2 and SIM 1 both dialled and were ended locally without an answer. Second round at 12:47, answered: SIM 2 outgoing 6 s (VoLTE call, active, ended by the far side), SIM 2 incoming 3 s, SIM 1 incoming 13 s (circuit-switched). Ringer, answer, earpiece route and in-call audio mode all normal, no crash. **Not yet shown:** an answered outgoing call on SIM 1. The log cannot show whether voice was heard both ways; that is the owner's to confirm.
+
+## 2026-10-31 13:00: noise reduction off, A/B from one fixed position (phone on its stand, indoors, ISO ~800)
+Three shots each, same spot, aligned; region means (Laplacian variance) and flat-wall noise:
+| | ROM v15 | NR off (+ edge off) | NR off + PhotoStage | LMC |
+|---|---|---|---|---|
+| shelf objects | 32 | 228 | 281 | 165 |
+| bag and basket | 32 | 323 | 303 | 202 |
+| wood grain | 17 | 368 | 1080 | 200 |
+| flat-wall noise | 1.10 | 6.45 | 2.71 | 2.41 |
+At 100 % (the numbers mislead here, grain and sharpening inflate them): LMC is the best by eye: thin flower outlines, clean surfaces. ROM v15 is clean and soft. NR off shows more structure than ROM but with heavy grain. **NR off + PhotoStage is the worst to look at:** the denoise melts the thin lines into blobs and leaves colour blotches.
+**Decision: do not ship NR off.** The test build was removed; the phone runs ROM v15. Not tested: NR off in daylight at ISO 50, where grain would be far lower. That needs the phone pointed at the same outdoor scene.
