@@ -33,6 +33,7 @@ Symptom: `dumpsys thermalservice` lists cooling devices but no temperatures, so 
 
 ### 2. ADPF unavailable: the power HAL is too old [Observed]
 `Hint Session Support: false`, CPU and GPU headroom unsupported. `android.hardware.power-service` links `android.hardware.power-V1-ndk_platform`, and hint sessions only exist from `IPower` version 2. It's byte-identical to official HyperOS 1 (sha d6fba612), so this isn't a porter mistake. The kernel also has no uclamp.
+**New (2026-10-31):** the framework also asks for `vendor.xiaomi.aidl.mipowerhal.IMiPowerHalAIDLService/default`, denied every 10 minutes, so HyperOS 4 expects a Xiaomi AIDL power HAL that this vendor lacks.
 **Two things are needed:** a newer power HAL and a way to act on hints. LineageOS on this same chip uses `android.hardware.power-service.lineage-libperfmgr` with a `powerhint.json`, and the Qualcomm power source implements `createHintSession` (`PowerHintSession.cpp`). Open question: whether the vendor's SDK 30 VINTF, SELinux and perf stack accept it.
 
 ### 3. Kernel features [Observed, `/proc/kallsyms` by symbol name]

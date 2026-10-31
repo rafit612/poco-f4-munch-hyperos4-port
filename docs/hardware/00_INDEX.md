@@ -1,6 +1,6 @@
 # POCO F4 5G (munch) — hardware / firmware / drivers / architecture documentation
 
-Start with `AUDIT_STATUS.md` (what is still true) and `subsystems/`: `POWER_THERMAL_PERF.md`, `MEMORY_SCHEDULING.md`, `DISPLAY_TOUCH.md`, `KERNEL_BASE_COMPARISON.md`, `HYPEROS4_KERNEL_TARGET.md`. The driver sources, datasheets, device tree and raw dumps named below are on the pendrive `hardware_docs/`, not in this repo.
+Start with `AUDIT_STATUS.md` (what is still true) and `subsystems/`: `POWER_THERMAL_PERF.md`, `MEMORY_SCHEDULING.md`, `DISPLAY_TOUCH.md`, `WIFI_MODEM_AUDIO.md`, `GNSS_SENSORS_POWER_STORAGE_SECURITY.md`, `KERNEL_BASE_COMPARISON.md`, `HYPEROS4_KERNEL_TARGET.md`. The driver sources, datasheets, device tree and raw dumps named below are on the pendrive `hardware_docs/`, not in this repo.
 
 Built 2026-10-27 from the user's own phone (custom ROM T20261026, HyperOS 4 / Android 17, port kernel 4.19.325) and the matching kernel sources.
 [Observed] = read from the phone; [Known] = general platform knowledge.
